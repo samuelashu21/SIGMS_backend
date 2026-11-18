@@ -1,0 +1,38 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model School {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  students Student[]
+
+  @@index([isActive], map: "schools_is_active_idx")
+  @@map("schools")
+}
+
+model Student {
+  id        String   @id @default(uuid()) @db.Uuid
+  fullName  String   @map("full_name")
+  schoolId  String   @db.Uuid
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([schoolId], map: "students_school_id_idx")
+  @@index([schoolId, isActive], map: "students_school_active_idx")
+  @@index([schoolId, fullName], map: "students_school_name_idx")
+  @@map("students")
+}
