@@ -56,3 +56,8 @@ export type Student = Prisma.StudentModel
  * 
  */
 export type AuthSession = Prisma.AuthSessionModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel

@@ -22,3 +22,4 @@ export {
 export { refreshAuthSession } from './refresh-session.service.js';
 
 export { hashRefreshToken } from './session-token.service.js';
+export { loginUser } from './login.service.js';
