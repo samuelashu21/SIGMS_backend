@@ -1,54 +1,74 @@
 
+import type { Prisma } from '../../../generated/prisma/client.js';
 import { prisma } from '../../../database/index.js';
-import { AppError } from '../../../utils/app-error.js';
 
-export const archiveUser = async (
-  userId: string,
-  archivedBy: string
+interface RecordUserActivityInput {
+  actorId: string;
+  targetUserId: string;
+  action: string;
+  details?: Prisma.InputJsonValue;
+}
+
+export const recordUserActivity = (
+  input: RecordUserActivityInput,
+  tx: Prisma.TransactionClient
 ) => {
-  if (userId === archivedBy) {
-    throw new AppError('You cannot archive your own account.', 400);
-  }
-
-  const user = await prisma.user.findFirst({
-    where: {
-      id: userId,
-      deletedAt: null
-    },
-    select: { id: true, isActive: true }
+  return tx.userActivityLog.create({
+    data: {
+      actorId: input.actorId,
+      targetUserId: input.targetUserId,
+      action: input.action,
+      ...(input.details !== undefined && {
+        details: input.details
+      })
+    }
   });
+};
 
-  if (!user) {
-    throw new AppError('User not found or already archived.', 404);
-  }
+export const getUserActivityHistory = async (
+  userId: string,
+  page = 1,
+  limit = 20
+) => {
+  const currentPage = Math.max(1, Math.floor(page));
+  const pageSize = Math.min(100, Math.max(1, Math.floor(limit)));
 
-  return prisma.$transaction(async (tx) => {
-    const archived = await tx.user.update({
-      where: { id: userId },
-      data: {
-        isActive: false,
-        deletedAt: new Date()
-      },
-      select: {
-        id: true,
-        email: true,
-        username: true,
-        role: true,
-        isActive: true,
-        deletedAt: true
-      }
-    });
-
-    await tx.authSession.updateMany({
+  const [activities, total] = await prisma.$transaction([
+    prisma.userActivityLog.findMany({
       where: {
-        userId,
-        revokedAt: null
+        targetUserId: userId
       },
-      data: {
-        revokedAt: new Date()
-      }
-    });
+      include: {
+        actor: {
+          select: {
+            id: true,
+            email: true,
+            username: true,
+            role: true
+          }
+        }
+      },
+      orderBy: {
+        createdAt: 'desc'
+      },
+      skip: (currentPage - 1) * pageSize,
+      take: pageSize
+    }),
 
-    return archived;
-  });
+    prisma.userActivityLog.count({
+      where: {
+        targetUserId: userId
+      }
+    })
+  ]);
+
+  return {
+    activities,
+    pagination: {
+      page: currentPage,
+      limit: pageSize,
+      total,
+      totalPages: Math.ceil(total / pageSize)
+    }
+  };
 };

@@ -42,3 +42,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type PasswordResetToken = Prisma.PasswordResetTokenModel
+/**
+ * Model UserActivityLog
+ * 
+ */
+export type UserActivityLog = Prisma.UserActivityLogModel
