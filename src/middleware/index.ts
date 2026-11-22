@@ -1,0 +1,1 @@
+export { sanitizeRequest } from './sanitize.middleware.js';

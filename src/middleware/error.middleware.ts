@@ -6,7 +6,7 @@ import type {
 } from 'express';
 
 import { AppError } from '../utils/app-error.js';
-import { env } from '../config/env.js';
+import { environmentConfig } from '../config/environment.config.js';
 
 export const errorHandler = (
   error: Error,
@@ -26,7 +26,7 @@ export const errorHandler = (
     success: false,
     status: statusCode >= 500 ? 'error' : 'fail',
     message,
-    ...(env.NODE_ENV === 'development' && {
+    ...(environmentConfig.exposeErrorDetails && {
       stack: error.stack
     })
   });
