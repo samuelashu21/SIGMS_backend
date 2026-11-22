@@ -20,6 +20,7 @@ import {
 import { updateUserStatusController } from '../controllers/user-status.controller.js';
 import { archiveUserController } from '../controllers/user-archive.controller.js';
 import { getUserActivityController } from '../controllers/user-activity.controller.js';
+import { restoreUserController } from '../controllers/user-restore.controller.js';
 
 const router = Router();
 
@@ -30,6 +31,7 @@ router.get('/roles', getRolesController);
 router.get('/', getUsersController);
 router.post('/', createUserController);
 router.get('/:userId/activity', getUserActivityController);
+router.patch('/:userId/restore', restoreUserController);
 router.get('/:userId', getUserController);
 router.patch('/:userId', updateUserController);
 router.delete('/:userId', archiveUserController); 

@@ -225,3 +225,72 @@ export const updateUserStatus = async (
 
   return updatedUser;
 };
+
+
+
+export const getUserAccountDetails = async (userId: string) => {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: {
+      id: true,
+      email: true,
+      username: true,
+      role: true,
+      isActive: true,
+      deletedAt: true,
+      createdAt: true,
+      updatedAt: true
+    }
+  });
+
+  if (!user) {
+    throw new AppError('User not found.', 404);
+  }
+
+  const [activeSessions, activityCount, recentActivities] =
+    await prisma.$transaction([
+      prisma.authSession.count({
+        where: {
+          userId,
+          revokedAt: null,
+          expiresAt: { gt: new Date() }
+        }
+      }),
+      prisma.userActivityLog.count({
+        where: { targetUserId: userId }
+      }),
+      prisma.userActivityLog.findMany({
+        where: { targetUserId: userId },
+        select: {
+          id: true,
+          action: true,
+          details: true,
+          createdAt: true,
+          actor: {
+            select: {
+              id: true,
+              email: true,
+              username: true,
+              role: true
+            }
+          }
+        },
+        orderBy: { createdAt: 'desc' },
+        take: 10
+      })
+    ]);
+
+  return {
+    ...user,
+    accountStatus: user.deletedAt
+      ? 'ARCHIVED'
+      : user.isActive
+        ? 'ACTIVE'
+        : 'INACTIVE',
+    summary: {
+      activeSessions,
+      activityCount
+    },
+    recentActivities
+  };
+};

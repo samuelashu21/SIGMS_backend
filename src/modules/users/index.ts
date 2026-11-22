@@ -11,3 +11,6 @@ export {
 } from './services/user.service.js';
 
 export * from './validators/user-status.validator.js';
+
+export { restoreUser } from './services/user-restore.service.js';
+export { getUserAccountDetails } from './services/user.service.js';

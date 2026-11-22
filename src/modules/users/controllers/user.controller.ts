@@ -6,16 +6,16 @@ import { AppError } from '../../../utils/app-error.js';
 
 import {
   createUser,
-  getUserById,
-  getUsers
+  getUsers,
+  getUserAccountDetails,
+  updateUserProfile
 } from '../services/user.service.js';
 
 import { createUserSchema } from '../validators/create-user.validator.js';
 import { userQuerySchema } from '../validators/user-query.validator.js';
-import { updateUserProfile } from '../services/user.service.js';
 import { updateUserSchema } from '../validators/update-user.validator.js';
 
-
+// Create user
 export const createUserController = asyncHandler(
   async (req: Request, res: Response) => {
     const result = createUserSchema.safeParse(req.body);
@@ -34,6 +34,7 @@ export const createUserController = asyncHandler(
   }
 );
 
+// Get user account details
 export const getUserController = asyncHandler(
   async (req: Request, res: Response) => {
     const userId = req.params.userId;
@@ -42,16 +43,17 @@ export const getUserController = asyncHandler(
       throw new AppError('A valid user ID is required.', 400);
     }
 
-    const user = await getUserById(userId);
+    const user = await getUserAccountDetails(userId);
 
     res.status(200).json({
       success: true,
-      message: 'User retrieved successfully.',
+      message: 'User account details retrieved successfully.',
       data: user
     });
   }
 );
 
+// Get users
 export const getUsersController = asyncHandler(
   async (req: Request, res: Response) => {
     const result = userQuerySchema.safeParse(req.query);
@@ -71,15 +73,13 @@ export const getUsersController = asyncHandler(
   }
 );
 
-
-
-
+// Update user profile
 export const updateUserController = asyncHandler(
   async (req: Request, res: Response) => {
     const userId = req.params.userId;
 
     if (typeof userId !== 'string' || !userId.trim()) {
-      throw new AppError('User ID is required.', 400);
+      throw new AppError('A valid user ID is required.', 400);
     }
 
     const result = updateUserSchema.safeParse(req.body);
@@ -90,7 +90,7 @@ export const updateUserController = asyncHandler(
 
     const user = await updateUserProfile(userId, result.data);
 
-    res.status(200).json({ 
+    res.status(200).json({
       success: true,
       message: 'User profile updated successfully.',
       data: user

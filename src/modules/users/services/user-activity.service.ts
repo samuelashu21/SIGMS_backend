@@ -11,7 +11,7 @@ interface RecordUserActivityInput {
 
 export const recordUserActivity = (
   input: RecordUserActivityInput,
-  tx: typeof prisma = prisma
+  tx: Prisma.TransactionClient
 ) => {
   return tx.userActivityLog.create({
     data: {
@@ -30,7 +30,6 @@ export const getUserActivityHistory = async (
   page = 1,
   limit = 20
 ) => {
-  // Validate pagination parameters
   const currentPage = Math.max(1, Math.floor(page));
   const pageSize = Math.min(100, Math.max(1, Math.floor(limit)));
 
