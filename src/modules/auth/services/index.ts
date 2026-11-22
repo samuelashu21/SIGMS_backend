@@ -23,3 +23,8 @@ export { refreshAuthSession } from './refresh-session.service.js';
 
 export { hashRefreshToken } from './session-token.service.js';
 export { loginUser } from './login.service.js';
+export { revokeAllUserSessions } from './logout-all.service.js';
+export { changeUserPassword } from './change-password.service.js';
+
+export { requestPasswordReset } from './forgot-password.service.js';
+export { resetUserPassword } from './reset-password.service.js';

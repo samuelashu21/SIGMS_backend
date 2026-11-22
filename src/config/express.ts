@@ -9,6 +9,8 @@ import {
   developmentLogger
 } from './logger.js';
 
+import cookieParser from 'cookie-parser';
+
 const configureExpress = () => {
   const app = express();
 
@@ -23,6 +25,7 @@ const configureExpress = () => {
 
   app.use(express.json({ limit: '10mb' }));
   app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
 
   // Logging middleware
   app.use(morgan('dev'));

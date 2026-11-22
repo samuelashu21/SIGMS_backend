@@ -19,5 +19,12 @@ export const env = {
   WEB_URL: process.env.WEB_URL || 'http://localhost:3000',
 
   STORAGE_PROVIDER: process.env.STORAGE_PROVIDER || 'local',
-  STORAGE_PATH: process.env.STORAGE_PATH || 'storage'
+  STORAGE_PATH: process.env.STORAGE_PATH || 'storage',
+
+
+  SMTP_HOST: process.env.SMTP_HOST || '',
+SMTP_PORT: Number(process.env.SMTP_PORT || 587),
+SMTP_USER: process.env.SMTP_USER || '',
+SMTP_PASSWORD: process.env.SMTP_PASSWORD || '',
+SMTP_FROM: process.env.SMTP_FROM || '',
 };
