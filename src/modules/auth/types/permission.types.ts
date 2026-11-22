@@ -1,5 +1,5 @@
-
 export const PERMISSIONS = [
+  // Existing permissions
   'school:manage',
   'school:view',
   'users:create',
@@ -25,7 +25,13 @@ export const PERMISSIONS = [
   'notifications:manage',
   'announcements:manage',
   'analytics:view',
-  'audit:view'
+  'audit:view',
+
+  // Role and permission management
+  'roles:manage',
+  'roles:view',
+  'permissions:view',
+  'permissions:manage'
 ] as const;
 
 export type Permission = (typeof PERMISSIONS)[number];
