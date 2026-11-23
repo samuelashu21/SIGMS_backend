@@ -2,10 +2,15 @@
 import { prisma } from '../../../database/index.js';
 import { AppError } from '../../../utils/app-error.js';
 
+import {
+  recordEnrollmentHistory
+} from './enrollment-history.service.js';
+
 export const assignStudentSection = async (
   schoolId: string,
   enrollmentId: string,
-  sectionId: string
+  sectionId: string,
+  changedById: string
 ) => {
   return prisma.$transaction(async (tx) => {
     const enrollment = await tx.academicEnrollment.findFirst({
@@ -67,6 +72,17 @@ export const assignStudentSection = async (
       data: {
         sectionId
       }
+    });
+
+    // Record section assignment history.
+    await recordEnrollmentHistory(tx, {
+      schoolId,
+      enrollmentId,
+      changedById,
+      action: 'SECTION_ASSIGNED',
+      previousSectionId: enrollment.sectionId,
+      newSectionId: sectionId,
+      reason: 'Student section assignment updated.'
     });
 
     return tx.academicEnrollment.findFirstOrThrow({

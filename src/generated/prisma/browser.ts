@@ -152,3 +152,13 @@ export type AcademicEnrollment = Prisma.AcademicEnrollmentModel
  * 
  */
 export type StudentTransfer = Prisma.StudentTransferModel
+/**
+ * Model EnrollmentHistory
+ * 
+ */
+export type EnrollmentHistory = Prisma.EnrollmentHistoryModel
+/**
+ * Model StudentAcademicRecord
+ * 
+ */
+export type StudentAcademicRecord = Prisma.StudentAcademicRecordModel

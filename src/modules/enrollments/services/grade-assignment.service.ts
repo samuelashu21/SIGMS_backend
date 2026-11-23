@@ -2,10 +2,15 @@
 import { prisma } from '../../../database/index.js';
 import { AppError } from '../../../utils/app-error.js';
 
+import {
+  recordEnrollmentHistory
+} from './enrollment-history.service.js';
+
 export const assignStudentGrade = async (
   schoolId: string,
   enrollmentId: string,
-  gradeId: string
+  gradeId: string,
+  changedById: string
 ) => {
   return prisma.$transaction(async (tx) => {
     const enrollment = await tx.academicEnrollment.findFirst({
@@ -33,6 +38,10 @@ export const assignStudentGrade = async (
       );
     }
 
+    // Capture previous grade and section before updating.
+    const previousGradeId = enrollment.gradeId;
+    const previousSectionId = enrollment.sectionId;
+
     await tx.academicEnrollment.updateMany({
       where: {
         id: enrollmentId,
@@ -43,6 +52,19 @@ export const assignStudentGrade = async (
         // A previous section may not belong to the new grade.
         sectionId: null
       }
+    });
+
+    // Record grade assignment history.
+    await recordEnrollmentHistory(tx, {
+      schoolId,
+      enrollmentId,
+      changedById,
+      action: 'GRADE_ASSIGNED',
+      previousGradeId,
+      newGradeId: gradeId,
+      previousSectionId,
+      newSectionId: null,
+      reason: 'Student grade assignment updated.'
     });
 
     return tx.academicEnrollment.findFirstOrThrow({
@@ -65,7 +87,6 @@ export const assignStudentGrade = async (
     });
   });
 };
-
 
 export const getStudentGradeAssignments = async (
   schoolId: string,

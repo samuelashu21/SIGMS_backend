@@ -17,6 +17,7 @@ export const createAcademicEnrollmentController = asyncHandler(
   async (req: Request, res: Response) => {
     const schoolId = req.tenant?.schoolId;
     const studentId = req.params.studentId;
+    const userId = req.auth?.sub;
 
     if (typeof schoolId !== 'string' || !schoolId.trim()) {
       throw new AppError('Tenant context required.', 403);
@@ -29,6 +30,10 @@ export const createAcademicEnrollmentController = asyncHandler(
       throw new AppError('Student ID required.', 400);
     }
 
+    if (!userId) {
+      throw new AppError('Authenticated user required.', 401);
+    }
+
     const input = createAcademicEnrollmentSchema.safeParse(req.body);
 
     if (!input.success) {
@@ -38,6 +43,7 @@ export const createAcademicEnrollmentController = asyncHandler(
     const data = await createAcademicEnrollment(
       schoolId,
       studentId,
+      userId,
       input.data
     );
 

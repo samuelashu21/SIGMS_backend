@@ -6,9 +6,14 @@ import type {
   CreateAcademicEnrollmentInput
 } from '../validators/academic-enrollment.validator.js';
 
+import {
+  recordEnrollmentHistory
+} from './enrollment-history.service.js';
+
 export const createAcademicEnrollment = async (
   schoolId: string,
   studentId: string,
+  createdById: string,
   input: CreateAcademicEnrollmentInput
 ) => {
   return prisma.$transaction(async (tx) => {
@@ -65,23 +70,33 @@ export const createAcademicEnrollment = async (
       );
     }
 
-    return tx.academicEnrollment.create({
+    const enrollment = await tx.academicEnrollment.create({
       data: {
         schoolId,
         studentId,
         academicYearId: input.academicYearId,
         enrollmentDate: input.enrollmentDate
           ? new Date(`${input.enrollmentDate}T00:00:00.000Z`)
-          : new Date(new Date().toISOString().slice(0, 10) + 'T00:00:00.000Z')
+          : new Date(`${new Date().toISOString().slice(0, 10)}T00:00:00.000Z`)
+      }
+    });
+
+    await recordEnrollmentHistory(tx, {
+      schoolId,
+      enrollmentId: enrollment.id,
+      changedById: createdById,
+      action: 'ENROLLED',
+      newStatus: 'ACTIVE',
+      reason: 'Initial academic enrollment.'
+    });
+
+    return tx.academicEnrollment.findFirstOrThrow({
+      where: {
+        id: enrollment.id,
+        schoolId
       },
       include: {
-        student: {
-          select: {
-            id: true,
-            studentNumber: true,
-            fullName: true
-          }
-        },
+        student: true,
         academicYear: true
       }
     });

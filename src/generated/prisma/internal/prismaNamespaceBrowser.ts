@@ -77,7 +77,9 @@ export const ModelName = {
   StudentProfile: 'StudentProfile',
   StudentIdSequence: 'StudentIdSequence',
   AcademicEnrollment: 'AcademicEnrollment',
-  StudentTransfer: 'StudentTransfer'
+  StudentTransfer: 'StudentTransfer',
+  EnrollmentHistory: 'EnrollmentHistory',
+  StudentAcademicRecord: 'StudentAcademicRecord'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -535,6 +537,42 @@ export const StudentTransferScalarFieldEnum = {
 } as const
 
 export type StudentTransferScalarFieldEnum = (typeof StudentTransferScalarFieldEnum)[keyof typeof StudentTransferScalarFieldEnum]
+
+
+export const EnrollmentHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  enrollmentId: 'enrollmentId',
+  changedById: 'changedById',
+  action: 'action',
+  previousGradeId: 'previousGradeId',
+  newGradeId: 'newGradeId',
+  previousSectionId: 'previousSectionId',
+  newSectionId: 'newSectionId',
+  previousStatus: 'previousStatus',
+  newStatus: 'newStatus',
+  reason: 'reason',
+  changedAt: 'changedAt'
+} as const
+
+export type EnrollmentHistoryScalarFieldEnum = (typeof EnrollmentHistoryScalarFieldEnum)[keyof typeof EnrollmentHistoryScalarFieldEnum]
+
+
+export const StudentAcademicRecordScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  enrollmentId: 'enrollmentId',
+  createdById: 'createdById',
+  recordType: 'recordType',
+  title: 'title',
+  description: 'description',
+  subjectName: 'subjectName',
+  recordDate: 'recordDate',
+  createdAt: 'createdAt'
+} as const
+
+export type StudentAcademicRecordScalarFieldEnum = (typeof StudentAcademicRecordScalarFieldEnum)[keyof typeof StudentAcademicRecordScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -45,3 +45,8 @@ export * from './validators/student-transfer.validator.js';
 export * from './validators/enrollment-status.validator.js';
 
 export * from './constants/enrollment-status.constants.js';
+
+export * from './services/enrollment-history.service.js';
+export * from './services/student-academic-record.service.js';
+
+export * from './validators/student-academic-record.validator.js';

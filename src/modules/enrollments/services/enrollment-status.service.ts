@@ -7,11 +7,16 @@ import {
   type EnrollmentStatus
 } from '../constants/enrollment-status.constants.js';
 
+import {
+  recordEnrollmentHistory
+} from './enrollment-history.service.js';
+
 export const updateEnrollmentStatus = async (
   schoolId: string,
   enrollmentId: string,
   nextStatus: EnrollmentStatus,
-  reason: string
+  reason: string,
+  changedById: string
 ) => {
   return prisma.$transaction(async (tx) => {
     const enrollment = await tx.academicEnrollment.findFirst({
@@ -56,6 +61,17 @@ export const updateEnrollmentStatus = async (
         409
       );
     }
+
+    // Record enrollment status history.
+    await recordEnrollmentHistory(tx, {
+      schoolId,
+      enrollmentId,
+      changedById,
+      action: 'STATUS_CHANGED',
+      previousStatus: enrollment.status,
+      newStatus: nextStatus,
+      reason
+    });
 
     return tx.academicEnrollment.findFirstOrThrow({
       where: {

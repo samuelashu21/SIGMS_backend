@@ -82,6 +82,8 @@ model Student {
   academicEnrollments AcademicEnrollment[]
   transfers StudentTransfer[]
 
+  academicRecords StudentAcademicRecord[]
+
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
   @@index([schoolId], map: "students_school_id_idx")
@@ -150,6 +152,8 @@ model User {
 
   requestedStudentTransfers StudentTransfer[] @relation("StudentTransferRequester")
   reviewedStudentTransfers StudentTransfer[] @relation("StudentTransferReviewer")
+  enrollmentHistoryChanges EnrollmentHistory[]
+  createdStudentAcademicRecords StudentAcademicRecord[]
 
   @@map("users")
 }
@@ -842,6 +846,10 @@ model AcademicEnrollment {
   status          AcademicEnrollmentStatus @default(ACTIVE)
   statusReason    String? @map("status_reason")
   statusChangedAt DateTime @default(now()) @map("status_changed_at") @db.Timestamptz(3)
+  history EnrollmentHistory[]
+  academicRecords StudentAcademicRecord[]
+
+  @@unique([id, schoolId], map: "academic_enrollments_id_school_key")
 
   @@unique([studentId, academicYearId], map: "academic_enrollments_student_year_key")
   @@index([schoolId, academicYearId], map: "academic_enrollments_school_year_idx")
@@ -921,3 +929,83 @@ enum AcademicEnrollmentStatus {
   @@map("academic_enrollment_statuses")
 }
 
+
+
+
+enum EnrollmentHistoryAction {
+  ENROLLED
+  GRADE_ASSIGNED
+  SECTION_ASSIGNED
+  STATUS_CHANGED
+
+  @@map("enrollment_history_actions")
+}
+
+
+model EnrollmentHistory {
+  id           String @id @default(uuid()) @db.Uuid
+  schoolId     String @map("school_id") @db.Uuid
+  enrollmentId String @map("enrollment_id") @db.Uuid
+  changedById  String? @map("changed_by_id") @db.Uuid
+
+  action EnrollmentHistoryAction
+
+  previousGradeId   String? @map("previous_grade_id") @db.Uuid
+  newGradeId        String? @map("new_grade_id") @db.Uuid
+  previousSectionId String? @map("previous_section_id") @db.Uuid
+  newSectionId      String? @map("new_section_id") @db.Uuid
+
+  previousStatus AcademicEnrollmentStatus? @map("previous_status")
+  newStatus      AcademicEnrollmentStatus? @map("new_status")
+
+  reason    String?
+  changedAt DateTime @default(now()) @map("changed_at") @db.Timestamptz(3)
+
+  enrollment AcademicEnrollment @relation( fields: [enrollmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+  changedBy User? @relation( fields: [changedById], references: [id],onDelete: Restrict)
+
+  @@index([schoolId, enrollmentId, changedAt], map: "enrollment_history_school_enrollment_idx")
+  @@index([changedById, changedAt], map: "enrollment_history_actor_idx")
+  @@map("enrollment_history")
+}
+
+
+
+enum StudentAcademicRecordType {
+  ACADEMIC_ACHIEVEMENT
+  ACADEMIC_MILESTONE
+  PERFORMANCE_REMARK
+  TEACHER_REMARK
+  GENERAL_ACADEMIC_NOTE
+
+  @@map("student_academic_record_types")
+}
+
+
+
+model StudentAcademicRecord {
+  id           String @id @default(uuid()) @db.Uuid
+  schoolId     String @map("school_id") @db.Uuid
+  studentId    String @map("student_id") @db.Uuid
+  enrollmentId String? @map("enrollment_id") @db.Uuid
+  createdById  String @map("created_by_id") @db.Uuid
+
+  recordType StudentAcademicRecordType @map("record_type")
+  title      String
+  description String
+  subjectName String? @map("subject_name")
+  recordDate DateTime @map("record_date") @db.Date
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  enrollment AcademicEnrollment? @relation( fields: [enrollmentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  createdBy User @relation( fields: [createdById],references: [id],onDelete: Restrict)
+
+  @@index([schoolId, studentId, recordDate], map: "student_academic_records_school_student_date_idx")
+  @@index([schoolId, recordType], map: "student_academic_records_school_type_idx")
+  @@index([enrollmentId], map: "student_academic_records_enrollment_idx")
+  @@map("student_academic_records")
+}

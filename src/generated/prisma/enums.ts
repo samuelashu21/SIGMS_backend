@@ -166,3 +166,24 @@ export const AcademicEnrollmentStatus = {
 } as const
 
 export type AcademicEnrollmentStatus = (typeof AcademicEnrollmentStatus)[keyof typeof AcademicEnrollmentStatus]
+
+
+export const EnrollmentHistoryAction = {
+  ENROLLED: 'ENROLLED',
+  GRADE_ASSIGNED: 'GRADE_ASSIGNED',
+  SECTION_ASSIGNED: 'SECTION_ASSIGNED',
+  STATUS_CHANGED: 'STATUS_CHANGED'
+} as const
+
+export type EnrollmentHistoryAction = (typeof EnrollmentHistoryAction)[keyof typeof EnrollmentHistoryAction]
+
+
+export const StudentAcademicRecordType = {
+  ACADEMIC_ACHIEVEMENT: 'ACADEMIC_ACHIEVEMENT',
+  ACADEMIC_MILESTONE: 'ACADEMIC_MILESTONE',
+  PERFORMANCE_REMARK: 'PERFORMANCE_REMARK',
+  TEACHER_REMARK: 'TEACHER_REMARK',
+  GENERAL_ACADEMIC_NOTE: 'GENERAL_ACADEMIC_NOTE'
+} as const
+
+export type StudentAcademicRecordType = (typeof StudentAcademicRecordType)[keyof typeof StudentAcademicRecordType]

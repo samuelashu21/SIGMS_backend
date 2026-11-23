@@ -134,6 +134,8 @@ import {
 import {
   updateEnrollmentStatusController
 } from '../../enrollments/controllers/enrollment-status.controller.js';
+import { getEnrollmentHistoryController } from '../../enrollments/controllers/enrollment-history.controller.js';
+import { createStudentAcademicRecordController, getStudentAcademicRecordsController } from '../../enrollments/controllers/student-academic-record.controller.js';
 
 const router = Router();
 
@@ -891,6 +893,46 @@ router.patch(
     'REGISTRAR'
   ),
   updateEnrollmentStatusController
+);
+
+router.get(
+  '/:schoolId/enrollments/:enrollmentId/history',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getEnrollmentHistoryController
+);
+
+// Create academic record
+router.post(
+  '/:schoolId/students/:studentId/academic-records',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  createStudentAcademicRecordController
+);
+
+// Retrieve academic records
+router.get(
+  '/:schoolId/students/:studentId/academic-records',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  getStudentAcademicRecordsController
 );
 
 export default router;
