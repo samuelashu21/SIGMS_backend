@@ -105,6 +105,11 @@ import { createAdmissionApplicationController, getAdmissionApplicationController
 import { getApplicantInformationController, saveApplicantInformationController } from '../../admissions/controllers/applicant-information.controller.js';
 import { deleteAdmissionDocumentController, downloadAdmissionDocumentController, getAdmissionDocumentsController, uploadAdmissionDocumentController } from '../../admissions/controllers/admission-document.controller.js';
 import { admissionUpload } from '../../admissions/middleware/admission-upload.middleware.js';
+import { createAdmissionReviewController, getAdmissionReviewsController } from '../../admissions/controllers/admission-review.controller.js';
+import { submitAdmissionApplicationController } from '../../admissions/controllers/admission-submission.controller.js';
+import { approveAdmissionApplicationController, rejectAdmissionApplicationController } from '../../admissions/controllers/admission-decision.controller.js';
+import { getAdmissionStatusHistoryController } from '../../admissions/controllers/admission-history.controller.js';
+import { updateAdmissionStatusController } from '../../admissions/controllers/admission-status.controller.js';
 
 const router = Router();
 
@@ -619,6 +624,90 @@ router.delete(
     'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'
   ),
   deleteAdmissionDocumentController
+);
+
+// Application submission
+router.post(
+  '/:schoolId/admissions/:applicationId/submit',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  submitAdmissionApplicationController
+);
+
+// Application review
+router.post(
+  '/:schoolId/admissions/:applicationId/reviews',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  createAdmissionReviewController
+);
+
+router.get(
+  '/:schoolId/admissions/:applicationId/reviews',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getAdmissionReviewsController
+);
+
+// Admission application approval
+router.post(
+  '/:schoolId/admissions/:applicationId/approve',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  approveAdmissionApplicationController
+);
+
+// Admission application rejection
+router.post(
+  '/:schoolId/admissions/:applicationId/reject',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  rejectAdmissionApplicationController
+);
+
+// Admission status management
+router.patch(
+  '/:schoolId/admissions/:applicationId/status',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  updateAdmissionStatusController
+);
+
+// Admission status history
+router.get(
+  '/:schoolId/admissions/:applicationId/history',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getAdmissionStatusHistoryController
 );
 
 export default router;

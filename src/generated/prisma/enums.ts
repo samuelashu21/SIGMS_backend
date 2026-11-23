@@ -124,3 +124,15 @@ export const AdmissionDocumentType = {
 } as const
 
 export type AdmissionDocumentType = (typeof AdmissionDocumentType)[keyof typeof AdmissionDocumentType]
+
+
+export const AdmissionReviewType = {
+  GENERAL_REVIEW: 'GENERAL_REVIEW',
+  DOCUMENT_REVIEW: 'DOCUMENT_REVIEW',
+  ELIGIBILITY_REVIEW: 'ELIGIBILITY_REVIEW',
+  RECOMMEND_APPROVAL: 'RECOMMEND_APPROVAL',
+  RECOMMEND_REJECTION: 'RECOMMEND_REJECTION',
+  REQUEST_INFORMATION: 'REQUEST_INFORMATION'
+} as const
+
+export type AdmissionReviewType = (typeof AdmissionReviewType)[keyof typeof AdmissionReviewType]

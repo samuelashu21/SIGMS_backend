@@ -124,6 +124,9 @@ model User {
   memberships UserSchoolMembership[]
   createdAdmissionApplications AdmissionApplication[]
   uploadedAdmissionDocuments AdmissionDocument[]
+  admissionReviews AdmissionReview[]
+  admissionDecisions AdmissionApplication[] @relation("AdmissionDecisionActor")
+  admissionStatusChanges AdmissionStatusHistory[]
 
   @@map("users")
 }
@@ -595,6 +598,15 @@ model AdmissionApplication {
 
   applicantInformation ApplicantInformation?
   documents            AdmissionDocument[]
+  submittedAt DateTime? @map("submitted_at") @db.Timestamptz(3)
+  reviews AdmissionReview[]
+
+  decisionAt     DateTime? @map("decision_at") @db.Timestamptz(3)
+  decisionById   String?   @map("decision_by_id") @db.Uuid
+  decisionReason String?   @map("decision_reason")
+  decisionBy User? @relation("AdmissionDecisionActor", fields: [decisionById],references: [id],onDelete: Restrict)
+
+  statusHistory AdmissionStatusHistory[]
 
   @@unique([id, schoolId], map: "admission_applications_id_school_key")
 
@@ -670,4 +682,58 @@ model AdmissionDocument {
   @@index([schoolId, applicationId], map: "admission_documents_school_application_idx")
   @@index([uploadedById], map: "admission_documents_uploaded_by_idx")
   @@map("admission_documents")
+}
+
+
+
+enum AdmissionReviewType {
+  GENERAL_REVIEW
+  DOCUMENT_REVIEW
+  ELIGIBILITY_REVIEW
+  RECOMMEND_APPROVAL
+  RECOMMEND_REJECTION
+  REQUEST_INFORMATION
+
+  @@map("admission_review_types")
+}
+
+model AdmissionReview {
+  id            String   @id @default(uuid()) @db.Uuid
+  schoolId      String   @map("school_id") @db.Uuid
+  applicationId String   @map("application_id") @db.Uuid
+  reviewerId    String   @map("reviewer_id") @db.Uuid
+
+  reviewType    AdmissionReviewType @map("review_type")
+  comments      String
+  reviewedAt    DateTime @default(now()) @map("reviewed_at") @db.Timestamptz(3)
+
+  application AdmissionApplication @relation( fields: [applicationId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  reviewer User @relation( fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([schoolId, applicationId, reviewedAt], map: "admission_reviews_school_application_idx")
+  @@index([reviewerId, reviewedAt], map: "admission_reviews_reviewer_date_idx")
+  @@map("admission_reviews")
+}
+
+
+
+model AdmissionStatusHistory {
+  id            String          @id @default(uuid()) @db.Uuid
+  schoolId      String          @map("school_id") @db.Uuid
+  applicationId String          @map("application_id") @db.Uuid
+  changedById   String          @map("changed_by_id") @db.Uuid
+
+  previousStatus AdmissionStatus? @map("previous_status")
+  newStatus      AdmissionStatus  @map("new_status")
+  reason         String?
+  changedAt      DateTime         @default(now()) @map("changed_at") @db.Timestamptz(3)
+
+  application AdmissionApplication @relation( fields: [applicationId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  changedBy User @relation( fields: [changedById],references: [id], onDelete: Restrict)
+
+  @@index([schoolId, applicationId, changedAt], map: "admission_status_history_school_application_idx")
+  @@index([changedById, changedAt], map: "admission_status_history_actor_idx")
+  @@map("admission_status_history")
 }

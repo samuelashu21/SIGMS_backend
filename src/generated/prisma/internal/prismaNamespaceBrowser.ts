@@ -71,7 +71,9 @@ export const ModelName = {
   AcademicCalendarEvent: 'AcademicCalendarEvent',
   AdmissionApplication: 'AdmissionApplication',
   ApplicantInformation: 'ApplicantInformation',
-  AdmissionDocument: 'AdmissionDocument'
+  AdmissionDocument: 'AdmissionDocument',
+  AdmissionReview: 'AdmissionReview',
+  AdmissionStatusHistory: 'AdmissionStatusHistory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -383,7 +385,11 @@ export const AdmissionApplicationScalarFieldEnum = {
   notes: 'notes',
   createdById: 'createdById',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  submittedAt: 'submittedAt',
+  decisionAt: 'decisionAt',
+  decisionById: 'decisionById',
+  decisionReason: 'decisionReason'
 } as const
 
 export type AdmissionApplicationScalarFieldEnum = (typeof AdmissionApplicationScalarFieldEnum)[keyof typeof AdmissionApplicationScalarFieldEnum]
@@ -426,6 +432,33 @@ export const AdmissionDocumentScalarFieldEnum = {
 } as const
 
 export type AdmissionDocumentScalarFieldEnum = (typeof AdmissionDocumentScalarFieldEnum)[keyof typeof AdmissionDocumentScalarFieldEnum]
+
+
+export const AdmissionReviewScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationId: 'applicationId',
+  reviewerId: 'reviewerId',
+  reviewType: 'reviewType',
+  comments: 'comments',
+  reviewedAt: 'reviewedAt'
+} as const
+
+export type AdmissionReviewScalarFieldEnum = (typeof AdmissionReviewScalarFieldEnum)[keyof typeof AdmissionReviewScalarFieldEnum]
+
+
+export const AdmissionStatusHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationId: 'applicationId',
+  changedById: 'changedById',
+  previousStatus: 'previousStatus',
+  newStatus: 'newStatus',
+  reason: 'reason',
+  changedAt: 'changedAt'
+} as const
+
+export type AdmissionStatusHistoryScalarFieldEnum = (typeof AdmissionStatusHistoryScalarFieldEnum)[keyof typeof AdmissionStatusHistoryScalarFieldEnum]
 
 
 export const SortOrder = {

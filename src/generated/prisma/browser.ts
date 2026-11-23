@@ -122,3 +122,13 @@ export type ApplicantInformation = Prisma.ApplicantInformationModel
  * 
  */
 export type AdmissionDocument = Prisma.AdmissionDocumentModel
+/**
+ * Model AdmissionReview
+ * 
+ */
+export type AdmissionReview = Prisma.AdmissionReviewModel
+/**
+ * Model AdmissionStatusHistory
+ * 
+ */
+export type AdmissionStatusHistory = Prisma.AdmissionStatusHistoryModel

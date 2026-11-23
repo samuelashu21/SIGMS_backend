@@ -417,7 +417,9 @@ export const ModelName = {
   AcademicCalendarEvent: 'AcademicCalendarEvent',
   AdmissionApplication: 'AdmissionApplication',
   ApplicantInformation: 'ApplicantInformation',
-  AdmissionDocument: 'AdmissionDocument'
+  AdmissionDocument: 'AdmissionDocument',
+  AdmissionReview: 'AdmissionReview',
+  AdmissionStatusHistory: 'AdmissionStatusHistory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -433,7 +435,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1991,6 +1993,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AdmissionReview: {
+      payload: Prisma.$AdmissionReviewPayload<ExtArgs>
+      fields: Prisma.AdmissionReviewFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AdmissionReviewFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AdmissionReviewFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>
+        }
+        findFirst: {
+          args: Prisma.AdmissionReviewFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AdmissionReviewFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>
+        }
+        findMany: {
+          args: Prisma.AdmissionReviewFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>[]
+        }
+        create: {
+          args: Prisma.AdmissionReviewCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>
+        }
+        createMany: {
+          args: Prisma.AdmissionReviewCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AdmissionReviewCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>[]
+        }
+        delete: {
+          args: Prisma.AdmissionReviewDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>
+        }
+        update: {
+          args: Prisma.AdmissionReviewUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>
+        }
+        deleteMany: {
+          args: Prisma.AdmissionReviewDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AdmissionReviewUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AdmissionReviewUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>[]
+        }
+        upsert: {
+          args: Prisma.AdmissionReviewUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionReviewPayload>
+        }
+        aggregate: {
+          args: Prisma.AdmissionReviewAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAdmissionReview>
+        }
+        groupBy: {
+          args: Prisma.AdmissionReviewGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionReviewGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AdmissionReviewCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionReviewCountAggregateOutputType> | number
+        }
+      }
+    }
+    AdmissionStatusHistory: {
+      payload: Prisma.$AdmissionStatusHistoryPayload<ExtArgs>
+      fields: Prisma.AdmissionStatusHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AdmissionStatusHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AdmissionStatusHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.AdmissionStatusHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AdmissionStatusHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.AdmissionStatusHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.AdmissionStatusHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.AdmissionStatusHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AdmissionStatusHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.AdmissionStatusHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>
+        }
+        update: {
+          args: Prisma.AdmissionStatusHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.AdmissionStatusHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AdmissionStatusHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AdmissionStatusHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.AdmissionStatusHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionStatusHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.AdmissionStatusHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAdmissionStatusHistory>
+        }
+        groupBy: {
+          args: Prisma.AdmissionStatusHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionStatusHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AdmissionStatusHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionStatusHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2323,7 +2473,11 @@ export const AdmissionApplicationScalarFieldEnum = {
   notes: 'notes',
   createdById: 'createdById',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  submittedAt: 'submittedAt',
+  decisionAt: 'decisionAt',
+  decisionById: 'decisionById',
+  decisionReason: 'decisionReason'
 } as const
 
 export type AdmissionApplicationScalarFieldEnum = (typeof AdmissionApplicationScalarFieldEnum)[keyof typeof AdmissionApplicationScalarFieldEnum]
@@ -2366,6 +2520,33 @@ export const AdmissionDocumentScalarFieldEnum = {
 } as const
 
 export type AdmissionDocumentScalarFieldEnum = (typeof AdmissionDocumentScalarFieldEnum)[keyof typeof AdmissionDocumentScalarFieldEnum]
+
+
+export const AdmissionReviewScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationId: 'applicationId',
+  reviewerId: 'reviewerId',
+  reviewType: 'reviewType',
+  comments: 'comments',
+  reviewedAt: 'reviewedAt'
+} as const
+
+export type AdmissionReviewScalarFieldEnum = (typeof AdmissionReviewScalarFieldEnum)[keyof typeof AdmissionReviewScalarFieldEnum]
+
+
+export const AdmissionStatusHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationId: 'applicationId',
+  changedById: 'changedById',
+  previousStatus: 'previousStatus',
+  newStatus: 'newStatus',
+  reason: 'reason',
+  changedAt: 'changedAt'
+} as const
+
+export type AdmissionStatusHistoryScalarFieldEnum = (typeof AdmissionStatusHistoryScalarFieldEnum)[keyof typeof AdmissionStatusHistoryScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -2647,6 +2828,20 @@ export type ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel> = FieldRefI
 
 
 /**
+ * Reference to a field of type 'AdmissionReviewType'
+ */
+export type EnumAdmissionReviewTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AdmissionReviewType'>
+    
+
+
+/**
+ * Reference to a field of type 'AdmissionReviewType[]'
+ */
+export type ListEnumAdmissionReviewTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AdmissionReviewType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -2831,6 +3026,8 @@ export type GlobalOmitConfig = {
   admissionApplication?: Prisma.AdmissionApplicationOmit
   applicantInformation?: Prisma.ApplicantInformationOmit
   admissionDocument?: Prisma.AdmissionDocumentOmit
+  admissionReview?: Prisma.AdmissionReviewOmit
+  admissionStatusHistory?: Prisma.AdmissionStatusHistoryOmit
 }
 
 /* Types for Logging */

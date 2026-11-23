@@ -1,4 +1,3 @@
-
 import { randomBytes } from 'node:crypto';
 
 import { prisma } from '../../../database/index.js';
@@ -45,24 +44,39 @@ export const createAdmissionApplication = async (
     throw new AppError('Academic year not found.', 404);
   }
 
-  return prisma.admissionApplication.create({
-    data: {
-      schoolId,
-      createdById,
-      applicationNumber: generateApplicationNumber(),
-      applicantName: input.applicantName,
-      dateOfBirth: input.dateOfBirth
-        ? new Date(`${input.dateOfBirth}T00:00:00.000Z`)
-        : null,
-      gender: input.gender,
-      requestedGradeId: input.requestedGradeId,
-      academicYearId: input.academicYearId,
-      notes: input.notes
-    },
-    include: {
-      requestedGrade: true,
-      academicYear: true
-    }
+  return prisma.$transaction(async (tx) => {
+    const application = await tx.admissionApplication.create({
+      data: {
+        schoolId,
+        createdById,
+        applicationNumber: generateApplicationNumber(),
+        applicantName: input.applicantName,
+        dateOfBirth: input.dateOfBirth
+          ? new Date(`${input.dateOfBirth}T00:00:00.000Z`)
+          : null,
+        gender: input.gender,
+        requestedGradeId: input.requestedGradeId,
+        academicYearId: input.academicYearId,
+        notes: input.notes
+      },
+      include: {
+        requestedGrade: true,
+        academicYear: true
+      }
+    });
+
+    await tx.admissionStatusHistory.create({
+      data: {
+        schoolId,
+        applicationId: application.id,
+        changedById: createdById,
+        previousStatus: null,
+        newStatus: 'DRAFT',
+        reason: 'Admission application created.'
+      }
+    });
+
+    return application;
   });
 };
 
