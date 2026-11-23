@@ -250,6 +250,8 @@ export type AdmissionApplicationWhereInput = {
   requestedGrade?: Prisma.XOR<Prisma.GradeScalarRelationFilter, Prisma.GradeWhereInput>
   academicYear?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  applicantInformation?: Prisma.XOR<Prisma.ApplicantInformationNullableScalarRelationFilter, Prisma.ApplicantInformationWhereInput> | null
+  documents?: Prisma.AdmissionDocumentListRelationFilter
 }
 
 export type AdmissionApplicationOrderByWithRelationInput = {
@@ -270,10 +272,13 @@ export type AdmissionApplicationOrderByWithRelationInput = {
   requestedGrade?: Prisma.GradeOrderByWithRelationInput
   academicYear?: Prisma.AcademicYearOrderByWithRelationInput
   createdBy?: Prisma.UserOrderByWithRelationInput
+  applicantInformation?: Prisma.ApplicantInformationOrderByWithRelationInput
+  documents?: Prisma.AdmissionDocumentOrderByRelationAggregateInput
 }
 
 export type AdmissionApplicationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  id_schoolId?: Prisma.AdmissionApplicationIdSchoolIdCompoundUniqueInput
   schoolId_applicationNumber?: Prisma.AdmissionApplicationSchoolIdApplicationNumberCompoundUniqueInput
   AND?: Prisma.AdmissionApplicationWhereInput | Prisma.AdmissionApplicationWhereInput[]
   OR?: Prisma.AdmissionApplicationWhereInput[]
@@ -294,7 +299,9 @@ export type AdmissionApplicationWhereUniqueInput = Prisma.AtLeast<{
   requestedGrade?: Prisma.XOR<Prisma.GradeScalarRelationFilter, Prisma.GradeWhereInput>
   academicYear?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-}, "id" | "schoolId_applicationNumber">
+  applicantInformation?: Prisma.XOR<Prisma.ApplicantInformationNullableScalarRelationFilter, Prisma.ApplicantInformationWhereInput> | null
+  documents?: Prisma.AdmissionDocumentListRelationFilter
+}, "id" | "id_schoolId" | "schoolId_applicationNumber">
 
 export type AdmissionApplicationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -348,6 +355,8 @@ export type AdmissionApplicationCreateInput = {
   requestedGrade: Prisma.GradeCreateNestedOneWithoutAdmissionApplicationsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAdmissionApplicationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput
+  applicantInformation?: Prisma.ApplicantInformationCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationUncheckedCreateInput = {
@@ -364,6 +373,8 @@ export type AdmissionApplicationUncheckedCreateInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationUpdateInput = {
@@ -380,6 +391,8 @@ export type AdmissionApplicationUpdateInput = {
   requestedGrade?: Prisma.GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput
+  applicantInformation?: Prisma.ApplicantInformationUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateInput = {
@@ -396,6 +409,8 @@ export type AdmissionApplicationUncheckedUpdateInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationCreateManyInput = {
@@ -452,6 +467,11 @@ export type AdmissionApplicationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type AdmissionApplicationIdSchoolIdCompoundUniqueInput = {
+  id: string
+  schoolId: string
+}
+
 export type AdmissionApplicationSchoolIdApplicationNumberCompoundUniqueInput = {
   schoolId: string
   applicationNumber: string
@@ -503,6 +523,11 @@ export type AdmissionApplicationMinOrderByAggregateInput = {
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type AdmissionApplicationScalarRelationFilter = {
+  is?: Prisma.AdmissionApplicationWhereInput
+  isNot?: Prisma.AdmissionApplicationWhereInput
 }
 
 export type AdmissionApplicationCreateNestedManyWithoutSchoolInput = {
@@ -681,6 +706,34 @@ export type EnumAdmissionStatusFieldUpdateOperationsInput = {
   set?: $Enums.AdmissionStatus
 }
 
+export type AdmissionApplicationCreateNestedOneWithoutApplicantInformationInput = {
+  create?: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutApplicantInformationInput, Prisma.AdmissionApplicationUncheckedCreateWithoutApplicantInformationInput>
+  connectOrCreate?: Prisma.AdmissionApplicationCreateOrConnectWithoutApplicantInformationInput
+  connect?: Prisma.AdmissionApplicationWhereUniqueInput
+}
+
+export type AdmissionApplicationUpdateOneRequiredWithoutApplicantInformationNestedInput = {
+  create?: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutApplicantInformationInput, Prisma.AdmissionApplicationUncheckedCreateWithoutApplicantInformationInput>
+  connectOrCreate?: Prisma.AdmissionApplicationCreateOrConnectWithoutApplicantInformationInput
+  upsert?: Prisma.AdmissionApplicationUpsertWithoutApplicantInformationInput
+  connect?: Prisma.AdmissionApplicationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AdmissionApplicationUpdateToOneWithWhereWithoutApplicantInformationInput, Prisma.AdmissionApplicationUpdateWithoutApplicantInformationInput>, Prisma.AdmissionApplicationUncheckedUpdateWithoutApplicantInformationInput>
+}
+
+export type AdmissionApplicationCreateNestedOneWithoutDocumentsInput = {
+  create?: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutDocumentsInput, Prisma.AdmissionApplicationUncheckedCreateWithoutDocumentsInput>
+  connectOrCreate?: Prisma.AdmissionApplicationCreateOrConnectWithoutDocumentsInput
+  connect?: Prisma.AdmissionApplicationWhereUniqueInput
+}
+
+export type AdmissionApplicationUpdateOneRequiredWithoutDocumentsNestedInput = {
+  create?: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutDocumentsInput, Prisma.AdmissionApplicationUncheckedCreateWithoutDocumentsInput>
+  connectOrCreate?: Prisma.AdmissionApplicationCreateOrConnectWithoutDocumentsInput
+  upsert?: Prisma.AdmissionApplicationUpsertWithoutDocumentsInput
+  connect?: Prisma.AdmissionApplicationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AdmissionApplicationUpdateToOneWithWhereWithoutDocumentsInput, Prisma.AdmissionApplicationUpdateWithoutDocumentsInput>, Prisma.AdmissionApplicationUncheckedUpdateWithoutDocumentsInput>
+}
+
 export type AdmissionApplicationCreateWithoutSchoolInput = {
   id?: string
   applicationNumber: string
@@ -694,6 +747,8 @@ export type AdmissionApplicationCreateWithoutSchoolInput = {
   requestedGrade: Prisma.GradeCreateNestedOneWithoutAdmissionApplicationsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAdmissionApplicationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput
+  applicantInformation?: Prisma.ApplicantInformationCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationUncheckedCreateWithoutSchoolInput = {
@@ -709,6 +764,8 @@ export type AdmissionApplicationUncheckedCreateWithoutSchoolInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationCreateOrConnectWithoutSchoolInput = {
@@ -769,6 +826,8 @@ export type AdmissionApplicationCreateWithoutCreatedByInput = {
   school: Prisma.SchoolCreateNestedOneWithoutAdmissionApplicationsInput
   requestedGrade: Prisma.GradeCreateNestedOneWithoutAdmissionApplicationsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAdmissionApplicationsInput
+  applicantInformation?: Prisma.ApplicantInformationCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationUncheckedCreateWithoutCreatedByInput = {
@@ -784,6 +843,8 @@ export type AdmissionApplicationUncheckedCreateWithoutCreatedByInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationCreateOrConnectWithoutCreatedByInput = {
@@ -825,6 +886,8 @@ export type AdmissionApplicationCreateWithoutAcademicYearInput = {
   school: Prisma.SchoolCreateNestedOneWithoutAdmissionApplicationsInput
   requestedGrade: Prisma.GradeCreateNestedOneWithoutAdmissionApplicationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput
+  applicantInformation?: Prisma.ApplicantInformationCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationUncheckedCreateWithoutAcademicYearInput = {
@@ -839,6 +902,8 @@ export type AdmissionApplicationUncheckedCreateWithoutAcademicYearInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationCreateOrConnectWithoutAcademicYearInput = {
@@ -880,6 +945,8 @@ export type AdmissionApplicationCreateWithoutRequestedGradeInput = {
   school: Prisma.SchoolCreateNestedOneWithoutAdmissionApplicationsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAdmissionApplicationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput
+  applicantInformation?: Prisma.ApplicantInformationCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationUncheckedCreateWithoutRequestedGradeInput = {
@@ -894,6 +961,8 @@ export type AdmissionApplicationUncheckedCreateWithoutRequestedGradeInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedCreateNestedOneWithoutApplicationInput
+  documents?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutApplicationInput
 }
 
 export type AdmissionApplicationCreateOrConnectWithoutRequestedGradeInput = {
@@ -920,6 +989,174 @@ export type AdmissionApplicationUpdateWithWhereUniqueWithoutRequestedGradeInput 
 export type AdmissionApplicationUpdateManyWithWhereWithoutRequestedGradeInput = {
   where: Prisma.AdmissionApplicationScalarWhereInput
   data: Prisma.XOR<Prisma.AdmissionApplicationUpdateManyMutationInput, Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeInput>
+}
+
+export type AdmissionApplicationCreateWithoutApplicantInformationInput = {
+  id?: string
+  applicationNumber: string
+  applicantName: string
+  dateOfBirth?: Date | string | null
+  gender?: $Enums.ApplicantGender | null
+  status?: $Enums.AdmissionStatus
+  notes?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAdmissionApplicationsInput
+  requestedGrade: Prisma.GradeCreateNestedOneWithoutAdmissionApplicationsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutAdmissionApplicationsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput
+  documents?: Prisma.AdmissionDocumentCreateNestedManyWithoutApplicationInput
+}
+
+export type AdmissionApplicationUncheckedCreateWithoutApplicantInformationInput = {
+  id?: string
+  schoolId: string
+  applicationNumber: string
+  applicantName: string
+  dateOfBirth?: Date | string | null
+  gender?: $Enums.ApplicantGender | null
+  requestedGradeId: string
+  academicYearId: string
+  status?: $Enums.AdmissionStatus
+  notes?: string | null
+  createdById: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  documents?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutApplicationInput
+}
+
+export type AdmissionApplicationCreateOrConnectWithoutApplicantInformationInput = {
+  where: Prisma.AdmissionApplicationWhereUniqueInput
+  create: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutApplicantInformationInput, Prisma.AdmissionApplicationUncheckedCreateWithoutApplicantInformationInput>
+}
+
+export type AdmissionApplicationUpsertWithoutApplicantInformationInput = {
+  update: Prisma.XOR<Prisma.AdmissionApplicationUpdateWithoutApplicantInformationInput, Prisma.AdmissionApplicationUncheckedUpdateWithoutApplicantInformationInput>
+  create: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutApplicantInformationInput, Prisma.AdmissionApplicationUncheckedCreateWithoutApplicantInformationInput>
+  where?: Prisma.AdmissionApplicationWhereInput
+}
+
+export type AdmissionApplicationUpdateToOneWithWhereWithoutApplicantInformationInput = {
+  where?: Prisma.AdmissionApplicationWhereInput
+  data: Prisma.XOR<Prisma.AdmissionApplicationUpdateWithoutApplicantInformationInput, Prisma.AdmissionApplicationUncheckedUpdateWithoutApplicantInformationInput>
+}
+
+export type AdmissionApplicationUpdateWithoutApplicantInformationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  applicantName?: Prisma.StringFieldUpdateOperationsInput | string
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  gender?: Prisma.NullableEnumApplicantGenderFieldUpdateOperationsInput | $Enums.ApplicantGender | null
+  status?: Prisma.EnumAdmissionStatusFieldUpdateOperationsInput | $Enums.AdmissionStatus
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  requestedGrade?: Prisma.GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput
+  documents?: Prisma.AdmissionDocumentUpdateManyWithoutApplicationNestedInput
+}
+
+export type AdmissionApplicationUncheckedUpdateWithoutApplicantInformationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  applicantName?: Prisma.StringFieldUpdateOperationsInput | string
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  gender?: Prisma.NullableEnumApplicantGenderFieldUpdateOperationsInput | $Enums.ApplicantGender | null
+  requestedGradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumAdmissionStatusFieldUpdateOperationsInput | $Enums.AdmissionStatus
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  documents?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutApplicationNestedInput
+}
+
+export type AdmissionApplicationCreateWithoutDocumentsInput = {
+  id?: string
+  applicationNumber: string
+  applicantName: string
+  dateOfBirth?: Date | string | null
+  gender?: $Enums.ApplicantGender | null
+  status?: $Enums.AdmissionStatus
+  notes?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAdmissionApplicationsInput
+  requestedGrade: Prisma.GradeCreateNestedOneWithoutAdmissionApplicationsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutAdmissionApplicationsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput
+  applicantInformation?: Prisma.ApplicantInformationCreateNestedOneWithoutApplicationInput
+}
+
+export type AdmissionApplicationUncheckedCreateWithoutDocumentsInput = {
+  id?: string
+  schoolId: string
+  applicationNumber: string
+  applicantName: string
+  dateOfBirth?: Date | string | null
+  gender?: $Enums.ApplicantGender | null
+  requestedGradeId: string
+  academicYearId: string
+  status?: $Enums.AdmissionStatus
+  notes?: string | null
+  createdById: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedCreateNestedOneWithoutApplicationInput
+}
+
+export type AdmissionApplicationCreateOrConnectWithoutDocumentsInput = {
+  where: Prisma.AdmissionApplicationWhereUniqueInput
+  create: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutDocumentsInput, Prisma.AdmissionApplicationUncheckedCreateWithoutDocumentsInput>
+}
+
+export type AdmissionApplicationUpsertWithoutDocumentsInput = {
+  update: Prisma.XOR<Prisma.AdmissionApplicationUpdateWithoutDocumentsInput, Prisma.AdmissionApplicationUncheckedUpdateWithoutDocumentsInput>
+  create: Prisma.XOR<Prisma.AdmissionApplicationCreateWithoutDocumentsInput, Prisma.AdmissionApplicationUncheckedCreateWithoutDocumentsInput>
+  where?: Prisma.AdmissionApplicationWhereInput
+}
+
+export type AdmissionApplicationUpdateToOneWithWhereWithoutDocumentsInput = {
+  where?: Prisma.AdmissionApplicationWhereInput
+  data: Prisma.XOR<Prisma.AdmissionApplicationUpdateWithoutDocumentsInput, Prisma.AdmissionApplicationUncheckedUpdateWithoutDocumentsInput>
+}
+
+export type AdmissionApplicationUpdateWithoutDocumentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  applicantName?: Prisma.StringFieldUpdateOperationsInput | string
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  gender?: Prisma.NullableEnumApplicantGenderFieldUpdateOperationsInput | $Enums.ApplicantGender | null
+  status?: Prisma.EnumAdmissionStatusFieldUpdateOperationsInput | $Enums.AdmissionStatus
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  requestedGrade?: Prisma.GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput
+  applicantInformation?: Prisma.ApplicantInformationUpdateOneWithoutApplicationNestedInput
+}
+
+export type AdmissionApplicationUncheckedUpdateWithoutDocumentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  applicantName?: Prisma.StringFieldUpdateOperationsInput | string
+  dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  gender?: Prisma.NullableEnumApplicantGenderFieldUpdateOperationsInput | $Enums.ApplicantGender | null
+  requestedGradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumAdmissionStatusFieldUpdateOperationsInput | $Enums.AdmissionStatus
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedUpdateOneWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationCreateManySchoolInput = {
@@ -950,6 +1187,8 @@ export type AdmissionApplicationUpdateWithoutSchoolInput = {
   requestedGrade?: Prisma.GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput
+  applicantInformation?: Prisma.ApplicantInformationUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateWithoutSchoolInput = {
@@ -965,6 +1204,8 @@ export type AdmissionApplicationUncheckedUpdateWithoutSchoolInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateManyWithoutSchoolInput = {
@@ -1010,6 +1251,8 @@ export type AdmissionApplicationUpdateWithoutCreatedByInput = {
   school?: Prisma.SchoolUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   requestedGrade?: Prisma.GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
+  applicantInformation?: Prisma.ApplicantInformationUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateWithoutCreatedByInput = {
@@ -1025,6 +1268,8 @@ export type AdmissionApplicationUncheckedUpdateWithoutCreatedByInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateManyWithoutCreatedByInput = {
@@ -1069,6 +1314,8 @@ export type AdmissionApplicationUpdateWithoutAcademicYearInput = {
   school?: Prisma.SchoolUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   requestedGrade?: Prisma.GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput
+  applicantInformation?: Prisma.ApplicantInformationUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateWithoutAcademicYearInput = {
@@ -1083,6 +1330,8 @@ export type AdmissionApplicationUncheckedUpdateWithoutAcademicYearInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -1126,6 +1375,8 @@ export type AdmissionApplicationUpdateWithoutRequestedGradeInput = {
   school?: Prisma.SchoolUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAdmissionApplicationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput
+  applicantInformation?: Prisma.ApplicantInformationUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateWithoutRequestedGradeInput = {
@@ -1140,6 +1391,8 @@ export type AdmissionApplicationUncheckedUpdateWithoutRequestedGradeInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  applicantInformation?: Prisma.ApplicantInformationUncheckedUpdateOneWithoutApplicationNestedInput
+  documents?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutApplicationNestedInput
 }
 
 export type AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeInput = {
@@ -1156,6 +1409,35 @@ export type AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeInput = 
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+
+/**
+ * Count Type AdmissionApplicationCountOutputType
+ */
+
+export type AdmissionApplicationCountOutputType = {
+  documents: number
+}
+
+export type AdmissionApplicationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  documents?: boolean | AdmissionApplicationCountOutputTypeCountDocumentsArgs
+}
+
+/**
+ * AdmissionApplicationCountOutputType without action
+ */
+export type AdmissionApplicationCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AdmissionApplicationCountOutputType
+   */
+  select?: Prisma.AdmissionApplicationCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * AdmissionApplicationCountOutputType without action
+ */
+export type AdmissionApplicationCountOutputTypeCountDocumentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AdmissionDocumentWhereInput
+}
 
 
 export type AdmissionApplicationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1176,6 +1458,9 @@ export type AdmissionApplicationSelect<ExtArgs extends runtime.Types.Extensions.
   requestedGrade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  applicantInformation?: boolean | Prisma.AdmissionApplication$applicantInformationArgs<ExtArgs>
+  documents?: boolean | Prisma.AdmissionApplication$documentsArgs<ExtArgs>
+  _count?: boolean | Prisma.AdmissionApplicationCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["admissionApplication"]>
 
 export type AdmissionApplicationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1240,6 +1525,9 @@ export type AdmissionApplicationInclude<ExtArgs extends runtime.Types.Extensions
   requestedGrade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  applicantInformation?: boolean | Prisma.AdmissionApplication$applicantInformationArgs<ExtArgs>
+  documents?: boolean | Prisma.AdmissionApplication$documentsArgs<ExtArgs>
+  _count?: boolean | Prisma.AdmissionApplicationCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AdmissionApplicationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -1261,6 +1549,8 @@ export type $AdmissionApplicationPayload<ExtArgs extends runtime.Types.Extension
     requestedGrade: Prisma.$GradePayload<ExtArgs>
     academicYear: Prisma.$AcademicYearPayload<ExtArgs>
     createdBy: Prisma.$UserPayload<ExtArgs>
+    applicantInformation: Prisma.$ApplicantInformationPayload<ExtArgs> | null
+    documents: Prisma.$AdmissionDocumentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1674,6 +1964,8 @@ export interface Prisma__AdmissionApplicationClient<T, Null = never, ExtArgs ext
   requestedGrade<T extends Prisma.GradeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.GradeDefaultArgs<ExtArgs>>): Prisma.Prisma__GradeClient<runtime.Types.Result.GetResult<Prisma.$GradePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   academicYear<T extends Prisma.AcademicYearDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYearDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicYearClient<runtime.Types.Result.GetResult<Prisma.$AcademicYearPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  applicantInformation<T extends Prisma.AdmissionApplication$applicantInformationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AdmissionApplication$applicantInformationArgs<ExtArgs>>): Prisma.Prisma__ApplicantInformationClient<runtime.Types.Result.GetResult<Prisma.$ApplicantInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  documents<T extends Prisma.AdmissionApplication$documentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AdmissionApplication$documentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AdmissionDocumentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2114,6 +2406,49 @@ export type AdmissionApplicationDeleteManyArgs<ExtArgs extends runtime.Types.Ext
    * Limit how many AdmissionApplications to delete.
    */
   limit?: number
+}
+
+/**
+ * AdmissionApplication.applicantInformation
+ */
+export type AdmissionApplication$applicantInformationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ApplicantInformation
+   */
+  select?: Prisma.ApplicantInformationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ApplicantInformation
+   */
+  omit?: Prisma.ApplicantInformationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ApplicantInformationInclude<ExtArgs> | null
+  where?: Prisma.ApplicantInformationWhereInput
+}
+
+/**
+ * AdmissionApplication.documents
+ */
+export type AdmissionApplication$documentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AdmissionDocument
+   */
+  select?: Prisma.AdmissionDocumentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AdmissionDocument
+   */
+  omit?: Prisma.AdmissionDocumentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdmissionDocumentInclude<ExtArgs> | null
+  where?: Prisma.AdmissionDocumentWhereInput
+  orderBy?: Prisma.AdmissionDocumentOrderByWithRelationInput | Prisma.AdmissionDocumentOrderByWithRelationInput[]
+  cursor?: Prisma.AdmissionDocumentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AdmissionDocumentScalarFieldEnum | Prisma.AdmissionDocumentScalarFieldEnum[]
 }
 
 /**

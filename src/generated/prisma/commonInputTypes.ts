@@ -531,6 +531,23 @@ export type EnumAdmissionStatusWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumAdmissionStatusFilter<$PrismaModel>
 }
 
+export type EnumAdmissionDocumentTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AdmissionDocumentType | Prisma.EnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdmissionDocumentTypeFilter<$PrismaModel> | $Enums.AdmissionDocumentType
+}
+
+export type EnumAdmissionDocumentTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AdmissionDocumentType | Prisma.EnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdmissionDocumentTypeWithAggregatesFilter<$PrismaModel> | $Enums.AdmissionDocumentType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAdmissionDocumentTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAdmissionDocumentTypeFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1028,6 +1045,23 @@ export type NestedEnumAdmissionStatusWithAggregatesFilter<$PrismaModel = never> 
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAdmissionStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAdmissionStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumAdmissionDocumentTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AdmissionDocumentType | Prisma.EnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdmissionDocumentTypeFilter<$PrismaModel> | $Enums.AdmissionDocumentType
+}
+
+export type NestedEnumAdmissionDocumentTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AdmissionDocumentType | Prisma.EnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AdmissionDocumentType[] | Prisma.ListEnumAdmissionDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAdmissionDocumentTypeWithAggregatesFilter<$PrismaModel> | $Enums.AdmissionDocumentType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAdmissionDocumentTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAdmissionDocumentTypeFilter<$PrismaModel>
 }
 
 

@@ -69,7 +69,9 @@ export const ModelName = {
   GradingSystem: 'GradingSystem',
   GradeScale: 'GradeScale',
   AcademicCalendarEvent: 'AcademicCalendarEvent',
-  AdmissionApplication: 'AdmissionApplication'
+  AdmissionApplication: 'AdmissionApplication',
+  ApplicantInformation: 'ApplicantInformation',
+  AdmissionDocument: 'AdmissionDocument'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -385,6 +387,45 @@ export const AdmissionApplicationScalarFieldEnum = {
 } as const
 
 export type AdmissionApplicationScalarFieldEnum = (typeof AdmissionApplicationScalarFieldEnum)[keyof typeof AdmissionApplicationScalarFieldEnum]
+
+
+export const ApplicantInformationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationId: 'applicationId',
+  phoneNumber: 'phoneNumber',
+  email: 'email',
+  address: 'address',
+  city: 'city',
+  region: 'region',
+  previousSchool: 'previousSchool',
+  guardianName: 'guardianName',
+  guardianRelation: 'guardianRelation',
+  guardianPhone: 'guardianPhone',
+  guardianEmail: 'guardianEmail',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ApplicantInformationScalarFieldEnum = (typeof ApplicantInformationScalarFieldEnum)[keyof typeof ApplicantInformationScalarFieldEnum]
+
+
+export const AdmissionDocumentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationId: 'applicationId',
+  uploadedById: 'uploadedById',
+  documentType: 'documentType',
+  originalFilename: 'originalFilename',
+  storedFilename: 'storedFilename',
+  storagePath: 'storagePath',
+  mimeType: 'mimeType',
+  sizeBytes: 'sizeBytes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AdmissionDocumentScalarFieldEnum = (typeof AdmissionDocumentScalarFieldEnum)[keyof typeof AdmissionDocumentScalarFieldEnum]
 
 
 export const SortOrder = {

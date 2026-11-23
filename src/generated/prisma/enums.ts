@@ -112,3 +112,15 @@ export const ApplicantGender = {
 } as const
 
 export type ApplicantGender = (typeof ApplicantGender)[keyof typeof ApplicantGender]
+
+
+export const AdmissionDocumentType = {
+  BIRTH_CERTIFICATE: 'BIRTH_CERTIFICATE',
+  PREVIOUS_REPORT_CARD: 'PREVIOUS_REPORT_CARD',
+  TRANSFER_CERTIFICATE: 'TRANSFER_CERTIFICATE',
+  IDENTIFICATION: 'IDENTIFICATION',
+  PHOTOGRAPH: 'PHOTOGRAPH',
+  OTHER: 'OTHER'
+} as const
+
+export type AdmissionDocumentType = (typeof AdmissionDocumentType)[keyof typeof AdmissionDocumentType]

@@ -136,3 +136,13 @@ export type AcademicCalendarEvent = Prisma.AcademicCalendarEventModel
  * 
  */
 export type AdmissionApplication = Prisma.AdmissionApplicationModel
+/**
+ * Model ApplicantInformation
+ * 
+ */
+export type ApplicantInformation = Prisma.ApplicantInformationModel
+/**
+ * Model AdmissionDocument
+ * 
+ */
+export type AdmissionDocument = Prisma.AdmissionDocumentModel

@@ -123,6 +123,7 @@ model User {
   targetActivityLogs UserActivityLog[] @relation("UserActivityTarget")
   memberships UserSchoolMembership[]
   createdAdmissionApplications AdmissionApplication[]
+  uploadedAdmissionDocuments AdmissionDocument[]
 
   @@map("users")
 }
@@ -592,10 +593,81 @@ model AdmissionApplication {
 
   createdBy User @relation(fields: [createdById], references: [id], onDelete: Restrict)
 
+  applicantInformation ApplicantInformation?
+  documents            AdmissionDocument[]
+
+  @@unique([id, schoolId], map: "admission_applications_id_school_key")
+
   @@unique([schoolId, applicationNumber], map: "admission_applications_school_number_key")
   @@index([schoolId, status], map: "admission_applications_school_status_idx")
   @@index([schoolId, academicYearId], map: "admission_applications_school_year_idx")
   @@index([schoolId, requestedGradeId], map: "admission_applications_school_grade_idx")
   @@index([createdById], map: "admission_applications_created_by_idx")
   @@map("admission_applications")
+}
+
+
+
+model ApplicantInformation {
+  id            String   @id @default(uuid()) @db.Uuid
+  schoolId      String   @map("school_id") @db.Uuid
+  applicationId String   @map("application_id") @db.Uuid
+
+  phoneNumber      String? @map("phone_number")
+  email            String?
+  address          String?
+  city             String?
+  region           String?
+  previousSchool   String? @map("previous_school")
+  guardianName     String? @map("guardian_name")
+  guardianRelation String? @map("guardian_relation")
+  guardianPhone    String? @map("guardian_phone")
+  guardianEmail    String? @map("guardian_email")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  application AdmissionApplication @relation( fields: [applicationId, schoolId], references: [id, schoolId], onDelete: Cascade)
+
+  @@unique([applicationId, schoolId], map: "applicant_information_application_school_key")
+  @@index([schoolId, phoneNumber], map: "applicant_information_school_phone_idx")
+  @@map("applicant_information")
+}
+
+
+
+enum AdmissionDocumentType {
+  BIRTH_CERTIFICATE
+  PREVIOUS_REPORT_CARD
+  TRANSFER_CERTIFICATE
+  IDENTIFICATION
+  PHOTOGRAPH
+  OTHER
+
+  @@map("admission_document_types")
+}
+
+model AdmissionDocument {
+  id            String   @id @default(uuid()) @db.Uuid
+  schoolId      String   @map("school_id") @db.Uuid
+  applicationId String   @map("application_id") @db.Uuid
+  uploadedById  String   @map("uploaded_by_id") @db.Uuid
+
+  documentType     AdmissionDocumentType @map("document_type")
+  originalFilename String   @map("original_filename")
+  storedFilename   String   @map("stored_filename")
+  storagePath      String   @map("storage_path")
+  mimeType         String   @map("mime_type")
+  sizeBytes        Int      @map("size_bytes")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  application AdmissionApplication @relation(fields: [applicationId, schoolId],references: [id, schoolId], onDelete: Cascade)
+
+  uploadedBy User @relation( fields: [uploadedById], references: [id],onDelete: Restrict)
+
+  @@index([schoolId, applicationId], map: "admission_documents_school_application_idx")
+  @@index([uploadedById], map: "admission_documents_uploaded_by_idx")
+  @@map("admission_documents")
 }

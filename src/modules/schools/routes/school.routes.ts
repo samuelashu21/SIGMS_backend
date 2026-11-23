@@ -102,6 +102,9 @@ import {
 } from '../../academic/controllers/grading-system.controller.js';
 import { createCalendarEventController, deleteCalendarEventController, getCalendarEventController, getCalendarEventsController, updateCalendarEventController } from '../../academic/controllers/academic-calendar.controller.js';
 import { createAdmissionApplicationController, getAdmissionApplicationController, getAdmissionApplicationsController, updateAdmissionApplicationController } from '../../admissions/controllers/admission-application.controller.js';
+import { getApplicantInformationController, saveApplicantInformationController } from '../../admissions/controllers/applicant-information.controller.js';
+import { deleteAdmissionDocumentController, downloadAdmissionDocumentController, getAdmissionDocumentsController, uploadAdmissionDocumentController } from '../../admissions/controllers/admission-document.controller.js';
+import { admissionUpload } from '../../admissions/middleware/admission-upload.middleware.js';
 
 const router = Router();
 
@@ -562,6 +565,60 @@ router.patch(
     'REGISTRAR'
   ),
   updateAdmissionApplicationController
+);
+
+router.get(
+  '/:schoolId/admissions/:applicationId/applicant-information',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR'
+  ),
+  getApplicantInformationController
+);
+
+router.put(
+  '/:schoolId/admissions/:applicationId/applicant-information',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'
+  ),
+  saveApplicantInformationController
+);
+
+// Admission document management
+
+router.post(
+  '/:schoolId/admissions/:applicationId/documents',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'
+  ),
+  admissionUpload,
+  uploadAdmissionDocumentController
+);
+
+router.get(
+  '/:schoolId/admissions/:applicationId/documents',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR'
+  ),
+  getAdmissionDocumentsController
+);
+
+router.get(
+  '/:schoolId/admissions/:applicationId/documents/:documentId/download',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR'
+  ),
+  downloadAdmissionDocumentController
+);
+
+router.delete(
+  '/:schoolId/admissions/:applicationId/documents/:documentId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'
+  ),
+  deleteAdmissionDocumentController
 );
 
 export default router;
