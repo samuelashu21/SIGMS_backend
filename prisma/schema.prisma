@@ -211,6 +211,15 @@ model SchoolConfiguration {
   notificationsEnabled Boolean          @default(true) @map("notifications_enabled")
   parentAccessEnabled Boolean            @default(true) @map("parent_access_enabled")
 
+
+  academicYearStartMonth       Int     @default(9) @map("academic_year_start_month")
+  weekStartsOn                 Int     @default(1) @map("week_starts_on")
+  attendanceCutoffTime         String  @default("08:30") @map("attendance_cutoff_time")
+  requireMarksApproval         Boolean @default(true) @map("require_marks_approval")
+  allowStudentResultAccess     Boolean @default(true) @map("allow_student_result_access")
+  allowParentResultAccess      Boolean @default(true) @map("allow_parent_result_access")
+
+
   createdAt           DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt           DateTime           @updatedAt @map("updated_at") @db.Timestamptz(3)
 

@@ -28,3 +28,17 @@ export {
 
 export * from './validators/create-school-admin.validator.js';
 export * from './validators/update-school-membership.validator.js';
+
+
+export {
+  requireSchoolMembership,
+  authorizeSchoolRoles
+} from './middleware/index.js';
+
+export * from './types/school-auth.types.js';
+export * from './validators/school-settings.validator.js';
+
+export {
+  getSchoolSettings,
+  updateSchoolSettings
+} from './services/school-settings.service.js';

@@ -1,9 +1,18 @@
 
 import { z } from 'zod';
-import { USER_ROLES } from '../../auth/types/auth.types.js';
+
+const SCHOOL_MEMBERSHIP_ROLES = [
+  'SCHOOL_ADMIN',
+  'PRINCIPAL',
+  'VICE_PRINCIPAL',
+  'REGISTRAR',
+  'TEACHER',
+  'STUDENT',
+  'PARENT'
+] as const;
 
 export const updateSchoolMembershipSchema = z.object({
-  role: z.enum(USER_ROLES).optional(),
+  role: z.enum(SCHOOL_MEMBERSHIP_ROLES).optional(),
   isActive: z.boolean().optional()
 }).refine(
   (data) => Object.keys(data).length > 0,
