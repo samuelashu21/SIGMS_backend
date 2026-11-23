@@ -44,6 +44,7 @@ model School {
 
   academicConfiguration AcademicConfiguration?
   gradingSystems GradingSystem[]
+  academicCalendarEvents AcademicCalendarEvent[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -266,6 +267,7 @@ model AcademicYear {
   school    School            @relation(fields: [schoolId], references: [id], onDelete: Restrict)
   semesters Semester[]
   sections Section[]
+  calendarEvents AcademicCalendarEvent[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -489,4 +491,49 @@ model GradeScale {
   @@unique([gradingSystemId, letterGrade], map: "grade_scales_system_letter_key")
   @@index([schoolId, gradingSystemId], map: "grade_scales_school_system_idx")
   @@map("grade_scales")
+}
+
+
+
+enum AcademicCalendarEventType {
+  TERM_START
+  TERM_END
+  SCHOOL_DAY
+  HOLIDAY
+  EXAMINATION
+  REGISTRATION
+  MEETING
+  CULTURAL_EVENT
+  OTHER
+
+  @@map("academic_calendar_event_types")
+}
+
+
+model AcademicCalendarEvent {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+
+  title          String
+  description    String?
+  eventType      AcademicCalendarEventType @map("event_type")
+  startDate      DateTime @map("start_date") @db.Date
+  endDate        DateTime @map("end_date") @db.Date
+  isAllDay       Boolean  @default(true) @map("is_all_day")
+  location       String?
+  isPublished    Boolean  @default(false) @map("is_published")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId],references: [id],onDelete: Restrict)
+
+  academicYear AcademicYear @relation( fields: [academicYearId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  @@index([schoolId, startDate, endDate], map: "calendar_events_school_dates_idx")
+  @@index([schoolId, academicYearId], map: "calendar_events_school_year_idx")
+  @@index([schoolId, eventType], map: "calendar_events_school_type_idx")
+  @@index([schoolId, isPublished], map: "calendar_events_school_published_idx")
+  @@map("academic_calendar_events")
 }

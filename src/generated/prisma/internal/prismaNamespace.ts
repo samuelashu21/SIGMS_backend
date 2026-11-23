@@ -413,7 +413,8 @@ export const ModelName = {
   GradeSubject: 'GradeSubject',
   AcademicConfiguration: 'AcademicConfiguration',
   GradingSystem: 'GradingSystem',
-  GradeScale: 'GradeScale'
+  GradeScale: 'GradeScale',
+  AcademicCalendarEvent: 'AcademicCalendarEvent'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -429,7 +430,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1691,6 +1692,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AcademicCalendarEvent: {
+      payload: Prisma.$AcademicCalendarEventPayload<ExtArgs>
+      fields: Prisma.AcademicCalendarEventFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicCalendarEventFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicCalendarEventFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicCalendarEventFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicCalendarEventFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicCalendarEventFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicCalendarEventCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicCalendarEventCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicCalendarEventCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicCalendarEventDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>
+        }
+        update: {
+          args: Prisma.AcademicCalendarEventUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicCalendarEventDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicCalendarEventUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicCalendarEventUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicCalendarEventUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicCalendarEventPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicCalendarEventAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicCalendarEvent>
+        }
+        groupBy: {
+          args: Prisma.AcademicCalendarEventGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicCalendarEventGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicCalendarEventCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicCalendarEventCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1991,6 +2066,25 @@ export const GradeScaleScalarFieldEnum = {
 export type GradeScaleScalarFieldEnum = (typeof GradeScaleScalarFieldEnum)[keyof typeof GradeScaleScalarFieldEnum]
 
 
+export const AcademicCalendarEventScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  title: 'title',
+  description: 'description',
+  eventType: 'eventType',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  isAllDay: 'isAllDay',
+  location: 'location',
+  isPublished: 'isPublished',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicCalendarEventScalarFieldEnum = (typeof AcademicCalendarEventScalarFieldEnum)[keyof typeof AcademicCalendarEventScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -2214,6 +2308,20 @@ export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMo
 
 
 /**
+ * Reference to a field of type 'AcademicCalendarEventType'
+ */
+export type EnumAcademicCalendarEventTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicCalendarEventType'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicCalendarEventType[]'
+ */
+export type ListEnumAcademicCalendarEventTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicCalendarEventType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -2394,6 +2502,7 @@ export type GlobalOmitConfig = {
   academicConfiguration?: Prisma.AcademicConfigurationOmit
   gradingSystem?: Prisma.GradingSystemOmit
   gradeScale?: Prisma.GradeScaleOmit
+  academicCalendarEvent?: Prisma.AcademicCalendarEventOmit
 }
 
 /* Types for Logging */

@@ -24,3 +24,6 @@ export * from './services/grading-system.service.js';
 
 export * from './validators/academic-configuration.validator.js';
 export * from './validators/grading-system.validator.js';
+
+export * from './services/academic-calendar.service.js';
+export * from './validators/academic-calendar.validator.js';

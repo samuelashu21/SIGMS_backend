@@ -126,3 +126,8 @@ export type GradingSystem = Prisma.GradingSystemModel
  * 
  */
 export type GradeScale = Prisma.GradeScaleModel
+/**
+ * Model AcademicCalendarEvent
+ * 
+ */
+export type AcademicCalendarEvent = Prisma.AcademicCalendarEventModel

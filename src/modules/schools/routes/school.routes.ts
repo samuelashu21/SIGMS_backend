@@ -100,6 +100,7 @@ import {
   setDefaultGradingSystemController,
   replaceGradeScalesController
 } from '../../academic/controllers/grading-system.controller.js';
+import { createCalendarEventController, deleteCalendarEventController, getCalendarEventController, getCalendarEventsController, updateCalendarEventController } from '../../academic/controllers/academic-calendar.controller.js';
 
 const router = Router();
 
@@ -462,6 +463,55 @@ router.put(
   '/:schoolId/grading-systems/:gradingSystemId/grade-scales',
   authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
   replaceGradeScalesController
+);
+
+// Academic calendar
+router.post(
+  '/:schoolId/calendar-events',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  createCalendarEventController
+);
+
+router.get(
+  '/:schoolId/calendar-events',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER',
+    'STUDENT',
+    'PARENT'
+  ),
+  getCalendarEventsController
+);
+
+router.get(
+  '/:schoolId/calendar-events/:eventId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER',
+    'STUDENT',
+    'PARENT'
+  ),
+  getCalendarEventController
+);
+
+router.patch(
+  '/:schoolId/calendar-events/:eventId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateCalendarEventController
+);
+
+router.delete(
+  '/:schoolId/calendar-events/:eventId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  deleteCalendarEventController
 );
 
 export default router;

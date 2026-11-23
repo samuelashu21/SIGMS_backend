@@ -75,3 +75,18 @@ export const AcademicTermType = {
 } as const
 
 export type AcademicTermType = (typeof AcademicTermType)[keyof typeof AcademicTermType]
+
+
+export const AcademicCalendarEventType = {
+  TERM_START: 'TERM_START',
+  TERM_END: 'TERM_END',
+  SCHOOL_DAY: 'SCHOOL_DAY',
+  HOLIDAY: 'HOLIDAY',
+  EXAMINATION: 'EXAMINATION',
+  REGISTRATION: 'REGISTRATION',
+  MEETING: 'MEETING',
+  CULTURAL_EVENT: 'CULTURAL_EVENT',
+  OTHER: 'OTHER'
+} as const
+
+export type AcademicCalendarEventType = (typeof AcademicCalendarEventType)[keyof typeof AcademicCalendarEventType]
