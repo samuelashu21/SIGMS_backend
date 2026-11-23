@@ -2,6 +2,10 @@
 import { prisma } from '../../../database/index.js';
 import { AppError } from '../../../utils/app-error.js';
 
+import {
+  generateStudentNumber
+} from './student-identification.service.js';
+
 export const registerStudentFromAdmission = async (
   schoolId: string,
   applicationId: string
@@ -14,7 +18,8 @@ export const registerStudentFromAdmission = async (
       },
       include: {
         applicantInformation: true,
-        student: true
+        student: true,
+        academicYear: true
       }
     });
 
@@ -38,10 +43,17 @@ export const registerStudentFromAdmission = async (
 
     const information = application.applicantInformation;
 
+    const studentNumber = await generateStudentNumber(
+      tx,
+      schoolId,
+      application.academicYearId
+    );
+
     const student = await tx.student.create({
       data: {
         schoolId,
         admissionApplicationId: application.id,
+        studentNumber,
         fullName: application.applicantName,
         dateOfBirth: application.dateOfBirth,
         gender: application.gender,

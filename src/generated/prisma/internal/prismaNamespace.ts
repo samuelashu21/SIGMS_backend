@@ -420,7 +420,9 @@ export const ModelName = {
   AdmissionDocument: 'AdmissionDocument',
   AdmissionReview: 'AdmissionReview',
   AdmissionStatusHistory: 'AdmissionStatusHistory',
-  StudentProfile: 'StudentProfile'
+  StudentProfile: 'StudentProfile',
+  StudentIdSequence: 'StudentIdSequence',
+  AcademicEnrollment: 'AcademicEnrollment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -436,7 +438,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2216,6 +2218,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    StudentIdSequence: {
+      payload: Prisma.$StudentIdSequencePayload<ExtArgs>
+      fields: Prisma.StudentIdSequenceFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StudentIdSequenceFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StudentIdSequenceFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>
+        }
+        findFirst: {
+          args: Prisma.StudentIdSequenceFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StudentIdSequenceFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>
+        }
+        findMany: {
+          args: Prisma.StudentIdSequenceFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>[]
+        }
+        create: {
+          args: Prisma.StudentIdSequenceCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>
+        }
+        createMany: {
+          args: Prisma.StudentIdSequenceCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StudentIdSequenceCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>[]
+        }
+        delete: {
+          args: Prisma.StudentIdSequenceDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>
+        }
+        update: {
+          args: Prisma.StudentIdSequenceUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>
+        }
+        deleteMany: {
+          args: Prisma.StudentIdSequenceDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StudentIdSequenceUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StudentIdSequenceUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>[]
+        }
+        upsert: {
+          args: Prisma.StudentIdSequenceUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentIdSequencePayload>
+        }
+        aggregate: {
+          args: Prisma.StudentIdSequenceAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStudentIdSequence>
+        }
+        groupBy: {
+          args: Prisma.StudentIdSequenceGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentIdSequenceGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StudentIdSequenceCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentIdSequenceCountAggregateOutputType> | number
+        }
+      }
+    }
+    AcademicEnrollment: {
+      payload: Prisma.$AcademicEnrollmentPayload<ExtArgs>
+      fields: Prisma.AcademicEnrollmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicEnrollmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicEnrollmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicEnrollmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicEnrollmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicEnrollmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicEnrollmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicEnrollmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicEnrollmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicEnrollmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>
+        }
+        update: {
+          args: Prisma.AcademicEnrollmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicEnrollmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicEnrollmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicEnrollmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicEnrollmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicEnrollmentPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicEnrollmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicEnrollment>
+        }
+        groupBy: {
+          args: Prisma.AcademicEnrollmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicEnrollmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicEnrollmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicEnrollmentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2284,7 +2434,8 @@ export const StudentScalarFieldEnum = {
   gender: 'gender',
   isActive: 'isActive',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  studentNumber: 'studentNumber'
 } as const
 
 export type StudentScalarFieldEnum = (typeof StudentScalarFieldEnum)[keyof typeof StudentScalarFieldEnum]
@@ -2642,6 +2793,31 @@ export const StudentProfileScalarFieldEnum = {
 } as const
 
 export type StudentProfileScalarFieldEnum = (typeof StudentProfileScalarFieldEnum)[keyof typeof StudentProfileScalarFieldEnum]
+
+
+export const StudentIdSequenceScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  lastNumber: 'lastNumber',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentIdSequenceScalarFieldEnum = (typeof StudentIdSequenceScalarFieldEnum)[keyof typeof StudentIdSequenceScalarFieldEnum]
+
+
+export const AcademicEnrollmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  enrollmentDate: 'enrollmentDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicEnrollmentScalarFieldEnum = (typeof AcademicEnrollmentScalarFieldEnum)[keyof typeof AcademicEnrollmentScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -3124,6 +3300,8 @@ export type GlobalOmitConfig = {
   admissionReview?: Prisma.AdmissionReviewOmit
   admissionStatusHistory?: Prisma.AdmissionStatusHistoryOmit
   studentProfile?: Prisma.StudentProfileOmit
+  studentIdSequence?: Prisma.StudentIdSequenceOmit
+  academicEnrollment?: Prisma.AcademicEnrollmentOmit
 }
 
 /* Types for Logging */

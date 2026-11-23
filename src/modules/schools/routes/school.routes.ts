@@ -112,6 +112,10 @@ import { getAdmissionStatusHistoryController } from '../../admissions/controller
 import { updateAdmissionStatusController } from '../../admissions/controllers/admission-status.controller.js';
 import { getStudentProfileController, updateStudentProfileController } from '../../enrollments/controllers/student-profile.controller.js';
 import { registerStudentController } from '../../enrollments/controllers/student-registration.controller.js';
+import {
+  assignStudentIdentificationController
+} from '../../enrollments/controllers/student-identification.controller.js';
+import { createAcademicEnrollmentController, getStudentAcademicEnrollmentsController } from '../../enrollments/controllers/academic-enrollment.controller.js';
 
 const router = Router();
 
@@ -747,6 +751,42 @@ router.patch(
     'REGISTRAR'
   ),
   updateStudentProfileController
+);
+
+router.post(
+  '/:schoolId/students/:studentId/identification-number',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  assignStudentIdentificationController
+);
+
+// Academic enrollment
+router.post(
+  '/:schoolId/students/:studentId/enrollments',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  createAcademicEnrollmentController
+);
+
+router.get(
+  '/:schoolId/students/:studentId/enrollments',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getStudentAcademicEnrollmentsController
 );
 
 export default router;

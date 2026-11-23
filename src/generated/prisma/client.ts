@@ -161,3 +161,13 @@ export type AdmissionStatusHistory = Prisma.AdmissionStatusHistoryModel
  * 
  */
 export type StudentProfile = Prisma.StudentProfileModel
+/**
+ * Model StudentIdSequence
+ * 
+ */
+export type StudentIdSequence = Prisma.StudentIdSequenceModel
+/**
+ * Model AcademicEnrollment
+ * 
+ */
+export type AcademicEnrollment = Prisma.AcademicEnrollmentModel

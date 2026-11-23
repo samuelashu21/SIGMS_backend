@@ -46,6 +46,8 @@ model School {
   gradingSystems GradingSystem[]
   academicCalendarEvents AcademicCalendarEvent[]
   admissionApplications AdmissionApplication[]
+  studentIdSequences StudentIdSequence[]
+  academicEnrollments AcademicEnrollment[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -73,14 +75,16 @@ model Student {
   admissionApplication AdmissionApplication? @relation(fields: [admissionApplicationId], references: [id],onDelete: Restrict)
 
   profile StudentProfile?
+  studentNumber String? @map("student_number")
+  academicEnrollments AcademicEnrollment[]
 
+  @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
   @@index([schoolId], map: "students_school_id_idx")
   @@index([schoolId, isActive], map: "students_school_active_idx")
   @@index([schoolId, fullName], map: "students_school_name_idx")
   @@map("students")
 }
-
 
 
 
@@ -287,6 +291,8 @@ model AcademicYear {
   sections Section[]
   calendarEvents AcademicCalendarEvent[]
   admissionApplications AdmissionApplication[]
+  studentIdSequences StudentIdSequence[]
+  enrollments AcademicEnrollment[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -773,4 +779,48 @@ model StudentProfile {
   @@unique([studentId, schoolId], map: "student_profiles_student_school_key")
   @@index([schoolId], map: "student_profiles_school_id_idx")
   @@map("student_profiles")
+}
+
+
+
+
+model StudentIdSequence {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  lastNumber    Int    @default(0) @map("last_number")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  academicYear AcademicYear @relation( fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId], map: "student_id_sequences_school_year_key")
+  @@map("student_id_sequences")
+}
+
+
+
+model AcademicEnrollment {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+
+  enrollmentDate DateTime @map("enrollment_date") @db.Date
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([studentId, academicYearId], map: "academic_enrollments_student_year_key")
+  @@index([schoolId, academicYearId], map: "academic_enrollments_school_year_idx")
+  @@index([schoolId, studentId], map: "academic_enrollments_school_student_idx")
+  @@map("academic_enrollments")
 }
