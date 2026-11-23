@@ -356,6 +356,7 @@ model Grade {
 
   subjectAssignments GradeSubject[]
   admissionApplications AdmissionApplication[]
+  academicEnrollments AcademicEnrollment[]
 
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
@@ -386,11 +387,16 @@ model Section {
 
   academicYear AcademicYear @relation(  fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict )
 
+  academicEnrollments AcademicEnrollment[]
+
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
   @@index([schoolId, gradeId], map: "sections_school_grade_idx")
   @@index([schoolId, isActive], map: "sections_school_active_idx")
   @@map("sections")
+
+  @@unique([id, schoolId, gradeId, academicYearId],map: "sections_id_school_grade_year_key")
+  
 }
 
 
@@ -803,24 +809,34 @@ model StudentIdSequence {
 
 
 
+
 model AcademicEnrollment {
   id             String   @id @default(uuid()) @db.Uuid
   schoolId       String   @map("school_id") @db.Uuid
   studentId      String   @map("student_id") @db.Uuid
   academicYearId String   @map("academic_year_id") @db.Uuid
+  gradeId        String?  @map("grade_id") @db.Uuid
+  sectionId      String?  @map("section_id") @db.Uuid
 
   enrollmentDate DateTime @map("enrollment_date") @db.Date
   createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+  school School @relation(fields: [schoolId],references: [id], onDelete: Restrict)
 
   student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
 
-  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  grade Grade? @relation(fields: [gradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  section Section? @relation(fields: [sectionId, schoolId, gradeId, academicYearId],references: [id, schoolId, gradeId, academicYearId],onDelete: Restrict)
 
   @@unique([studentId, academicYearId], map: "academic_enrollments_student_year_key")
   @@index([schoolId, academicYearId], map: "academic_enrollments_school_year_idx")
   @@index([schoolId, studentId], map: "academic_enrollments_school_student_idx")
+  @@index([schoolId, gradeId], map: "academic_enrollments_school_grade_idx")
+  @@index([schoolId, sectionId], map: "academic_enrollments_school_section_idx")
   @@map("academic_enrollments")
 }
+

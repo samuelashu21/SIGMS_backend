@@ -116,6 +116,15 @@ import {
   assignStudentIdentificationController
 } from '../../enrollments/controllers/student-identification.controller.js';
 import { createAcademicEnrollmentController, getStudentAcademicEnrollmentsController } from '../../enrollments/controllers/academic-enrollment.controller.js';
+import {
+  assignStudentGradeController,
+  getStudentGradeAssignmentsController
+} from '../../enrollments/controllers/grade-assignment.controller.js';
+
+import {
+  assignStudentSectionController
+} from '../../enrollments/controllers/section-assignment.controller.js';
+
 
 const router = Router();
 
@@ -787,6 +796,44 @@ router.get(
     'TEACHER'
   ),
   getStudentAcademicEnrollmentsController
+);
+
+// Grade assignment
+router.patch(
+  '/:schoolId/enrollments/:enrollmentId/grade',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  assignStudentGradeController
+);
+
+// Student grade assignment history
+router.get(
+  '/:schoolId/students/:studentId/grade-assignments',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getStudentGradeAssignmentsController
+);
+
+// Section assignment
+router.patch(
+  '/:schoolId/enrollments/:enrollmentId/section',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  assignStudentSectionController
 );
 
 export default router;

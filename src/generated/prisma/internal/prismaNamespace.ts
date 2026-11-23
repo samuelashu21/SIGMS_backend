@@ -2812,6 +2812,8 @@ export const AcademicEnrollmentScalarFieldEnum = {
   schoolId: 'schoolId',
   studentId: 'studentId',
   academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  sectionId: 'sectionId',
   enrollmentDate: 'enrollmentDate',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

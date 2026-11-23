@@ -244,6 +244,7 @@ export type GradeWhereInput = {
   sections?: Prisma.SectionListRelationFilter
   subjectAssignments?: Prisma.GradeSubjectListRelationFilter
   admissionApplications?: Prisma.AdmissionApplicationListRelationFilter
+  academicEnrollments?: Prisma.AcademicEnrollmentListRelationFilter
 }
 
 export type GradeOrderByWithRelationInput = {
@@ -259,6 +260,7 @@ export type GradeOrderByWithRelationInput = {
   sections?: Prisma.SectionOrderByRelationAggregateInput
   subjectAssignments?: Prisma.GradeSubjectOrderByRelationAggregateInput
   admissionApplications?: Prisma.AdmissionApplicationOrderByRelationAggregateInput
+  academicEnrollments?: Prisma.AcademicEnrollmentOrderByRelationAggregateInput
 }
 
 export type GradeWhereUniqueInput = Prisma.AtLeast<{
@@ -280,6 +282,7 @@ export type GradeWhereUniqueInput = Prisma.AtLeast<{
   sections?: Prisma.SectionListRelationFilter
   subjectAssignments?: Prisma.GradeSubjectListRelationFilter
   admissionApplications?: Prisma.AdmissionApplicationListRelationFilter
+  academicEnrollments?: Prisma.AcademicEnrollmentListRelationFilter
 }, "id" | "schoolId_name" | "schoolId_gradeLevel" | "id_schoolId">
 
 export type GradeOrderByWithAggregationInput = {
@@ -324,6 +327,7 @@ export type GradeCreateInput = {
   sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
   subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
 }
 
 export type GradeUncheckedCreateInput = {
@@ -338,6 +342,7 @@ export type GradeUncheckedCreateInput = {
   sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
   subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
 }
 
 export type GradeUpdateInput = {
@@ -352,6 +357,7 @@ export type GradeUpdateInput = {
   sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
   subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeUncheckedUpdateInput = {
@@ -366,6 +372,7 @@ export type GradeUncheckedUpdateInput = {
   sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
   subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeCreateManyInput = {
@@ -471,6 +478,11 @@ export type GradeScalarRelationFilter = {
   isNot?: Prisma.GradeWhereInput
 }
 
+export type GradeNullableScalarRelationFilter = {
+  is?: Prisma.GradeWhereInput | null
+  isNot?: Prisma.GradeWhereInput | null
+}
+
 export type GradeCreateNestedManyWithoutSchoolInput = {
   create?: Prisma.XOR<Prisma.GradeCreateWithoutSchoolInput, Prisma.GradeUncheckedCreateWithoutSchoolInput> | Prisma.GradeCreateWithoutSchoolInput[] | Prisma.GradeUncheckedCreateWithoutSchoolInput[]
   connectOrCreate?: Prisma.GradeCreateOrConnectWithoutSchoolInput | Prisma.GradeCreateOrConnectWithoutSchoolInput[]
@@ -555,6 +567,22 @@ export type GradeUpdateOneRequiredWithoutAdmissionApplicationsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutAdmissionApplicationsInput, Prisma.GradeUpdateWithoutAdmissionApplicationsInput>, Prisma.GradeUncheckedUpdateWithoutAdmissionApplicationsInput>
 }
 
+export type GradeCreateNestedOneWithoutAcademicEnrollmentsInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutAcademicEnrollmentsInput, Prisma.GradeUncheckedCreateWithoutAcademicEnrollmentsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutAcademicEnrollmentsInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneWithoutAcademicEnrollmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutAcademicEnrollmentsInput, Prisma.GradeUncheckedCreateWithoutAcademicEnrollmentsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutAcademicEnrollmentsInput
+  upsert?: Prisma.GradeUpsertWithoutAcademicEnrollmentsInput
+  disconnect?: Prisma.GradeWhereInput | boolean
+  delete?: Prisma.GradeWhereInput | boolean
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutAcademicEnrollmentsInput, Prisma.GradeUpdateWithoutAcademicEnrollmentsInput>, Prisma.GradeUncheckedUpdateWithoutAcademicEnrollmentsInput>
+}
+
 export type GradeCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -566,6 +594,7 @@ export type GradeCreateWithoutSchoolInput = {
   sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
   subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
 }
 
 export type GradeUncheckedCreateWithoutSchoolInput = {
@@ -579,6 +608,7 @@ export type GradeUncheckedCreateWithoutSchoolInput = {
   sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
   subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
 }
 
 export type GradeCreateOrConnectWithoutSchoolInput = {
@@ -632,6 +662,7 @@ export type GradeCreateWithoutSectionsInput = {
   school: Prisma.SchoolCreateNestedOneWithoutGradesInput
   subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
 }
 
 export type GradeUncheckedCreateWithoutSectionsInput = {
@@ -645,6 +676,7 @@ export type GradeUncheckedCreateWithoutSectionsInput = {
   updatedAt?: Date | string
   subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
 }
 
 export type GradeCreateOrConnectWithoutSectionsInput = {
@@ -674,6 +706,7 @@ export type GradeUpdateWithoutSectionsInput = {
   school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
   subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutSectionsInput = {
@@ -687,6 +720,7 @@ export type GradeUncheckedUpdateWithoutSectionsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeCreateWithoutSubjectAssignmentsInput = {
@@ -700,6 +734,7 @@ export type GradeCreateWithoutSubjectAssignmentsInput = {
   school: Prisma.SchoolCreateNestedOneWithoutGradesInput
   sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
 }
 
 export type GradeUncheckedCreateWithoutSubjectAssignmentsInput = {
@@ -713,6 +748,7 @@ export type GradeUncheckedCreateWithoutSubjectAssignmentsInput = {
   updatedAt?: Date | string
   sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
 }
 
 export type GradeCreateOrConnectWithoutSubjectAssignmentsInput = {
@@ -742,6 +778,7 @@ export type GradeUpdateWithoutSubjectAssignmentsInput = {
   school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
   sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutSubjectAssignmentsInput = {
@@ -755,6 +792,7 @@ export type GradeUncheckedUpdateWithoutSubjectAssignmentsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeCreateWithoutAdmissionApplicationsInput = {
@@ -768,6 +806,7 @@ export type GradeCreateWithoutAdmissionApplicationsInput = {
   school: Prisma.SchoolCreateNestedOneWithoutGradesInput
   sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
   subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAdmissionApplicationsInput = {
@@ -781,6 +820,7 @@ export type GradeUncheckedCreateWithoutAdmissionApplicationsInput = {
   updatedAt?: Date | string
   sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
   subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAdmissionApplicationsInput = {
@@ -810,6 +850,7 @@ export type GradeUpdateWithoutAdmissionApplicationsInput = {
   school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
   sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
   subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAdmissionApplicationsInput = {
@@ -823,6 +864,79 @@ export type GradeUncheckedUpdateWithoutAdmissionApplicationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
   subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+}
+
+export type GradeCreateWithoutAcademicEnrollmentsInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+}
+
+export type GradeUncheckedCreateWithoutAcademicEnrollmentsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+}
+
+export type GradeCreateOrConnectWithoutAcademicEnrollmentsInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutAcademicEnrollmentsInput, Prisma.GradeUncheckedCreateWithoutAcademicEnrollmentsInput>
+}
+
+export type GradeUpsertWithoutAcademicEnrollmentsInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutAcademicEnrollmentsInput, Prisma.GradeUncheckedUpdateWithoutAcademicEnrollmentsInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutAcademicEnrollmentsInput, Prisma.GradeUncheckedCreateWithoutAcademicEnrollmentsInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutAcademicEnrollmentsInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutAcademicEnrollmentsInput, Prisma.GradeUncheckedUpdateWithoutAcademicEnrollmentsInput>
+}
+
+export type GradeUpdateWithoutAcademicEnrollmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutAcademicEnrollmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
 }
 
 export type GradeCreateManySchoolInput = {
@@ -846,6 +960,7 @@ export type GradeUpdateWithoutSchoolInput = {
   sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
   subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutSchoolInput = {
@@ -859,6 +974,7 @@ export type GradeUncheckedUpdateWithoutSchoolInput = {
   sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
   subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
   admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
 }
 
 export type GradeUncheckedUpdateManyWithoutSchoolInput = {
@@ -880,12 +996,14 @@ export type GradeCountOutputType = {
   sections: number
   subjectAssignments: number
   admissionApplications: number
+  academicEnrollments: number
 }
 
 export type GradeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sections?: boolean | GradeCountOutputTypeCountSectionsArgs
   subjectAssignments?: boolean | GradeCountOutputTypeCountSubjectAssignmentsArgs
   admissionApplications?: boolean | GradeCountOutputTypeCountAdmissionApplicationsArgs
+  academicEnrollments?: boolean | GradeCountOutputTypeCountAcademicEnrollmentsArgs
 }
 
 /**
@@ -919,6 +1037,13 @@ export type GradeCountOutputTypeCountAdmissionApplicationsArgs<ExtArgs extends r
   where?: Prisma.AdmissionApplicationWhereInput
 }
 
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountAcademicEnrollmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicEnrollmentWhereInput
+}
+
 
 export type GradeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -933,6 +1058,7 @@ export type GradeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   sections?: boolean | Prisma.Grade$sectionsArgs<ExtArgs>
   subjectAssignments?: boolean | Prisma.Grade$subjectAssignmentsArgs<ExtArgs>
   admissionApplications?: boolean | Prisma.Grade$admissionApplicationsArgs<ExtArgs>
+  academicEnrollments?: boolean | Prisma.Grade$academicEnrollmentsArgs<ExtArgs>
   _count?: boolean | Prisma.GradeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["grade"]>
 
@@ -977,6 +1103,7 @@ export type GradeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   sections?: boolean | Prisma.Grade$sectionsArgs<ExtArgs>
   subjectAssignments?: boolean | Prisma.Grade$subjectAssignmentsArgs<ExtArgs>
   admissionApplications?: boolean | Prisma.Grade$admissionApplicationsArgs<ExtArgs>
+  academicEnrollments?: boolean | Prisma.Grade$academicEnrollmentsArgs<ExtArgs>
   _count?: boolean | Prisma.GradeCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type GradeIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -993,6 +1120,7 @@ export type $GradePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     sections: Prisma.$SectionPayload<ExtArgs>[]
     subjectAssignments: Prisma.$GradeSubjectPayload<ExtArgs>[]
     admissionApplications: Prisma.$AdmissionApplicationPayload<ExtArgs>[]
+    academicEnrollments: Prisma.$AcademicEnrollmentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1401,6 +1529,7 @@ export interface Prisma__GradeClient<T, Null = never, ExtArgs extends runtime.Ty
   sections<T extends Prisma.Grade$sectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$sectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   subjectAssignments<T extends Prisma.Grade$subjectAssignmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$subjectAssignmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GradeSubjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   admissionApplications<T extends Prisma.Grade$admissionApplicationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$admissionApplicationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AdmissionApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  academicEnrollments<T extends Prisma.Grade$academicEnrollmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$academicEnrollmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicEnrollmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1908,6 +2037,30 @@ export type Grade$admissionApplicationsArgs<ExtArgs extends runtime.Types.Extens
   take?: number
   skip?: number
   distinct?: Prisma.AdmissionApplicationScalarFieldEnum | Prisma.AdmissionApplicationScalarFieldEnum[]
+}
+
+/**
+ * Grade.academicEnrollments
+ */
+export type Grade$academicEnrollmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicEnrollment
+   */
+  select?: Prisma.AcademicEnrollmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicEnrollment
+   */
+  omit?: Prisma.AcademicEnrollmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicEnrollmentInclude<ExtArgs> | null
+  where?: Prisma.AcademicEnrollmentWhereInput
+  orderBy?: Prisma.AcademicEnrollmentOrderByWithRelationInput | Prisma.AcademicEnrollmentOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicEnrollmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicEnrollmentScalarFieldEnum | Prisma.AcademicEnrollmentScalarFieldEnum[]
 }
 
 /**
