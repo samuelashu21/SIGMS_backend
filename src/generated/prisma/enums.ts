@@ -187,3 +187,31 @@ export const StudentAcademicRecordType = {
 } as const
 
 export type StudentAcademicRecordType = (typeof StudentAcademicRecordType)[keyof typeof StudentAcademicRecordType]
+
+
+export const TeacherGender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER'
+} as const
+
+export type TeacherGender = (typeof TeacherGender)[keyof typeof TeacherGender]
+
+
+export const TeacherEmploymentType = {
+  PERMANENT: 'PERMANENT',
+  CONTRACT: 'CONTRACT',
+  TEMPORARY: 'TEMPORARY',
+  PART_TIME: 'PART_TIME'
+} as const
+
+export type TeacherEmploymentType = (typeof TeacherEmploymentType)[keyof typeof TeacherEmploymentType]
+
+
+export const TeacherEmploymentStatus = {
+  ACTIVE: 'ACTIVE',
+  ON_LEAVE: 'ON_LEAVE',
+  ENDED: 'ENDED'
+} as const
+
+export type TeacherEmploymentStatus = (typeof TeacherEmploymentStatus)[keyof typeof TeacherEmploymentStatus]

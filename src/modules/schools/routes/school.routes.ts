@@ -136,6 +136,19 @@ import {
 } from '../../enrollments/controllers/enrollment-status.controller.js';
 import { getEnrollmentHistoryController } from '../../enrollments/controllers/enrollment-history.controller.js';
 import { createStudentAcademicRecordController, getStudentAcademicRecordsController } from '../../enrollments/controllers/student-academic-record.controller.js';
+import {
+  createTeacherProfileController,
+  getTeacherProfileController,
+  getTeachersController,
+  updateTeacherProfileController
+} from '../../teachers/controllers/teacher-profile.controller.js';
+
+import {
+  createTeacherEmploymentController,
+  getTeacherEmploymentController,
+  updateTeacherEmploymentController
+} from '../../teachers/controllers/teacher-employment.controller.js';
+
 
 const router = Router();
 
@@ -934,5 +947,84 @@ router.get(
   ),
   getStudentAcademicRecordsController
 );
+
+// Teacher profiles
+router.post(
+  '/:schoolId/teachers',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  createTeacherProfileController
+);
+
+router.get(
+  '/:schoolId/teachers',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getTeachersController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getTeacherProfileController
+);
+
+router.patch(
+  '/:schoolId/teachers/:teacherId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  updateTeacherProfileController
+);
+
+// Teacher employment records
+router.post(
+  '/:schoolId/teachers/:teacherId/employment',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  createTeacherEmploymentController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/employment',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getTeacherEmploymentController
+);
+
+router.patch(
+  '/:schoolId/teachers/:teacherId/employment/:employmentId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  updateTeacherEmploymentController
+);
+
 
 export default router;

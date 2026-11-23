@@ -162,3 +162,13 @@ export type EnrollmentHistory = Prisma.EnrollmentHistoryModel
  * 
  */
 export type StudentAcademicRecord = Prisma.StudentAcademicRecordModel
+/**
+ * Model TeacherProfile
+ * 
+ */
+export type TeacherProfile = Prisma.TeacherProfileModel
+/**
+ * Model TeacherEmployment
+ * 
+ */
+export type TeacherEmployment = Prisma.TeacherEmploymentModel
