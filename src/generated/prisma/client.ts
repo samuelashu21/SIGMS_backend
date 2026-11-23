@@ -156,3 +156,8 @@ export type AdmissionReview = Prisma.AdmissionReviewModel
  * 
  */
 export type AdmissionStatusHistory = Prisma.AdmissionStatusHistoryModel
+/**
+ * Model StudentProfile
+ * 
+ */
+export type StudentProfile = Prisma.StudentProfileModel

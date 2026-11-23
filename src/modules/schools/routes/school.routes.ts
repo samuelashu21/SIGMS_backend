@@ -110,6 +110,8 @@ import { submitAdmissionApplicationController } from '../../admissions/controlle
 import { approveAdmissionApplicationController, rejectAdmissionApplicationController } from '../../admissions/controllers/admission-decision.controller.js';
 import { getAdmissionStatusHistoryController } from '../../admissions/controllers/admission-history.controller.js';
 import { updateAdmissionStatusController } from '../../admissions/controllers/admission-status.controller.js';
+import { getStudentProfileController, updateStudentProfileController } from '../../enrollments/controllers/student-profile.controller.js';
+import { registerStudentController } from '../../enrollments/controllers/student-registration.controller.js';
 
 const router = Router();
 
@@ -708,6 +710,43 @@ router.get(
     'REGISTRAR'
   ),
   getAdmissionStatusHistoryController
+);
+
+// Student registration from approved admission
+router.post(
+  '/:schoolId/students/from-admission/:applicationId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  registerStudentController
+);
+
+// Student profile management
+router.get(
+  '/:schoolId/students/:studentId/profile',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getStudentProfileController
+);
+
+router.patch(
+  '/:schoolId/students/:studentId/profile',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  updateStudentProfileController
 );
 
 export default router;

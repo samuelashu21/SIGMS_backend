@@ -73,7 +73,8 @@ export const ModelName = {
   ApplicantInformation: 'ApplicantInformation',
   AdmissionDocument: 'AdmissionDocument',
   AdmissionReview: 'AdmissionReview',
-  AdmissionStatusHistory: 'AdmissionStatusHistory'
+  AdmissionStatusHistory: 'AdmissionStatusHistory',
+  StudentProfile: 'StudentProfile'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -114,8 +115,11 @@ export type SchoolScalarFieldEnum = (typeof SchoolScalarFieldEnum)[keyof typeof 
 
 export const StudentScalarFieldEnum = {
   id: 'id',
-  fullName: 'fullName',
   schoolId: 'schoolId',
+  admissionApplicationId: 'admissionApplicationId',
+  fullName: 'fullName',
+  dateOfBirth: 'dateOfBirth',
+  gender: 'gender',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -459,6 +463,23 @@ export const AdmissionStatusHistoryScalarFieldEnum = {
 } as const
 
 export type AdmissionStatusHistoryScalarFieldEnum = (typeof AdmissionStatusHistoryScalarFieldEnum)[keyof typeof AdmissionStatusHistoryScalarFieldEnum]
+
+
+export const StudentProfileScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  phoneNumber: 'phoneNumber',
+  email: 'email',
+  address: 'address',
+  city: 'city',
+  region: 'region',
+  previousSchool: 'previousSchool',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentProfileScalarFieldEnum = (typeof StudentProfileScalarFieldEnum)[keyof typeof StudentProfileScalarFieldEnum]
 
 
 export const SortOrder = {
