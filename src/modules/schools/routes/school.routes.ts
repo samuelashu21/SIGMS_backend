@@ -72,6 +72,19 @@ import {
   updateSectionController
 } from '../../academic/controllers/section.controller.js';
 
+import {
+  createSubjectController,
+  getSubjectsController,
+  getSubjectController,
+  updateSubjectController
+} from '../../academic/controllers/subject.controller.js';
+
+import {
+  assignSubjectToGradeController,
+  getGradeSubjectAssignmentsController,
+  updateGradeSubjectAssignmentController,
+  removeGradeSubjectAssignmentController
+} from '../../academic/controllers/grade-subject.controller.js';
 
 const router = Router();
 
@@ -309,5 +322,66 @@ router.patch(
   authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
   updateSectionController
 );
+
+
+// Subject management
+router.post(
+  '/:schoolId/subjects',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  createSubjectController
+);
+
+router.get(
+  '/:schoolId/subjects',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getSubjectsController
+);
+
+router.get(
+  '/:schoolId/subjects/:subjectId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getSubjectController
+);
+
+router.patch(
+  '/:schoolId/subjects/:subjectId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateSubjectController
+);
+
+// Subject-grade assignments
+router.post(
+  '/:schoolId/grade-subjects',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  assignSubjectToGradeController
+);
+
+router.get(
+  '/:schoolId/grades/:gradeId/subjects',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getGradeSubjectAssignmentsController
+);
+
+router.patch(
+  '/:schoolId/grade-subjects/:assignmentId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateGradeSubjectAssignmentController
+);
+
+router.delete(
+  '/:schoolId/grade-subjects/:assignmentId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  removeGradeSubjectAssignmentController
+);
+
 
 export default router;

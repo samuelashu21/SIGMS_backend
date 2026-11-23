@@ -101,3 +101,13 @@ export type Grade = Prisma.GradeModel
  * 
  */
 export type Section = Prisma.SectionModel
+/**
+ * Model Subject
+ * 
+ */
+export type Subject = Prisma.SubjectModel
+/**
+ * Model GradeSubject
+ * 
+ */
+export type GradeSubject = Prisma.GradeSubjectModel

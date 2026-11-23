@@ -38,6 +38,10 @@ model School {
   grades Grade[]
   sections Section[]
 
+  subjects Subject[]
+
+  gradeSubjectAssignments GradeSubject[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -320,6 +324,8 @@ model Grade {
 
   sections Section[]
 
+  subjectAssignments GradeSubject[]
+
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
   @@unique([id, schoolId], map: "grades_id_school_key")
@@ -354,4 +360,55 @@ model Section {
   @@index([schoolId, gradeId], map: "sections_school_grade_idx")
   @@index([schoolId, isActive], map: "sections_school_active_idx")
   @@map("sections")
+}
+
+
+
+model Subject {
+  id          String   @id @default(uuid()) @db.Uuid
+  schoolId    String   @map("school_id") @db.Uuid
+  name        String
+  code        String
+  description String?
+  isActive    Boolean  @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId], references: [id], onDelete: Restrict)
+
+  gradeAssignments GradeSubject[]
+
+  @@unique([schoolId, code], map: "subjects_school_code_key")
+  @@unique([schoolId, name], map: "subjects_school_name_key")
+  @@unique([id, schoolId], map: "subjects_id_school_key")
+  @@index([schoolId, isActive], map: "subjects_school_active_idx")
+  @@map("subjects")
+}
+
+
+
+model GradeSubject {
+  id                String   @id @default(uuid()) @db.Uuid
+  schoolId          String   @map("school_id") @db.Uuid
+  gradeId           String   @map("grade_id") @db.Uuid
+  subjectId         String   @map("subject_id") @db.Uuid
+
+  weeklyPeriods     Int      @default(3) @map("weekly_periods")
+  isCompulsory      Boolean  @default(true) @map("is_compulsory")
+  isActive          Boolean  @default(true) @map("is_active")
+
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt         DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId],references: [id], onDelete: Restrict )
+
+  grade Grade @relation( fields: [gradeId, schoolId], references: [id, schoolId],onDelete: Restrict)
+
+  subject Subject @relation( fields: [subjectId, schoolId], references: [id, schoolId],onDelete: Restrict )
+
+  @@unique([schoolId, gradeId, subjectId], map: "grade_subjects_school_grade_subject_key")
+  @@index([schoolId, gradeId], map: "grade_subjects_school_grade_idx")
+  @@index([schoolId, subjectId], map: "grade_subjects_school_subject_idx")
+  @@map("grade_subjects")
 }

@@ -62,7 +62,9 @@ export const ModelName = {
   AcademicYear: 'AcademicYear',
   Semester: 'Semester',
   Grade: 'Grade',
-  Section: 'Section'
+  Section: 'Section',
+  Subject: 'Subject',
+  GradeSubject: 'GradeSubject'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -263,6 +265,35 @@ export const SectionScalarFieldEnum = {
 } as const
 
 export type SectionScalarFieldEnum = (typeof SectionScalarFieldEnum)[keyof typeof SectionScalarFieldEnum]
+
+
+export const SubjectScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  name: 'name',
+  code: 'code',
+  description: 'description',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SubjectScalarFieldEnum = (typeof SubjectScalarFieldEnum)[keyof typeof SubjectScalarFieldEnum]
+
+
+export const GradeSubjectScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  gradeId: 'gradeId',
+  subjectId: 'subjectId',
+  weeklyPeriods: 'weeklyPeriods',
+  isCompulsory: 'isCompulsory',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GradeSubjectScalarFieldEnum = (typeof GradeSubjectScalarFieldEnum)[keyof typeof GradeSubjectScalarFieldEnum]
 
 
 export const SortOrder = {
