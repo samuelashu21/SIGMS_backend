@@ -287,6 +287,40 @@ export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
   _max?: Prisma.NestedJsonNullableFilter<$PrismaModel>
 }
 
+export type EnumSchoolLanguageFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolLanguage | Prisma.EnumSchoolLanguageFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolLanguageFilter<$PrismaModel> | $Enums.SchoolLanguage
+}
+
+export type EnumSchoolCalendarTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolCalendarType | Prisma.EnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolCalendarTypeFilter<$PrismaModel> | $Enums.SchoolCalendarType
+}
+
+export type EnumSchoolLanguageWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolLanguage | Prisma.EnumSchoolLanguageFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolLanguageWithAggregatesFilter<$PrismaModel> | $Enums.SchoolLanguage
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSchoolLanguageFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSchoolLanguageFilter<$PrismaModel>
+}
+
+export type EnumSchoolCalendarTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolCalendarType | Prisma.EnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolCalendarTypeWithAggregatesFilter<$PrismaModel> | $Enums.SchoolCalendarType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSchoolCalendarTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSchoolCalendarTypeFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -540,6 +574,40 @@ export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
   gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type NestedEnumSchoolLanguageFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolLanguage | Prisma.EnumSchoolLanguageFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolLanguageFilter<$PrismaModel> | $Enums.SchoolLanguage
+}
+
+export type NestedEnumSchoolCalendarTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolCalendarType | Prisma.EnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolCalendarTypeFilter<$PrismaModel> | $Enums.SchoolCalendarType
+}
+
+export type NestedEnumSchoolLanguageWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolLanguage | Prisma.EnumSchoolLanguageFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolLanguage[] | Prisma.ListEnumSchoolLanguageFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolLanguageWithAggregatesFilter<$PrismaModel> | $Enums.SchoolLanguage
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSchoolLanguageFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSchoolLanguageFilter<$PrismaModel>
+}
+
+export type NestedEnumSchoolCalendarTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolCalendarType | Prisma.EnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolCalendarType[] | Prisma.ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolCalendarTypeWithAggregatesFilter<$PrismaModel> | $Enums.SchoolCalendarType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSchoolCalendarTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSchoolCalendarTypeFilter<$PrismaModel>
 }
 
 

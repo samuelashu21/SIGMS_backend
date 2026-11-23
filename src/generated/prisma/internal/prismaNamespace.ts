@@ -403,7 +403,8 @@ export const ModelName = {
   User: 'User',
   PasswordResetToken: 'PasswordResetToken',
   UserActivityLog: 'UserActivityLog',
-  UserSchoolMembership: 'UserSchoolMembership'
+  UserSchoolMembership: 'UserSchoolMembership',
+  SchoolConfiguration: 'SchoolConfiguration'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -419,7 +420,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -941,6 +942,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    SchoolConfiguration: {
+      payload: Prisma.$SchoolConfigurationPayload<ExtArgs>
+      fields: Prisma.SchoolConfigurationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SchoolConfigurationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SchoolConfigurationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>
+        }
+        findFirst: {
+          args: Prisma.SchoolConfigurationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SchoolConfigurationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>
+        }
+        findMany: {
+          args: Prisma.SchoolConfigurationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>[]
+        }
+        create: {
+          args: Prisma.SchoolConfigurationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>
+        }
+        createMany: {
+          args: Prisma.SchoolConfigurationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SchoolConfigurationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>[]
+        }
+        delete: {
+          args: Prisma.SchoolConfigurationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>
+        }
+        update: {
+          args: Prisma.SchoolConfigurationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>
+        }
+        deleteMany: {
+          args: Prisma.SchoolConfigurationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SchoolConfigurationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SchoolConfigurationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>[]
+        }
+        upsert: {
+          args: Prisma.SchoolConfigurationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SchoolConfigurationPayload>
+        }
+        aggregate: {
+          args: Prisma.SchoolConfigurationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSchoolConfiguration>
+        }
+        groupBy: {
+          args: Prisma.SchoolConfigurationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SchoolConfigurationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SchoolConfigurationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SchoolConfigurationCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1079,6 +1154,23 @@ export const UserSchoolMembershipScalarFieldEnum = {
 export type UserSchoolMembershipScalarFieldEnum = (typeof UserSchoolMembershipScalarFieldEnum)[keyof typeof UserSchoolMembershipScalarFieldEnum]
 
 
+export const SchoolConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  defaultLanguage: 'defaultLanguage',
+  calendarType: 'calendarType',
+  timezone: 'timezone',
+  academicYearLabel: 'academicYearLabel',
+  attendanceEnabled: 'attendanceEnabled',
+  notificationsEnabled: 'notificationsEnabled',
+  parentAccessEnabled: 'parentAccessEnabled',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SchoolConfigurationScalarFieldEnum = (typeof SchoolConfigurationScalarFieldEnum)[keyof typeof SchoolConfigurationScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1200,6 +1292,34 @@ export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'J
  * Reference to a field of type 'QueryMode'
  */
 export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+/**
+ * Reference to a field of type 'SchoolLanguage'
+ */
+export type EnumSchoolLanguageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SchoolLanguage'>
+    
+
+
+/**
+ * Reference to a field of type 'SchoolLanguage[]'
+ */
+export type ListEnumSchoolLanguageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SchoolLanguage[]'>
+    
+
+
+/**
+ * Reference to a field of type 'SchoolCalendarType'
+ */
+export type EnumSchoolCalendarTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SchoolCalendarType'>
+    
+
+
+/**
+ * Reference to a field of type 'SchoolCalendarType[]'
+ */
+export type ListEnumSchoolCalendarTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SchoolCalendarType[]'>
     
 
 
@@ -1374,6 +1494,7 @@ export type GlobalOmitConfig = {
   passwordResetToken?: Prisma.PasswordResetTokenOmit
   userActivityLog?: Prisma.UserActivityLogOmit
   userSchoolMembership?: Prisma.UserSchoolMembershipOmit
+  schoolConfiguration?: Prisma.SchoolConfigurationOmit
 }
 
 /* Types for Logging */

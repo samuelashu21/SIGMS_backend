@@ -52,3 +52,8 @@ export type UserActivityLog = Prisma.UserActivityLogModel
  * 
  */
 export type UserSchoolMembership = Prisma.UserSchoolMembershipModel
+/**
+ * Model SchoolConfiguration
+ * 
+ */
+export type SchoolConfiguration = Prisma.SchoolConfigurationModel

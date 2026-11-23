@@ -30,6 +30,7 @@ model School {
 
   students    Student[]
   memberships UserSchoolMembership[]
+  configuration SchoolConfiguration?
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -178,4 +179,42 @@ enum SchoolType {
   COMBINED
 
   @@map("school_types")
+}
+
+
+
+
+enum SchoolLanguage {
+  ENGLISH
+  AMHARIC
+
+  @@map("school_languages")
+}
+
+enum SchoolCalendarType {
+  GREGORIAN
+  ETHIOPIAN
+
+  @@map("school_calendar_types")
+}
+
+model SchoolConfiguration {
+  id                  String             @id @default(uuid()) @db.Uuid
+  schoolId            String             @unique @map("school_id") @db.Uuid
+
+  defaultLanguage     SchoolLanguage     @default(ENGLISH) @map("default_language")
+  calendarType        SchoolCalendarType @default(GREGORIAN) @map("calendar_type")
+  timezone            String             @default("Africa/Addis_Ababa")
+  academicYearLabel   String             @default("GREGORIAN") @map("academic_year_label")
+
+  attendanceEnabled   Boolean            @default(true) @map("attendance_enabled")
+  notificationsEnabled Boolean          @default(true) @map("notifications_enabled")
+  parentAccessEnabled Boolean            @default(true) @map("parent_access_enabled")
+
+  createdAt           DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt           DateTime           @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId],references: [id], onDelete: Cascade)
+
+  @@map("school_configurations")
 }

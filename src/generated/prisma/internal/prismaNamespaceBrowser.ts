@@ -57,7 +57,8 @@ export const ModelName = {
   User: 'User',
   PasswordResetToken: 'PasswordResetToken',
   UserActivityLog: 'UserActivityLog',
-  UserSchoolMembership: 'UserSchoolMembership'
+  UserSchoolMembership: 'UserSchoolMembership',
+  SchoolConfiguration: 'SchoolConfiguration'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -173,6 +174,23 @@ export const UserSchoolMembershipScalarFieldEnum = {
 } as const
 
 export type UserSchoolMembershipScalarFieldEnum = (typeof UserSchoolMembershipScalarFieldEnum)[keyof typeof UserSchoolMembershipScalarFieldEnum]
+
+
+export const SchoolConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  defaultLanguage: 'defaultLanguage',
+  calendarType: 'calendarType',
+  timezone: 'timezone',
+  academicYearLabel: 'academicYearLabel',
+  attendanceEnabled: 'attendanceEnabled',
+  notificationsEnabled: 'notificationsEnabled',
+  parentAccessEnabled: 'parentAccessEnabled',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SchoolConfigurationScalarFieldEnum = (typeof SchoolConfigurationScalarFieldEnum)[keyof typeof SchoolConfigurationScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -31,3 +31,19 @@ export const SchoolType = {
 } as const
 
 export type SchoolType = (typeof SchoolType)[keyof typeof SchoolType]
+
+
+export const SchoolLanguage = {
+  ENGLISH: 'ENGLISH',
+  AMHARIC: 'AMHARIC'
+} as const
+
+export type SchoolLanguage = (typeof SchoolLanguage)[keyof typeof SchoolLanguage]
+
+
+export const SchoolCalendarType = {
+  GREGORIAN: 'GREGORIAN',
+  ETHIOPIAN: 'ETHIOPIAN'
+} as const
+
+export type SchoolCalendarType = (typeof SchoolCalendarType)[keyof typeof SchoolCalendarType]
