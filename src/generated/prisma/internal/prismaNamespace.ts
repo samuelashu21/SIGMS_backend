@@ -427,7 +427,9 @@ export const ModelName = {
   EnrollmentHistory: 'EnrollmentHistory',
   StudentAcademicRecord: 'StudentAcademicRecord',
   TeacherProfile: 'TeacherProfile',
-  TeacherEmployment: 'TeacherEmployment'
+  TeacherEmployment: 'TeacherEmployment',
+  TeacherQualification: 'TeacherQualification',
+  TeacherSubjectAssignment: 'TeacherSubjectAssignment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -443,7 +445,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2741,6 +2743,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    TeacherQualification: {
+      payload: Prisma.$TeacherQualificationPayload<ExtArgs>
+      fields: Prisma.TeacherQualificationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherQualificationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherQualificationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherQualificationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherQualificationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherQualificationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherQualificationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherQualificationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherQualificationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherQualificationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>
+        }
+        update: {
+          args: Prisma.TeacherQualificationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherQualificationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherQualificationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherQualificationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherQualificationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherQualificationPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherQualificationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherQualification>
+        }
+        groupBy: {
+          args: Prisma.TeacherQualificationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherQualificationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherQualificationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherQualificationCountAggregateOutputType> | number
+        }
+      }
+    }
+    TeacherSubjectAssignment: {
+      payload: Prisma.$TeacherSubjectAssignmentPayload<ExtArgs>
+      fields: Prisma.TeacherSubjectAssignmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherSubjectAssignmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherSubjectAssignmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherSubjectAssignmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherSubjectAssignmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherSubjectAssignmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherSubjectAssignmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherSubjectAssignmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherSubjectAssignmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherSubjectAssignmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>
+        }
+        update: {
+          args: Prisma.TeacherSubjectAssignmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherSubjectAssignmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherSubjectAssignmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherSubjectAssignmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherSubjectAssignmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherSubjectAssignmentPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherSubjectAssignmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherSubjectAssignment>
+        }
+        groupBy: {
+          args: Prisma.TeacherSubjectAssignmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherSubjectAssignmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherSubjectAssignmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherSubjectAssignmentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3299,6 +3449,43 @@ export const TeacherEmploymentScalarFieldEnum = {
 export type TeacherEmploymentScalarFieldEnum = (typeof TeacherEmploymentScalarFieldEnum)[keyof typeof TeacherEmploymentScalarFieldEnum]
 
 
+export const TeacherQualificationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  qualificationType: 'qualificationType',
+  title: 'title',
+  institution: 'institution',
+  fieldOfStudy: 'fieldOfStudy',
+  country: 'country',
+  graduationYear: 'graduationYear',
+  certificateNumber: 'certificateNumber',
+  documentPath: 'documentPath',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherQualificationScalarFieldEnum = (typeof TeacherQualificationScalarFieldEnum)[keyof typeof TeacherQualificationScalarFieldEnum]
+
+
+export const TeacherSubjectAssignmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  subjectId: 'subjectId',
+  gradeId: 'gradeId',
+  academicYearId: 'academicYearId',
+  weeklyPeriods: 'weeklyPeriods',
+  isActive: 'isActive',
+  assignedAt: 'assignedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherSubjectAssignmentScalarFieldEnum = (typeof TeacherSubjectAssignmentScalarFieldEnum)[keyof typeof TeacherSubjectAssignmentScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -3704,6 +3891,20 @@ export type ListEnumTeacherEmploymentStatusFieldRefInput<$PrismaModel> = FieldRe
 
 
 /**
+ * Reference to a field of type 'TeacherQualificationType'
+ */
+export type EnumTeacherQualificationTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherQualificationType'>
+    
+
+
+/**
+ * Reference to a field of type 'TeacherQualificationType[]'
+ */
+export type ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherQualificationType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -3898,6 +4099,8 @@ export type GlobalOmitConfig = {
   studentAcademicRecord?: Prisma.StudentAcademicRecordOmit
   teacherProfile?: Prisma.TeacherProfileOmit
   teacherEmployment?: Prisma.TeacherEmploymentOmit
+  teacherQualification?: Prisma.TeacherQualificationOmit
+  teacherSubjectAssignment?: Prisma.TeacherSubjectAssignmentOmit
 }
 
 /* Types for Logging */

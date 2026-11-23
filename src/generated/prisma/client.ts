@@ -196,3 +196,13 @@ export type TeacherProfile = Prisma.TeacherProfileModel
  * 
  */
 export type TeacherEmployment = Prisma.TeacherEmploymentModel
+/**
+ * Model TeacherQualification
+ * 
+ */
+export type TeacherQualification = Prisma.TeacherQualificationModel
+/**
+ * Model TeacherSubjectAssignment
+ * 
+ */
+export type TeacherSubjectAssignment = Prisma.TeacherSubjectAssignmentModel

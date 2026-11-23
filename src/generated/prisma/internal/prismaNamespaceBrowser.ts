@@ -81,7 +81,9 @@ export const ModelName = {
   EnrollmentHistory: 'EnrollmentHistory',
   StudentAcademicRecord: 'StudentAcademicRecord',
   TeacherProfile: 'TeacherProfile',
-  TeacherEmployment: 'TeacherEmployment'
+  TeacherEmployment: 'TeacherEmployment',
+  TeacherQualification: 'TeacherQualification',
+  TeacherSubjectAssignment: 'TeacherSubjectAssignment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -617,6 +619,43 @@ export const TeacherEmploymentScalarFieldEnum = {
 } as const
 
 export type TeacherEmploymentScalarFieldEnum = (typeof TeacherEmploymentScalarFieldEnum)[keyof typeof TeacherEmploymentScalarFieldEnum]
+
+
+export const TeacherQualificationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  qualificationType: 'qualificationType',
+  title: 'title',
+  institution: 'institution',
+  fieldOfStudy: 'fieldOfStudy',
+  country: 'country',
+  graduationYear: 'graduationYear',
+  certificateNumber: 'certificateNumber',
+  documentPath: 'documentPath',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherQualificationScalarFieldEnum = (typeof TeacherQualificationScalarFieldEnum)[keyof typeof TeacherQualificationScalarFieldEnum]
+
+
+export const TeacherSubjectAssignmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  subjectId: 'subjectId',
+  gradeId: 'gradeId',
+  academicYearId: 'academicYearId',
+  weeklyPeriods: 'weeklyPeriods',
+  isActive: 'isActive',
+  assignedAt: 'assignedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherSubjectAssignmentScalarFieldEnum = (typeof TeacherSubjectAssignmentScalarFieldEnum)[keyof typeof TeacherSubjectAssignmentScalarFieldEnum]
 
 
 export const SortOrder = {

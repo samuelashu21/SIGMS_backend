@@ -148,6 +148,18 @@ import {
   getTeacherEmploymentController,
   updateTeacherEmploymentController
 } from '../../teachers/controllers/teacher-employment.controller.js';
+import {
+  createTeacherQualificationController,
+  getTeacherQualificationsController,
+  updateTeacherQualificationController,
+  deleteTeacherQualificationController
+} from '../../teachers/controllers/teacher-qualification.controller.js';
+
+import {
+  createTeacherSubjectAssignmentController,
+  getTeacherSubjectAssignmentsController,
+  updateTeacherSubjectAssignmentController
+} from '../../teachers/controllers/teacher-subject-assignment.controller.js';
 
 
 const router = Router();
@@ -1026,5 +1038,62 @@ router.patch(
   updateTeacherEmploymentController
 );
 
+
+// Teacher qualifications
+router.post(
+  '/:schoolId/teachers/:teacherId/qualifications',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createTeacherQualificationController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/qualifications',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getTeacherQualificationsController
+);
+
+router.patch(
+  '/:schoolId/teachers/:teacherId/qualifications/:qualificationId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateTeacherQualificationController
+);
+
+router.delete(
+  '/:schoolId/teachers/:teacherId/qualifications/:qualificationId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  deleteTeacherQualificationController
+);
+
+// Teacher subject assignments
+router.post(
+  '/:schoolId/teachers/:teacherId/subject-assignments',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createTeacherSubjectAssignmentController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/subject-assignments',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  getTeacherSubjectAssignmentsController
+);
+
+router.patch(
+  '/:schoolId/teachers/:teacherId/subject-assignments/:assignmentId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateTeacherSubjectAssignmentController
+);
 
 export default router;

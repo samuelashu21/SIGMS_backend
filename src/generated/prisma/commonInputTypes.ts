@@ -735,6 +735,23 @@ export type EnumTeacherEmploymentStatusWithAggregatesFilter<$PrismaModel = never
   _max?: Prisma.NestedEnumTeacherEmploymentStatusFilter<$PrismaModel>
 }
 
+export type EnumTeacherQualificationTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherQualificationType | Prisma.EnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel> | $Enums.TeacherQualificationType
+}
+
+export type EnumTeacherQualificationTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherQualificationType | Prisma.EnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherQualificationTypeWithAggregatesFilter<$PrismaModel> | $Enums.TeacherQualificationType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1436,6 +1453,23 @@ export type NestedEnumTeacherEmploymentStatusWithAggregatesFilter<$PrismaModel =
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumTeacherEmploymentStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumTeacherEmploymentStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumTeacherQualificationTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherQualificationType | Prisma.EnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel> | $Enums.TeacherQualificationType
+}
+
+export type NestedEnumTeacherQualificationTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherQualificationType | Prisma.EnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherQualificationType[] | Prisma.ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherQualificationTypeWithAggregatesFilter<$PrismaModel> | $Enums.TeacherQualificationType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
 }
 
 

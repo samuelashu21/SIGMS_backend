@@ -215,3 +215,16 @@ export const TeacherEmploymentStatus = {
 } as const
 
 export type TeacherEmploymentStatus = (typeof TeacherEmploymentStatus)[keyof typeof TeacherEmploymentStatus]
+
+
+export const TeacherQualificationType = {
+  CERTIFICATE: 'CERTIFICATE',
+  DIPLOMA: 'DIPLOMA',
+  BACHELORS: 'BACHELORS',
+  MASTERS: 'MASTERS',
+  DOCTORATE: 'DOCTORATE',
+  PROFESSIONAL_CERTIFICATION: 'PROFESSIONAL_CERTIFICATION',
+  OTHER: 'OTHER'
+} as const
+
+export type TeacherQualificationType = (typeof TeacherQualificationType)[keyof typeof TeacherQualificationType]

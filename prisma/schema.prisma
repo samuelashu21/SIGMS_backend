@@ -306,6 +306,7 @@ model AcademicYear {
   admissionApplications AdmissionApplication[]
   studentIdSequences StudentIdSequence[]
   enrollments AcademicEnrollment[]
+  teacherAssignments TeacherSubjectAssignment[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -370,6 +371,7 @@ model Grade {
   subjectAssignments GradeSubject[]
   admissionApplications AdmissionApplication[]
   academicEnrollments AcademicEnrollment[]
+  teacherAssignments TeacherSubjectAssignment[]
 
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
@@ -428,6 +430,7 @@ model Subject {
   school School @relation( fields: [schoolId], references: [id], onDelete: Restrict)
 
   gradeAssignments GradeSubject[]
+  teacherAssignments TeacherSubjectAssignment[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -1050,6 +1053,8 @@ model TeacherProfile {
   user User @relation(fields: [userId],references: [id],onDelete: Restrict)
 
   employmentRecords TeacherEmployment[]
+  qualifications TeacherQualification[]
+  subjectAssignments TeacherSubjectAssignment[]
 
   @@unique([schoolId, userId], map: "teacher_profiles_school_user_key")
   @@unique([id, schoolId], map: "teacher_profiles_id_school_key")
@@ -1103,4 +1108,75 @@ model TeacherEmployment {
   @@index([schoolId, teacherId], map: "teacher_employment_school_teacher_idx")
   @@index([schoolId, startDate], map: "teacher_employment_school_start_date_idx")
   @@map("teacher_employment")
+}
+
+
+
+enum TeacherQualificationType {
+  CERTIFICATE
+  DIPLOMA
+  BACHELORS
+  MASTERS
+  DOCTORATE
+  PROFESSIONAL_CERTIFICATION
+  OTHER
+
+  @@map("teacher_qualification_types")
+}
+
+
+model TeacherQualification {
+  id        String @id @default(uuid()) @db.Uuid
+  schoolId  String @map("school_id") @db.Uuid
+  teacherId String @map("teacher_id") @db.Uuid
+
+  qualificationType TeacherQualificationType @map("qualification_type")
+  title             String
+  institution       String
+  fieldOfStudy      String? @map("field_of_study")
+  country           String?
+  graduationYear    Int? @map("graduation_year")
+  certificateNumber String? @map("certificate_number")
+  documentPath      String? @map("document_path")
+  description       String?
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  teacher TeacherProfile @relation(fields: [teacherId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  @@index([schoolId, teacherId], map: "teacher_qualifications_school_teacher_idx")
+  @@index([schoolId, qualificationType], map: "teacher_qualifications_school_type_idx")
+  @@map("teacher_qualifications")
+}
+
+
+
+model TeacherSubjectAssignment {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  teacherId     String @map("teacher_id") @db.Uuid
+  subjectId     String @map("subject_id") @db.Uuid
+  gradeId       String @map("grade_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  weeklyPeriods Int @default(0) @map("weekly_periods")
+  isActive      Boolean @default(true) @map("is_active")
+
+  assignedAt DateTime @default(now()) @map("assigned_at") @db.Timestamptz(3)
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  teacher TeacherProfile @relation(fields: [teacherId, schoolId],references: [id, schoolId],onDelete: Restrict )
+
+  subject Subject @relation(fields: [subjectId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  grade Grade @relation(fields: [gradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, teacherId, subjectId, gradeId, academicYearId], map: "teacher_subject_assignment_key")
+  @@index([schoolId, teacherId, academicYearId], map: "teacher_subject_assignment_teacher_year_idx")
+  @@index([schoolId, subjectId, gradeId], map: "teacher_subject_assignment_subject_grade_idx")
+  @@map("teacher_subject_assignments")
 }
