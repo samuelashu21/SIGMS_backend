@@ -71,3 +71,8 @@ export type PasswordResetToken = Prisma.PasswordResetTokenModel
  * 
  */
 export type UserActivityLog = Prisma.UserActivityLogModel
+/**
+ * Model UserSchoolMembership
+ * 
+ */
+export type UserSchoolMembership = Prisma.UserSchoolMembershipModel

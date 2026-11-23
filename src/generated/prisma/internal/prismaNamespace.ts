@@ -402,7 +402,8 @@ export const ModelName = {
   AuthSession: 'AuthSession',
   User: 'User',
   PasswordResetToken: 'PasswordResetToken',
-  UserActivityLog: 'UserActivityLog'
+  UserActivityLog: 'UserActivityLog',
+  UserSchoolMembership: 'UserSchoolMembership'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -418,7 +419,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -866,6 +867,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    UserSchoolMembership: {
+      payload: Prisma.$UserSchoolMembershipPayload<ExtArgs>
+      fields: Prisma.UserSchoolMembershipFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserSchoolMembershipFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserSchoolMembershipFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>
+        }
+        findFirst: {
+          args: Prisma.UserSchoolMembershipFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserSchoolMembershipFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>
+        }
+        findMany: {
+          args: Prisma.UserSchoolMembershipFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>[]
+        }
+        create: {
+          args: Prisma.UserSchoolMembershipCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>
+        }
+        createMany: {
+          args: Prisma.UserSchoolMembershipCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.UserSchoolMembershipCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>[]
+        }
+        delete: {
+          args: Prisma.UserSchoolMembershipDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>
+        }
+        update: {
+          args: Prisma.UserSchoolMembershipUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>
+        }
+        deleteMany: {
+          args: Prisma.UserSchoolMembershipDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.UserSchoolMembershipUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.UserSchoolMembershipUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>[]
+        }
+        upsert: {
+          args: Prisma.UserSchoolMembershipUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserSchoolMembershipPayload>
+        }
+        aggregate: {
+          args: Prisma.UserSchoolMembershipAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUserSchoolMembership>
+        }
+        groupBy: {
+          args: Prisma.UserSchoolMembershipGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserSchoolMembershipGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserSchoolMembershipCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserSchoolMembershipCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -979,6 +1054,20 @@ export const UserActivityLogScalarFieldEnum = {
 } as const
 
 export type UserActivityLogScalarFieldEnum = (typeof UserActivityLogScalarFieldEnum)[keyof typeof UserActivityLogScalarFieldEnum]
+
+
+export const UserSchoolMembershipScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  schoolId: 'schoolId',
+  role: 'role',
+  isActive: 'isActive',
+  joinedAt: 'joinedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserSchoolMembershipScalarFieldEnum = (typeof UserSchoolMembershipScalarFieldEnum)[keyof typeof UserSchoolMembershipScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1261,6 +1350,7 @@ export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   passwordResetToken?: Prisma.PasswordResetTokenOmit
   userActivityLog?: Prisma.UserActivityLogOmit
+  userSchoolMembership?: Prisma.UserSchoolMembershipOmit
 }
 
 /* Types for Logging */

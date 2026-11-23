@@ -17,6 +17,8 @@ model School {
 
   students Student[]
 
+  memberships UserSchoolMembership[]
+
   @@index([isActive], map: "schools_is_active_idx")
   @@map("schools")
 }
@@ -88,6 +90,7 @@ model User {
   sessions AuthSession[]
   actorActivityLogs  UserActivityLog[] @relation("UserActivityActor")
   targetActivityLogs UserActivityLog[] @relation("UserActivityTarget")
+  memberships UserSchoolMembership[]
 
   @@map("users")
 }
@@ -127,4 +130,26 @@ model UserActivityLog {
   @@index([targetUserId, createdAt], map: "user_activity_target_created_idx")
   @@index([action], map: "user_activity_action_idx")
   @@map("user_activity_logs")
+}
+
+
+
+model UserSchoolMembership {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  schoolId  String    @map("school_id") @db.Uuid
+  role      UserRole
+  isActive  Boolean   @default(true) @map("is_active")
+  joinedAt  DateTime  @default(now()) @map("joined_at") @db.Timestamptz(3)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user User @relation( fields: [userId], references: [id], onDelete: Restrict)
+
+  school School @relation( fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@unique([userId, schoolId], map: "user_school_memberships_user_school_key")
+  @@index([schoolId, role], map: "user_school_memberships_school_role_idx")
+  @@index([userId, isActive], map: "user_school_memberships_user_active_idx")
+  @@map("user_school_memberships")
 }

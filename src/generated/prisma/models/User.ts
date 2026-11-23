@@ -218,6 +218,7 @@ export type UserWhereInput = {
   sessions?: Prisma.AuthSessionListRelationFilter
   actorActivityLogs?: Prisma.UserActivityLogListRelationFilter
   targetActivityLogs?: Prisma.UserActivityLogListRelationFilter
+  memberships?: Prisma.UserSchoolMembershipListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -234,6 +235,7 @@ export type UserOrderByWithRelationInput = {
   sessions?: Prisma.AuthSessionOrderByRelationAggregateInput
   actorActivityLogs?: Prisma.UserActivityLogOrderByRelationAggregateInput
   targetActivityLogs?: Prisma.UserActivityLogOrderByRelationAggregateInput
+  memberships?: Prisma.UserSchoolMembershipOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -253,6 +255,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   sessions?: Prisma.AuthSessionListRelationFilter
   actorActivityLogs?: Prisma.UserActivityLogListRelationFilter
   targetActivityLogs?: Prisma.UserActivityLogListRelationFilter
+  memberships?: Prisma.UserSchoolMembershipListRelationFilter
 }, "id" | "email" | "username">
 
 export type UserOrderByWithAggregationInput = {
@@ -299,6 +302,7 @@ export type UserCreateInput = {
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -315,6 +319,7 @@ export type UserUncheckedCreateInput = {
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -331,6 +336,7 @@ export type UserUpdateInput = {
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -347,6 +353,7 @@ export type UserUncheckedUpdateInput = {
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -486,6 +493,20 @@ export type UserUpdateOneRequiredWithoutTargetActivityLogsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTargetActivityLogsInput, Prisma.UserUpdateWithoutTargetActivityLogsInput>, Prisma.UserUncheckedUpdateWithoutTargetActivityLogsInput>
 }
 
+export type UserCreateNestedOneWithoutMembershipsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMembershipsInput, Prisma.UserUncheckedCreateWithoutMembershipsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMembershipsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutMembershipsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMembershipsInput, Prisma.UserUncheckedCreateWithoutMembershipsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMembershipsInput
+  upsert?: Prisma.UserUpsertWithoutMembershipsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutMembershipsInput, Prisma.UserUpdateWithoutMembershipsInput>, Prisma.UserUncheckedUpdateWithoutMembershipsInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   id?: string
   email?: string | null
@@ -499,6 +520,7 @@ export type UserCreateWithoutSessionsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -514,6 +536,7 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -545,6 +568,7 @@ export type UserUpdateWithoutSessionsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -560,6 +584,7 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPasswordResetTokensInput = {
@@ -575,6 +600,7 @@ export type UserCreateWithoutPasswordResetTokensInput = {
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
@@ -590,6 +616,7 @@ export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPasswordResetTokensInput = {
@@ -621,6 +648,7 @@ export type UserUpdateWithoutPasswordResetTokensInput = {
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
@@ -636,6 +664,7 @@ export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutActorActivityLogsInput = {
@@ -651,6 +680,7 @@ export type UserCreateWithoutActorActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutActorActivityLogsInput = {
@@ -666,6 +696,7 @@ export type UserUncheckedCreateWithoutActorActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutActorActivityLogsInput = {
@@ -686,6 +717,7 @@ export type UserCreateWithoutTargetActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
@@ -701,6 +733,7 @@ export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutTargetActivityLogsInput = {
@@ -732,6 +765,7 @@ export type UserUpdateWithoutActorActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
@@ -747,6 +781,7 @@ export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUpsertWithoutTargetActivityLogsInput = {
@@ -773,6 +808,7 @@ export type UserUpdateWithoutTargetActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
@@ -788,6 +824,87 @@ export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutMembershipsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+}
+
+export type UserUncheckedCreateWithoutMembershipsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+}
+
+export type UserCreateOrConnectWithoutMembershipsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutMembershipsInput, Prisma.UserUncheckedCreateWithoutMembershipsInput>
+}
+
+export type UserUpsertWithoutMembershipsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutMembershipsInput, Prisma.UserUncheckedUpdateWithoutMembershipsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutMembershipsInput, Prisma.UserUncheckedCreateWithoutMembershipsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutMembershipsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutMembershipsInput, Prisma.UserUncheckedUpdateWithoutMembershipsInput>
+}
+
+export type UserUpdateWithoutMembershipsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutMembershipsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
 }
 
 
@@ -800,6 +917,7 @@ export type UserCountOutputType = {
   sessions: number
   actorActivityLogs: number
   targetActivityLogs: number
+  memberships: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -807,6 +925,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   sessions?: boolean | UserCountOutputTypeCountSessionsArgs
   actorActivityLogs?: boolean | UserCountOutputTypeCountActorActivityLogsArgs
   targetActivityLogs?: boolean | UserCountOutputTypeCountTargetActivityLogsArgs
+  memberships?: boolean | UserCountOutputTypeCountMembershipsArgs
 }
 
 /**
@@ -847,6 +966,13 @@ export type UserCountOutputTypeCountTargetActivityLogsArgs<ExtArgs extends runti
   where?: Prisma.UserActivityLogWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountMembershipsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserSchoolMembershipWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -862,6 +988,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   actorActivityLogs?: boolean | Prisma.User$actorActivityLogsArgs<ExtArgs>
   targetActivityLogs?: boolean | Prisma.User$targetActivityLogsArgs<ExtArgs>
+  memberships?: boolean | Prisma.User$membershipsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -907,6 +1034,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   actorActivityLogs?: boolean | Prisma.User$actorActivityLogsArgs<ExtArgs>
   targetActivityLogs?: boolean | Prisma.User$targetActivityLogsArgs<ExtArgs>
+  memberships?: boolean | Prisma.User$membershipsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -919,6 +1047,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     sessions: Prisma.$AuthSessionPayload<ExtArgs>[]
     actorActivityLogs: Prisma.$UserActivityLogPayload<ExtArgs>[]
     targetActivityLogs: Prisma.$UserActivityLogPayload<ExtArgs>[]
+    memberships: Prisma.$UserSchoolMembershipPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1328,6 +1457,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuthSessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   actorActivityLogs<T extends Prisma.User$actorActivityLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$actorActivityLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserActivityLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   targetActivityLogs<T extends Prisma.User$targetActivityLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$targetActivityLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserActivityLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  memberships<T extends Prisma.User$membershipsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$membershipsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserSchoolMembershipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1852,6 +1982,30 @@ export type User$targetActivityLogsArgs<ExtArgs extends runtime.Types.Extensions
   take?: number
   skip?: number
   distinct?: Prisma.UserActivityLogScalarFieldEnum | Prisma.UserActivityLogScalarFieldEnum[]
+}
+
+/**
+ * User.memberships
+ */
+export type User$membershipsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserSchoolMembership
+   */
+  select?: Prisma.UserSchoolMembershipSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UserSchoolMembership
+   */
+  omit?: Prisma.UserSchoolMembershipOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserSchoolMembershipInclude<ExtArgs> | null
+  where?: Prisma.UserSchoolMembershipWhereInput
+  orderBy?: Prisma.UserSchoolMembershipOrderByWithRelationInput | Prisma.UserSchoolMembershipOrderByWithRelationInput[]
+  cursor?: Prisma.UserSchoolMembershipWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserSchoolMembershipScalarFieldEnum | Prisma.UserSchoolMembershipScalarFieldEnum[]
 }
 
 /**

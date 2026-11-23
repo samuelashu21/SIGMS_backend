@@ -56,7 +56,8 @@ export const ModelName = {
   AuthSession: 'AuthSession',
   User: 'User',
   PasswordResetToken: 'PasswordResetToken',
-  UserActivityLog: 'UserActivityLog'
+  UserActivityLog: 'UserActivityLog',
+  UserSchoolMembership: 'UserSchoolMembership'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -149,6 +150,20 @@ export const UserActivityLogScalarFieldEnum = {
 } as const
 
 export type UserActivityLogScalarFieldEnum = (typeof UserActivityLogScalarFieldEnum)[keyof typeof UserActivityLogScalarFieldEnum]
+
+
+export const UserSchoolMembershipScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  schoolId: 'schoolId',
+  role: 'role',
+  isActive: 'isActive',
+  joinedAt: 'joinedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserSchoolMembershipScalarFieldEnum = (typeof UserSchoolMembershipScalarFieldEnum)[keyof typeof UserSchoolMembershipScalarFieldEnum]
 
 
 export const SortOrder = {
