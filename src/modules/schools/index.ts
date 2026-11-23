@@ -15,3 +15,16 @@ export {
 
 export * from './validators/update-school.validator.js';
 export * from './validators/school-configuration.validator.js';
+
+
+export {
+  createSchoolAdministrator
+} from './services/school-admin.service.js';
+
+export {
+  getSchoolMemberships,
+  updateSchoolMembership
+} from './services/school-membership.service.js';
+
+export * from './validators/create-school-admin.validator.js';
+export * from './validators/update-school-membership.validator.js';
