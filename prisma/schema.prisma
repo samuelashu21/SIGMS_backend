@@ -32,6 +32,10 @@ model School {
   memberships UserSchoolMembership[]
   configuration SchoolConfiguration?
 
+  academicYears AcademicYear[]
+
+  semesters Semester[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -226,4 +230,72 @@ model SchoolConfiguration {
   school School @relation( fields: [schoolId],references: [id], onDelete: Cascade)
 
   @@map("school_configurations")
+}
+
+
+
+enum AcademicYearStatus {
+  PLANNED
+  ACTIVE
+  COMPLETED
+
+  @@map("academic_year_statuses")
+}
+
+model AcademicYear {
+  id        String            @id @default(uuid()) @db.Uuid
+  schoolId  String            @map("school_id") @db.Uuid
+  name      String
+  startDate DateTime          @map("start_date") @db.Date
+  endDate   DateTime          @map("end_date") @db.Date
+  status    AcademicYearStatus @default(PLANNED)
+  isCurrent Boolean           @default(false) @map("is_current")
+
+  createdAt DateTime          @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime          @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school    School            @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  semesters Semester[]
+
+  @@unique([id, schoolId], map: "academic_years_id_school_key")
+
+  @@unique([schoolId, name], map: "academic_years_school_name_key")
+  @@index([schoolId, status], map: "academic_years_school_status_idx")
+  @@index([schoolId, isCurrent], map: "academic_years_school_current_idx")
+  @@map("academic_years")
+}
+
+
+
+enum SemesterStatus {
+  PLANNED
+  ACTIVE
+  COMPLETED
+
+  @@map("semester_statuses")
+}
+
+model Semester {
+  id            String         @id @default(uuid()) @db.Uuid
+  schoolId      String         @map("school_id") @db.Uuid
+  academicYearId String        @map("academic_year_id") @db.Uuid
+  name          String
+  sequence      Int
+  startDate     DateTime       @map("start_date") @db.Date
+  endDate       DateTime       @map("end_date") @db.Date
+  status        SemesterStatus @default(PLANNED)
+  isCurrent     Boolean        @default(false) @map("is_current")
+
+  createdAt     DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt     DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId], references: [id],  onDelete: Restrict)
+
+  academicYear AcademicYear @relation(  fields: [academicYearId, schoolId], references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([academicYearId, name], map: "semesters_year_name_key")
+  @@unique([academicYearId, sequence], map: "semesters_year_sequence_key")
+  @@index([schoolId, status], map: "semesters_school_status_idx")
+  @@index([schoolId, academicYearId], map: "semesters_school_year_idx")
+  @@map("semesters")
 }

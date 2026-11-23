@@ -47,3 +47,21 @@ export const SchoolCalendarType = {
 } as const
 
 export type SchoolCalendarType = (typeof SchoolCalendarType)[keyof typeof SchoolCalendarType]
+
+
+export const AcademicYearStatus = {
+  PLANNED: 'PLANNED',
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED'
+} as const
+
+export type AcademicYearStatus = (typeof AcademicYearStatus)[keyof typeof AcademicYearStatus]
+
+
+export const SemesterStatus = {
+  PLANNED: 'PLANNED',
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED'
+} as const
+
+export type SemesterStatus = (typeof SemesterStatus)[keyof typeof SemesterStatus]

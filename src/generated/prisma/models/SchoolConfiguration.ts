@@ -20,8 +20,20 @@ export type SchoolConfigurationModel = runtime.Types.Result.DefaultSelection<Pri
 
 export type AggregateSchoolConfiguration = {
   _count: SchoolConfigurationCountAggregateOutputType | null
+  _avg: SchoolConfigurationAvgAggregateOutputType | null
+  _sum: SchoolConfigurationSumAggregateOutputType | null
   _min: SchoolConfigurationMinAggregateOutputType | null
   _max: SchoolConfigurationMaxAggregateOutputType | null
+}
+
+export type SchoolConfigurationAvgAggregateOutputType = {
+  academicYearStartMonth: number | null
+  weekStartsOn: number | null
+}
+
+export type SchoolConfigurationSumAggregateOutputType = {
+  academicYearStartMonth: number | null
+  weekStartsOn: number | null
 }
 
 export type SchoolConfigurationMinAggregateOutputType = {
@@ -34,6 +46,12 @@ export type SchoolConfigurationMinAggregateOutputType = {
   attendanceEnabled: boolean | null
   notificationsEnabled: boolean | null
   parentAccessEnabled: boolean | null
+  academicYearStartMonth: number | null
+  weekStartsOn: number | null
+  attendanceCutoffTime: string | null
+  requireMarksApproval: boolean | null
+  allowStudentResultAccess: boolean | null
+  allowParentResultAccess: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -48,6 +66,12 @@ export type SchoolConfigurationMaxAggregateOutputType = {
   attendanceEnabled: boolean | null
   notificationsEnabled: boolean | null
   parentAccessEnabled: boolean | null
+  academicYearStartMonth: number | null
+  weekStartsOn: number | null
+  attendanceCutoffTime: string | null
+  requireMarksApproval: boolean | null
+  allowStudentResultAccess: boolean | null
+  allowParentResultAccess: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -62,11 +86,27 @@ export type SchoolConfigurationCountAggregateOutputType = {
   attendanceEnabled: number
   notificationsEnabled: number
   parentAccessEnabled: number
+  academicYearStartMonth: number
+  weekStartsOn: number
+  attendanceCutoffTime: number
+  requireMarksApproval: number
+  allowStudentResultAccess: number
+  allowParentResultAccess: number
   createdAt: number
   updatedAt: number
   _all: number
 }
 
+
+export type SchoolConfigurationAvgAggregateInputType = {
+  academicYearStartMonth?: true
+  weekStartsOn?: true
+}
+
+export type SchoolConfigurationSumAggregateInputType = {
+  academicYearStartMonth?: true
+  weekStartsOn?: true
+}
 
 export type SchoolConfigurationMinAggregateInputType = {
   id?: true
@@ -78,6 +118,12 @@ export type SchoolConfigurationMinAggregateInputType = {
   attendanceEnabled?: true
   notificationsEnabled?: true
   parentAccessEnabled?: true
+  academicYearStartMonth?: true
+  weekStartsOn?: true
+  attendanceCutoffTime?: true
+  requireMarksApproval?: true
+  allowStudentResultAccess?: true
+  allowParentResultAccess?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -92,6 +138,12 @@ export type SchoolConfigurationMaxAggregateInputType = {
   attendanceEnabled?: true
   notificationsEnabled?: true
   parentAccessEnabled?: true
+  academicYearStartMonth?: true
+  weekStartsOn?: true
+  attendanceCutoffTime?: true
+  requireMarksApproval?: true
+  allowStudentResultAccess?: true
+  allowParentResultAccess?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -106,6 +158,12 @@ export type SchoolConfigurationCountAggregateInputType = {
   attendanceEnabled?: true
   notificationsEnabled?: true
   parentAccessEnabled?: true
+  academicYearStartMonth?: true
+  weekStartsOn?: true
+  attendanceCutoffTime?: true
+  requireMarksApproval?: true
+  allowStudentResultAccess?: true
+  allowParentResultAccess?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -149,6 +207,18 @@ export type SchoolConfigurationAggregateArgs<ExtArgs extends runtime.Types.Exten
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
+   * Select which fields to average
+  **/
+  _avg?: SchoolConfigurationAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: SchoolConfigurationSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
    * Select which fields to find the minimum value
   **/
   _min?: SchoolConfigurationMinAggregateInputType
@@ -179,6 +249,8 @@ export type SchoolConfigurationGroupByArgs<ExtArgs extends runtime.Types.Extensi
   take?: number
   skip?: number
   _count?: SchoolConfigurationCountAggregateInputType | true
+  _avg?: SchoolConfigurationAvgAggregateInputType
+  _sum?: SchoolConfigurationSumAggregateInputType
   _min?: SchoolConfigurationMinAggregateInputType
   _max?: SchoolConfigurationMaxAggregateInputType
 }
@@ -193,9 +265,17 @@ export type SchoolConfigurationGroupByOutputType = {
   attendanceEnabled: boolean
   notificationsEnabled: boolean
   parentAccessEnabled: boolean
+  academicYearStartMonth: number
+  weekStartsOn: number
+  attendanceCutoffTime: string
+  requireMarksApproval: boolean
+  allowStudentResultAccess: boolean
+  allowParentResultAccess: boolean
   createdAt: Date
   updatedAt: Date
   _count: SchoolConfigurationCountAggregateOutputType | null
+  _avg: SchoolConfigurationAvgAggregateOutputType | null
+  _sum: SchoolConfigurationSumAggregateOutputType | null
   _min: SchoolConfigurationMinAggregateOutputType | null
   _max: SchoolConfigurationMaxAggregateOutputType | null
 }
@@ -228,6 +308,12 @@ export type SchoolConfigurationWhereInput = {
   attendanceEnabled?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
   notificationsEnabled?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
   parentAccessEnabled?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
+  academicYearStartMonth?: Prisma.IntFilter<"SchoolConfiguration"> | number
+  weekStartsOn?: Prisma.IntFilter<"SchoolConfiguration"> | number
+  attendanceCutoffTime?: Prisma.StringFilter<"SchoolConfiguration"> | string
+  requireMarksApproval?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
+  allowStudentResultAccess?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
+  allowParentResultAccess?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
   createdAt?: Prisma.DateTimeFilter<"SchoolConfiguration"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"SchoolConfiguration"> | Date | string
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
@@ -243,6 +329,12 @@ export type SchoolConfigurationOrderByWithRelationInput = {
   attendanceEnabled?: Prisma.SortOrder
   notificationsEnabled?: Prisma.SortOrder
   parentAccessEnabled?: Prisma.SortOrder
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
+  attendanceCutoffTime?: Prisma.SortOrder
+  requireMarksApproval?: Prisma.SortOrder
+  allowStudentResultAccess?: Prisma.SortOrder
+  allowParentResultAccess?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   school?: Prisma.SchoolOrderByWithRelationInput
@@ -261,6 +353,12 @@ export type SchoolConfigurationWhereUniqueInput = Prisma.AtLeast<{
   attendanceEnabled?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
   notificationsEnabled?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
   parentAccessEnabled?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
+  academicYearStartMonth?: Prisma.IntFilter<"SchoolConfiguration"> | number
+  weekStartsOn?: Prisma.IntFilter<"SchoolConfiguration"> | number
+  attendanceCutoffTime?: Prisma.StringFilter<"SchoolConfiguration"> | string
+  requireMarksApproval?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
+  allowStudentResultAccess?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
+  allowParentResultAccess?: Prisma.BoolFilter<"SchoolConfiguration"> | boolean
   createdAt?: Prisma.DateTimeFilter<"SchoolConfiguration"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"SchoolConfiguration"> | Date | string
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
@@ -276,11 +374,19 @@ export type SchoolConfigurationOrderByWithAggregationInput = {
   attendanceEnabled?: Prisma.SortOrder
   notificationsEnabled?: Prisma.SortOrder
   parentAccessEnabled?: Prisma.SortOrder
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
+  attendanceCutoffTime?: Prisma.SortOrder
+  requireMarksApproval?: Prisma.SortOrder
+  allowStudentResultAccess?: Prisma.SortOrder
+  allowParentResultAccess?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.SchoolConfigurationCountOrderByAggregateInput
+  _avg?: Prisma.SchoolConfigurationAvgOrderByAggregateInput
   _max?: Prisma.SchoolConfigurationMaxOrderByAggregateInput
   _min?: Prisma.SchoolConfigurationMinOrderByAggregateInput
+  _sum?: Prisma.SchoolConfigurationSumOrderByAggregateInput
 }
 
 export type SchoolConfigurationScalarWhereWithAggregatesInput = {
@@ -296,6 +402,12 @@ export type SchoolConfigurationScalarWhereWithAggregatesInput = {
   attendanceEnabled?: Prisma.BoolWithAggregatesFilter<"SchoolConfiguration"> | boolean
   notificationsEnabled?: Prisma.BoolWithAggregatesFilter<"SchoolConfiguration"> | boolean
   parentAccessEnabled?: Prisma.BoolWithAggregatesFilter<"SchoolConfiguration"> | boolean
+  academicYearStartMonth?: Prisma.IntWithAggregatesFilter<"SchoolConfiguration"> | number
+  weekStartsOn?: Prisma.IntWithAggregatesFilter<"SchoolConfiguration"> | number
+  attendanceCutoffTime?: Prisma.StringWithAggregatesFilter<"SchoolConfiguration"> | string
+  requireMarksApproval?: Prisma.BoolWithAggregatesFilter<"SchoolConfiguration"> | boolean
+  allowStudentResultAccess?: Prisma.BoolWithAggregatesFilter<"SchoolConfiguration"> | boolean
+  allowParentResultAccess?: Prisma.BoolWithAggregatesFilter<"SchoolConfiguration"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"SchoolConfiguration"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"SchoolConfiguration"> | Date | string
 }
@@ -309,6 +421,12 @@ export type SchoolConfigurationCreateInput = {
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: number
+  weekStartsOn?: number
+  attendanceCutoffTime?: string
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   school: Prisma.SchoolCreateNestedOneWithoutConfigurationInput
@@ -324,6 +442,12 @@ export type SchoolConfigurationUncheckedCreateInput = {
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: number
+  weekStartsOn?: number
+  attendanceCutoffTime?: string
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -337,6 +461,12 @@ export type SchoolConfigurationUpdateInput = {
   attendanceEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   notificationsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   parentAccessEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  academicYearStartMonth?: Prisma.IntFieldUpdateOperationsInput | number
+  weekStartsOn?: Prisma.IntFieldUpdateOperationsInput | number
+  attendanceCutoffTime?: Prisma.StringFieldUpdateOperationsInput | string
+  requireMarksApproval?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowStudentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowParentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   school?: Prisma.SchoolUpdateOneRequiredWithoutConfigurationNestedInput
@@ -352,6 +482,12 @@ export type SchoolConfigurationUncheckedUpdateInput = {
   attendanceEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   notificationsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   parentAccessEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  academicYearStartMonth?: Prisma.IntFieldUpdateOperationsInput | number
+  weekStartsOn?: Prisma.IntFieldUpdateOperationsInput | number
+  attendanceCutoffTime?: Prisma.StringFieldUpdateOperationsInput | string
+  requireMarksApproval?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowStudentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowParentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -366,6 +502,12 @@ export type SchoolConfigurationCreateManyInput = {
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: number
+  weekStartsOn?: number
+  attendanceCutoffTime?: string
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -379,6 +521,12 @@ export type SchoolConfigurationUpdateManyMutationInput = {
   attendanceEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   notificationsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   parentAccessEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  academicYearStartMonth?: Prisma.IntFieldUpdateOperationsInput | number
+  weekStartsOn?: Prisma.IntFieldUpdateOperationsInput | number
+  attendanceCutoffTime?: Prisma.StringFieldUpdateOperationsInput | string
+  requireMarksApproval?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowStudentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowParentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -393,6 +541,12 @@ export type SchoolConfigurationUncheckedUpdateManyInput = {
   attendanceEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   notificationsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   parentAccessEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  academicYearStartMonth?: Prisma.IntFieldUpdateOperationsInput | number
+  weekStartsOn?: Prisma.IntFieldUpdateOperationsInput | number
+  attendanceCutoffTime?: Prisma.StringFieldUpdateOperationsInput | string
+  requireMarksApproval?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowStudentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowParentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -412,8 +566,19 @@ export type SchoolConfigurationCountOrderByAggregateInput = {
   attendanceEnabled?: Prisma.SortOrder
   notificationsEnabled?: Prisma.SortOrder
   parentAccessEnabled?: Prisma.SortOrder
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
+  attendanceCutoffTime?: Prisma.SortOrder
+  requireMarksApproval?: Prisma.SortOrder
+  allowStudentResultAccess?: Prisma.SortOrder
+  allowParentResultAccess?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type SchoolConfigurationAvgOrderByAggregateInput = {
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
 }
 
 export type SchoolConfigurationMaxOrderByAggregateInput = {
@@ -426,6 +591,12 @@ export type SchoolConfigurationMaxOrderByAggregateInput = {
   attendanceEnabled?: Prisma.SortOrder
   notificationsEnabled?: Prisma.SortOrder
   parentAccessEnabled?: Prisma.SortOrder
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
+  attendanceCutoffTime?: Prisma.SortOrder
+  requireMarksApproval?: Prisma.SortOrder
+  allowStudentResultAccess?: Prisma.SortOrder
+  allowParentResultAccess?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -440,8 +611,19 @@ export type SchoolConfigurationMinOrderByAggregateInput = {
   attendanceEnabled?: Prisma.SortOrder
   notificationsEnabled?: Prisma.SortOrder
   parentAccessEnabled?: Prisma.SortOrder
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
+  attendanceCutoffTime?: Prisma.SortOrder
+  requireMarksApproval?: Prisma.SortOrder
+  allowStudentResultAccess?: Prisma.SortOrder
+  allowParentResultAccess?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type SchoolConfigurationSumOrderByAggregateInput = {
+  academicYearStartMonth?: Prisma.SortOrder
+  weekStartsOn?: Prisma.SortOrder
 }
 
 export type SchoolConfigurationCreateNestedOneWithoutSchoolInput = {
@@ -484,6 +666,14 @@ export type EnumSchoolCalendarTypeFieldUpdateOperationsInput = {
   set?: $Enums.SchoolCalendarType
 }
 
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type SchoolConfigurationCreateWithoutSchoolInput = {
   id?: string
   defaultLanguage?: $Enums.SchoolLanguage
@@ -493,6 +683,12 @@ export type SchoolConfigurationCreateWithoutSchoolInput = {
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: number
+  weekStartsOn?: number
+  attendanceCutoffTime?: string
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -506,6 +702,12 @@ export type SchoolConfigurationUncheckedCreateWithoutSchoolInput = {
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: number
+  weekStartsOn?: number
+  attendanceCutoffTime?: string
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -535,6 +737,12 @@ export type SchoolConfigurationUpdateWithoutSchoolInput = {
   attendanceEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   notificationsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   parentAccessEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  academicYearStartMonth?: Prisma.IntFieldUpdateOperationsInput | number
+  weekStartsOn?: Prisma.IntFieldUpdateOperationsInput | number
+  attendanceCutoffTime?: Prisma.StringFieldUpdateOperationsInput | string
+  requireMarksApproval?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowStudentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowParentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -548,6 +756,12 @@ export type SchoolConfigurationUncheckedUpdateWithoutSchoolInput = {
   attendanceEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   notificationsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   parentAccessEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  academicYearStartMonth?: Prisma.IntFieldUpdateOperationsInput | number
+  weekStartsOn?: Prisma.IntFieldUpdateOperationsInput | number
+  attendanceCutoffTime?: Prisma.StringFieldUpdateOperationsInput | string
+  requireMarksApproval?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowStudentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  allowParentResultAccess?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -564,6 +778,12 @@ export type SchoolConfigurationSelect<ExtArgs extends runtime.Types.Extensions.I
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: boolean
+  weekStartsOn?: boolean
+  attendanceCutoffTime?: boolean
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -579,6 +799,12 @@ export type SchoolConfigurationSelectCreateManyAndReturn<ExtArgs extends runtime
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: boolean
+  weekStartsOn?: boolean
+  attendanceCutoffTime?: boolean
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -594,6 +820,12 @@ export type SchoolConfigurationSelectUpdateManyAndReturn<ExtArgs extends runtime
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: boolean
+  weekStartsOn?: boolean
+  attendanceCutoffTime?: boolean
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -609,11 +841,17 @@ export type SchoolConfigurationSelectScalar = {
   attendanceEnabled?: boolean
   notificationsEnabled?: boolean
   parentAccessEnabled?: boolean
+  academicYearStartMonth?: boolean
+  weekStartsOn?: boolean
+  attendanceCutoffTime?: boolean
+  requireMarksApproval?: boolean
+  allowStudentResultAccess?: boolean
+  allowParentResultAccess?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type SchoolConfigurationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "schoolId" | "defaultLanguage" | "calendarType" | "timezone" | "academicYearLabel" | "attendanceEnabled" | "notificationsEnabled" | "parentAccessEnabled" | "createdAt" | "updatedAt", ExtArgs["result"]["schoolConfiguration"]>
+export type SchoolConfigurationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "schoolId" | "defaultLanguage" | "calendarType" | "timezone" | "academicYearLabel" | "attendanceEnabled" | "notificationsEnabled" | "parentAccessEnabled" | "academicYearStartMonth" | "weekStartsOn" | "attendanceCutoffTime" | "requireMarksApproval" | "allowStudentResultAccess" | "allowParentResultAccess" | "createdAt" | "updatedAt", ExtArgs["result"]["schoolConfiguration"]>
 export type SchoolConfigurationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
 }
@@ -639,6 +877,12 @@ export type $SchoolConfigurationPayload<ExtArgs extends runtime.Types.Extensions
     attendanceEnabled: boolean
     notificationsEnabled: boolean
     parentAccessEnabled: boolean
+    academicYearStartMonth: number
+    weekStartsOn: number
+    attendanceCutoffTime: string
+    requireMarksApproval: boolean
+    allowStudentResultAccess: boolean
+    allowParentResultAccess: boolean
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["schoolConfiguration"]>
@@ -1074,6 +1318,12 @@ export interface SchoolConfigurationFieldRefs {
   readonly attendanceEnabled: Prisma.FieldRef<"SchoolConfiguration", 'Boolean'>
   readonly notificationsEnabled: Prisma.FieldRef<"SchoolConfiguration", 'Boolean'>
   readonly parentAccessEnabled: Prisma.FieldRef<"SchoolConfiguration", 'Boolean'>
+  readonly academicYearStartMonth: Prisma.FieldRef<"SchoolConfiguration", 'Int'>
+  readonly weekStartsOn: Prisma.FieldRef<"SchoolConfiguration", 'Int'>
+  readonly attendanceCutoffTime: Prisma.FieldRef<"SchoolConfiguration", 'String'>
+  readonly requireMarksApproval: Prisma.FieldRef<"SchoolConfiguration", 'Boolean'>
+  readonly allowStudentResultAccess: Prisma.FieldRef<"SchoolConfiguration", 'Boolean'>
+  readonly allowParentResultAccess: Prisma.FieldRef<"SchoolConfiguration", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"SchoolConfiguration", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"SchoolConfiguration", 'DateTime'>
 }

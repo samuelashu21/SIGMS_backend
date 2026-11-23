@@ -41,6 +41,22 @@ import {
 } from '../middleware/tenant-isolation.middleware.js';
 import { getSchoolStudentController, getSchoolStudentsController } from '../controllers/tenant-data.controller.js';
 
+
+import {
+  createAcademicYearController,
+  getAcademicYearsController,
+  getAcademicYearController,
+  updateAcademicYearController,
+  setCurrentAcademicYearController
+} from '../../academic/controllers/academic-year.controller.js';
+
+import {
+  createSemesterController,
+  getSemestersController,
+  updateSemesterController,
+  setCurrentSemesterController
+} from '../../academic/controllers/semester.controller.js';
+
 const router = Router();
 
 router.use(authenticate);
@@ -147,6 +163,72 @@ router.get(
     'TEACHER'
   ),
   getSchoolStudentController
+);
+
+
+// Academic year management
+router.post(
+  '/:schoolId/academic-years',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  createAcademicYearController
+);
+
+router.get(
+  '/:schoolId/academic-years',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getAcademicYearsController
+);
+
+router.get(
+  '/:schoolId/academic-years/:academicYearId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getAcademicYearController
+);
+
+router.patch(
+  '/:schoolId/academic-years/:academicYearId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateAcademicYearController
+);
+
+router.patch(
+  '/:schoolId/academic-years/:academicYearId/current',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  setCurrentAcademicYearController
+);
+
+// Semester management
+router.post(
+  '/:schoolId/academic-years/:academicYearId/semesters',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  createSemesterController
+);
+
+router.get(
+  '/:schoolId/academic-years/:academicYearId/semesters',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getSemestersController
+);
+
+router.patch(
+  '/:schoolId/semesters/:semesterId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateSemesterController
+);
+
+router.patch(
+  '/:schoolId/semesters/:semesterId/current',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  setCurrentSemesterController
 );
 
 export default router;

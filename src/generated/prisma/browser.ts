@@ -57,3 +57,13 @@ export type UserSchoolMembership = Prisma.UserSchoolMembershipModel
  * 
  */
 export type SchoolConfiguration = Prisma.SchoolConfigurationModel
+/**
+ * Model AcademicYear
+ * 
+ */
+export type AcademicYear = Prisma.AcademicYearModel
+/**
+ * Model Semester
+ * 
+ */
+export type Semester = Prisma.SemesterModel

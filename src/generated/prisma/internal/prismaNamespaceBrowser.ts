@@ -58,7 +58,9 @@ export const ModelName = {
   PasswordResetToken: 'PasswordResetToken',
   UserActivityLog: 'UserActivityLog',
   UserSchoolMembership: 'UserSchoolMembership',
-  SchoolConfiguration: 'SchoolConfiguration'
+  SchoolConfiguration: 'SchoolConfiguration',
+  AcademicYear: 'AcademicYear',
+  Semester: 'Semester'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -186,11 +188,49 @@ export const SchoolConfigurationScalarFieldEnum = {
   attendanceEnabled: 'attendanceEnabled',
   notificationsEnabled: 'notificationsEnabled',
   parentAccessEnabled: 'parentAccessEnabled',
+  academicYearStartMonth: 'academicYearStartMonth',
+  weekStartsOn: 'weekStartsOn',
+  attendanceCutoffTime: 'attendanceCutoffTime',
+  requireMarksApproval: 'requireMarksApproval',
+  allowStudentResultAccess: 'allowStudentResultAccess',
+  allowParentResultAccess: 'allowParentResultAccess',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
 export type SchoolConfigurationScalarFieldEnum = (typeof SchoolConfigurationScalarFieldEnum)[keyof typeof SchoolConfigurationScalarFieldEnum]
+
+
+export const AcademicYearScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  name: 'name',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  status: 'status',
+  isCurrent: 'isCurrent',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicYearScalarFieldEnum = (typeof AcademicYearScalarFieldEnum)[keyof typeof AcademicYearScalarFieldEnum]
+
+
+export const SemesterScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  name: 'name',
+  sequence: 'sequence',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  status: 'status',
+  isCurrent: 'isCurrent',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SemesterScalarFieldEnum = (typeof SemesterScalarFieldEnum)[keyof typeof SemesterScalarFieldEnum]
 
 
 export const SortOrder = {
