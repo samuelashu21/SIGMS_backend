@@ -414,7 +414,8 @@ export const ModelName = {
   AcademicConfiguration: 'AcademicConfiguration',
   GradingSystem: 'GradingSystem',
   GradeScale: 'GradeScale',
-  AcademicCalendarEvent: 'AcademicCalendarEvent'
+  AcademicCalendarEvent: 'AcademicCalendarEvent',
+  AdmissionApplication: 'AdmissionApplication'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -430,7 +431,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1766,6 +1767,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AdmissionApplication: {
+      payload: Prisma.$AdmissionApplicationPayload<ExtArgs>
+      fields: Prisma.AdmissionApplicationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AdmissionApplicationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AdmissionApplicationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>
+        }
+        findFirst: {
+          args: Prisma.AdmissionApplicationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AdmissionApplicationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>
+        }
+        findMany: {
+          args: Prisma.AdmissionApplicationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>[]
+        }
+        create: {
+          args: Prisma.AdmissionApplicationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>
+        }
+        createMany: {
+          args: Prisma.AdmissionApplicationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AdmissionApplicationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>[]
+        }
+        delete: {
+          args: Prisma.AdmissionApplicationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>
+        }
+        update: {
+          args: Prisma.AdmissionApplicationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>
+        }
+        deleteMany: {
+          args: Prisma.AdmissionApplicationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AdmissionApplicationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AdmissionApplicationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>[]
+        }
+        upsert: {
+          args: Prisma.AdmissionApplicationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AdmissionApplicationPayload>
+        }
+        aggregate: {
+          args: Prisma.AdmissionApplicationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAdmissionApplication>
+        }
+        groupBy: {
+          args: Prisma.AdmissionApplicationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionApplicationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AdmissionApplicationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AdmissionApplicationCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2085,6 +2160,25 @@ export const AcademicCalendarEventScalarFieldEnum = {
 export type AcademicCalendarEventScalarFieldEnum = (typeof AcademicCalendarEventScalarFieldEnum)[keyof typeof AcademicCalendarEventScalarFieldEnum]
 
 
+export const AdmissionApplicationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationNumber: 'applicationNumber',
+  applicantName: 'applicantName',
+  dateOfBirth: 'dateOfBirth',
+  gender: 'gender',
+  requestedGradeId: 'requestedGradeId',
+  academicYearId: 'academicYearId',
+  status: 'status',
+  notes: 'notes',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AdmissionApplicationScalarFieldEnum = (typeof AdmissionApplicationScalarFieldEnum)[keyof typeof AdmissionApplicationScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -2322,6 +2416,34 @@ export type ListEnumAcademicCalendarEventTypeFieldRefInput<$PrismaModel> = Field
 
 
 /**
+ * Reference to a field of type 'ApplicantGender'
+ */
+export type EnumApplicantGenderFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ApplicantGender'>
+    
+
+
+/**
+ * Reference to a field of type 'ApplicantGender[]'
+ */
+export type ListEnumApplicantGenderFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ApplicantGender[]'>
+    
+
+
+/**
+ * Reference to a field of type 'AdmissionStatus'
+ */
+export type EnumAdmissionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AdmissionStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'AdmissionStatus[]'
+ */
+export type ListEnumAdmissionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AdmissionStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -2503,6 +2625,7 @@ export type GlobalOmitConfig = {
   gradingSystem?: Prisma.GradingSystemOmit
   gradeScale?: Prisma.GradeScaleOmit
   academicCalendarEvent?: Prisma.AcademicCalendarEventOmit
+  admissionApplication?: Prisma.AdmissionApplicationOmit
 }
 
 /* Types for Logging */

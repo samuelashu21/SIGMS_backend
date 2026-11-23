@@ -131,3 +131,8 @@ export type GradeScale = Prisma.GradeScaleModel
  * 
  */
 export type AcademicCalendarEvent = Prisma.AcademicCalendarEventModel
+/**
+ * Model AdmissionApplication
+ * 
+ */
+export type AdmissionApplication = Prisma.AdmissionApplicationModel

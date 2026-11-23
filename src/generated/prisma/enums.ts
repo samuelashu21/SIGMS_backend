@@ -90,3 +90,25 @@ export const AcademicCalendarEventType = {
 } as const
 
 export type AcademicCalendarEventType = (typeof AcademicCalendarEventType)[keyof typeof AcademicCalendarEventType]
+
+
+export const AdmissionStatus = {
+  DRAFT: 'DRAFT',
+  SUBMITTED: 'SUBMITTED',
+  UNDER_REVIEW: 'UNDER_REVIEW',
+  NEEDS_INFORMATION: 'NEEDS_INFORMATION',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type AdmissionStatus = (typeof AdmissionStatus)[keyof typeof AdmissionStatus]
+
+
+export const ApplicantGender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER'
+} as const
+
+export type ApplicantGender = (typeof ApplicantGender)[keyof typeof ApplicantGender]

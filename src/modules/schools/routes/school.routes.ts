@@ -101,6 +101,7 @@ import {
   replaceGradeScalesController
 } from '../../academic/controllers/grading-system.controller.js';
 import { createCalendarEventController, deleteCalendarEventController, getCalendarEventController, getCalendarEventsController, updateCalendarEventController } from '../../academic/controllers/academic-calendar.controller.js';
+import { createAdmissionApplicationController, getAdmissionApplicationController, getAdmissionApplicationsController, updateAdmissionApplicationController } from '../../admissions/controllers/admission-application.controller.js';
 
 const router = Router();
 
@@ -512,6 +513,55 @@ router.delete(
   '/:schoolId/calendar-events/:eventId',
   authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
   deleteCalendarEventController
+);
+
+
+// Registrar-managed admission applications
+
+router.post(
+  '/:schoolId/admissions',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  createAdmissionApplicationController
+);
+
+router.get(
+  '/:schoolId/admissions',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getAdmissionApplicationsController
+);
+
+router.get(
+  '/:schoolId/admissions/:applicationId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getAdmissionApplicationController
+);
+
+router.patch(
+  '/:schoolId/admissions/:applicationId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  updateAdmissionApplicationController
 );
 
 export default router;

@@ -45,6 +45,7 @@ model School {
   academicConfiguration AcademicConfiguration?
   gradingSystems GradingSystem[]
   academicCalendarEvents AcademicCalendarEvent[]
+  admissionApplications AdmissionApplication[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -121,6 +122,7 @@ model User {
   actorActivityLogs  UserActivityLog[] @relation("UserActivityActor")
   targetActivityLogs UserActivityLog[] @relation("UserActivityTarget")
   memberships UserSchoolMembership[]
+  createdAdmissionApplications AdmissionApplication[]
 
   @@map("users")
 }
@@ -268,6 +270,7 @@ model AcademicYear {
   semesters Semester[]
   sections Section[]
   calendarEvents AcademicCalendarEvent[]
+  admissionApplications AdmissionApplication[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -330,6 +333,7 @@ model Grade {
   sections Section[]
 
   subjectAssignments GradeSubject[]
+  admissionApplications AdmissionApplication[]
 
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
@@ -536,4 +540,62 @@ model AcademicCalendarEvent {
   @@index([schoolId, eventType], map: "calendar_events_school_type_idx")
   @@index([schoolId, isPublished], map: "calendar_events_school_published_idx")
   @@map("academic_calendar_events")
+}
+
+
+
+enum AdmissionStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  NEEDS_INFORMATION
+  APPROVED
+  REJECTED
+  WITHDRAWN
+
+  @@map("admission_statuses")
+}
+
+enum ApplicantGender {
+  MALE
+  FEMALE
+  OTHER
+
+  @@map("applicant_genders")
+}
+
+
+
+model AdmissionApplication {
+  id                String          @id @default(uuid()) @db.Uuid
+  schoolId          String          @map("school_id") @db.Uuid
+  applicationNumber String          @map("application_number")
+
+  applicantName    String          @map("applicant_name")
+  dateOfBirth      DateTime?       @map("date_of_birth") @db.Date
+  gender           ApplicantGender?
+  requestedGradeId String          @map("requested_grade_id") @db.Uuid
+  academicYearId   String          @map("academic_year_id") @db.Uuid
+
+  status           AdmissionStatus @default(DRAFT)
+  notes            String?
+  createdById      String          @map("created_by_id") @db.Uuid
+
+  createdAt        DateTime        @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime        @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId],references: [id],onDelete: Restrict)
+
+  requestedGrade Grade @relation( fields: [requestedGradeId, schoolId], references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation( fields: [academicYearId, schoolId], references: [id, schoolId],onDelete: Restrict)
+
+  createdBy User @relation(fields: [createdById], references: [id], onDelete: Restrict)
+
+  @@unique([schoolId, applicationNumber], map: "admission_applications_school_number_key")
+  @@index([schoolId, status], map: "admission_applications_school_status_idx")
+  @@index([schoolId, academicYearId], map: "admission_applications_school_year_idx")
+  @@index([schoolId, requestedGradeId], map: "admission_applications_school_grade_idx")
+  @@index([createdById], map: "admission_applications_created_by_idx")
+  @@map("admission_applications")
 }

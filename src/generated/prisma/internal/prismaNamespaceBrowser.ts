@@ -68,7 +68,8 @@ export const ModelName = {
   AcademicConfiguration: 'AcademicConfiguration',
   GradingSystem: 'GradingSystem',
   GradeScale: 'GradeScale',
-  AcademicCalendarEvent: 'AcademicCalendarEvent'
+  AcademicCalendarEvent: 'AcademicCalendarEvent',
+  AdmissionApplication: 'AdmissionApplication'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -365,6 +366,25 @@ export const AcademicCalendarEventScalarFieldEnum = {
 } as const
 
 export type AcademicCalendarEventScalarFieldEnum = (typeof AcademicCalendarEventScalarFieldEnum)[keyof typeof AcademicCalendarEventScalarFieldEnum]
+
+
+export const AdmissionApplicationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  applicationNumber: 'applicationNumber',
+  applicantName: 'applicantName',
+  dateOfBirth: 'dateOfBirth',
+  gender: 'gender',
+  requestedGradeId: 'requestedGradeId',
+  academicYearId: 'academicYearId',
+  status: 'status',
+  notes: 'notes',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AdmissionApplicationScalarFieldEnum = (typeof AdmissionApplicationScalarFieldEnum)[keyof typeof AdmissionApplicationScalarFieldEnum]
 
 
 export const SortOrder = {

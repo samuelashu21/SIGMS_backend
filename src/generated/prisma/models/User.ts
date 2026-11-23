@@ -219,6 +219,7 @@ export type UserWhereInput = {
   actorActivityLogs?: Prisma.UserActivityLogListRelationFilter
   targetActivityLogs?: Prisma.UserActivityLogListRelationFilter
   memberships?: Prisma.UserSchoolMembershipListRelationFilter
+  createdAdmissionApplications?: Prisma.AdmissionApplicationListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -236,6 +237,7 @@ export type UserOrderByWithRelationInput = {
   actorActivityLogs?: Prisma.UserActivityLogOrderByRelationAggregateInput
   targetActivityLogs?: Prisma.UserActivityLogOrderByRelationAggregateInput
   memberships?: Prisma.UserSchoolMembershipOrderByRelationAggregateInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -256,6 +258,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   actorActivityLogs?: Prisma.UserActivityLogListRelationFilter
   targetActivityLogs?: Prisma.UserActivityLogListRelationFilter
   memberships?: Prisma.UserSchoolMembershipListRelationFilter
+  createdAdmissionApplications?: Prisma.AdmissionApplicationListRelationFilter
 }, "id" | "email" | "username">
 
 export type UserOrderByWithAggregationInput = {
@@ -303,6 +306,7 @@ export type UserCreateInput = {
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -320,6 +324,7 @@ export type UserUncheckedCreateInput = {
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUpdateInput = {
@@ -337,6 +342,7 @@ export type UserUpdateInput = {
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -354,6 +360,7 @@ export type UserUncheckedUpdateInput = {
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -507,6 +514,20 @@ export type UserUpdateOneRequiredWithoutMembershipsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutMembershipsInput, Prisma.UserUpdateWithoutMembershipsInput>, Prisma.UserUncheckedUpdateWithoutMembershipsInput>
 }
 
+export type UserCreateNestedOneWithoutCreatedAdmissionApplicationsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedAdmissionApplicationsInput, Prisma.UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedAdmissionApplicationsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCreatedAdmissionApplicationsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedAdmissionApplicationsInput, Prisma.UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedAdmissionApplicationsInput
+  upsert?: Prisma.UserUpsertWithoutCreatedAdmissionApplicationsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCreatedAdmissionApplicationsInput, Prisma.UserUpdateWithoutCreatedAdmissionApplicationsInput>, Prisma.UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   id?: string
   email?: string | null
@@ -521,6 +542,7 @@ export type UserCreateWithoutSessionsInput = {
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -537,6 +559,7 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -569,6 +592,7 @@ export type UserUpdateWithoutSessionsInput = {
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -585,6 +609,7 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateWithoutPasswordResetTokensInput = {
@@ -601,6 +626,7 @@ export type UserCreateWithoutPasswordResetTokensInput = {
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
@@ -617,6 +643,7 @@ export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutPasswordResetTokensInput = {
@@ -649,6 +676,7 @@ export type UserUpdateWithoutPasswordResetTokensInput = {
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
@@ -665,6 +693,7 @@ export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateWithoutActorActivityLogsInput = {
@@ -681,6 +710,7 @@ export type UserCreateWithoutActorActivityLogsInput = {
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutActorActivityLogsInput = {
@@ -697,6 +727,7 @@ export type UserUncheckedCreateWithoutActorActivityLogsInput = {
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
   memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutActorActivityLogsInput = {
@@ -718,6 +749,7 @@ export type UserCreateWithoutTargetActivityLogsInput = {
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
@@ -734,6 +766,7 @@ export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutTargetActivityLogsInput = {
@@ -766,6 +799,7 @@ export type UserUpdateWithoutActorActivityLogsInput = {
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
@@ -782,6 +816,7 @@ export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
   memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUpsertWithoutTargetActivityLogsInput = {
@@ -809,6 +844,7 @@ export type UserUpdateWithoutTargetActivityLogsInput = {
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
@@ -825,6 +861,7 @@ export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateWithoutMembershipsInput = {
@@ -841,6 +878,7 @@ export type UserCreateWithoutMembershipsInput = {
   sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutMembershipsInput = {
@@ -857,6 +895,7 @@ export type UserUncheckedCreateWithoutMembershipsInput = {
   sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutMembershipsInput = {
@@ -889,6 +928,7 @@ export type UserUpdateWithoutMembershipsInput = {
   sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMembershipsInput = {
@@ -905,6 +945,91 @@ export type UserUncheckedUpdateWithoutMembershipsInput = {
   sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
   actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
   targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutCreatedAdmissionApplicationsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutCreatedAdmissionApplicationsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedAdmissionApplicationsInput, Prisma.UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput>
+}
+
+export type UserUpsertWithoutCreatedAdmissionApplicationsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCreatedAdmissionApplicationsInput, Prisma.UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedAdmissionApplicationsInput, Prisma.UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCreatedAdmissionApplicationsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCreatedAdmissionApplicationsInput, Prisma.UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput>
+}
+
+export type UserUpdateWithoutCreatedAdmissionApplicationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -918,6 +1043,7 @@ export type UserCountOutputType = {
   actorActivityLogs: number
   targetActivityLogs: number
   memberships: number
+  createdAdmissionApplications: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -926,6 +1052,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   actorActivityLogs?: boolean | UserCountOutputTypeCountActorActivityLogsArgs
   targetActivityLogs?: boolean | UserCountOutputTypeCountTargetActivityLogsArgs
   memberships?: boolean | UserCountOutputTypeCountMembershipsArgs
+  createdAdmissionApplications?: boolean | UserCountOutputTypeCountCreatedAdmissionApplicationsArgs
 }
 
 /**
@@ -973,6 +1100,13 @@ export type UserCountOutputTypeCountMembershipsArgs<ExtArgs extends runtime.Type
   where?: Prisma.UserSchoolMembershipWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCreatedAdmissionApplicationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AdmissionApplicationWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -989,6 +1123,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   actorActivityLogs?: boolean | Prisma.User$actorActivityLogsArgs<ExtArgs>
   targetActivityLogs?: boolean | Prisma.User$targetActivityLogsArgs<ExtArgs>
   memberships?: boolean | Prisma.User$membershipsArgs<ExtArgs>
+  createdAdmissionApplications?: boolean | Prisma.User$createdAdmissionApplicationsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1035,6 +1170,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   actorActivityLogs?: boolean | Prisma.User$actorActivityLogsArgs<ExtArgs>
   targetActivityLogs?: boolean | Prisma.User$targetActivityLogsArgs<ExtArgs>
   memberships?: boolean | Prisma.User$membershipsArgs<ExtArgs>
+  createdAdmissionApplications?: boolean | Prisma.User$createdAdmissionApplicationsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1048,6 +1184,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     actorActivityLogs: Prisma.$UserActivityLogPayload<ExtArgs>[]
     targetActivityLogs: Prisma.$UserActivityLogPayload<ExtArgs>[]
     memberships: Prisma.$UserSchoolMembershipPayload<ExtArgs>[]
+    createdAdmissionApplications: Prisma.$AdmissionApplicationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1458,6 +1595,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   actorActivityLogs<T extends Prisma.User$actorActivityLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$actorActivityLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserActivityLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   targetActivityLogs<T extends Prisma.User$targetActivityLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$targetActivityLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserActivityLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   memberships<T extends Prisma.User$membershipsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$membershipsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserSchoolMembershipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdAdmissionApplications<T extends Prisma.User$createdAdmissionApplicationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdAdmissionApplicationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AdmissionApplicationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2006,6 +2144,30 @@ export type User$membershipsArgs<ExtArgs extends runtime.Types.Extensions.Intern
   take?: number
   skip?: number
   distinct?: Prisma.UserSchoolMembershipScalarFieldEnum | Prisma.UserSchoolMembershipScalarFieldEnum[]
+}
+
+/**
+ * User.createdAdmissionApplications
+ */
+export type User$createdAdmissionApplicationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AdmissionApplication
+   */
+  select?: Prisma.AdmissionApplicationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AdmissionApplication
+   */
+  omit?: Prisma.AdmissionApplicationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdmissionApplicationInclude<ExtArgs> | null
+  where?: Prisma.AdmissionApplicationWhereInput
+  orderBy?: Prisma.AdmissionApplicationOrderByWithRelationInput | Prisma.AdmissionApplicationOrderByWithRelationInput[]
+  cursor?: Prisma.AdmissionApplicationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AdmissionApplicationScalarFieldEnum | Prisma.AdmissionApplicationScalarFieldEnum[]
 }
 
 /**
