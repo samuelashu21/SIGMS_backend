@@ -42,3 +42,17 @@ export {
   getSchoolSettings,
   updateSchoolSettings
 } from './services/school-settings.service.js';
+
+
+export * from './types/tenant.types.js';
+
+export {
+  tenantWhere,
+  tenantCreateData,
+  assertTenantOwnership
+} from './services/tenant-query.service.js';
+
+export {
+  getSchoolStudents,
+  getSchoolStudent
+} from './services/tenant-data.service.js';

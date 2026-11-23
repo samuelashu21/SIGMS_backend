@@ -36,6 +36,11 @@ import {
   updateSchoolSettingsController
 } from '../controllers/school-settings.controller.js';
 
+import {
+  tenantIsolationMiddleware
+} from '../middleware/tenant-isolation.middleware.js';
+import { getSchoolStudentController, getSchoolStudentsController } from '../controllers/tenant-data.controller.js';
+
 const router = Router();
 
 router.use(authenticate);
@@ -113,6 +118,35 @@ router.patch(
   '/:schoolId/settings',
   authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN'),
   updateSchoolSettingsController
+);
+
+router.use('/:schoolId', requireSchoolMembership);
+
+
+router.get(
+  '/:schoolId/students',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getSchoolStudentsController
+);
+
+router.get(
+  '/:schoolId/students/:studentId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getSchoolStudentController
 );
 
 export default router;
