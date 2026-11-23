@@ -429,7 +429,9 @@ export const ModelName = {
   TeacherProfile: 'TeacherProfile',
   TeacherEmployment: 'TeacherEmployment',
   TeacherQualification: 'TeacherQualification',
-  TeacherSubjectAssignment: 'TeacherSubjectAssignment'
+  TeacherSubjectAssignment: 'TeacherSubjectAssignment',
+  TeacherClassAssignment: 'TeacherClassAssignment',
+  HomeroomTeacherAssignment: 'HomeroomTeacherAssignment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -445,7 +447,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2891,6 +2893,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    TeacherClassAssignment: {
+      payload: Prisma.$TeacherClassAssignmentPayload<ExtArgs>
+      fields: Prisma.TeacherClassAssignmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherClassAssignmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherClassAssignmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherClassAssignmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherClassAssignmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherClassAssignmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherClassAssignmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherClassAssignmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherClassAssignmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherClassAssignmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>
+        }
+        update: {
+          args: Prisma.TeacherClassAssignmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherClassAssignmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherClassAssignmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherClassAssignmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherClassAssignmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherClassAssignmentPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherClassAssignmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherClassAssignment>
+        }
+        groupBy: {
+          args: Prisma.TeacherClassAssignmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherClassAssignmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherClassAssignmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherClassAssignmentCountAggregateOutputType> | number
+        }
+      }
+    }
+    HomeroomTeacherAssignment: {
+      payload: Prisma.$HomeroomTeacherAssignmentPayload<ExtArgs>
+      fields: Prisma.HomeroomTeacherAssignmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.HomeroomTeacherAssignmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.HomeroomTeacherAssignmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>
+        }
+        findFirst: {
+          args: Prisma.HomeroomTeacherAssignmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.HomeroomTeacherAssignmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>
+        }
+        findMany: {
+          args: Prisma.HomeroomTeacherAssignmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>[]
+        }
+        create: {
+          args: Prisma.HomeroomTeacherAssignmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>
+        }
+        createMany: {
+          args: Prisma.HomeroomTeacherAssignmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.HomeroomTeacherAssignmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>[]
+        }
+        delete: {
+          args: Prisma.HomeroomTeacherAssignmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>
+        }
+        update: {
+          args: Prisma.HomeroomTeacherAssignmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.HomeroomTeacherAssignmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.HomeroomTeacherAssignmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.HomeroomTeacherAssignmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.HomeroomTeacherAssignmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$HomeroomTeacherAssignmentPayload>
+        }
+        aggregate: {
+          args: Prisma.HomeroomTeacherAssignmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateHomeroomTeacherAssignment>
+        }
+        groupBy: {
+          args: Prisma.HomeroomTeacherAssignmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.HomeroomTeacherAssignmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.HomeroomTeacherAssignmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.HomeroomTeacherAssignmentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3484,6 +3634,36 @@ export const TeacherSubjectAssignmentScalarFieldEnum = {
 } as const
 
 export type TeacherSubjectAssignmentScalarFieldEnum = (typeof TeacherSubjectAssignmentScalarFieldEnum)[keyof typeof TeacherSubjectAssignmentScalarFieldEnum]
+
+
+export const TeacherClassAssignmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  sectionId: 'sectionId',
+  academicYearId: 'academicYearId',
+  assignedAt: 'assignedAt',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherClassAssignmentScalarFieldEnum = (typeof TeacherClassAssignmentScalarFieldEnum)[keyof typeof TeacherClassAssignmentScalarFieldEnum]
+
+
+export const HomeroomTeacherAssignmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  sectionId: 'sectionId',
+  academicYearId: 'academicYearId',
+  assignedAt: 'assignedAt',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type HomeroomTeacherAssignmentScalarFieldEnum = (typeof HomeroomTeacherAssignmentScalarFieldEnum)[keyof typeof HomeroomTeacherAssignmentScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -4101,6 +4281,8 @@ export type GlobalOmitConfig = {
   teacherEmployment?: Prisma.TeacherEmploymentOmit
   teacherQualification?: Prisma.TeacherQualificationOmit
   teacherSubjectAssignment?: Prisma.TeacherSubjectAssignmentOmit
+  teacherClassAssignment?: Prisma.TeacherClassAssignmentOmit
+  homeroomTeacherAssignment?: Prisma.HomeroomTeacherAssignmentOmit
 }
 
 /* Types for Logging */

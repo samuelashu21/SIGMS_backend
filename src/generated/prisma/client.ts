@@ -206,3 +206,13 @@ export type TeacherQualification = Prisma.TeacherQualificationModel
  * 
  */
 export type TeacherSubjectAssignment = Prisma.TeacherSubjectAssignmentModel
+/**
+ * Model TeacherClassAssignment
+ * 
+ */
+export type TeacherClassAssignment = Prisma.TeacherClassAssignmentModel
+/**
+ * Model HomeroomTeacherAssignment
+ * 
+ */
+export type HomeroomTeacherAssignment = Prisma.HomeroomTeacherAssignmentModel

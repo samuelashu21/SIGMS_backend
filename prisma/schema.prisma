@@ -307,6 +307,8 @@ model AcademicYear {
   studentIdSequences StudentIdSequence[]
   enrollments AcademicEnrollment[]
   teacherAssignments TeacherSubjectAssignment[]
+  teacherClassAssignments TeacherClassAssignment[]
+  homeroomAssignments HomeroomTeacherAssignment[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -403,12 +405,16 @@ model Section {
   academicYear AcademicYear @relation(  fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict )
 
   academicEnrollments AcademicEnrollment[]
+  teacherAssignments TeacherClassAssignment[]
+  homeroomAssignments HomeroomTeacherAssignment[]
 
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
   @@index([schoolId, gradeId], map: "sections_school_grade_idx")
   @@index([schoolId, isActive], map: "sections_school_active_idx")
   @@map("sections")
+
+  @@unique([id, schoolId], map: "sections_id_school_key")
 
   @@unique([id, schoolId, gradeId, academicYearId],map: "sections_id_school_grade_year_key")
   
@@ -1055,6 +1061,8 @@ model TeacherProfile {
   employmentRecords TeacherEmployment[]
   qualifications TeacherQualification[]
   subjectAssignments TeacherSubjectAssignment[]
+  classAssignments TeacherClassAssignment[]
+  homeroomAssignments HomeroomTeacherAssignment[]
 
   @@unique([schoolId, userId], map: "teacher_profiles_school_user_key")
   @@unique([id, schoolId], map: "teacher_profiles_id_school_key")
@@ -1179,4 +1187,58 @@ model TeacherSubjectAssignment {
   @@index([schoolId, teacherId, academicYearId], map: "teacher_subject_assignment_teacher_year_idx")
   @@index([schoolId, subjectId, gradeId], map: "teacher_subject_assignment_subject_grade_idx")
   @@map("teacher_subject_assignments")
+}
+
+
+
+model TeacherClassAssignment {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  teacherId      String @map("teacher_id") @db.Uuid
+  sectionId      String @map("section_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  assignedAt DateTime @default(now()) @map("assigned_at") @db.Timestamptz(3)
+  isActive   Boolean  @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  teacher TeacherProfile @relation(fields: [teacherId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  section Section @relation( fields: [sectionId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  academicYear AcademicYear @relation( fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, teacherId, sectionId, academicYearId], map: "teacher_class_assignment_key")
+  @@index([schoolId, sectionId, academicYearId], map: "teacher_class_assignment_section_year_idx")
+  @@index([schoolId, teacherId, academicYearId], map: "teacher_class_assignment_teacher_year_idx")
+  @@map("teacher_class_assignments")
+}
+
+
+
+model HomeroomTeacherAssignment {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  teacherId      String @map("teacher_id") @db.Uuid
+  sectionId      String @map("section_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  assignedAt DateTime @default(now()) @map("assigned_at") @db.Timestamptz(3)
+  isActive   Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  teacher TeacherProfile @relation(fields: [teacherId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  section Section @relation(fields: [sectionId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, sectionId, academicYearId], map: "homeroom_section_year_key")
+  @@unique([schoolId, teacherId, academicYearId], map: "homeroom_teacher_year_key")
+  @@index([schoolId, teacherId, isActive], map: "homeroom_teacher_active_idx")
+  @@map("homeroom_teacher_assignments")
 }

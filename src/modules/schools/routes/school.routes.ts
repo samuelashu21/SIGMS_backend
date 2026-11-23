@@ -160,7 +160,18 @@ import {
   getTeacherSubjectAssignmentsController,
   updateTeacherSubjectAssignmentController
 } from '../../teachers/controllers/teacher-subject-assignment.controller.js';
+import {
+  createTeacherClassAssignmentController,
+  getTeacherClassAssignmentsController,
+  updateTeacherClassAssignmentController
+} from '../../teachers/controllers/teacher-class-assignment.controller.js';
 
+import {
+  assignHomeroomTeacherController,
+  getHomeroomTeacherAssignmentController,
+  getTeacherHomeroomAssignmentsController,
+  updateHomeroomTeacherAssignmentController
+} from '../../teachers/controllers/homeroom-teacher-assignment.controller.js';
 
 const router = Router();
 
@@ -1095,5 +1106,72 @@ router.patch(
   authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
   updateTeacherSubjectAssignmentController
 );
+
+
+// Teacher class assignments
+router.post(
+  '/:schoolId/teachers/:teacherId/class-assignments',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createTeacherClassAssignmentController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/class-assignments',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  getTeacherClassAssignmentsController
+);
+
+router.patch(
+  '/:schoolId/teachers/:teacherId/class-assignments/:assignmentId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateTeacherClassAssignmentController
+);
+
+// Homeroom teacher assignments
+router.post(
+  '/:schoolId/sections/:sectionId/homeroom-teacher',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  assignHomeroomTeacherController
+);
+
+router.get(
+  '/:schoolId/sections/:sectionId/homeroom-teacher',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getHomeroomTeacherAssignmentController
+);
+
+router.patch(
+  '/:schoolId/sections/:sectionId/homeroom-teacher/:assignmentId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateHomeroomTeacherAssignmentController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/homeroom-assignments',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  getTeacherHomeroomAssignmentsController
+);
+
 
 export default router;
