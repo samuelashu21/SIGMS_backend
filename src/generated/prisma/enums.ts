@@ -136,3 +136,33 @@ export const AdmissionReviewType = {
 } as const
 
 export type AdmissionReviewType = (typeof AdmissionReviewType)[keyof typeof AdmissionReviewType]
+
+
+export const StudentTransferStatus = {
+  REQUESTED: 'REQUESTED',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type StudentTransferStatus = (typeof StudentTransferStatus)[keyof typeof StudentTransferStatus]
+
+
+export const StudentTransferType = {
+  INTERNAL: 'INTERNAL',
+  EXTERNAL: 'EXTERNAL'
+} as const
+
+export type StudentTransferType = (typeof StudentTransferType)[keyof typeof StudentTransferType]
+
+
+export const AcademicEnrollmentStatus = {
+  ACTIVE: 'ACTIVE',
+  SUSPENDED: 'SUSPENDED',
+  WITHDRAWN: 'WITHDRAWN',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type AcademicEnrollmentStatus = (typeof AcademicEnrollmentStatus)[keyof typeof AcademicEnrollmentStatus]

@@ -171,3 +171,8 @@ export type StudentIdSequence = Prisma.StudentIdSequenceModel
  * 
  */
 export type AcademicEnrollment = Prisma.AcademicEnrollmentModel
+/**
+ * Model StudentTransfer
+ * 
+ */
+export type StudentTransfer = Prisma.StudentTransferModel

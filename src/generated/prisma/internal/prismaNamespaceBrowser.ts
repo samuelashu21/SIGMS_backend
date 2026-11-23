@@ -76,7 +76,8 @@ export const ModelName = {
   AdmissionStatusHistory: 'AdmissionStatusHistory',
   StudentProfile: 'StudentProfile',
   StudentIdSequence: 'StudentIdSequence',
-  AcademicEnrollment: 'AcademicEnrollment'
+  AcademicEnrollment: 'AcademicEnrollment',
+  StudentTransfer: 'StudentTransfer'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -506,10 +507,34 @@ export const AcademicEnrollmentScalarFieldEnum = {
   sectionId: 'sectionId',
   enrollmentDate: 'enrollmentDate',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  status: 'status',
+  statusReason: 'statusReason',
+  statusChangedAt: 'statusChangedAt'
 } as const
 
 export type AcademicEnrollmentScalarFieldEnum = (typeof AcademicEnrollmentScalarFieldEnum)[keyof typeof AcademicEnrollmentScalarFieldEnum]
+
+
+export const StudentTransferScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  sourceSchoolId: 'sourceSchoolId',
+  destinationSchoolId: 'destinationSchoolId',
+  transferType: 'transferType',
+  status: 'status',
+  reason: 'reason',
+  requestedById: 'requestedById',
+  reviewedById: 'reviewedById',
+  decisionReason: 'decisionReason',
+  requestedAt: 'requestedAt',
+  decisionAt: 'decisionAt',
+  completedAt: 'completedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentTransferScalarFieldEnum = (typeof StudentTransferScalarFieldEnum)[keyof typeof StudentTransferScalarFieldEnum]
 
 
 export const SortOrder = {

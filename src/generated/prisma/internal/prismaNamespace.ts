@@ -422,7 +422,8 @@ export const ModelName = {
   AdmissionStatusHistory: 'AdmissionStatusHistory',
   StudentProfile: 'StudentProfile',
   StudentIdSequence: 'StudentIdSequence',
-  AcademicEnrollment: 'AcademicEnrollment'
+  AcademicEnrollment: 'AcademicEnrollment',
+  StudentTransfer: 'StudentTransfer'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -438,7 +439,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2366,6 +2367,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    StudentTransfer: {
+      payload: Prisma.$StudentTransferPayload<ExtArgs>
+      fields: Prisma.StudentTransferFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StudentTransferFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StudentTransferFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>
+        }
+        findFirst: {
+          args: Prisma.StudentTransferFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StudentTransferFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>
+        }
+        findMany: {
+          args: Prisma.StudentTransferFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>[]
+        }
+        create: {
+          args: Prisma.StudentTransferCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>
+        }
+        createMany: {
+          args: Prisma.StudentTransferCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StudentTransferCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>[]
+        }
+        delete: {
+          args: Prisma.StudentTransferDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>
+        }
+        update: {
+          args: Prisma.StudentTransferUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>
+        }
+        deleteMany: {
+          args: Prisma.StudentTransferDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StudentTransferUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StudentTransferUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>[]
+        }
+        upsert: {
+          args: Prisma.StudentTransferUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentTransferPayload>
+        }
+        aggregate: {
+          args: Prisma.StudentTransferAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStudentTransfer>
+        }
+        groupBy: {
+          args: Prisma.StudentTransferGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentTransferGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StudentTransferCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentTransferCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2816,10 +2891,34 @@ export const AcademicEnrollmentScalarFieldEnum = {
   sectionId: 'sectionId',
   enrollmentDate: 'enrollmentDate',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  status: 'status',
+  statusReason: 'statusReason',
+  statusChangedAt: 'statusChangedAt'
 } as const
 
 export type AcademicEnrollmentScalarFieldEnum = (typeof AcademicEnrollmentScalarFieldEnum)[keyof typeof AcademicEnrollmentScalarFieldEnum]
+
+
+export const StudentTransferScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  sourceSchoolId: 'sourceSchoolId',
+  destinationSchoolId: 'destinationSchoolId',
+  transferType: 'transferType',
+  status: 'status',
+  reason: 'reason',
+  requestedById: 'requestedById',
+  reviewedById: 'reviewedById',
+  decisionReason: 'decisionReason',
+  requestedAt: 'requestedAt',
+  decisionAt: 'decisionAt',
+  completedAt: 'completedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentTransferScalarFieldEnum = (typeof StudentTransferScalarFieldEnum)[keyof typeof StudentTransferScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -3115,6 +3214,48 @@ export type ListEnumAdmissionReviewTypeFieldRefInput<$PrismaModel> = FieldRefInp
 
 
 /**
+ * Reference to a field of type 'AcademicEnrollmentStatus'
+ */
+export type EnumAcademicEnrollmentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicEnrollmentStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicEnrollmentStatus[]'
+ */
+export type ListEnumAcademicEnrollmentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicEnrollmentStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'StudentTransferType'
+ */
+export type EnumStudentTransferTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentTransferType'>
+    
+
+
+/**
+ * Reference to a field of type 'StudentTransferType[]'
+ */
+export type ListEnumStudentTransferTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentTransferType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'StudentTransferStatus'
+ */
+export type EnumStudentTransferStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentTransferStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'StudentTransferStatus[]'
+ */
+export type ListEnumStudentTransferStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentTransferStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -3304,6 +3445,7 @@ export type GlobalOmitConfig = {
   studentProfile?: Prisma.StudentProfileOmit
   studentIdSequence?: Prisma.StudentIdSequenceOmit
   academicEnrollment?: Prisma.AcademicEnrollmentOmit
+  studentTransfer?: Prisma.StudentTransferOmit
 }
 
 /* Types for Logging */

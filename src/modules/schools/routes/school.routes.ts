@@ -125,6 +125,15 @@ import {
   assignStudentSectionController
 } from '../../enrollments/controllers/section-assignment.controller.js';
 
+import {
+  createStudentTransferController,
+  decideStudentTransferController,
+  getStudentTransfersController
+} from '../../enrollments/controllers/student-transfer.controller.js';
+
+import {
+  updateEnrollmentStatusController
+} from '../../enrollments/controllers/enrollment-status.controller.js';
 
 const router = Router();
 
@@ -834,6 +843,54 @@ router.patch(
     'REGISTRAR'
   ),
   assignStudentSectionController
+);
+
+// Student transfer requests
+router.post(
+  '/:schoolId/students/:studentId/transfers',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  createStudentTransferController
+);
+
+// Review and approve/reject transfer requests
+router.patch(
+  '/:schoolId/transfers/:transferId/decision',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  decideStudentTransferController
+);
+
+// Retrieve student transfer records
+router.get(
+  '/:schoolId/students/:studentId/transfers',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getStudentTransfersController
+);
+
+// Academic enrollment status
+router.patch(
+  '/:schoolId/enrollments/:enrollmentId/status',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'REGISTRAR'
+  ),
+  updateEnrollmentStatusController
 );
 
 export default router;
