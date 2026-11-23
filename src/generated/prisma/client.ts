@@ -111,3 +111,18 @@ export type Subject = Prisma.SubjectModel
  * 
  */
 export type GradeSubject = Prisma.GradeSubjectModel
+/**
+ * Model AcademicConfiguration
+ * 
+ */
+export type AcademicConfiguration = Prisma.AcademicConfigurationModel
+/**
+ * Model GradingSystem
+ * 
+ */
+export type GradingSystem = Prisma.GradingSystemModel
+/**
+ * Model GradeScale
+ * 
+ */
+export type GradeScale = Prisma.GradeScaleModel

@@ -17,3 +17,10 @@ export * from './services/grade-subject.service.js';
 
 export * from './validators/subject.validator.js';
 export * from './validators/grade-subject.validator.js';
+
+
+export * from './services/academic-configuration.service.js';
+export * from './services/grading-system.service.js';
+
+export * from './validators/academic-configuration.validator.js';
+export * from './validators/grading-system.validator.js';

@@ -64,7 +64,10 @@ export const ModelName = {
   Grade: 'Grade',
   Section: 'Section',
   Subject: 'Subject',
-  GradeSubject: 'GradeSubject'
+  GradeSubject: 'GradeSubject',
+  AcademicConfiguration: 'AcademicConfiguration',
+  GradingSystem: 'GradingSystem',
+  GradeScale: 'GradeScale'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -294,6 +297,54 @@ export const GradeSubjectScalarFieldEnum = {
 } as const
 
 export type GradeSubjectScalarFieldEnum = (typeof GradeSubjectScalarFieldEnum)[keyof typeof GradeSubjectScalarFieldEnum]
+
+
+export const AcademicConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  termType: 'termType',
+  termsPerYear: 'termsPerYear',
+  passingPercentage: 'passingPercentage',
+  maximumScore: 'maximumScore',
+  allowMarksCorrection: 'allowMarksCorrection',
+  requireMarksApproval: 'requireMarksApproval',
+  allowIncompleteGrades: 'allowIncompleteGrades',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicConfigurationScalarFieldEnum = (typeof AcademicConfigurationScalarFieldEnum)[keyof typeof AcademicConfigurationScalarFieldEnum]
+
+
+export const GradingSystemScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  name: 'name',
+  description: 'description',
+  isDefault: 'isDefault',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GradingSystemScalarFieldEnum = (typeof GradingSystemScalarFieldEnum)[keyof typeof GradingSystemScalarFieldEnum]
+
+
+export const GradeScaleScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  gradingSystemId: 'gradingSystemId',
+  letterGrade: 'letterGrade',
+  minimumScore: 'minimumScore',
+  maximumScore: 'maximumScore',
+  gradePoint: 'gradePoint',
+  description: 'description',
+  isPassing: 'isPassing',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GradeScaleScalarFieldEnum = (typeof GradeScaleScalarFieldEnum)[keyof typeof GradeScaleScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -86,6 +86,21 @@ import {
   removeGradeSubjectAssignmentController
 } from '../../academic/controllers/grade-subject.controller.js';
 
+import {
+  getAcademicConfigurationController,
+  createAcademicConfigurationController,
+  updateAcademicConfigurationController
+} from '../../academic/controllers/academic-configuration.controller.js';
+
+import {
+  createGradingSystemController,
+  getGradingSystemsController,
+  getGradingSystemController,
+  updateGradingSystemController,
+  setDefaultGradingSystemController,
+  replaceGradeScalesController
+} from '../../academic/controllers/grading-system.controller.js';
+
 const router = Router();
 
 router.use(authenticate);
@@ -383,5 +398,70 @@ router.delete(
   removeGradeSubjectAssignmentController
 );
 
+
+// Academic configuration
+router.post(
+  '/:schoolId/academic-configuration',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createAcademicConfigurationController
+);
+
+router.get(
+  '/:schoolId/academic-configuration',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getAcademicConfigurationController
+);
+
+router.patch(
+  '/:schoolId/academic-configuration',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateAcademicConfigurationController
+);
+
+// Grading systems
+router.post(
+  '/:schoolId/grading-systems',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createGradingSystemController
+);
+
+router.get(
+  '/:schoolId/grading-systems',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getGradingSystemsController
+);
+
+router.get(
+  '/:schoolId/grading-systems/:gradingSystemId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getGradingSystemController
+);
+
+router.patch(
+  '/:schoolId/grading-systems/:gradingSystemId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateGradingSystemController
+);
+
+router.patch(
+  '/:schoolId/grading-systems/:gradingSystemId/default',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  setDefaultGradingSystemController
+);
+
+router.put(
+  '/:schoolId/grading-systems/:gradingSystemId/grade-scales',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  replaceGradeScalesController
+);
 
 export default router;

@@ -42,6 +42,9 @@ model School {
 
   gradeSubjectAssignments GradeSubject[]
 
+  academicConfiguration AcademicConfiguration?
+  gradingSystems GradingSystem[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -411,4 +414,79 @@ model GradeSubject {
   @@index([schoolId, gradeId], map: "grade_subjects_school_grade_idx")
   @@index([schoolId, subjectId], map: "grade_subjects_school_subject_idx")
   @@map("grade_subjects")
+}
+
+
+
+enum AcademicTermType {
+  SEMESTER
+  QUARTER
+  TRIMESTER
+  ANNUAL
+
+  @@map("academic_term_types")
+}
+
+model AcademicConfiguration {
+  id                    String           @id @default(uuid()) @db.Uuid
+  schoolId              String           @unique @map("school_id") @db.Uuid
+  termType              AcademicTermType @default(SEMESTER) @map("term_type")
+  termsPerYear          Int              @default(2) @map("terms_per_year")
+  passingPercentage     Decimal          @default(50) @map("passing_percentage") @db.Decimal(5, 2)
+  maximumScore          Decimal          @default(100) @map("maximum_score") @db.Decimal(7, 2)
+  allowMarksCorrection  Boolean          @default(false) @map("allow_marks_correction")
+  requireMarksApproval  Boolean          @default(true) @map("require_marks_approval")
+  allowIncompleteGrades Boolean          @default(false) @map("allow_incomplete_grades")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@map("academic_configurations")
+}
+
+
+
+model GradingSystem {
+  id          String   @id @default(uuid()) @db.Uuid
+  schoolId    String   @map("school_id") @db.Uuid
+  name        String
+  description String?
+  isDefault   Boolean  @default(false) @map("is_default")
+  isActive    Boolean  @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school      School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  gradeScales GradeScale[]
+
+  @@unique([schoolId, name], map: "grading_systems_school_name_key")
+  @@unique([id, schoolId], map: "grading_systems_id_school_key")
+  @@index([schoolId, isActive], map: "grading_systems_school_active_idx")
+  @@map("grading_systems")
+}
+
+
+model GradeScale {
+  id              String   @id @default(uuid()) @db.Uuid
+  schoolId        String   @map("school_id") @db.Uuid
+  gradingSystemId String   @map("grading_system_id") @db.Uuid
+
+  letterGrade     String   @map("letter_grade")
+  minimumScore    Decimal  @map("minimum_score") @db.Decimal(7, 2)
+  maximumScore    Decimal  @map("maximum_score") @db.Decimal(7, 2)
+  gradePoint      Decimal? @map("grade_point") @db.Decimal(5, 2)
+  description     String?
+  isPassing       Boolean  @default(false) @map("is_passing")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  gradingSystem GradingSystem @relation(fields: [gradingSystemId, schoolId], references: [id, schoolId], onDelete: Cascade)
+
+  @@unique([gradingSystemId, letterGrade], map: "grade_scales_system_letter_key")
+  @@index([schoolId, gradingSystemId], map: "grade_scales_school_system_idx")
+  @@map("grade_scales")
 }

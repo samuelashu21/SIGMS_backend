@@ -65,3 +65,13 @@ export const SemesterStatus = {
 } as const
 
 export type SemesterStatus = (typeof SemesterStatus)[keyof typeof SemesterStatus]
+
+
+export const AcademicTermType = {
+  SEMESTER: 'SEMESTER',
+  QUARTER: 'QUARTER',
+  TRIMESTER: 'TRIMESTER',
+  ANNUAL: 'ANNUAL'
+} as const
+
+export type AcademicTermType = (typeof AcademicTermType)[keyof typeof AcademicTermType]
