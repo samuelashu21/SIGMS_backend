@@ -35,6 +35,8 @@ model School {
   academicYears AcademicYear[]
 
   semesters Semester[]
+  grades Grade[]
+  sections Section[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -256,6 +258,7 @@ model AcademicYear {
 
   school    School            @relation(fields: [schoolId], references: [id], onDelete: Restrict)
   semesters Semester[]
+  sections Section[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -298,4 +301,57 @@ model Semester {
   @@index([schoolId, status], map: "semesters_school_status_idx")
   @@index([schoolId, academicYearId], map: "semesters_school_year_idx")
   @@map("semesters")
+}
+
+
+
+model Grade {
+  id         String   @id @default(uuid()) @db.Uuid
+  schoolId   String   @map("school_id") @db.Uuid
+  name       String
+  gradeLevel Int      @map("grade_level")
+  description String?
+
+  isActive   Boolean  @default(true) @map("is_active")
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId],  references: [id], onDelete: Restrict)
+
+  sections Section[]
+
+  @@unique([schoolId, name], map: "grades_school_name_key")
+  @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
+  @@unique([id, schoolId], map: "grades_id_school_key")
+  @@index([schoolId, isActive], map: "grades_school_active_idx")
+  @@map("grades")
+}
+
+
+
+model Section {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  gradeId        String   @map("grade_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+
+  name           String
+  capacity       Int?
+  room           String?
+  isActive       Boolean  @default(true) @map("is_active")
+
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(  fields: [schoolId], references: [id],onDelete: Restrict )
+
+  grade Grade @relation(  fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  academicYear AcademicYear @relation(  fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict )
+
+  @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
+  @@index([schoolId, academicYearId], map: "sections_school_year_idx")
+  @@index([schoolId, gradeId], map: "sections_school_grade_idx")
+  @@index([schoolId, isActive], map: "sections_school_active_idx")
+  @@map("sections")
 }

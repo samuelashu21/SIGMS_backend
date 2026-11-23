@@ -57,6 +57,22 @@ import {
   setCurrentSemesterController
 } from '../../academic/controllers/semester.controller.js';
 
+
+import {
+  createGradeController,
+  getGradesController,
+  getGradeController,
+  updateGradeController
+} from '../../academic/controllers/grade.controller.js';
+
+import {
+  createSectionController,
+  getSectionsController,
+  getSectionController,
+  updateSectionController
+} from '../../academic/controllers/section.controller.js';
+
+
 const router = Router();
 
 router.use(authenticate);
@@ -229,6 +245,69 @@ router.patch(
   '/:schoolId/semesters/:semesterId/current',
   authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
   setCurrentSemesterController
+);
+
+
+// Grade management
+router.post(
+  '/:schoolId/grades',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  createGradeController
+);
+
+router.get(
+  '/:schoolId/grades',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getGradesController
+);
+
+router.get(
+  '/:schoolId/grades/:gradeId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getGradeController
+);
+
+router.patch(
+  '/:schoolId/grades/:gradeId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateGradeController
+);
+
+// Section management
+router.post(
+  '/:schoolId/sections',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  createSectionController
+);
+
+router.get(
+  '/:schoolId/sections',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getSectionsController
+);
+
+router.get(
+  '/:schoolId/sections/:sectionId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL',
+    'VICE_PRINCIPAL', 'REGISTRAR', 'TEACHER'
+  ),
+  getSectionController
+);
+
+router.patch(
+  '/:schoolId/sections/:sectionId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL', 'REGISTRAR'),
+  updateSectionController
 );
 
 export default router;

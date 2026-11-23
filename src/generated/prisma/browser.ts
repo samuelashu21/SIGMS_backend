@@ -67,3 +67,13 @@ export type AcademicYear = Prisma.AcademicYearModel
  * 
  */
 export type Semester = Prisma.SemesterModel
+/**
+ * Model Grade
+ * 
+ */
+export type Grade = Prisma.GradeModel
+/**
+ * Model Section
+ * 
+ */
+export type Section = Prisma.SectionModel
