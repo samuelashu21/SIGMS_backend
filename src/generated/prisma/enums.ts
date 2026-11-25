@@ -306,3 +306,42 @@ export const GuardianContactChannel = {
 } as const
 
 export type GuardianContactChannel = (typeof GuardianContactChannel)[keyof typeof GuardianContactChannel]
+
+
+export const AttendanceStatus = {
+  PRESENT: 'PRESENT',
+  ABSENT: 'ABSENT',
+  LATE: 'LATE',
+  EXCUSED: 'EXCUSED',
+  HALF_DAY: 'HALF_DAY'
+} as const
+
+export type AttendanceStatus = (typeof AttendanceStatus)[keyof typeof AttendanceStatus]
+
+
+export const AttendanceSession = {
+  MORNING: 'MORNING',
+  AFTERNOON: 'AFTERNOON',
+  FULL_DAY: 'FULL_DAY'
+} as const
+
+export type AttendanceSession = (typeof AttendanceSession)[keyof typeof AttendanceSession]
+
+
+export const AttendanceRecordStatus = {
+  DRAFT: 'DRAFT',
+  SUBMITTED: 'SUBMITTED',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type AttendanceRecordStatus = (typeof AttendanceRecordStatus)[keyof typeof AttendanceRecordStatus]
+
+
+export const AttendanceCorrectionStatus = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type AttendanceCorrectionStatus = (typeof AttendanceCorrectionStatus)[keyof typeof AttendanceCorrectionStatus]

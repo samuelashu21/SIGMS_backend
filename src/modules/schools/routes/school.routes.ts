@@ -187,6 +187,7 @@ import {
   getTeacherWorkloadSummaryController
 } from '../../teachers/controllers/teacher-workload.controller.js';
 import parentRoutes from '../../parents/routes/parent.routes.js';
+import attendanceRoutes from '../../attendance/routes/attendance.routes.js';
 
  
 const router = Router();
@@ -212,6 +213,12 @@ router.use('/:schoolId', requireSchoolMembership);
 
 // Parent routes
 router.use('/:schoolId/parents', parentRoutes);
+
+// Parent routes
+router.use('/:schoolId/parents', parentRoutes);
+
+// Attendance routes
+router.use('/:schoolId/attendance', attendanceRoutes);
 
 // School profile
 router.get(
@@ -271,7 +278,6 @@ router.patch(
   updateSchoolSettingsController
 );
 
-router.use('/:schoolId', requireSchoolMembership);
 
 
 router.get(

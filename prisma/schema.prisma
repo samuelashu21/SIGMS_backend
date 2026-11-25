@@ -87,6 +87,7 @@ model Student {
 
   academicRecords StudentAcademicRecord[]
   guardianRelationships StudentGuardianRelationship[]
+  attendanceRecords AttendanceRecord[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -162,6 +163,10 @@ model User {
   staffProfiles StaffProfile[]
   guardianProfiles GuardianProfile[]
   verifiedGuardianRelationships StudentGuardianRelationship[] @relation("GuardianRelationshipVerifier")
+  recordedAttendance ClassAttendance[] @relation("AttendanceRecorder")
+  approvedAttendance ClassAttendance[] @relation("AttendanceApprover")
+  requestedAttendanceCorrections AttendanceCorrection[] @relation("AttendanceCorrectionRequester")
+  reviewedAttendanceCorrections AttendanceCorrection[] @relation("AttendanceCorrectionReviewer")
 
   @@map("users")
 }
@@ -316,6 +321,7 @@ model AcademicYear {
   teacherClassAssignments TeacherClassAssignment[]
   homeroomAssignments HomeroomTeacherAssignment[]
   teacherWorkloadRecords TeacherWorkloadRecord[]
+  classAttendance ClassAttendance[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -414,6 +420,7 @@ model Section {
   academicEnrollments AcademicEnrollment[]
   teacherAssignments TeacherClassAssignment[]
   homeroomAssignments HomeroomTeacherAssignment[]
+  classAttendance ClassAttendance[]
 
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
@@ -1529,4 +1536,145 @@ model GuardianContact {
   @@index([schoolId, guardianId, contactType], map: "guardian_contacts_guardian_type_idx")
   @@index([schoolId, guardianId, isPrimary], map: "guardian_contacts_primary_idx")
   @@map("guardian_contacts")
+}
+
+
+
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  LATE
+  EXCUSED
+  HALF_DAY
+
+  @@map("attendance_statuses")
+}
+
+enum AttendanceSession {
+  MORNING
+  AFTERNOON
+  FULL_DAY
+
+  @@map("attendance_sessions")
+}
+
+enum AttendanceRecordStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+
+  @@map("attendance_record_statuses")
+}
+
+enum AttendanceCorrectionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+
+  @@map("attendance_correction_statuses")
+}
+
+
+model ClassAttendance {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  sectionId      String @map("section_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  recordedById   String @map("recorded_by_id") @db.Uuid
+
+  attendanceDate DateTime @map("attendance_date") @db.Date
+  session        AttendanceSession @default(FULL_DAY)
+  status         AttendanceRecordStatus @default(DRAFT)
+
+  submittedAt DateTime? @map("submitted_at") @db.Timestamptz(3)
+  approvedAt  DateTime? @map("approved_at") @db.Timestamptz(3)
+  approvedById String? @map("approved_by_id") @db.Uuid
+  remarks      String?
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  section Section @relation(fields: [sectionId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  recordedBy User @relation("AttendanceRecorder",fields: [recordedById],references: [id],onDelete: Restrict)
+
+  approvedBy User? @relation("AttendanceApprover", fields: [approvedById],references: [id],onDelete: Restrict)
+
+  records AttendanceRecord[]
+
+  @@unique([schoolId, sectionId, attendanceDate, session], map: "class_attendance_section_date_session_key")
+  @@unique([id, schoolId], map: "class_attendance_id_school_key")
+  @@index([schoolId, attendanceDate, status], map: "class_attendance_date_status_idx")
+  @@index([schoolId, sectionId, attendanceDate], map: "class_attendance_section_date_idx")
+  @@map("class_attendance")
+}
+
+
+
+
+model AttendanceRecord {
+  id                String @id @default(uuid()) @db.Uuid
+  schoolId          String @map("school_id") @db.Uuid
+  classAttendanceId String @map("class_attendance_id") @db.Uuid
+  studentId         String @map("student_id") @db.Uuid
+
+  status AttendanceStatus
+  arrivalTime DateTime? @map("arrival_time") @db.Timestamptz(3)
+  remarks String?
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  classAttendance ClassAttendance @relation(fields: [classAttendanceId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  corrections AttendanceCorrection[]
+
+  @@unique([schoolId, classAttendanceId, studentId], map: "attendance_record_session_student_key")
+  @@index([schoolId, studentId], map: "attendance_record_student_idx")
+  @@index([schoolId, status], map: "attendance_record_status_idx")
+  @@unique([id, schoolId], map: "attendance_records_id_school_key")
+  @@map("attendance_records")
+}
+
+
+
+model AttendanceCorrection {
+  id                String @id @default(uuid()) @db.Uuid
+  schoolId          String @map("school_id") @db.Uuid
+  attendanceRecordId String @map("attendance_record_id") @db.Uuid
+
+  requestedById String @map("requested_by_id") @db.Uuid
+  reviewedById  String? @map("reviewed_by_id") @db.Uuid
+
+  previousStatus AttendanceStatus @map("previous_status")
+  requestedStatus AttendanceStatus @map("requested_status")
+
+  reason String
+  reviewNotes String? @map("review_notes")
+
+  status AttendanceCorrectionStatus @default(PENDING)
+
+  requestedAt DateTime @default(now()) @map("requested_at") @db.Timestamptz(3)
+  reviewedAt  DateTime? @map("reviewed_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  attendanceRecord AttendanceRecord @relation(fields: [attendanceRecordId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  requestedBy User @relation("AttendanceCorrectionRequester",fields: [requestedById], references: [id],onDelete: Restrict)
+
+  reviewedBy User? @relation("AttendanceCorrectionReviewer", fields: [reviewedById],references: [id], onDelete: Restrict)
+
+  @@unique([id, schoolId], map: "attendance_corrections_id_school_key")
+  @@index([schoolId, attendanceRecordId], map: "attendance_corrections_record_idx")
+  @@index([schoolId, status, requestedAt], map: "attendance_corrections_status_idx")
+  @@index([schoolId, requestedById], map: "attendance_corrections_requester_idx")
+  @@map("attendance_corrections")
 }

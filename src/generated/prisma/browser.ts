@@ -222,3 +222,18 @@ export type GuardianPermission = Prisma.GuardianPermissionModel
  * 
  */
 export type GuardianContact = Prisma.GuardianContactModel
+/**
+ * Model ClassAttendance
+ * 
+ */
+export type ClassAttendance = Prisma.ClassAttendanceModel
+/**
+ * Model AttendanceRecord
+ * 
+ */
+export type AttendanceRecord = Prisma.AttendanceRecordModel
+/**
+ * Model AttendanceCorrection
+ * 
+ */
+export type AttendanceCorrection = Prisma.AttendanceCorrectionModel

@@ -91,7 +91,10 @@ export const ModelName = {
   GuardianProfile: 'GuardianProfile',
   StudentGuardianRelationship: 'StudentGuardianRelationship',
   GuardianPermission: 'GuardianPermission',
-  GuardianContact: 'GuardianContact'
+  GuardianContact: 'GuardianContact',
+  ClassAttendance: 'ClassAttendance',
+  AttendanceRecord: 'AttendanceRecord',
+  AttendanceCorrection: 'AttendanceCorrection'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -816,6 +819,61 @@ export const GuardianContactScalarFieldEnum = {
 } as const
 
 export type GuardianContactScalarFieldEnum = (typeof GuardianContactScalarFieldEnum)[keyof typeof GuardianContactScalarFieldEnum]
+
+
+export const ClassAttendanceScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  sectionId: 'sectionId',
+  academicYearId: 'academicYearId',
+  recordedById: 'recordedById',
+  attendanceDate: 'attendanceDate',
+  session: 'session',
+  status: 'status',
+  submittedAt: 'submittedAt',
+  approvedAt: 'approvedAt',
+  approvedById: 'approvedById',
+  remarks: 'remarks',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ClassAttendanceScalarFieldEnum = (typeof ClassAttendanceScalarFieldEnum)[keyof typeof ClassAttendanceScalarFieldEnum]
+
+
+export const AttendanceRecordScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  classAttendanceId: 'classAttendanceId',
+  studentId: 'studentId',
+  status: 'status',
+  arrivalTime: 'arrivalTime',
+  remarks: 'remarks',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AttendanceRecordScalarFieldEnum = (typeof AttendanceRecordScalarFieldEnum)[keyof typeof AttendanceRecordScalarFieldEnum]
+
+
+export const AttendanceCorrectionScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  attendanceRecordId: 'attendanceRecordId',
+  requestedById: 'requestedById',
+  reviewedById: 'reviewedById',
+  previousStatus: 'previousStatus',
+  requestedStatus: 'requestedStatus',
+  reason: 'reason',
+  reviewNotes: 'reviewNotes',
+  status: 'status',
+  requestedAt: 'requestedAt',
+  reviewedAt: 'reviewedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AttendanceCorrectionScalarFieldEnum = (typeof AttendanceCorrectionScalarFieldEnum)[keyof typeof AttendanceCorrectionScalarFieldEnum]
 
 
 export const SortOrder = {
