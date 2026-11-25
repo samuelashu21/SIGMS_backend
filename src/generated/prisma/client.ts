@@ -216,3 +216,13 @@ export type TeacherClassAssignment = Prisma.TeacherClassAssignmentModel
  * 
  */
 export type HomeroomTeacherAssignment = Prisma.HomeroomTeacherAssignmentModel
+/**
+ * Model StaffProfile
+ * 
+ */
+export type StaffProfile = Prisma.StaffProfileModel
+/**
+ * Model TeacherWorkloadRecord
+ * 
+ */
+export type TeacherWorkloadRecord = Prisma.TeacherWorkloadRecordModel

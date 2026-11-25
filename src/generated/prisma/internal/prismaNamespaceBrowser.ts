@@ -85,7 +85,9 @@ export const ModelName = {
   TeacherQualification: 'TeacherQualification',
   TeacherSubjectAssignment: 'TeacherSubjectAssignment',
   TeacherClassAssignment: 'TeacherClassAssignment',
-  HomeroomTeacherAssignment: 'HomeroomTeacherAssignment'
+  HomeroomTeacherAssignment: 'HomeroomTeacherAssignment',
+  StaffProfile: 'StaffProfile',
+  TeacherWorkloadRecord: 'TeacherWorkloadRecord'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -688,6 +690,49 @@ export const HomeroomTeacherAssignmentScalarFieldEnum = {
 } as const
 
 export type HomeroomTeacherAssignmentScalarFieldEnum = (typeof HomeroomTeacherAssignmentScalarFieldEnum)[keyof typeof HomeroomTeacherAssignmentScalarFieldEnum]
+
+
+export const StaffProfileScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  userId: 'userId',
+  employeeNumber: 'employeeNumber',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  category: 'category',
+  designation: 'designation',
+  department: 'department',
+  phoneNumber: 'phoneNumber',
+  email: 'email',
+  address: 'address',
+  employmentStatus: 'employmentStatus',
+  hireDate: 'hireDate',
+  terminationDate: 'terminationDate',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StaffProfileScalarFieldEnum = (typeof StaffProfileScalarFieldEnum)[keyof typeof StaffProfileScalarFieldEnum]
+
+
+export const TeacherWorkloadRecordScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  academicYearId: 'academicYearId',
+  workloadType: 'workloadType',
+  description: 'description',
+  weeklyPeriods: 'weeklyPeriods',
+  effectiveFrom: 'effectiveFrom',
+  effectiveTo: 'effectiveTo',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherWorkloadRecordScalarFieldEnum = (typeof TeacherWorkloadRecordScalarFieldEnum)[keyof typeof TeacherWorkloadRecordScalarFieldEnum]
 
 
 export const SortOrder = {

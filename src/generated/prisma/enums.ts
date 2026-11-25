@@ -228,3 +228,35 @@ export const TeacherQualificationType = {
 } as const
 
 export type TeacherQualificationType = (typeof TeacherQualificationType)[keyof typeof TeacherQualificationType]
+
+
+export const StaffCategory = {
+  ADMINISTRATIVE: 'ADMINISTRATIVE',
+  REGISTRAR: 'REGISTRAR',
+  MANAGEMENT: 'MANAGEMENT',
+  SUPPORT: 'SUPPORT',
+  OTHER: 'OTHER'
+} as const
+
+export type StaffCategory = (typeof StaffCategory)[keyof typeof StaffCategory]
+
+
+export const StaffEmploymentStatus = {
+  ACTIVE: 'ACTIVE',
+  ON_LEAVE: 'ON_LEAVE',
+  SUSPENDED: 'SUSPENDED',
+  TERMINATED: 'TERMINATED'
+} as const
+
+export type StaffEmploymentStatus = (typeof StaffEmploymentStatus)[keyof typeof StaffEmploymentStatus]
+
+
+export const TeacherWorkloadType = {
+  TEACHING: 'TEACHING',
+  HOMEROOM: 'HOMEROOM',
+  ADMINISTRATIVE: 'ADMINISTRATIVE',
+  EXTRACURRICULAR: 'EXTRACURRICULAR',
+  OTHER: 'OTHER'
+} as const
+
+export type TeacherWorkloadType = (typeof TeacherWorkloadType)[keyof typeof TeacherWorkloadType]

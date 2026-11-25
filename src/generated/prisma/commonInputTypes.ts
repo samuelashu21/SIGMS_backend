@@ -752,6 +752,57 @@ export type EnumTeacherQualificationTypeWithAggregatesFilter<$PrismaModel = neve
   _max?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
 }
 
+export type EnumStaffCategoryFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffCategory | Prisma.EnumStaffCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffCategoryFilter<$PrismaModel> | $Enums.StaffCategory
+}
+
+export type EnumStaffEmploymentStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffEmploymentStatus | Prisma.EnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffEmploymentStatusFilter<$PrismaModel> | $Enums.StaffEmploymentStatus
+}
+
+export type EnumStaffCategoryWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffCategory | Prisma.EnumStaffCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffCategoryWithAggregatesFilter<$PrismaModel> | $Enums.StaffCategory
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStaffCategoryFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStaffCategoryFilter<$PrismaModel>
+}
+
+export type EnumStaffEmploymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffEmploymentStatus | Prisma.EnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffEmploymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.StaffEmploymentStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStaffEmploymentStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStaffEmploymentStatusFilter<$PrismaModel>
+}
+
+export type EnumTeacherWorkloadTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherWorkloadType | Prisma.EnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel> | $Enums.TeacherWorkloadType
+}
+
+export type EnumTeacherWorkloadTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherWorkloadType | Prisma.EnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherWorkloadTypeWithAggregatesFilter<$PrismaModel> | $Enums.TeacherWorkloadType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1470,6 +1521,57 @@ export type NestedEnumTeacherQualificationTypeWithAggregatesFilter<$PrismaModel 
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumTeacherQualificationTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumStaffCategoryFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffCategory | Prisma.EnumStaffCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffCategoryFilter<$PrismaModel> | $Enums.StaffCategory
+}
+
+export type NestedEnumStaffEmploymentStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffEmploymentStatus | Prisma.EnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffEmploymentStatusFilter<$PrismaModel> | $Enums.StaffEmploymentStatus
+}
+
+export type NestedEnumStaffCategoryWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffCategory | Prisma.EnumStaffCategoryFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffCategory[] | Prisma.ListEnumStaffCategoryFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffCategoryWithAggregatesFilter<$PrismaModel> | $Enums.StaffCategory
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStaffCategoryFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStaffCategoryFilter<$PrismaModel>
+}
+
+export type NestedEnumStaffEmploymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StaffEmploymentStatus | Prisma.EnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StaffEmploymentStatus[] | Prisma.ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStaffEmploymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.StaffEmploymentStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStaffEmploymentStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStaffEmploymentStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumTeacherWorkloadTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherWorkloadType | Prisma.EnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel> | $Enums.TeacherWorkloadType
+}
+
+export type NestedEnumTeacherWorkloadTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherWorkloadType | Prisma.EnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherWorkloadType[] | Prisma.ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherWorkloadTypeWithAggregatesFilter<$PrismaModel> | $Enums.TeacherWorkloadType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
 }
 
 

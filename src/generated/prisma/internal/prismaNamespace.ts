@@ -431,7 +431,9 @@ export const ModelName = {
   TeacherQualification: 'TeacherQualification',
   TeacherSubjectAssignment: 'TeacherSubjectAssignment',
   TeacherClassAssignment: 'TeacherClassAssignment',
-  HomeroomTeacherAssignment: 'HomeroomTeacherAssignment'
+  HomeroomTeacherAssignment: 'HomeroomTeacherAssignment',
+  StaffProfile: 'StaffProfile',
+  TeacherWorkloadRecord: 'TeacherWorkloadRecord'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -447,7 +449,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -3041,6 +3043,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    StaffProfile: {
+      payload: Prisma.$StaffProfilePayload<ExtArgs>
+      fields: Prisma.StaffProfileFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StaffProfileFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StaffProfileFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>
+        }
+        findFirst: {
+          args: Prisma.StaffProfileFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StaffProfileFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>
+        }
+        findMany: {
+          args: Prisma.StaffProfileFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>[]
+        }
+        create: {
+          args: Prisma.StaffProfileCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>
+        }
+        createMany: {
+          args: Prisma.StaffProfileCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StaffProfileCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>[]
+        }
+        delete: {
+          args: Prisma.StaffProfileDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>
+        }
+        update: {
+          args: Prisma.StaffProfileUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>
+        }
+        deleteMany: {
+          args: Prisma.StaffProfileDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StaffProfileUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StaffProfileUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>[]
+        }
+        upsert: {
+          args: Prisma.StaffProfileUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StaffProfilePayload>
+        }
+        aggregate: {
+          args: Prisma.StaffProfileAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStaffProfile>
+        }
+        groupBy: {
+          args: Prisma.StaffProfileGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StaffProfileGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StaffProfileCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StaffProfileCountAggregateOutputType> | number
+        }
+      }
+    }
+    TeacherWorkloadRecord: {
+      payload: Prisma.$TeacherWorkloadRecordPayload<ExtArgs>
+      fields: Prisma.TeacherWorkloadRecordFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherWorkloadRecordFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherWorkloadRecordFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherWorkloadRecordFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherWorkloadRecordFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherWorkloadRecordFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherWorkloadRecordCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherWorkloadRecordCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherWorkloadRecordCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherWorkloadRecordDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>
+        }
+        update: {
+          args: Prisma.TeacherWorkloadRecordUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherWorkloadRecordDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherWorkloadRecordUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherWorkloadRecordUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherWorkloadRecordUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherWorkloadRecordPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherWorkloadRecordAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherWorkloadRecord>
+        }
+        groupBy: {
+          args: Prisma.TeacherWorkloadRecordGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherWorkloadRecordGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherWorkloadRecordCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherWorkloadRecordCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3666,6 +3816,49 @@ export const HomeroomTeacherAssignmentScalarFieldEnum = {
 export type HomeroomTeacherAssignmentScalarFieldEnum = (typeof HomeroomTeacherAssignmentScalarFieldEnum)[keyof typeof HomeroomTeacherAssignmentScalarFieldEnum]
 
 
+export const StaffProfileScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  userId: 'userId',
+  employeeNumber: 'employeeNumber',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  category: 'category',
+  designation: 'designation',
+  department: 'department',
+  phoneNumber: 'phoneNumber',
+  email: 'email',
+  address: 'address',
+  employmentStatus: 'employmentStatus',
+  hireDate: 'hireDate',
+  terminationDate: 'terminationDate',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StaffProfileScalarFieldEnum = (typeof StaffProfileScalarFieldEnum)[keyof typeof StaffProfileScalarFieldEnum]
+
+
+export const TeacherWorkloadRecordScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  teacherId: 'teacherId',
+  academicYearId: 'academicYearId',
+  workloadType: 'workloadType',
+  description: 'description',
+  weeklyPeriods: 'weeklyPeriods',
+  effectiveFrom: 'effectiveFrom',
+  effectiveTo: 'effectiveTo',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TeacherWorkloadRecordScalarFieldEnum = (typeof TeacherWorkloadRecordScalarFieldEnum)[keyof typeof TeacherWorkloadRecordScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -4085,6 +4278,48 @@ export type ListEnumTeacherQualificationTypeFieldRefInput<$PrismaModel> = FieldR
 
 
 /**
+ * Reference to a field of type 'StaffCategory'
+ */
+export type EnumStaffCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StaffCategory'>
+    
+
+
+/**
+ * Reference to a field of type 'StaffCategory[]'
+ */
+export type ListEnumStaffCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StaffCategory[]'>
+    
+
+
+/**
+ * Reference to a field of type 'StaffEmploymentStatus'
+ */
+export type EnumStaffEmploymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StaffEmploymentStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'StaffEmploymentStatus[]'
+ */
+export type ListEnumStaffEmploymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StaffEmploymentStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'TeacherWorkloadType'
+ */
+export type EnumTeacherWorkloadTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherWorkloadType'>
+    
+
+
+/**
+ * Reference to a field of type 'TeacherWorkloadType[]'
+ */
+export type ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherWorkloadType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4283,6 +4518,8 @@ export type GlobalOmitConfig = {
   teacherSubjectAssignment?: Prisma.TeacherSubjectAssignmentOmit
   teacherClassAssignment?: Prisma.TeacherClassAssignmentOmit
   homeroomTeacherAssignment?: Prisma.HomeroomTeacherAssignmentOmit
+  staffProfile?: Prisma.StaffProfileOmit
+  teacherWorkloadRecord?: Prisma.TeacherWorkloadRecordOmit
 }
 
 /* Types for Logging */

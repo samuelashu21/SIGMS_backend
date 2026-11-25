@@ -52,6 +52,7 @@ model School {
   outgoingStudentTransfers StudentTransfer[] @relation("StudentTransferSource")
   incomingStudentTransfers StudentTransfer[] @relation("StudentTransferDestination")
   teacherProfiles TeacherProfile[]
+  staffProfiles StaffProfile[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -156,6 +157,7 @@ model User {
   enrollmentHistoryChanges EnrollmentHistory[]
   createdStudentAcademicRecords StudentAcademicRecord[]
   teacherProfiles TeacherProfile[]
+  staffProfiles StaffProfile[]
 
   @@map("users")
 }
@@ -309,6 +311,7 @@ model AcademicYear {
   teacherAssignments TeacherSubjectAssignment[]
   teacherClassAssignments TeacherClassAssignment[]
   homeroomAssignments HomeroomTeacherAssignment[]
+  teacherWorkloadRecords TeacherWorkloadRecord[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -1063,6 +1066,7 @@ model TeacherProfile {
   subjectAssignments TeacherSubjectAssignment[]
   classAssignments TeacherClassAssignment[]
   homeroomAssignments HomeroomTeacherAssignment[]
+  workloadRecords TeacherWorkloadRecord[]
 
   @@unique([schoolId, userId], map: "teacher_profiles_school_user_key")
   @@unique([id, schoolId], map: "teacher_profiles_id_school_key")
@@ -1242,3 +1246,109 @@ model HomeroomTeacherAssignment {
   @@index([schoolId, teacherId, isActive], map: "homeroom_teacher_active_idx")
   @@map("homeroom_teacher_assignments")
 }
+
+
+
+enum StaffCategory {
+  ADMINISTRATIVE
+  REGISTRAR
+  MANAGEMENT
+  SUPPORT
+  OTHER
+
+  @@map("staff_categories")
+}
+
+enum StaffEmploymentStatus {
+  ACTIVE
+  ON_LEAVE
+  SUSPENDED
+  TERMINATED
+
+  @@map("staff_employment_statuses")
+}
+
+
+model StaffProfile {
+  id       String @id @default(uuid()) @db.Uuid
+  schoolId String @map("school_id") @db.Uuid
+  userId   String @map("user_id") @db.Uuid
+
+  employeeNumber String @map("employee_number")
+  firstName      String @map("first_name")
+  middleName     String? @map("middle_name")
+  lastName       String @map("last_name")
+
+  category   StaffCategory
+  designation String
+  department  String?
+
+  phoneNumber String? @map("phone_number")
+  email       String?
+  address     String?
+
+  employmentStatus StaffEmploymentStatus @default(ACTIVE) @map("employment_status")
+  hireDate         DateTime @map("hire_date") @db.Date
+  terminationDate  DateTime? @map("termination_date") @db.Date
+
+  isActive Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  user User @relation(fields: [userId], references: [id],onDelete: Restrict)
+
+  @@unique([schoolId, userId], map: "staff_profiles_school_user_key")
+  @@unique([schoolId, employeeNumber], map: "staff_profiles_school_employee_number_key")
+  @@unique([id, schoolId], map: "staff_profiles_id_school_key")
+  @@index([schoolId, category], map: "staff_profiles_school_category_idx")
+  @@index([schoolId, employmentStatus], map: "staff_profiles_school_status_idx")
+  @@index([schoolId, lastName], map: "staff_profiles_school_last_name_idx")
+  @@map("staff_profiles")
+}
+
+
+
+enum TeacherWorkloadType {
+  TEACHING
+  HOMEROOM
+  ADMINISTRATIVE
+  EXTRACURRICULAR
+  OTHER
+
+  @@map("teacher_workload_types")
+}
+
+model TeacherWorkloadRecord {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  teacherId      String @map("teacher_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  workloadType TeacherWorkloadType @map("workload_type")
+  description  String
+  weeklyPeriods Int @map("weekly_periods")
+
+  effectiveFrom DateTime @map("effective_from") @db.Date
+  effectiveTo   DateTime? @map("effective_to") @db.Date
+
+  isActive Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  teacher TeacherProfile @relation(fields: [teacherId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  @@index([schoolId, teacherId, academicYearId], map: "teacher_workload_teacher_year_idx")
+  @@index([schoolId, workloadType], map: "teacher_workload_type_idx")
+  @@index([schoolId, effectiveFrom], map: "teacher_workload_effective_date_idx")
+  @@map("teacher_workload_records")
+}
+
+
+
+ 

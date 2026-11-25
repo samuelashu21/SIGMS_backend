@@ -173,6 +173,20 @@ import {
   updateHomeroomTeacherAssignmentController
 } from '../../teachers/controllers/homeroom-teacher-assignment.controller.js';
 
+import {
+  createStaffProfileController,
+  getStaffProfilesController,
+  getStaffProfileController,
+  updateStaffProfileController
+} from '../../teachers/controllers/staff-profile.controller.js';
+
+import {
+  createTeacherWorkloadController,
+  getTeacherWorkloadRecordsController,
+  updateTeacherWorkloadController,
+  getTeacherWorkloadSummaryController
+} from '../../teachers/controllers/teacher-workload.controller.js';
+
 const router = Router();
 
 router.use(authenticate);
@@ -1172,6 +1186,85 @@ router.get(
   ),
   getTeacherHomeroomAssignmentsController
 );
+
+
+
+// Staff management
+router.post(
+  '/:schoolId/staff',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createStaffProfileController
+);
+
+router.get(
+  '/:schoolId/staff',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getStaffProfilesController
+);
+
+router.get(
+  '/:schoolId/staff/:staffId',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getStaffProfileController
+);
+
+router.patch(
+  '/:schoolId/staff/:staffId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateStaffProfileController
+);
+
+// Teacher workload management
+router.post(
+  '/:schoolId/teachers/:teacherId/workloads',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  createTeacherWorkloadController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/workloads',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  getTeacherWorkloadRecordsController
+);
+
+router.patch(
+  '/:schoolId/teachers/:teacherId/workloads/:workloadId',
+  authorizeSchoolRoles('SUPER_ADMIN', 'SCHOOL_ADMIN', 'PRINCIPAL'),
+  updateTeacherWorkloadController
+);
+
+router.get(
+  '/:schoolId/teachers/:teacherId/workload-summary',
+  authorizeSchoolRoles(
+    'SUPER_ADMIN',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'TEACHER',
+    'REGISTRAR'
+  ),
+  getTeacherWorkloadSummaryController
+);
+
 
 
 export default router;
