@@ -53,6 +53,7 @@ model School {
   incomingStudentTransfers StudentTransfer[] @relation("StudentTransferDestination")
   teacherProfiles TeacherProfile[]
   staffProfiles StaffProfile[]
+  guardianProfiles GuardianProfile[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -85,6 +86,7 @@ model Student {
   transfers StudentTransfer[]
 
   academicRecords StudentAcademicRecord[]
+  guardianRelationships StudentGuardianRelationship[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -158,6 +160,8 @@ model User {
   createdStudentAcademicRecords StudentAcademicRecord[]
   teacherProfiles TeacherProfile[]
   staffProfiles StaffProfile[]
+  guardianProfiles GuardianProfile[]
+  verifiedGuardianRelationships StudentGuardianRelationship[] @relation("GuardianRelationshipVerifier")
 
   @@map("users")
 }
@@ -1351,4 +1355,178 @@ model TeacherWorkloadRecord {
 
 
 
+
+model GuardianProfile {
+  id       String @id @default(uuid()) @db.Uuid
+  schoolId String @map("school_id") @db.Uuid
+  userId   String @map("user_id") @db.Uuid
+
+  firstName  String  @map("first_name")
+  middleName String? @map("middle_name")
+  lastName   String  @map("last_name")
+
+  gender      ApplicantGender?
+  dateOfBirth DateTime? @map("date_of_birth") @db.Date
+
+  phoneNumber     String  @map("phone_number")
+  alternatePhone  String? @map("alternate_phone")
+  email           String?
+  occupation      String?
+  address         String?
+  city            String?
+  region          String?
+  preferredLanguage String? @map("preferred_language")
+
+  isActive Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  user User @relation(fields: [userId],references: [id],onDelete: Restrict)
+  studentRelationships StudentGuardianRelationship[]
+  contacts GuardianContact[]
+
+  @@unique([schoolId, userId], map: "guardian_profiles_school_user_key")
+  @@unique([id, schoolId], map: "guardian_profiles_id_school_key")
+  @@index([schoolId, lastName], map: "guardian_profiles_school_last_name_idx")
+  @@index([schoolId, phoneNumber], map: "guardian_profiles_school_phone_idx")
+  @@index([schoolId, isActive], map: "guardian_profiles_school_active_idx")
+  @@map("guardian_profiles")
+}
  
+
+
+
+enum GuardianRelationshipType {
+  FATHER
+  MOTHER
+  GRANDFATHER
+  GRANDMOTHER
+  BROTHER
+  SISTER
+  UNCLE
+  AUNT
+  LEGAL_GUARDIAN
+  OTHER
+
+  @@map("guardian_relationship_types")
+}
+
+enum GuardianRelationshipStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+
+  @@map("guardian_relationship_statuses")
+}
+
+
+model StudentGuardianRelationship {
+  id         String @id @default(uuid()) @db.Uuid
+  schoolId   String @map("school_id") @db.Uuid
+  studentId  String @map("student_id") @db.Uuid
+  guardianId String @map("guardian_id") @db.Uuid
+
+  relationshipType GuardianRelationshipType @map("relationship_type")
+  isPrimary        Boolean @default(false) @map("is_primary")
+
+  status GuardianRelationshipStatus @default(PENDING)
+
+  verificationNotes String? @map("verification_notes")
+  verifiedAt        DateTime? @map("verified_at") @db.Timestamptz(3)
+  verifiedById      String? @map("verified_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  guardian GuardianProfile @relation(fields: [guardianId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  permission GuardianPermission?
+  verifiedBy User? @relation("GuardianRelationshipVerifier",fields: [verifiedById],references: [id], onDelete: Restrict)
+
+  @@unique([schoolId, studentId, guardianId], map: "student_guardian_relationship_key")
+  @@unique([id, schoolId], map: "student_guardian_relationship_id_school_key")
+  @@index([schoolId, studentId, status], map: "student_guardian_student_status_idx")
+  @@index([schoolId, guardianId, status], map: "student_guardian_guardian_status_idx")
+  @@index([schoolId, status, createdAt], map: "student_guardian_status_created_idx")
+  @@map("student_guardian_relationships")
+}
+
+
+
+
+model GuardianPermission {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  relationshipId String @unique @map("relationship_id") @db.Uuid
+
+  canViewAcademicRecords Boolean @default(true) @map("can_view_academic_records")
+  canViewAttendance      Boolean @default(true) @map("can_view_attendance")
+  canViewExamResults     Boolean @default(true) @map("can_view_exam_results")
+  canViewReportCards     Boolean @default(true) @map("can_view_report_cards")
+  canViewTimetable       Boolean @default(true) @map("can_view_timetable")
+  canViewAnnouncements   Boolean @default(true) @map("can_view_announcements")
+
+  canReceiveNotifications Boolean @default(true) @map("can_receive_notifications")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  relationship StudentGuardianRelationship @relation(fields: [relationshipId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([relationshipId, schoolId], map: "guardian_permissions_relationship_school_key")
+  @@unique([id, schoolId], map: "guardian_permissions_id_school_key")
+  @@index([schoolId], map: "guardian_permissions_school_idx")
+  @@map("guardian_permissions")
+}
+ 
+
+
+enum GuardianContactType {
+  PHONE
+  EMAIL
+  ADDRESS
+  EMERGENCY
+  OTHER
+
+  @@map("guardian_contact_types")
+}
+
+enum GuardianContactChannel {
+  SMS
+  EMAIL
+  PHONE_CALL
+  IN_APP
+
+  @@map("guardian_contact_channels")
+}
+
+
+model GuardianContact {
+  id         String @id @default(uuid()) @db.Uuid
+  schoolId   String @map("school_id") @db.Uuid
+  guardianId String @map("guardian_id") @db.Uuid
+
+  contactType GuardianContactType @map("contact_type")
+  label       String?
+  value       String
+  channel     GuardianContactChannel?
+
+  isPrimary  Boolean @default(false) @map("is_primary")
+  isVerified Boolean @default(false) @map("is_verified")
+  isActive   Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  guardian GuardianProfile @relation(fields: [guardianId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([id, schoolId], map: "guardian_contacts_id_school_key")
+  @@index([schoolId, guardianId, contactType], map: "guardian_contacts_guardian_type_idx")
+  @@index([schoolId, guardianId, isPrimary], map: "guardian_contacts_primary_idx")
+  @@map("guardian_contacts")
+}

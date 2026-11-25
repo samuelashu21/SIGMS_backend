@@ -433,7 +433,11 @@ export const ModelName = {
   TeacherClassAssignment: 'TeacherClassAssignment',
   HomeroomTeacherAssignment: 'HomeroomTeacherAssignment',
   StaffProfile: 'StaffProfile',
-  TeacherWorkloadRecord: 'TeacherWorkloadRecord'
+  TeacherWorkloadRecord: 'TeacherWorkloadRecord',
+  GuardianProfile: 'GuardianProfile',
+  StudentGuardianRelationship: 'StudentGuardianRelationship',
+  GuardianPermission: 'GuardianPermission',
+  GuardianContact: 'GuardianContact'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -449,7 +453,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -3191,6 +3195,302 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    GuardianProfile: {
+      payload: Prisma.$GuardianProfilePayload<ExtArgs>
+      fields: Prisma.GuardianProfileFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.GuardianProfileFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.GuardianProfileFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>
+        }
+        findFirst: {
+          args: Prisma.GuardianProfileFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.GuardianProfileFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>
+        }
+        findMany: {
+          args: Prisma.GuardianProfileFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>[]
+        }
+        create: {
+          args: Prisma.GuardianProfileCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>
+        }
+        createMany: {
+          args: Prisma.GuardianProfileCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.GuardianProfileCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>[]
+        }
+        delete: {
+          args: Prisma.GuardianProfileDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>
+        }
+        update: {
+          args: Prisma.GuardianProfileUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>
+        }
+        deleteMany: {
+          args: Prisma.GuardianProfileDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.GuardianProfileUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.GuardianProfileUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>[]
+        }
+        upsert: {
+          args: Prisma.GuardianProfileUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianProfilePayload>
+        }
+        aggregate: {
+          args: Prisma.GuardianProfileAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateGuardianProfile>
+        }
+        groupBy: {
+          args: Prisma.GuardianProfileGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuardianProfileGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.GuardianProfileCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuardianProfileCountAggregateOutputType> | number
+        }
+      }
+    }
+    StudentGuardianRelationship: {
+      payload: Prisma.$StudentGuardianRelationshipPayload<ExtArgs>
+      fields: Prisma.StudentGuardianRelationshipFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StudentGuardianRelationshipFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StudentGuardianRelationshipFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>
+        }
+        findFirst: {
+          args: Prisma.StudentGuardianRelationshipFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StudentGuardianRelationshipFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>
+        }
+        findMany: {
+          args: Prisma.StudentGuardianRelationshipFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>[]
+        }
+        create: {
+          args: Prisma.StudentGuardianRelationshipCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>
+        }
+        createMany: {
+          args: Prisma.StudentGuardianRelationshipCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StudentGuardianRelationshipCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>[]
+        }
+        delete: {
+          args: Prisma.StudentGuardianRelationshipDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>
+        }
+        update: {
+          args: Prisma.StudentGuardianRelationshipUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>
+        }
+        deleteMany: {
+          args: Prisma.StudentGuardianRelationshipDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StudentGuardianRelationshipUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StudentGuardianRelationshipUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>[]
+        }
+        upsert: {
+          args: Prisma.StudentGuardianRelationshipUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentGuardianRelationshipPayload>
+        }
+        aggregate: {
+          args: Prisma.StudentGuardianRelationshipAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStudentGuardianRelationship>
+        }
+        groupBy: {
+          args: Prisma.StudentGuardianRelationshipGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentGuardianRelationshipGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StudentGuardianRelationshipCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentGuardianRelationshipCountAggregateOutputType> | number
+        }
+      }
+    }
+    GuardianPermission: {
+      payload: Prisma.$GuardianPermissionPayload<ExtArgs>
+      fields: Prisma.GuardianPermissionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.GuardianPermissionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.GuardianPermissionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>
+        }
+        findFirst: {
+          args: Prisma.GuardianPermissionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.GuardianPermissionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>
+        }
+        findMany: {
+          args: Prisma.GuardianPermissionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>[]
+        }
+        create: {
+          args: Prisma.GuardianPermissionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>
+        }
+        createMany: {
+          args: Prisma.GuardianPermissionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.GuardianPermissionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>[]
+        }
+        delete: {
+          args: Prisma.GuardianPermissionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>
+        }
+        update: {
+          args: Prisma.GuardianPermissionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>
+        }
+        deleteMany: {
+          args: Prisma.GuardianPermissionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.GuardianPermissionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.GuardianPermissionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>[]
+        }
+        upsert: {
+          args: Prisma.GuardianPermissionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianPermissionPayload>
+        }
+        aggregate: {
+          args: Prisma.GuardianPermissionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateGuardianPermission>
+        }
+        groupBy: {
+          args: Prisma.GuardianPermissionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuardianPermissionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.GuardianPermissionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuardianPermissionCountAggregateOutputType> | number
+        }
+      }
+    }
+    GuardianContact: {
+      payload: Prisma.$GuardianContactPayload<ExtArgs>
+      fields: Prisma.GuardianContactFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.GuardianContactFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.GuardianContactFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>
+        }
+        findFirst: {
+          args: Prisma.GuardianContactFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.GuardianContactFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>
+        }
+        findMany: {
+          args: Prisma.GuardianContactFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>[]
+        }
+        create: {
+          args: Prisma.GuardianContactCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>
+        }
+        createMany: {
+          args: Prisma.GuardianContactCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.GuardianContactCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>[]
+        }
+        delete: {
+          args: Prisma.GuardianContactDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>
+        }
+        update: {
+          args: Prisma.GuardianContactUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>
+        }
+        deleteMany: {
+          args: Prisma.GuardianContactDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.GuardianContactUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.GuardianContactUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>[]
+        }
+        upsert: {
+          args: Prisma.GuardianContactUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GuardianContactPayload>
+        }
+        aggregate: {
+          args: Prisma.GuardianContactAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateGuardianContact>
+        }
+        groupBy: {
+          args: Prisma.GuardianContactGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuardianContactGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.GuardianContactCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GuardianContactCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3859,6 +4159,85 @@ export const TeacherWorkloadRecordScalarFieldEnum = {
 export type TeacherWorkloadRecordScalarFieldEnum = (typeof TeacherWorkloadRecordScalarFieldEnum)[keyof typeof TeacherWorkloadRecordScalarFieldEnum]
 
 
+export const GuardianProfileScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  userId: 'userId',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  gender: 'gender',
+  dateOfBirth: 'dateOfBirth',
+  phoneNumber: 'phoneNumber',
+  alternatePhone: 'alternatePhone',
+  email: 'email',
+  occupation: 'occupation',
+  address: 'address',
+  city: 'city',
+  region: 'region',
+  preferredLanguage: 'preferredLanguage',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GuardianProfileScalarFieldEnum = (typeof GuardianProfileScalarFieldEnum)[keyof typeof GuardianProfileScalarFieldEnum]
+
+
+export const StudentGuardianRelationshipScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  guardianId: 'guardianId',
+  relationshipType: 'relationshipType',
+  isPrimary: 'isPrimary',
+  status: 'status',
+  verificationNotes: 'verificationNotes',
+  verifiedAt: 'verifiedAt',
+  verifiedById: 'verifiedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentGuardianRelationshipScalarFieldEnum = (typeof StudentGuardianRelationshipScalarFieldEnum)[keyof typeof StudentGuardianRelationshipScalarFieldEnum]
+
+
+export const GuardianPermissionScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  relationshipId: 'relationshipId',
+  canViewAcademicRecords: 'canViewAcademicRecords',
+  canViewAttendance: 'canViewAttendance',
+  canViewExamResults: 'canViewExamResults',
+  canViewReportCards: 'canViewReportCards',
+  canViewTimetable: 'canViewTimetable',
+  canViewAnnouncements: 'canViewAnnouncements',
+  canReceiveNotifications: 'canReceiveNotifications',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GuardianPermissionScalarFieldEnum = (typeof GuardianPermissionScalarFieldEnum)[keyof typeof GuardianPermissionScalarFieldEnum]
+
+
+export const GuardianContactScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  guardianId: 'guardianId',
+  contactType: 'contactType',
+  label: 'label',
+  value: 'value',
+  channel: 'channel',
+  isPrimary: 'isPrimary',
+  isVerified: 'isVerified',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GuardianContactScalarFieldEnum = (typeof GuardianContactScalarFieldEnum)[keyof typeof GuardianContactScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -4320,6 +4699,62 @@ export type ListEnumTeacherWorkloadTypeFieldRefInput<$PrismaModel> = FieldRefInp
 
 
 /**
+ * Reference to a field of type 'GuardianRelationshipType'
+ */
+export type EnumGuardianRelationshipTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianRelationshipType'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianRelationshipType[]'
+ */
+export type ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianRelationshipType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianRelationshipStatus'
+ */
+export type EnumGuardianRelationshipStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianRelationshipStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianRelationshipStatus[]'
+ */
+export type ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianRelationshipStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianContactType'
+ */
+export type EnumGuardianContactTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianContactType'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianContactType[]'
+ */
+export type ListEnumGuardianContactTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianContactType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianContactChannel'
+ */
+export type EnumGuardianContactChannelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianContactChannel'>
+    
+
+
+/**
+ * Reference to a field of type 'GuardianContactChannel[]'
+ */
+export type ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GuardianContactChannel[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4520,6 +4955,10 @@ export type GlobalOmitConfig = {
   homeroomTeacherAssignment?: Prisma.HomeroomTeacherAssignmentOmit
   staffProfile?: Prisma.StaffProfileOmit
   teacherWorkloadRecord?: Prisma.TeacherWorkloadRecordOmit
+  guardianProfile?: Prisma.GuardianProfileOmit
+  studentGuardianRelationship?: Prisma.StudentGuardianRelationshipOmit
+  guardianPermission?: Prisma.GuardianPermissionOmit
+  guardianContact?: Prisma.GuardianContactOmit
 }
 
 /* Types for Logging */

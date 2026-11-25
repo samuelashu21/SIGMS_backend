@@ -186,7 +186,9 @@ import {
   updateTeacherWorkloadController,
   getTeacherWorkloadSummaryController
 } from '../../teachers/controllers/teacher-workload.controller.js';
+import parentRoutes from '../../parents/routes/parent.routes.js';
 
+ 
 const router = Router();
 
 router.use(authenticate);
@@ -207,6 +209,9 @@ router.post(
 
 // School-specific authorization
 router.use('/:schoolId', requireSchoolMembership);
+
+// Parent routes
+router.use('/:schoolId/parents', parentRoutes);
 
 // School profile
 router.get(
@@ -1264,6 +1269,7 @@ router.get(
   ),
   getTeacherWorkloadSummaryController
 );
+
 
 
 

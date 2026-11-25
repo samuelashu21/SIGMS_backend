@@ -202,3 +202,23 @@ export type StaffProfile = Prisma.StaffProfileModel
  * 
  */
 export type TeacherWorkloadRecord = Prisma.TeacherWorkloadRecordModel
+/**
+ * Model GuardianProfile
+ * 
+ */
+export type GuardianProfile = Prisma.GuardianProfileModel
+/**
+ * Model StudentGuardianRelationship
+ * 
+ */
+export type StudentGuardianRelationship = Prisma.StudentGuardianRelationshipModel
+/**
+ * Model GuardianPermission
+ * 
+ */
+export type GuardianPermission = Prisma.GuardianPermissionModel
+/**
+ * Model GuardianContact
+ * 
+ */
+export type GuardianContact = Prisma.GuardianContactModel

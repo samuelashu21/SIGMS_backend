@@ -803,6 +803,74 @@ export type EnumTeacherWorkloadTypeWithAggregatesFilter<$PrismaModel = never> = 
   _max?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
 }
 
+export type EnumGuardianRelationshipTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipType | Prisma.EnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipTypeFilter<$PrismaModel> | $Enums.GuardianRelationshipType
+}
+
+export type EnumGuardianRelationshipStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipStatus | Prisma.EnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipStatusFilter<$PrismaModel> | $Enums.GuardianRelationshipStatus
+}
+
+export type EnumGuardianRelationshipTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipType | Prisma.EnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipTypeWithAggregatesFilter<$PrismaModel> | $Enums.GuardianRelationshipType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianRelationshipTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianRelationshipTypeFilter<$PrismaModel>
+}
+
+export type EnumGuardianRelationshipStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipStatus | Prisma.EnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipStatusWithAggregatesFilter<$PrismaModel> | $Enums.GuardianRelationshipStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianRelationshipStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianRelationshipStatusFilter<$PrismaModel>
+}
+
+export type EnumGuardianContactTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactType | Prisma.EnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianContactTypeFilter<$PrismaModel> | $Enums.GuardianContactType
+}
+
+export type EnumGuardianContactChannelNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactChannel | Prisma.EnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  in?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumGuardianContactChannelNullableFilter<$PrismaModel> | $Enums.GuardianContactChannel | null
+}
+
+export type EnumGuardianContactTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactType | Prisma.EnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianContactTypeWithAggregatesFilter<$PrismaModel> | $Enums.GuardianContactType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianContactTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianContactTypeFilter<$PrismaModel>
+}
+
+export type EnumGuardianContactChannelNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactChannel | Prisma.EnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  in?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumGuardianContactChannelNullableWithAggregatesFilter<$PrismaModel> | $Enums.GuardianContactChannel | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianContactChannelNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianContactChannelNullableFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1572,6 +1640,74 @@ export type NestedEnumTeacherWorkloadTypeWithAggregatesFilter<$PrismaModel = nev
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumTeacherWorkloadTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumGuardianRelationshipTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipType | Prisma.EnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipTypeFilter<$PrismaModel> | $Enums.GuardianRelationshipType
+}
+
+export type NestedEnumGuardianRelationshipStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipStatus | Prisma.EnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipStatusFilter<$PrismaModel> | $Enums.GuardianRelationshipStatus
+}
+
+export type NestedEnumGuardianRelationshipTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipType | Prisma.EnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipType[] | Prisma.ListEnumGuardianRelationshipTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipTypeWithAggregatesFilter<$PrismaModel> | $Enums.GuardianRelationshipType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianRelationshipTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianRelationshipTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumGuardianRelationshipStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianRelationshipStatus | Prisma.EnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianRelationshipStatus[] | Prisma.ListEnumGuardianRelationshipStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianRelationshipStatusWithAggregatesFilter<$PrismaModel> | $Enums.GuardianRelationshipStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianRelationshipStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianRelationshipStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumGuardianContactTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactType | Prisma.EnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianContactTypeFilter<$PrismaModel> | $Enums.GuardianContactType
+}
+
+export type NestedEnumGuardianContactChannelNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactChannel | Prisma.EnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  in?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumGuardianContactChannelNullableFilter<$PrismaModel> | $Enums.GuardianContactChannel | null
+}
+
+export type NestedEnumGuardianContactTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactType | Prisma.EnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.GuardianContactType[] | Prisma.ListEnumGuardianContactTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGuardianContactTypeWithAggregatesFilter<$PrismaModel> | $Enums.GuardianContactType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianContactTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianContactTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumGuardianContactChannelNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.GuardianContactChannel | Prisma.EnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  in?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.GuardianContactChannel[] | Prisma.ListEnumGuardianContactChannelFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumGuardianContactChannelNullableWithAggregatesFilter<$PrismaModel> | $Enums.GuardianContactChannel | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGuardianContactChannelNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGuardianContactChannelNullableFilter<$PrismaModel>
 }
 
 

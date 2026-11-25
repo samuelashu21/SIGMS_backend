@@ -87,7 +87,11 @@ export const ModelName = {
   TeacherClassAssignment: 'TeacherClassAssignment',
   HomeroomTeacherAssignment: 'HomeroomTeacherAssignment',
   StaffProfile: 'StaffProfile',
-  TeacherWorkloadRecord: 'TeacherWorkloadRecord'
+  TeacherWorkloadRecord: 'TeacherWorkloadRecord',
+  GuardianProfile: 'GuardianProfile',
+  StudentGuardianRelationship: 'StudentGuardianRelationship',
+  GuardianPermission: 'GuardianPermission',
+  GuardianContact: 'GuardianContact'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -733,6 +737,85 @@ export const TeacherWorkloadRecordScalarFieldEnum = {
 } as const
 
 export type TeacherWorkloadRecordScalarFieldEnum = (typeof TeacherWorkloadRecordScalarFieldEnum)[keyof typeof TeacherWorkloadRecordScalarFieldEnum]
+
+
+export const GuardianProfileScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  userId: 'userId',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  gender: 'gender',
+  dateOfBirth: 'dateOfBirth',
+  phoneNumber: 'phoneNumber',
+  alternatePhone: 'alternatePhone',
+  email: 'email',
+  occupation: 'occupation',
+  address: 'address',
+  city: 'city',
+  region: 'region',
+  preferredLanguage: 'preferredLanguage',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GuardianProfileScalarFieldEnum = (typeof GuardianProfileScalarFieldEnum)[keyof typeof GuardianProfileScalarFieldEnum]
+
+
+export const StudentGuardianRelationshipScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  guardianId: 'guardianId',
+  relationshipType: 'relationshipType',
+  isPrimary: 'isPrimary',
+  status: 'status',
+  verificationNotes: 'verificationNotes',
+  verifiedAt: 'verifiedAt',
+  verifiedById: 'verifiedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentGuardianRelationshipScalarFieldEnum = (typeof StudentGuardianRelationshipScalarFieldEnum)[keyof typeof StudentGuardianRelationshipScalarFieldEnum]
+
+
+export const GuardianPermissionScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  relationshipId: 'relationshipId',
+  canViewAcademicRecords: 'canViewAcademicRecords',
+  canViewAttendance: 'canViewAttendance',
+  canViewExamResults: 'canViewExamResults',
+  canViewReportCards: 'canViewReportCards',
+  canViewTimetable: 'canViewTimetable',
+  canViewAnnouncements: 'canViewAnnouncements',
+  canReceiveNotifications: 'canReceiveNotifications',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GuardianPermissionScalarFieldEnum = (typeof GuardianPermissionScalarFieldEnum)[keyof typeof GuardianPermissionScalarFieldEnum]
+
+
+export const GuardianContactScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  guardianId: 'guardianId',
+  contactType: 'contactType',
+  label: 'label',
+  value: 'value',
+  channel: 'channel',
+  isPrimary: 'isPrimary',
+  isVerified: 'isVerified',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GuardianContactScalarFieldEnum = (typeof GuardianContactScalarFieldEnum)[keyof typeof GuardianContactScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -260,3 +260,49 @@ export const TeacherWorkloadType = {
 } as const
 
 export type TeacherWorkloadType = (typeof TeacherWorkloadType)[keyof typeof TeacherWorkloadType]
+
+
+export const GuardianRelationshipType = {
+  FATHER: 'FATHER',
+  MOTHER: 'MOTHER',
+  GRANDFATHER: 'GRANDFATHER',
+  GRANDMOTHER: 'GRANDMOTHER',
+  BROTHER: 'BROTHER',
+  SISTER: 'SISTER',
+  UNCLE: 'UNCLE',
+  AUNT: 'AUNT',
+  LEGAL_GUARDIAN: 'LEGAL_GUARDIAN',
+  OTHER: 'OTHER'
+} as const
+
+export type GuardianRelationshipType = (typeof GuardianRelationshipType)[keyof typeof GuardianRelationshipType]
+
+
+export const GuardianRelationshipStatus = {
+  PENDING: 'PENDING',
+  VERIFIED: 'VERIFIED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type GuardianRelationshipStatus = (typeof GuardianRelationshipStatus)[keyof typeof GuardianRelationshipStatus]
+
+
+export const GuardianContactType = {
+  PHONE: 'PHONE',
+  EMAIL: 'EMAIL',
+  ADDRESS: 'ADDRESS',
+  EMERGENCY: 'EMERGENCY',
+  OTHER: 'OTHER'
+} as const
+
+export type GuardianContactType = (typeof GuardianContactType)[keyof typeof GuardianContactType]
+
+
+export const GuardianContactChannel = {
+  SMS: 'SMS',
+  EMAIL: 'EMAIL',
+  PHONE_CALL: 'PHONE_CALL',
+  IN_APP: 'IN_APP'
+} as const
+
+export type GuardianContactChannel = (typeof GuardianContactChannel)[keyof typeof GuardianContactChannel]
