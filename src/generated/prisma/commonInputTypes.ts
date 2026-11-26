@@ -1126,6 +1126,125 @@ export type EnumAcademicPerformanceSummaryTypeWithAggregatesFilter<$PrismaModel 
   _max?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
 }
 
+export type EnumAcademicRankingScopeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingScope | Prisma.EnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingScopeFilter<$PrismaModel> | $Enums.AcademicRankingScope
+}
+
+export type EnumAcademicRankingScopeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingScope | Prisma.EnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingScopeWithAggregatesFilter<$PrismaModel> | $Enums.AcademicRankingScope
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicRankingScopeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicRankingScopeFilter<$PrismaModel>
+}
+
+export type EnumAcademicRankingPeriodFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingPeriod | Prisma.EnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingPeriodFilter<$PrismaModel> | $Enums.AcademicRankingPeriod
+}
+
+export type EnumAcademicRankingPeriodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingPeriod | Prisma.EnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingPeriodWithAggregatesFilter<$PrismaModel> | $Enums.AcademicRankingPeriod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicRankingPeriodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicRankingPeriodFilter<$PrismaModel>
+}
+
+export type EnumAcademicPerformanceHistoryTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryType | Prisma.EnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryType
+}
+
+export type EnumAcademicPerformanceHistoryActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryAction | Prisma.EnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryAction
+}
+
+export type JsonFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+    Required<JsonFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+export type JsonFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  path?: string[]
+  mode?: Prisma.QueryMode | Prisma.EnumQueryModeFieldRefInput<$PrismaModel>
+  string_contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_starts_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_ends_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  array_starts_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_ends_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_contains?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  lt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  lte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type EnumAcademicPerformanceHistoryTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryType | Prisma.EnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryTypeWithAggregatesFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel>
+}
+
+export type EnumAcademicPerformanceHistoryActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryAction | Prisma.EnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryActionWithAggregatesFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel>
+}
+
+export type JsonWithAggregatesFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+    Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  path?: string[]
+  mode?: Prisma.QueryMode | Prisma.EnumQueryModeFieldRefInput<$PrismaModel>
+  string_contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_starts_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_ends_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  array_starts_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_ends_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_contains?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  lt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  lte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedJsonFilter<$PrismaModel>
+  _max?: Prisma.NestedJsonFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -2218,6 +2337,98 @@ export type NestedEnumAcademicPerformanceSummaryTypeWithAggregatesFilter<$Prisma
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumAcademicRankingScopeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingScope | Prisma.EnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingScopeFilter<$PrismaModel> | $Enums.AcademicRankingScope
+}
+
+export type NestedEnumAcademicRankingScopeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingScope | Prisma.EnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingScope[] | Prisma.ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingScopeWithAggregatesFilter<$PrismaModel> | $Enums.AcademicRankingScope
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicRankingScopeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicRankingScopeFilter<$PrismaModel>
+}
+
+export type NestedEnumAcademicRankingPeriodFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingPeriod | Prisma.EnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingPeriodFilter<$PrismaModel> | $Enums.AcademicRankingPeriod
+}
+
+export type NestedEnumAcademicRankingPeriodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicRankingPeriod | Prisma.EnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicRankingPeriod[] | Prisma.ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicRankingPeriodWithAggregatesFilter<$PrismaModel> | $Enums.AcademicRankingPeriod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicRankingPeriodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicRankingPeriodFilter<$PrismaModel>
+}
+
+export type NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryType | Prisma.EnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryType
+}
+
+export type NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryAction | Prisma.EnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryAction
+}
+
+export type NestedEnumAcademicPerformanceHistoryTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryType | Prisma.EnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryType[] | Prisma.ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryTypeWithAggregatesFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicPerformanceHistoryTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumAcademicPerformanceHistoryActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceHistoryAction | Prisma.EnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceHistoryAction[] | Prisma.ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceHistoryActionWithAggregatesFilter<$PrismaModel> | $Enums.AcademicPerformanceHistoryAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicPerformanceHistoryActionFilter<$PrismaModel>
+}
+
+export type NestedJsonFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+    Required<NestedJsonFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
+
+export type NestedJsonFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  path?: string[]
+  mode?: Prisma.QueryMode | Prisma.EnumQueryModeFieldRefInput<$PrismaModel>
+  string_contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_starts_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_ends_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  array_starts_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_ends_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_contains?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  lt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  lte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
 }
 
 

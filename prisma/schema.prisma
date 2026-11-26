@@ -73,6 +73,11 @@ model School {
 
   academicPerformanceSummaries AcademicPerformanceSummary[]
 
+  academicRankingConfigurations AcademicRankingConfiguration[]
+  academicStudentRankings AcademicStudentRanking[]
+
+  academicPerformanceHistory AcademicPerformanceHistory[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -112,6 +117,8 @@ model Student {
   annualAcademicAverages AnnualAcademicAverage[]
 
   academicPerformanceSummaries AcademicPerformanceSummary[]
+  academicStudentRankings AcademicStudentRanking[]
+  academicPerformanceHistory AcademicPerformanceHistory[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -199,6 +206,7 @@ model User {
   requestedMarkCorrections MarkCorrection[] @relation("MarkCorrectionRequester")
   reviewedMarkCorrections MarkCorrection[] @relation("MarkCorrectionReviewer")
   publishedMarkRecords MarkRecord[] @relation("MarkRecordPublisher")
+  academicPerformanceHistoryActions AcademicPerformanceHistory[] @relation("AcademicPerformanceHistoryActor")
 
   @@map("users")
 }
@@ -365,6 +373,10 @@ model AcademicYear {
 
   academicPerformanceSummaries AcademicPerformanceSummary[]
 
+  academicRankingConfigurations AcademicRankingConfiguration[]
+  academicStudentRankings AcademicStudentRanking[]
+  academicPerformanceHistory AcademicPerformanceHistory[]
+
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
   @@unique([schoolId, name], map: "academic_years_school_name_key")
@@ -409,6 +421,10 @@ model Semester {
 
   academicPerformanceSummaries AcademicPerformanceSummary[]
 
+  academicStudentRankings AcademicStudentRanking[]
+
+  academicPerformanceHistory AcademicPerformanceHistory[]
+
   // ADD THIS
   @@unique([id, schoolId], map: "semesters_id_school_key")
 
@@ -445,6 +461,9 @@ model Grade {
   examinations Examination[]
   academicSubjectWeights AcademicSubjectWeight[]
 
+  academicRankingConfigurations AcademicRankingConfiguration[]
+  academicStudentRankings AcademicStudentRanking[]
+
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
   @@unique([id, schoolId], map: "grades_id_school_key")
@@ -479,6 +498,8 @@ model Section {
   homeroomAssignments HomeroomTeacherAssignment[]
   classAttendance ClassAttendance[]
   examinations Examination[]
+
+  academicStudentRankings AcademicStudentRanking[]
 
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
@@ -2346,4 +2367,140 @@ model AcademicPerformanceSummary {
   @@index([schoolId, academicYearId, summaryType])
   @@index([schoolId, studentId, academicYearId])
   @@map("academic_performance_summaries")
+}
+
+
+
+
+enum AcademicRankingScope {
+  GRADE
+  SECTION
+
+  @@map("academic_ranking_scopes")
+}
+
+enum AcademicRankingPeriod {
+  SEMESTER
+  ANNUAL
+
+  @@map("academic_ranking_periods")
+}
+
+
+model AcademicRankingConfiguration {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  gradeId        String   @map("grade_id") @db.Uuid
+
+  rankingEnabled       Boolean @default(false) @map("ranking_enabled")
+  rankingScope         AcademicRankingScope @default(GRADE) @map("ranking_scope")
+  allowStudentVisibility Boolean @default(false) @map("allow_student_visibility")
+  allowParentVisibility  Boolean @default(false) @map("allow_parent_visibility")
+  minimumStudents      Int @default(2) @map("minimum_students")
+  includeTies          Boolean @default(true) @map("include_ties")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  grade        Grade        @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId, gradeId])
+  @@unique([id, schoolId])
+  @@map("academic_ranking_configurations")
+}
+
+model AcademicStudentRanking {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  gradeId        String   @map("grade_id") @db.Uuid
+  sectionId      String?  @map("section_id") @db.Uuid
+  semesterId     String?  @map("semester_id") @db.Uuid
+
+  period         AcademicRankingPeriod
+  periodKey      String   @map("period_key") @db.VarChar(100)
+  scope          AcademicRankingScope
+  scopeKey       String   @map("scope_key") @db.VarChar(100)
+
+  rank           Int
+  score          Decimal  @db.Decimal(8, 2)
+  totalStudents  Int      @map("total_students")
+  tied           Boolean  @default(false)
+
+  calculatedAt DateTime @default(now()) @map("calculated_at") @db.Timestamptz(3)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  grade        Grade        @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  section      Section?     @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester?    @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, studentId, academicYearId, periodKey, scopeKey])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, gradeId, periodKey, scopeKey, rank])
+  @@index([schoolId, studentId, academicYearId])
+  @@map("academic_student_rankings")
+}
+
+
+
+enum AcademicPerformanceHistoryType {
+  SUBJECT_GRADE
+  SEMESTER_AVERAGE
+  ANNUAL_AVERAGE
+  PERFORMANCE_SUMMARY
+  RANKING
+
+  @@map("academic_performance_history_types")
+}
+
+enum AcademicPerformanceHistoryAction {
+  CREATED
+  RECALCULATED
+  CORRECTED
+  PUBLISHED
+  WITHDRAWN
+
+  @@map("academic_performance_history_actions")
+}
+
+
+model AcademicPerformanceHistory {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+
+  semesterId     String?  @map("semester_id") @db.Uuid
+  sourceId       String?  @map("source_id") @db.Uuid
+
+  historyType AcademicPerformanceHistoryType @map("history_type")
+  action      AcademicPerformanceHistoryAction
+
+  previousValues Json? @map("previous_values")
+  newValues      Json  @map("new_values")
+
+  reason        String? @db.Text
+  performedById String? @map("performed_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester?    @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  performedBy  User?        @relation("AcademicPerformanceHistoryActor", fields: [performedById], references: [id], onDelete: SetNull)
+
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, academicYearId, createdAt])
+  @@index([schoolId, historyType, action, createdAt])
+  @@index([sourceId])
+  @@map("academic_performance_history")
 }

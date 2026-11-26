@@ -312,3 +312,18 @@ export type AcademicSemesterWeight = Prisma.AcademicSemesterWeightModel
  * 
  */
 export type AcademicPerformanceSummary = Prisma.AcademicPerformanceSummaryModel
+/**
+ * Model AcademicRankingConfiguration
+ * 
+ */
+export type AcademicRankingConfiguration = Prisma.AcademicRankingConfigurationModel
+/**
+ * Model AcademicStudentRanking
+ * 
+ */
+export type AcademicStudentRanking = Prisma.AcademicStudentRankingModel
+/**
+ * Model AcademicPerformanceHistory
+ * 
+ */
+export type AcademicPerformanceHistory = Prisma.AcademicPerformanceHistoryModel

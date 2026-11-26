@@ -455,7 +455,10 @@ export const ModelName = {
   AnnualAcademicAverage: 'AnnualAcademicAverage',
   AcademicSubjectWeight: 'AcademicSubjectWeight',
   AcademicSemesterWeight: 'AcademicSemesterWeight',
-  AcademicPerformanceSummary: 'AcademicPerformanceSummary'
+  AcademicPerformanceSummary: 'AcademicPerformanceSummary',
+  AcademicRankingConfiguration: 'AcademicRankingConfiguration',
+  AcademicStudentRanking: 'AcademicStudentRanking',
+  AcademicPerformanceHistory: 'AcademicPerformanceHistory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -471,7 +474,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration" | "quiz" | "assignment" | "examinationGradingConfiguration" | "examinationHistory" | "markRecord" | "markCorrection" | "academicGradingConfiguration" | "subjectGradeResult" | "semesterAcademicAverage" | "annualAcademicAverage" | "academicSubjectWeight" | "academicSemesterWeight" | "academicPerformanceSummary"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration" | "quiz" | "assignment" | "examinationGradingConfiguration" | "examinationHistory" | "markRecord" | "markCorrection" | "academicGradingConfiguration" | "subjectGradeResult" | "semesterAcademicAverage" | "annualAcademicAverage" | "academicSubjectWeight" | "academicSemesterWeight" | "academicPerformanceSummary" | "academicRankingConfiguration" | "academicStudentRanking" | "academicPerformanceHistory"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -4841,6 +4844,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AcademicRankingConfiguration: {
+      payload: Prisma.$AcademicRankingConfigurationPayload<ExtArgs>
+      fields: Prisma.AcademicRankingConfigurationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicRankingConfigurationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicRankingConfigurationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicRankingConfigurationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicRankingConfigurationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicRankingConfigurationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicRankingConfigurationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicRankingConfigurationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicRankingConfigurationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicRankingConfigurationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>
+        }
+        update: {
+          args: Prisma.AcademicRankingConfigurationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicRankingConfigurationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicRankingConfigurationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicRankingConfigurationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicRankingConfigurationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicRankingConfigurationPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicRankingConfigurationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicRankingConfiguration>
+        }
+        groupBy: {
+          args: Prisma.AcademicRankingConfigurationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicRankingConfigurationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicRankingConfigurationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicRankingConfigurationCountAggregateOutputType> | number
+        }
+      }
+    }
+    AcademicStudentRanking: {
+      payload: Prisma.$AcademicStudentRankingPayload<ExtArgs>
+      fields: Prisma.AcademicStudentRankingFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicStudentRankingFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicStudentRankingFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicStudentRankingFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicStudentRankingFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicStudentRankingFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicStudentRankingCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicStudentRankingCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicStudentRankingCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicStudentRankingDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>
+        }
+        update: {
+          args: Prisma.AcademicStudentRankingUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicStudentRankingDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicStudentRankingUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicStudentRankingUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicStudentRankingUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicStudentRankingPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicStudentRankingAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicStudentRanking>
+        }
+        groupBy: {
+          args: Prisma.AcademicStudentRankingGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicStudentRankingGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicStudentRankingCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicStudentRankingCountAggregateOutputType> | number
+        }
+      }
+    }
+    AcademicPerformanceHistory: {
+      payload: Prisma.$AcademicPerformanceHistoryPayload<ExtArgs>
+      fields: Prisma.AcademicPerformanceHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicPerformanceHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicPerformanceHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicPerformanceHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicPerformanceHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicPerformanceHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicPerformanceHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicPerformanceHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicPerformanceHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicPerformanceHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>
+        }
+        update: {
+          args: Prisma.AcademicPerformanceHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicPerformanceHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicPerformanceHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicPerformanceHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicPerformanceHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicPerformanceHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicPerformanceHistory>
+        }
+        groupBy: {
+          args: Prisma.AcademicPerformanceHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicPerformanceHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicPerformanceHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicPerformanceHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -5941,6 +6166,67 @@ export const AcademicPerformanceSummaryScalarFieldEnum = {
 export type AcademicPerformanceSummaryScalarFieldEnum = (typeof AcademicPerformanceSummaryScalarFieldEnum)[keyof typeof AcademicPerformanceSummaryScalarFieldEnum]
 
 
+export const AcademicRankingConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  rankingEnabled: 'rankingEnabled',
+  rankingScope: 'rankingScope',
+  allowStudentVisibility: 'allowStudentVisibility',
+  allowParentVisibility: 'allowParentVisibility',
+  minimumStudents: 'minimumStudents',
+  includeTies: 'includeTies',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicRankingConfigurationScalarFieldEnum = (typeof AcademicRankingConfigurationScalarFieldEnum)[keyof typeof AcademicRankingConfigurationScalarFieldEnum]
+
+
+export const AcademicStudentRankingScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  sectionId: 'sectionId',
+  semesterId: 'semesterId',
+  period: 'period',
+  periodKey: 'periodKey',
+  scope: 'scope',
+  scopeKey: 'scopeKey',
+  rank: 'rank',
+  score: 'score',
+  totalStudents: 'totalStudents',
+  tied: 'tied',
+  calculatedAt: 'calculatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicStudentRankingScalarFieldEnum = (typeof AcademicStudentRankingScalarFieldEnum)[keyof typeof AcademicStudentRankingScalarFieldEnum]
+
+
+export const AcademicPerformanceHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  sourceId: 'sourceId',
+  historyType: 'historyType',
+  action: 'action',
+  previousValues: 'previousValues',
+  newValues: 'newValues',
+  reason: 'reason',
+  performedById: 'performedById',
+  createdAt: 'createdAt'
+} as const
+
+export type AcademicPerformanceHistoryScalarFieldEnum = (typeof AcademicPerformanceHistoryScalarFieldEnum)[keyof typeof AcademicPerformanceHistoryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -5955,6 +6241,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -6654,6 +6947,62 @@ export type ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel> = 
 
 
 /**
+ * Reference to a field of type 'AcademicRankingScope'
+ */
+export type EnumAcademicRankingScopeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicRankingScope'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicRankingScope[]'
+ */
+export type ListEnumAcademicRankingScopeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicRankingScope[]'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicRankingPeriod'
+ */
+export type EnumAcademicRankingPeriodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicRankingPeriod'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicRankingPeriod[]'
+ */
+export type ListEnumAcademicRankingPeriodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicRankingPeriod[]'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicPerformanceHistoryType'
+ */
+export type EnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicPerformanceHistoryType'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicPerformanceHistoryType[]'
+ */
+export type ListEnumAcademicPerformanceHistoryTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicPerformanceHistoryType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicPerformanceHistoryAction'
+ */
+export type EnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicPerformanceHistoryAction'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicPerformanceHistoryAction[]'
+ */
+export type ListEnumAcademicPerformanceHistoryActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicPerformanceHistoryAction[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -6876,6 +7225,9 @@ export type GlobalOmitConfig = {
   academicSubjectWeight?: Prisma.AcademicSubjectWeightOmit
   academicSemesterWeight?: Prisma.AcademicSemesterWeightOmit
   academicPerformanceSummary?: Prisma.AcademicPerformanceSummaryOmit
+  academicRankingConfiguration?: Prisma.AcademicRankingConfigurationOmit
+  academicStudentRanking?: Prisma.AcademicStudentRankingOmit
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryOmit
 }
 
 /* Types for Logging */

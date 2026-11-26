@@ -29,3 +29,13 @@ export * from './services/performance-summary.service.js';
 export * from './validators/performance-summary.validator.js';
 
 export * from './controllers/performance-summary.controller.js';
+
+
+export * from './services/academic-ranking.service.js';
+export * from './services/performance-history.service.js';
+
+export * from './validators/academic-ranking.validator.js';
+export * from './validators/performance-history.validator.js';
+
+export * from './controllers/academic-ranking.controller.js';
+export * from './controllers/performance-history.controller.js';

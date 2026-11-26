@@ -449,3 +449,41 @@ export const AcademicPerformanceSummaryType = {
 } as const
 
 export type AcademicPerformanceSummaryType = (typeof AcademicPerformanceSummaryType)[keyof typeof AcademicPerformanceSummaryType]
+
+
+export const AcademicRankingScope = {
+  GRADE: 'GRADE',
+  SECTION: 'SECTION'
+} as const
+
+export type AcademicRankingScope = (typeof AcademicRankingScope)[keyof typeof AcademicRankingScope]
+
+
+export const AcademicRankingPeriod = {
+  SEMESTER: 'SEMESTER',
+  ANNUAL: 'ANNUAL'
+} as const
+
+export type AcademicRankingPeriod = (typeof AcademicRankingPeriod)[keyof typeof AcademicRankingPeriod]
+
+
+export const AcademicPerformanceHistoryType = {
+  SUBJECT_GRADE: 'SUBJECT_GRADE',
+  SEMESTER_AVERAGE: 'SEMESTER_AVERAGE',
+  ANNUAL_AVERAGE: 'ANNUAL_AVERAGE',
+  PERFORMANCE_SUMMARY: 'PERFORMANCE_SUMMARY',
+  RANKING: 'RANKING'
+} as const
+
+export type AcademicPerformanceHistoryType = (typeof AcademicPerformanceHistoryType)[keyof typeof AcademicPerformanceHistoryType]
+
+
+export const AcademicPerformanceHistoryAction = {
+  CREATED: 'CREATED',
+  RECALCULATED: 'RECALCULATED',
+  CORRECTED: 'CORRECTED',
+  PUBLISHED: 'PUBLISHED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type AcademicPerformanceHistoryAction = (typeof AcademicPerformanceHistoryAction)[keyof typeof AcademicPerformanceHistoryAction]

@@ -42,6 +42,16 @@ import {
   getAcademicPerformanceSummariesController,
   getStudentAcademicPerformanceOverviewController
 } from '../controllers/performance-summary.controller.js';
+import {
+  configureAcademicRankingController,
+  calculateAcademicRankingsController,
+  getAcademicRankingsController,
+  getStudentAcademicRankingController
+} from '../controllers/academic-ranking.controller.js';
+import {
+  getAcademicPerformanceHistoryController,
+  getStudentPerformanceHistoryController
+} from '../controllers/performance-history.controller.js';
 
 const router = Router();
 
@@ -218,6 +228,66 @@ router.get(
   '/performance-summaries/students/:studentId/overview',
   authorizeSchoolRoles(...gradeCalculationRoles),
   getStudentAcademicPerformanceOverviewController
+);
+
+router.put(
+  '/rankings/configuration',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL'
+  ),
+  configureAcademicRankingController
+);
+
+router.post(
+  '/rankings/calculate',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL'
+  ),
+  calculateAcademicRankingsController
+);
+
+router.get(
+  '/rankings',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR'
+  ),
+  getAcademicRankingsController
+);
+
+router.get(
+  '/rankings/students/:studentId',
+  authorizeSchoolRoles('STUDENT', 'PARENT'),
+  getStudentAcademicRankingController
+);
+
+router.get(
+  '/performance-history',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getAcademicPerformanceHistoryController
+);
+
+router.get(
+  '/performance-history/students/:studentId',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL',
+    'REGISTRAR',
+    'TEACHER'
+  ),
+  getStudentPerformanceHistoryController
 );
 
 export default router;

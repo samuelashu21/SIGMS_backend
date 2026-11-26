@@ -109,7 +109,10 @@ export const ModelName = {
   AnnualAcademicAverage: 'AnnualAcademicAverage',
   AcademicSubjectWeight: 'AcademicSubjectWeight',
   AcademicSemesterWeight: 'AcademicSemesterWeight',
-  AcademicPerformanceSummary: 'AcademicPerformanceSummary'
+  AcademicPerformanceSummary: 'AcademicPerformanceSummary',
+  AcademicRankingConfiguration: 'AcademicRankingConfiguration',
+  AcademicStudentRanking: 'AcademicStudentRanking',
+  AcademicPerformanceHistory: 'AcademicPerformanceHistory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1189,6 +1192,67 @@ export const AcademicPerformanceSummaryScalarFieldEnum = {
 export type AcademicPerformanceSummaryScalarFieldEnum = (typeof AcademicPerformanceSummaryScalarFieldEnum)[keyof typeof AcademicPerformanceSummaryScalarFieldEnum]
 
 
+export const AcademicRankingConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  rankingEnabled: 'rankingEnabled',
+  rankingScope: 'rankingScope',
+  allowStudentVisibility: 'allowStudentVisibility',
+  allowParentVisibility: 'allowParentVisibility',
+  minimumStudents: 'minimumStudents',
+  includeTies: 'includeTies',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicRankingConfigurationScalarFieldEnum = (typeof AcademicRankingConfigurationScalarFieldEnum)[keyof typeof AcademicRankingConfigurationScalarFieldEnum]
+
+
+export const AcademicStudentRankingScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  sectionId: 'sectionId',
+  semesterId: 'semesterId',
+  period: 'period',
+  periodKey: 'periodKey',
+  scope: 'scope',
+  scopeKey: 'scopeKey',
+  rank: 'rank',
+  score: 'score',
+  totalStudents: 'totalStudents',
+  tied: 'tied',
+  calculatedAt: 'calculatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicStudentRankingScalarFieldEnum = (typeof AcademicStudentRankingScalarFieldEnum)[keyof typeof AcademicStudentRankingScalarFieldEnum]
+
+
+export const AcademicPerformanceHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  sourceId: 'sourceId',
+  historyType: 'historyType',
+  action: 'action',
+  previousValues: 'previousValues',
+  newValues: 'newValues',
+  reason: 'reason',
+  performedById: 'performedById',
+  createdAt: 'createdAt'
+} as const
+
+export type AcademicPerformanceHistoryScalarFieldEnum = (typeof AcademicPerformanceHistoryScalarFieldEnum)[keyof typeof AcademicPerformanceHistoryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1203,6 +1267,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
