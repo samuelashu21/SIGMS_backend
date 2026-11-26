@@ -441,3 +441,11 @@ export const AcademicGradeCalculationMethod = {
 } as const
 
 export type AcademicGradeCalculationMethod = (typeof AcademicGradeCalculationMethod)[keyof typeof AcademicGradeCalculationMethod]
+
+
+export const AcademicPerformanceSummaryType = {
+  SEMESTER: 'SEMESTER',
+  ANNUAL: 'ANNUAL'
+} as const
+
+export type AcademicPerformanceSummaryType = (typeof AcademicPerformanceSummaryType)[keyof typeof AcademicPerformanceSummaryType]

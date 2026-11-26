@@ -269,6 +269,8 @@ export type SemesterWhereInput = {
   examinations?: Prisma.ExaminationListRelationFilter
   subjectGradeResults?: Prisma.SubjectGradeResultListRelationFilter
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageListRelationFilter
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightListRelationFilter
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryListRelationFilter
 }
 
 export type SemesterOrderByWithRelationInput = {
@@ -288,6 +290,8 @@ export type SemesterOrderByWithRelationInput = {
   examinations?: Prisma.ExaminationOrderByRelationAggregateInput
   subjectGradeResults?: Prisma.SubjectGradeResultOrderByRelationAggregateInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageOrderByRelationAggregateInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightOrderByRelationAggregateInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryOrderByRelationAggregateInput
 }
 
 export type SemesterWhereUniqueInput = Prisma.AtLeast<{
@@ -313,6 +317,8 @@ export type SemesterWhereUniqueInput = Prisma.AtLeast<{
   examinations?: Prisma.ExaminationListRelationFilter
   subjectGradeResults?: Prisma.SubjectGradeResultListRelationFilter
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageListRelationFilter
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightListRelationFilter
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryListRelationFilter
 }, "id" | "id_schoolId" | "academicYearId_name" | "academicYearId_sequence">
 
 export type SemesterOrderByWithAggregationInput = {
@@ -366,6 +372,8 @@ export type SemesterCreateInput = {
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateInput = {
@@ -383,6 +391,8 @@ export type SemesterUncheckedCreateInput = {
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUpdateInput = {
@@ -400,6 +410,8 @@ export type SemesterUpdateInput = {
   examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateInput = {
@@ -417,6 +429,8 @@ export type SemesterUncheckedUpdateInput = {
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterCreateManyInput = {
@@ -676,6 +690,36 @@ export type SemesterUpdateOneRequiredWithoutSemesterAcademicAveragesNestedInput 
   update?: Prisma.XOR<Prisma.XOR<Prisma.SemesterUpdateToOneWithWhereWithoutSemesterAcademicAveragesInput, Prisma.SemesterUpdateWithoutSemesterAcademicAveragesInput>, Prisma.SemesterUncheckedUpdateWithoutSemesterAcademicAveragesInput>
 }
 
+export type SemesterCreateNestedOneWithoutAcademicSemesterWeightsInput = {
+  create?: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicSemesterWeightsInput, Prisma.SemesterUncheckedCreateWithoutAcademicSemesterWeightsInput>
+  connectOrCreate?: Prisma.SemesterCreateOrConnectWithoutAcademicSemesterWeightsInput
+  connect?: Prisma.SemesterWhereUniqueInput
+}
+
+export type SemesterUpdateOneRequiredWithoutAcademicSemesterWeightsNestedInput = {
+  create?: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicSemesterWeightsInput, Prisma.SemesterUncheckedCreateWithoutAcademicSemesterWeightsInput>
+  connectOrCreate?: Prisma.SemesterCreateOrConnectWithoutAcademicSemesterWeightsInput
+  upsert?: Prisma.SemesterUpsertWithoutAcademicSemesterWeightsInput
+  connect?: Prisma.SemesterWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SemesterUpdateToOneWithWhereWithoutAcademicSemesterWeightsInput, Prisma.SemesterUpdateWithoutAcademicSemesterWeightsInput>, Prisma.SemesterUncheckedUpdateWithoutAcademicSemesterWeightsInput>
+}
+
+export type SemesterCreateNestedOneWithoutAcademicPerformanceSummariesInput = {
+  create?: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUncheckedCreateWithoutAcademicPerformanceSummariesInput>
+  connectOrCreate?: Prisma.SemesterCreateOrConnectWithoutAcademicPerformanceSummariesInput
+  connect?: Prisma.SemesterWhereUniqueInput
+}
+
+export type SemesterUpdateOneWithoutAcademicPerformanceSummariesNestedInput = {
+  create?: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUncheckedCreateWithoutAcademicPerformanceSummariesInput>
+  connectOrCreate?: Prisma.SemesterCreateOrConnectWithoutAcademicPerformanceSummariesInput
+  upsert?: Prisma.SemesterUpsertWithoutAcademicPerformanceSummariesInput
+  disconnect?: Prisma.SemesterWhereInput | boolean
+  delete?: Prisma.SemesterWhereInput | boolean
+  connect?: Prisma.SemesterWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SemesterUpdateToOneWithWhereWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUpdateWithoutAcademicPerformanceSummariesInput>, Prisma.SemesterUncheckedUpdateWithoutAcademicPerformanceSummariesInput>
+}
+
 export type SemesterCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -690,6 +734,8 @@ export type SemesterCreateWithoutSchoolInput = {
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutSchoolInput = {
@@ -706,6 +752,8 @@ export type SemesterUncheckedCreateWithoutSchoolInput = {
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutSchoolInput = {
@@ -765,6 +813,8 @@ export type SemesterCreateWithoutAcademicYearInput = {
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutAcademicYearInput = {
@@ -780,6 +830,8 @@ export type SemesterUncheckedCreateWithoutAcademicYearInput = {
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutAcademicYearInput = {
@@ -822,6 +874,8 @@ export type SemesterCreateWithoutExaminationsInput = {
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutExaminationsInput = {
@@ -838,6 +892,8 @@ export type SemesterUncheckedCreateWithoutExaminationsInput = {
   updatedAt?: Date | string
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutExaminationsInput = {
@@ -870,6 +926,8 @@ export type SemesterUpdateWithoutExaminationsInput = {
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutExaminationsInput = {
@@ -886,6 +944,8 @@ export type SemesterUncheckedUpdateWithoutExaminationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterCreateWithoutSubjectGradeResultsInput = {
@@ -902,6 +962,8 @@ export type SemesterCreateWithoutSubjectGradeResultsInput = {
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutSubjectGradeResultsInput = {
@@ -918,6 +980,8 @@ export type SemesterUncheckedCreateWithoutSubjectGradeResultsInput = {
   updatedAt?: Date | string
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutSubjectGradeResultsInput = {
@@ -950,6 +1014,8 @@ export type SemesterUpdateWithoutSubjectGradeResultsInput = {
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
   examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutSubjectGradeResultsInput = {
@@ -966,6 +1032,8 @@ export type SemesterUncheckedUpdateWithoutSubjectGradeResultsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterCreateWithoutSemesterAcademicAveragesInput = {
@@ -982,6 +1050,8 @@ export type SemesterCreateWithoutSemesterAcademicAveragesInput = {
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutSemesterAcademicAveragesInput = {
@@ -998,6 +1068,8 @@ export type SemesterUncheckedCreateWithoutSemesterAcademicAveragesInput = {
   updatedAt?: Date | string
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutSemesterAcademicAveragesInput = {
@@ -1030,6 +1102,8 @@ export type SemesterUpdateWithoutSemesterAcademicAveragesInput = {
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
   examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutSemesterAcademicAveragesInput = {
@@ -1046,6 +1120,184 @@ export type SemesterUncheckedUpdateWithoutSemesterAcademicAveragesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
+}
+
+export type SemesterCreateWithoutAcademicSemesterWeightsInput = {
+  id?: string
+  name: string
+  sequence: number
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.SemesterStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSemestersInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutSemesterInput
+}
+
+export type SemesterUncheckedCreateWithoutAcademicSemesterWeightsInput = {
+  id?: string
+  schoolId: string
+  academicYearId: string
+  name: string
+  sequence: number
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.SemesterStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutSemesterInput
+}
+
+export type SemesterCreateOrConnectWithoutAcademicSemesterWeightsInput = {
+  where: Prisma.SemesterWhereUniqueInput
+  create: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicSemesterWeightsInput, Prisma.SemesterUncheckedCreateWithoutAcademicSemesterWeightsInput>
+}
+
+export type SemesterUpsertWithoutAcademicSemesterWeightsInput = {
+  update: Prisma.XOR<Prisma.SemesterUpdateWithoutAcademicSemesterWeightsInput, Prisma.SemesterUncheckedUpdateWithoutAcademicSemesterWeightsInput>
+  create: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicSemesterWeightsInput, Prisma.SemesterUncheckedCreateWithoutAcademicSemesterWeightsInput>
+  where?: Prisma.SemesterWhereInput
+}
+
+export type SemesterUpdateToOneWithWhereWithoutAcademicSemesterWeightsInput = {
+  where?: Prisma.SemesterWhereInput
+  data: Prisma.XOR<Prisma.SemesterUpdateWithoutAcademicSemesterWeightsInput, Prisma.SemesterUncheckedUpdateWithoutAcademicSemesterWeightsInput>
+}
+
+export type SemesterUpdateWithoutAcademicSemesterWeightsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  sequence?: Prisma.IntFieldUpdateOperationsInput | number
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumSemesterStatusFieldUpdateOperationsInput | $Enums.SemesterStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSemestersNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
+}
+
+export type SemesterUncheckedUpdateWithoutAcademicSemesterWeightsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  sequence?: Prisma.IntFieldUpdateOperationsInput | number
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumSemesterStatusFieldUpdateOperationsInput | $Enums.SemesterStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
+}
+
+export type SemesterCreateWithoutAcademicPerformanceSummariesInput = {
+  id?: string
+  name: string
+  sequence: number
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.SemesterStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSemestersInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSemesterInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutSemesterInput
+}
+
+export type SemesterUncheckedCreateWithoutAcademicPerformanceSummariesInput = {
+  id?: string
+  schoolId: string
+  academicYearId: string
+  name: string
+  sequence: number
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.SemesterStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSemesterInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutSemesterInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutSemesterInput
+}
+
+export type SemesterCreateOrConnectWithoutAcademicPerformanceSummariesInput = {
+  where: Prisma.SemesterWhereUniqueInput
+  create: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUncheckedCreateWithoutAcademicPerformanceSummariesInput>
+}
+
+export type SemesterUpsertWithoutAcademicPerformanceSummariesInput = {
+  update: Prisma.XOR<Prisma.SemesterUpdateWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUncheckedUpdateWithoutAcademicPerformanceSummariesInput>
+  create: Prisma.XOR<Prisma.SemesterCreateWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUncheckedCreateWithoutAcademicPerformanceSummariesInput>
+  where?: Prisma.SemesterWhereInput
+}
+
+export type SemesterUpdateToOneWithWhereWithoutAcademicPerformanceSummariesInput = {
+  where?: Prisma.SemesterWhereInput
+  data: Prisma.XOR<Prisma.SemesterUpdateWithoutAcademicPerformanceSummariesInput, Prisma.SemesterUncheckedUpdateWithoutAcademicPerformanceSummariesInput>
+}
+
+export type SemesterUpdateWithoutAcademicPerformanceSummariesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  sequence?: Prisma.IntFieldUpdateOperationsInput | number
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumSemesterStatusFieldUpdateOperationsInput | $Enums.SemesterStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSemestersNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+}
+
+export type SemesterUncheckedUpdateWithoutAcademicPerformanceSummariesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  sequence?: Prisma.IntFieldUpdateOperationsInput | number
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumSemesterStatusFieldUpdateOperationsInput | $Enums.SemesterStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterCreateManySchoolInput = {
@@ -1075,6 +1327,8 @@ export type SemesterUpdateWithoutSchoolInput = {
   examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutSchoolInput = {
@@ -1091,6 +1345,8 @@ export type SemesterUncheckedUpdateWithoutSchoolInput = {
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateManyWithoutSchoolInput = {
@@ -1132,6 +1388,8 @@ export type SemesterUpdateWithoutAcademicYearInput = {
   examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutAcademicYearInput = {
@@ -1147,6 +1405,8 @@ export type SemesterUncheckedUpdateWithoutAcademicYearInput = {
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSemesterNestedInput
   semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutSemesterNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutSemesterNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -1170,12 +1430,16 @@ export type SemesterCountOutputType = {
   examinations: number
   subjectGradeResults: number
   semesterAcademicAverages: number
+  academicSemesterWeights: number
+  academicPerformanceSummaries: number
 }
 
 export type SemesterCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   examinations?: boolean | SemesterCountOutputTypeCountExaminationsArgs
   subjectGradeResults?: boolean | SemesterCountOutputTypeCountSubjectGradeResultsArgs
   semesterAcademicAverages?: boolean | SemesterCountOutputTypeCountSemesterAcademicAveragesArgs
+  academicSemesterWeights?: boolean | SemesterCountOutputTypeCountAcademicSemesterWeightsArgs
+  academicPerformanceSummaries?: boolean | SemesterCountOutputTypeCountAcademicPerformanceSummariesArgs
 }
 
 /**
@@ -1209,6 +1473,20 @@ export type SemesterCountOutputTypeCountSemesterAcademicAveragesArgs<ExtArgs ext
   where?: Prisma.SemesterAcademicAverageWhereInput
 }
 
+/**
+ * SemesterCountOutputType without action
+ */
+export type SemesterCountOutputTypeCountAcademicSemesterWeightsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicSemesterWeightWhereInput
+}
+
+/**
+ * SemesterCountOutputType without action
+ */
+export type SemesterCountOutputTypeCountAcademicPerformanceSummariesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicPerformanceSummaryWhereInput
+}
+
 
 export type SemesterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1227,6 +1505,8 @@ export type SemesterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   examinations?: boolean | Prisma.Semester$examinationsArgs<ExtArgs>
   subjectGradeResults?: boolean | Prisma.Semester$subjectGradeResultsArgs<ExtArgs>
   semesterAcademicAverages?: boolean | Prisma.Semester$semesterAcademicAveragesArgs<ExtArgs>
+  academicSemesterWeights?: boolean | Prisma.Semester$academicSemesterWeightsArgs<ExtArgs>
+  academicPerformanceSummaries?: boolean | Prisma.Semester$academicPerformanceSummariesArgs<ExtArgs>
   _count?: boolean | Prisma.SemesterCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["semester"]>
 
@@ -1283,6 +1563,8 @@ export type SemesterInclude<ExtArgs extends runtime.Types.Extensions.InternalArg
   examinations?: boolean | Prisma.Semester$examinationsArgs<ExtArgs>
   subjectGradeResults?: boolean | Prisma.Semester$subjectGradeResultsArgs<ExtArgs>
   semesterAcademicAverages?: boolean | Prisma.Semester$semesterAcademicAveragesArgs<ExtArgs>
+  academicSemesterWeights?: boolean | Prisma.Semester$academicSemesterWeightsArgs<ExtArgs>
+  academicPerformanceSummaries?: boolean | Prisma.Semester$academicPerformanceSummariesArgs<ExtArgs>
   _count?: boolean | Prisma.SemesterCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type SemesterIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1302,6 +1584,8 @@ export type $SemesterPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     examinations: Prisma.$ExaminationPayload<ExtArgs>[]
     subjectGradeResults: Prisma.$SubjectGradeResultPayload<ExtArgs>[]
     semesterAcademicAverages: Prisma.$SemesterAcademicAveragePayload<ExtArgs>[]
+    academicSemesterWeights: Prisma.$AcademicSemesterWeightPayload<ExtArgs>[]
+    academicPerformanceSummaries: Prisma.$AcademicPerformanceSummaryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1714,6 +1998,8 @@ export interface Prisma__SemesterClient<T, Null = never, ExtArgs extends runtime
   examinations<T extends Prisma.Semester$examinationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Semester$examinationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExaminationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   subjectGradeResults<T extends Prisma.Semester$subjectGradeResultsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Semester$subjectGradeResultsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubjectGradeResultPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   semesterAcademicAverages<T extends Prisma.Semester$semesterAcademicAveragesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Semester$semesterAcademicAveragesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SemesterAcademicAveragePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  academicSemesterWeights<T extends Prisma.Semester$academicSemesterWeightsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Semester$academicSemesterWeightsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicSemesterWeightPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  academicPerformanceSummaries<T extends Prisma.Semester$academicPerformanceSummariesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Semester$academicPerformanceSummariesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicPerformanceSummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2224,6 +2510,54 @@ export type Semester$semesterAcademicAveragesArgs<ExtArgs extends runtime.Types.
   take?: number
   skip?: number
   distinct?: Prisma.SemesterAcademicAverageScalarFieldEnum | Prisma.SemesterAcademicAverageScalarFieldEnum[]
+}
+
+/**
+ * Semester.academicSemesterWeights
+ */
+export type Semester$academicSemesterWeightsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicSemesterWeight
+   */
+  select?: Prisma.AcademicSemesterWeightSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicSemesterWeight
+   */
+  omit?: Prisma.AcademicSemesterWeightOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicSemesterWeightInclude<ExtArgs> | null
+  where?: Prisma.AcademicSemesterWeightWhereInput
+  orderBy?: Prisma.AcademicSemesterWeightOrderByWithRelationInput | Prisma.AcademicSemesterWeightOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicSemesterWeightWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicSemesterWeightScalarFieldEnum | Prisma.AcademicSemesterWeightScalarFieldEnum[]
+}
+
+/**
+ * Semester.academicPerformanceSummaries
+ */
+export type Semester$academicPerformanceSummariesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicPerformanceSummary
+   */
+  select?: Prisma.AcademicPerformanceSummarySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicPerformanceSummary
+   */
+  omit?: Prisma.AcademicPerformanceSummaryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicPerformanceSummaryInclude<ExtArgs> | null
+  where?: Prisma.AcademicPerformanceSummaryWhereInput
+  orderBy?: Prisma.AcademicPerformanceSummaryOrderByWithRelationInput | Prisma.AcademicPerformanceSummaryOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicPerformanceSummaryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicPerformanceSummaryScalarFieldEnum | Prisma.AcademicPerformanceSummaryScalarFieldEnum[]
 }
 
 /**

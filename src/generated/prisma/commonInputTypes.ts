@@ -1109,6 +1109,23 @@ export type EnumAcademicGradeCalculationMethodWithAggregatesFilter<$PrismaModel 
   _max?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
 }
 
+export type EnumAcademicPerformanceSummaryTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceSummaryType | Prisma.EnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel> | $Enums.AcademicPerformanceSummaryType
+}
+
+export type EnumAcademicPerformanceSummaryTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceSummaryType | Prisma.EnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceSummaryTypeWithAggregatesFilter<$PrismaModel> | $Enums.AcademicPerformanceSummaryType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -2184,6 +2201,23 @@ export type NestedEnumAcademicGradeCalculationMethodWithAggregatesFilter<$Prisma
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
+}
+
+export type NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceSummaryType | Prisma.EnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel> | $Enums.AcademicPerformanceSummaryType
+}
+
+export type NestedEnumAcademicPerformanceSummaryTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicPerformanceSummaryType | Prisma.EnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicPerformanceSummaryType[] | Prisma.ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicPerformanceSummaryTypeWithAggregatesFilter<$PrismaModel> | $Enums.AcademicPerformanceSummaryType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicPerformanceSummaryTypeFilter<$PrismaModel>
 }
 
 

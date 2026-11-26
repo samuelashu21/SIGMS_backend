@@ -452,7 +452,10 @@ export const ModelName = {
   AcademicGradingConfiguration: 'AcademicGradingConfiguration',
   SubjectGradeResult: 'SubjectGradeResult',
   SemesterAcademicAverage: 'SemesterAcademicAverage',
-  AnnualAcademicAverage: 'AnnualAcademicAverage'
+  AnnualAcademicAverage: 'AnnualAcademicAverage',
+  AcademicSubjectWeight: 'AcademicSubjectWeight',
+  AcademicSemesterWeight: 'AcademicSemesterWeight',
+  AcademicPerformanceSummary: 'AcademicPerformanceSummary'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -468,7 +471,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration" | "quiz" | "assignment" | "examinationGradingConfiguration" | "examinationHistory" | "markRecord" | "markCorrection" | "academicGradingConfiguration" | "subjectGradeResult" | "semesterAcademicAverage" | "annualAcademicAverage"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration" | "quiz" | "assignment" | "examinationGradingConfiguration" | "examinationHistory" | "markRecord" | "markCorrection" | "academicGradingConfiguration" | "subjectGradeResult" | "semesterAcademicAverage" | "annualAcademicAverage" | "academicSubjectWeight" | "academicSemesterWeight" | "academicPerformanceSummary"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -4616,6 +4619,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AcademicSubjectWeight: {
+      payload: Prisma.$AcademicSubjectWeightPayload<ExtArgs>
+      fields: Prisma.AcademicSubjectWeightFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicSubjectWeightFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicSubjectWeightFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicSubjectWeightFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicSubjectWeightFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicSubjectWeightFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicSubjectWeightCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicSubjectWeightCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicSubjectWeightCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicSubjectWeightDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>
+        }
+        update: {
+          args: Prisma.AcademicSubjectWeightUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicSubjectWeightDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicSubjectWeightUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicSubjectWeightUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicSubjectWeightUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSubjectWeightPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicSubjectWeightAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicSubjectWeight>
+        }
+        groupBy: {
+          args: Prisma.AcademicSubjectWeightGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicSubjectWeightGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicSubjectWeightCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicSubjectWeightCountAggregateOutputType> | number
+        }
+      }
+    }
+    AcademicSemesterWeight: {
+      payload: Prisma.$AcademicSemesterWeightPayload<ExtArgs>
+      fields: Prisma.AcademicSemesterWeightFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicSemesterWeightFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicSemesterWeightFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicSemesterWeightFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicSemesterWeightFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicSemesterWeightFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicSemesterWeightCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicSemesterWeightCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicSemesterWeightCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicSemesterWeightDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>
+        }
+        update: {
+          args: Prisma.AcademicSemesterWeightUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicSemesterWeightDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicSemesterWeightUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicSemesterWeightUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicSemesterWeightUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicSemesterWeightPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicSemesterWeightAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicSemesterWeight>
+        }
+        groupBy: {
+          args: Prisma.AcademicSemesterWeightGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicSemesterWeightGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicSemesterWeightCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicSemesterWeightCountAggregateOutputType> | number
+        }
+      }
+    }
+    AcademicPerformanceSummary: {
+      payload: Prisma.$AcademicPerformanceSummaryPayload<ExtArgs>
+      fields: Prisma.AcademicPerformanceSummaryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AcademicPerformanceSummaryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AcademicPerformanceSummaryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>
+        }
+        findFirst: {
+          args: Prisma.AcademicPerformanceSummaryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AcademicPerformanceSummaryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>
+        }
+        findMany: {
+          args: Prisma.AcademicPerformanceSummaryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>[]
+        }
+        create: {
+          args: Prisma.AcademicPerformanceSummaryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>
+        }
+        createMany: {
+          args: Prisma.AcademicPerformanceSummaryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AcademicPerformanceSummaryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>[]
+        }
+        delete: {
+          args: Prisma.AcademicPerformanceSummaryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>
+        }
+        update: {
+          args: Prisma.AcademicPerformanceSummaryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>
+        }
+        deleteMany: {
+          args: Prisma.AcademicPerformanceSummaryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AcademicPerformanceSummaryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AcademicPerformanceSummaryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>[]
+        }
+        upsert: {
+          args: Prisma.AcademicPerformanceSummaryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AcademicPerformanceSummaryPayload>
+        }
+        aggregate: {
+          args: Prisma.AcademicPerformanceSummaryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAcademicPerformanceSummary>
+        }
+        groupBy: {
+          args: Prisma.AcademicPerformanceSummaryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicPerformanceSummaryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AcademicPerformanceSummaryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AcademicPerformanceSummaryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -5662,6 +5887,60 @@ export const AnnualAcademicAverageScalarFieldEnum = {
 export type AnnualAcademicAverageScalarFieldEnum = (typeof AnnualAcademicAverageScalarFieldEnum)[keyof typeof AnnualAcademicAverageScalarFieldEnum]
 
 
+export const AcademicSubjectWeightScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  subjectId: 'subjectId',
+  weight: 'weight',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicSubjectWeightScalarFieldEnum = (typeof AcademicSubjectWeightScalarFieldEnum)[keyof typeof AcademicSubjectWeightScalarFieldEnum]
+
+
+export const AcademicSemesterWeightScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  weight: 'weight',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicSemesterWeightScalarFieldEnum = (typeof AcademicSemesterWeightScalarFieldEnum)[keyof typeof AcademicSemesterWeightScalarFieldEnum]
+
+
+export const AcademicPerformanceSummaryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  summaryType: 'summaryType',
+  overallPercentage: 'overallPercentage',
+  overallGradePoint: 'overallGradePoint',
+  totalSubjects: 'totalSubjects',
+  passedSubjects: 'passedSubjects',
+  failedSubjects: 'failedSubjects',
+  attendancePercentage: 'attendancePercentage',
+  highestSubjectPercentage: 'highestSubjectPercentage',
+  lowestSubjectPercentage: 'lowestSubjectPercentage',
+  performanceDetails: 'performanceDetails',
+  generatedAt: 'generatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  periodKey: 'periodKey'
+} as const
+
+export type AcademicPerformanceSummaryScalarFieldEnum = (typeof AcademicPerformanceSummaryScalarFieldEnum)[keyof typeof AcademicPerformanceSummaryScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -6361,6 +6640,20 @@ export type ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel> = 
 
 
 /**
+ * Reference to a field of type 'AcademicPerformanceSummaryType'
+ */
+export type EnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicPerformanceSummaryType'>
+    
+
+
+/**
+ * Reference to a field of type 'AcademicPerformanceSummaryType[]'
+ */
+export type ListEnumAcademicPerformanceSummaryTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AcademicPerformanceSummaryType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -6580,6 +6873,9 @@ export type GlobalOmitConfig = {
   subjectGradeResult?: Prisma.SubjectGradeResultOmit
   semesterAcademicAverage?: Prisma.SemesterAcademicAverageOmit
   annualAcademicAverage?: Prisma.AnnualAcademicAverageOmit
+  academicSubjectWeight?: Prisma.AcademicSubjectWeightOmit
+  academicSemesterWeight?: Prisma.AcademicSemesterWeightOmit
+  academicPerformanceSummary?: Prisma.AcademicPerformanceSummaryOmit
 }
 
 /* Types for Logging */

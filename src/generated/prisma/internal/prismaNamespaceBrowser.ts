@@ -106,7 +106,10 @@ export const ModelName = {
   AcademicGradingConfiguration: 'AcademicGradingConfiguration',
   SubjectGradeResult: 'SubjectGradeResult',
   SemesterAcademicAverage: 'SemesterAcademicAverage',
-  AnnualAcademicAverage: 'AnnualAcademicAverage'
+  AnnualAcademicAverage: 'AnnualAcademicAverage',
+  AcademicSubjectWeight: 'AcademicSubjectWeight',
+  AcademicSemesterWeight: 'AcademicSemesterWeight',
+  AcademicPerformanceSummary: 'AcademicPerformanceSummary'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1130,6 +1133,60 @@ export const AnnualAcademicAverageScalarFieldEnum = {
 } as const
 
 export type AnnualAcademicAverageScalarFieldEnum = (typeof AnnualAcademicAverageScalarFieldEnum)[keyof typeof AnnualAcademicAverageScalarFieldEnum]
+
+
+export const AcademicSubjectWeightScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  subjectId: 'subjectId',
+  weight: 'weight',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicSubjectWeightScalarFieldEnum = (typeof AcademicSubjectWeightScalarFieldEnum)[keyof typeof AcademicSubjectWeightScalarFieldEnum]
+
+
+export const AcademicSemesterWeightScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  weight: 'weight',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicSemesterWeightScalarFieldEnum = (typeof AcademicSemesterWeightScalarFieldEnum)[keyof typeof AcademicSemesterWeightScalarFieldEnum]
+
+
+export const AcademicPerformanceSummaryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  summaryType: 'summaryType',
+  overallPercentage: 'overallPercentage',
+  overallGradePoint: 'overallGradePoint',
+  totalSubjects: 'totalSubjects',
+  passedSubjects: 'passedSubjects',
+  failedSubjects: 'failedSubjects',
+  attendancePercentage: 'attendancePercentage',
+  highestSubjectPercentage: 'highestSubjectPercentage',
+  lowestSubjectPercentage: 'lowestSubjectPercentage',
+  performanceDetails: 'performanceDetails',
+  generatedAt: 'generatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  periodKey: 'periodKey'
+} as const
+
+export type AcademicPerformanceSummaryScalarFieldEnum = (typeof AcademicPerformanceSummaryScalarFieldEnum)[keyof typeof AcademicPerformanceSummaryScalarFieldEnum]
 
 
 export const SortOrder = {

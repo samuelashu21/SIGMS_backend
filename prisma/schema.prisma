@@ -68,6 +68,11 @@ model School {
   semesterAcademicAverages SemesterAcademicAverage[]
   annualAcademicAverages AnnualAcademicAverage[]
 
+  academicSubjectWeights AcademicSubjectWeight[]
+  academicSemesterWeights AcademicSemesterWeight[]
+
+  academicPerformanceSummaries AcademicPerformanceSummary[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -105,6 +110,8 @@ model Student {
   subjectGradeResults SubjectGradeResult[]
   semesterAcademicAverages SemesterAcademicAverage[]
   annualAcademicAverages AnnualAcademicAverage[]
+
+  academicPerformanceSummaries AcademicPerformanceSummary[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -353,6 +360,11 @@ model AcademicYear {
   semesterAcademicAverages SemesterAcademicAverage[]
   annualAcademicAverages AnnualAcademicAverage[]
 
+  academicSubjectWeights AcademicSubjectWeight[]
+  academicSemesterWeights AcademicSemesterWeight[]
+
+  academicPerformanceSummaries AcademicPerformanceSummary[]
+
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
   @@unique([schoolId, name], map: "academic_years_school_name_key")
@@ -393,6 +405,9 @@ model Semester {
   examinations Examination[]
   subjectGradeResults SubjectGradeResult[]
   semesterAcademicAverages SemesterAcademicAverage[]
+  academicSemesterWeights AcademicSemesterWeight[]
+
+  academicPerformanceSummaries AcademicPerformanceSummary[]
 
   // ADD THIS
   @@unique([id, schoolId], map: "semesters_id_school_key")
@@ -428,6 +443,7 @@ model Grade {
   academicEnrollments AcademicEnrollment[]
   teacherAssignments TeacherSubjectAssignment[]
   examinations Examination[]
+  academicSubjectWeights AcademicSubjectWeight[]
 
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
@@ -495,6 +511,7 @@ model Subject {
   teacherAssignments TeacherSubjectAssignment[]
   examinations Examination[]
   subjectGradeResults SubjectGradeResult[]
+  academicSubjectWeights AcademicSubjectWeight[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -2235,4 +2252,98 @@ model AnnualAcademicAverage {
   @@index([schoolId, academicYearId, averagePercentage])
   @@index([schoolId, studentId, academicYearId])
   @@map("annual_academic_averages")
+}
+
+
+
+model AcademicSubjectWeight {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  gradeId        String   @map("grade_id") @db.Uuid
+  subjectId      String   @map("subject_id") @db.Uuid
+
+  weight         Decimal  @db.Decimal(8, 4)
+  isActive       Boolean  @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  grade        Grade        @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  subject      Subject      @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId, gradeId, subjectId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, gradeId, isActive])
+  @@map("academic_subject_weights")
+}
+
+model AcademicSemesterWeight {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  semesterId     String   @map("semester_id") @db.Uuid
+
+  weight         Decimal  @db.Decimal(8, 4)
+  isActive       Boolean  @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester     @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId, semesterId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, isActive])
+  @@map("academic_semester_weights")
+}
+
+enum AcademicPerformanceSummaryType {
+  SEMESTER
+  ANNUAL
+  @@map("academic_performance_summary_types")
+}
+
+model AcademicPerformanceSummary {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  semesterId     String?  @map("semester_id") @db.Uuid
+
+  summaryType AcademicPerformanceSummaryType @map("summary_type")
+
+  overallPercentage Decimal? @map("overall_percentage") @db.Decimal(8, 2)
+  overallGradePoint Decimal? @map("overall_grade_point") @db.Decimal(5, 2)
+
+  totalSubjects   Int @default(0) @map("total_subjects")
+  passedSubjects  Int @default(0) @map("passed_subjects")
+  failedSubjects  Int @default(0) @map("failed_subjects")
+
+  attendancePercentage Decimal? @map("attendance_percentage") @db.Decimal(8, 2)
+
+  highestSubjectPercentage Decimal? @map("highest_subject_percentage") @db.Decimal(8, 2)
+  lowestSubjectPercentage  Decimal? @map("lowest_subject_percentage") @db.Decimal(8, 2)
+
+  performanceDetails Json? @map("performance_details")
+
+  generatedAt DateTime @default(now()) @map("generated_at") @db.Timestamptz(3)
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester?    @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  periodKey String @map("period_key") @db.VarChar(100)
+
+  @@unique([schoolId, studentId, academicYearId, periodKey])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, summaryType])
+  @@index([schoolId, studentId, academicYearId])
+  @@map("academic_performance_summaries")
 }

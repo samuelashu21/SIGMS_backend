@@ -16,3 +16,16 @@ export * from './validators/annual-average.validator.js';
 
 export * from './controllers/semester-average.controller.js';
 export * from './controllers/annual-average.controller.js';
+
+export * from './services/grade-weight.service.js';
+export * from './services/weighted-grade.service.js';
+
+export * from './validators/grade-weight.validator.js';
+
+export * from './controllers/grade-weight.controller.js';
+
+export * from './services/performance-summary.service.js';
+
+export * from './validators/performance-summary.validator.js';
+
+export * from './controllers/performance-summary.controller.js';

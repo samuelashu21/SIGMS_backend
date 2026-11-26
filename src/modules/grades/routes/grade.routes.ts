@@ -26,6 +26,22 @@ import {
   getAnnualAverageByStudentController,
   getAnnualAveragesController
 } from '../controllers/annual-average.controller.js';
+import {
+  createSubjectWeightController,
+  createSemesterWeightController,
+  getSubjectWeightsController,
+  getSemesterWeightsController,
+  updateSubjectWeightController,
+  updateSemesterWeightController,
+  calculateWeightedSubjectGradeController,
+  calculateWeightedSemesterAverageController,
+  calculateWeightedAnnualAverageController
+} from '../controllers/grade-weight.controller.js';
+import {
+  generateAcademicPerformanceSummaryController,
+  getAcademicPerformanceSummariesController,
+  getStudentAcademicPerformanceOverviewController
+} from '../controllers/performance-summary.controller.js';
 
 const router = Router();
 
@@ -130,6 +146,78 @@ router.get(
   '/subject-results',
   authorizeSchoolRoles(...gradeCalculationRoles),
   getSubjectGradeResultsController
+);
+
+router.post(
+  '/weights/subjects',
+  authorizeSchoolRoles(...gradingManagementRoles),
+  createSubjectWeightController
+);
+
+router.get(
+  '/weights/subjects',
+  authorizeSchoolRoles(...gradingManagementRoles),
+  getSubjectWeightsController
+);
+
+router.patch(
+  '/weights/subjects/:weightId',
+  authorizeSchoolRoles(...gradingManagementRoles),
+  updateSubjectWeightController
+);
+
+router.post(
+  '/weights/semesters',
+  authorizeSchoolRoles(...gradingManagementRoles),
+  createSemesterWeightController
+);
+
+router.get(
+  '/weights/semesters',
+  authorizeSchoolRoles(...gradingManagementRoles),
+  getSemesterWeightsController
+);
+
+router.patch(
+  '/weights/semesters/:weightId',
+  authorizeSchoolRoles(...gradingManagementRoles),
+  updateSemesterWeightController
+);
+
+router.post(
+  '/weighted-calculations/subject',
+  authorizeSchoolRoles(...gradeCalculationRoles),
+  calculateWeightedSubjectGradeController
+);
+
+router.post(
+  '/weighted-calculations/semester',
+  authorizeSchoolRoles(...gradeCalculationRoles),
+  calculateWeightedSemesterAverageController
+);
+
+router.post(
+  '/weighted-calculations/annual',
+  authorizeSchoolRoles(...gradeCalculationRoles),
+  calculateWeightedAnnualAverageController
+);
+
+router.post(
+  '/performance-summaries/generate',
+  authorizeSchoolRoles(...gradeCalculationRoles),
+  generateAcademicPerformanceSummaryController
+);
+
+router.get(
+  '/performance-summaries',
+  authorizeSchoolRoles(...gradeCalculationRoles),
+  getAcademicPerformanceSummariesController
+);
+
+router.get(
+  '/performance-summaries/students/:studentId/overview',
+  authorizeSchoolRoles(...gradeCalculationRoles),
+  getStudentAcademicPerformanceOverviewController
 );
 
 export default router;

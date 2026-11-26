@@ -321,3 +321,18 @@ export type SemesterAcademicAverage = Prisma.SemesterAcademicAverageModel
  * 
  */
 export type AnnualAcademicAverage = Prisma.AnnualAcademicAverageModel
+/**
+ * Model AcademicSubjectWeight
+ * 
+ */
+export type AcademicSubjectWeight = Prisma.AcademicSubjectWeightModel
+/**
+ * Model AcademicSemesterWeight
+ * 
+ */
+export type AcademicSemesterWeight = Prisma.AcademicSemesterWeightModel
+/**
+ * Model AcademicPerformanceSummary
+ * 
+ */
+export type AcademicPerformanceSummary = Prisma.AcademicPerformanceSummaryModel
