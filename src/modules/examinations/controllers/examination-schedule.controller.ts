@@ -1,5 +1,6 @@
 
 import type { Request, Response } from 'express';
+import { z } from 'zod';
 
 import { asyncHandler } from '../../../utils/async-handler.js';
 import { AppError } from '../../../utils/app-error.js';
@@ -13,8 +14,22 @@ import {
   scheduleExaminationSchema
 } from '../validators/examination-schedule.validator.js';
 
-import { z } from 'zod';
+/**
+ * Safely extracts an Express route parameter.
+ */
+const getRouteParam = (
+  value: string | string[] | undefined
+): string | undefined => {
+  if (Array.isArray(value)) {
+    return value[0];
+  }
 
+  return value;
+};
+
+/**
+ * Schedule query validation.
+ */
 const scheduleQuerySchema = z.object({
   academicYearId: z.string().uuid().optional(),
   gradeId: z.string().uuid().optional(),
@@ -32,19 +47,31 @@ const scheduleQuerySchema = z.object({
   }
 );
 
+/**
+ * SCHEDULE EXAMINATION
+ */
 export const scheduleExaminationController = asyncHandler(
   async (req: Request, res: Response) => {
     const schoolId = req.tenant?.schoolId;
-    const examinationId = req.params.examinationId;
+
+    const examinationId = getRouteParam(
+      req.params.examinationId
+    );
 
     if (!schoolId || !examinationId) {
-      throw new AppError('Examination scheduling context required.', 400);
+      throw new AppError(
+        'Examination scheduling context required.',
+        400
+      );
     }
 
     const input = scheduleExaminationSchema.safeParse(req.body);
 
     if (!input.success) {
-      throw new AppError('Invalid examination schedule.', 400);
+      throw new AppError(
+        'Invalid examination schedule.',
+        400
+      );
     }
 
     const data = await scheduleExamination(
@@ -61,6 +88,9 @@ export const scheduleExaminationController = asyncHandler(
   }
 );
 
+/**
+ * GET EXAMINATION SCHEDULE
+ */
 export const getExaminationScheduleController = asyncHandler(
   async (req: Request, res: Response) => {
     const schoolId = req.tenant?.schoolId;
@@ -72,7 +102,10 @@ export const getExaminationScheduleController = asyncHandler(
     const filters = scheduleQuerySchema.safeParse(req.query);
 
     if (!filters.success) {
-      throw new AppError('Invalid examination schedule filters.', 400);
+      throw new AppError(
+        'Invalid examination schedule filters.',
+        400
+      );
     }
 
     const data = await getExaminationSchedule(
