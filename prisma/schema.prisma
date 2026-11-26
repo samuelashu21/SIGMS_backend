@@ -63,6 +63,10 @@ model School {
 
   markRecords MarkRecord[]
   markCorrections MarkCorrection[]
+  academicGradingConfigurations AcademicGradingConfiguration[]
+  subjectGradeResults SubjectGradeResult[]
+  semesterAcademicAverages SemesterAcademicAverage[]
+  annualAcademicAverages AnnualAcademicAverage[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -98,6 +102,9 @@ model Student {
   guardianRelationships StudentGuardianRelationship[]
   attendanceRecords AttendanceRecord[]
   markRecords MarkRecord[]
+  subjectGradeResults SubjectGradeResult[]
+  semesterAcademicAverages SemesterAcademicAverage[]
+  annualAcademicAverages AnnualAcademicAverage[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -341,6 +348,10 @@ model AcademicYear {
   teacherWorkloadRecords TeacherWorkloadRecord[]
   classAttendance ClassAttendance[]
   examinations Examination[]
+  academicGradingConfigurations AcademicGradingConfiguration[]
+  subjectGradeResults SubjectGradeResult[]
+  semesterAcademicAverages SemesterAcademicAverage[]
+  annualAcademicAverages AnnualAcademicAverage[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -380,6 +391,8 @@ model Semester {
   academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
 
   examinations Examination[]
+  subjectGradeResults SubjectGradeResult[]
+  semesterAcademicAverages SemesterAcademicAverage[]
 
   // ADD THIS
   @@unique([id, schoolId], map: "semesters_id_school_key")
@@ -481,6 +494,7 @@ model Subject {
   gradeAssignments GradeSubject[]
   teacherAssignments TeacherSubjectAssignment[]
   examinations Examination[]
+  subjectGradeResults SubjectGradeResult[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -561,6 +575,7 @@ model GradingSystem {
 
   school      School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
   gradeScales GradeScale[]
+  academicGradingConfigurations AcademicGradingConfiguration[]
 
   @@unique([schoolId, name], map: "grading_systems_school_name_key")
   @@unique([id, schoolId], map: "grading_systems_id_school_key")
@@ -2078,4 +2093,146 @@ model MarkCorrection {
   @@index([schoolId, markRecordId, status])
   @@index([schoolId, requestedAt])
   @@map("mark_corrections")
+}
+
+
+
+enum AcademicGradeCalculationMethod {
+  WEIGHTED_AVERAGE
+  SIMPLE_AVERAGE
+
+  @@map("academic_grade_calculation_methods")
+}
+
+
+model AcademicGradingConfiguration {
+  id                String   @id @default(uuid()) @db.Uuid
+  schoolId          String   @map("school_id") @db.Uuid
+  academicYearId    String   @map("academic_year_id") @db.Uuid
+  gradingSystemId   String   @map("grading_system_id") @db.Uuid
+
+  calculationMethod AcademicGradeCalculationMethod @default(WEIGHTED_AVERAGE) @map("calculation_method")
+
+  passingPercentage Decimal  @default(50) @map("passing_percentage") @db.Decimal(5, 2)
+  decimalPlaces     Int      @default(2) @map("decimal_places")
+  roundingMode      ExaminationRoundingMode @default(ROUND) @map("rounding_mode")
+
+  requireAllAssessments Boolean @default(false) @map("require_all_assessments")
+  isActive              Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  gradingSystem GradingSystem @relation(fields: [gradingSystemId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, isActive])
+  @@map("academic_grading_configurations")
+}
+
+
+
+model SubjectGradeResult {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  subjectId      String   @map("subject_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  semesterId     String   @map("semester_id") @db.Uuid
+
+  rawPercentage  Decimal  @map("raw_percentage") @db.Decimal(8, 4)
+  finalPercentage Decimal @map("final_percentage") @db.Decimal(8, 2)
+
+  letterGrade    String?  @map("letter_grade") @db.VarChar(20)
+  gradePoint     Decimal? @map("grade_point") @db.Decimal(5, 2)
+  gradeRemark    String?  @map("grade_remark") @db.VarChar(255)
+
+  assessmentCount Int     @default(0) @map("assessment_count")
+  calculationDetails Json? @map("calculation_details")
+
+  calculatedAt DateTime @default(now()) @map("calculated_at") @db.Timestamptz(3)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  subject      Subject      @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester     @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, studentId, subjectId, academicYearId, semesterId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, semesterId, subjectId])
+  @@index([schoolId, studentId, academicYearId])
+  @@map("subject_grade_results")
+}
+
+
+
+
+model SemesterAcademicAverage {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+  semesterId     String   @map("semester_id") @db.Uuid
+
+  averagePercentage Decimal  @map("average_percentage") @db.Decimal(8, 2)
+  averageGradePoint Decimal? @map("average_grade_point") @db.Decimal(5, 2)
+
+  totalSubjects  Int      @map("total_subjects")
+  passedSubjects Int      @default(0) @map("passed_subjects")
+  failedSubjects Int      @default(0) @map("failed_subjects")
+
+  calculationDetails Json? @map("calculation_details")
+
+  calculatedAt DateTime @default(now()) @map("calculated_at") @db.Timestamptz(3)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester     @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, studentId, academicYearId, semesterId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, semesterId])
+  @@index([schoolId, studentId, academicYearId])
+  @@map("semester_academic_averages")
+}
+
+
+
+model AnnualAcademicAverage {
+  id             String   @id @default(uuid()) @db.Uuid
+  schoolId       String   @map("school_id") @db.Uuid
+  studentId      String   @map("student_id") @db.Uuid
+  academicYearId String   @map("academic_year_id") @db.Uuid
+
+  averagePercentage Decimal  @map("average_percentage") @db.Decimal(8, 2)
+  averageGradePoint Decimal? @map("average_grade_point") @db.Decimal(5, 2)
+
+  totalSemesters  Int @map("total_semesters")
+  passedSemesters Int @default(0) @map("passed_semesters")
+  failedSemesters Int @default(0) @map("failed_semesters")
+
+  calculationDetails Json? @map("calculation_details")
+
+  calculatedAt DateTime @default(now()) @map("calculated_at") @db.Timestamptz(3)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  @@unique([schoolId, studentId, academicYearId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, averagePercentage])
+  @@index([schoolId, studentId, academicYearId])
+  @@map("annual_academic_averages")
 }

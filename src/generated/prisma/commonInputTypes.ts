@@ -1092,6 +1092,23 @@ export type EnumMarkCorrectionStatusWithAggregatesFilter<$PrismaModel = never> =
   _max?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
 }
 
+export type EnumAcademicGradeCalculationMethodFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicGradeCalculationMethod | Prisma.EnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel> | $Enums.AcademicGradeCalculationMethod
+}
+
+export type EnumAcademicGradeCalculationMethodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicGradeCalculationMethod | Prisma.EnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicGradeCalculationMethodWithAggregatesFilter<$PrismaModel> | $Enums.AcademicGradeCalculationMethod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -2150,6 +2167,23 @@ export type NestedEnumMarkCorrectionStatusWithAggregatesFilter<$PrismaModel = ne
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicGradeCalculationMethod | Prisma.EnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel> | $Enums.AcademicGradeCalculationMethod
+}
+
+export type NestedEnumAcademicGradeCalculationMethodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AcademicGradeCalculationMethod | Prisma.EnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AcademicGradeCalculationMethod[] | Prisma.ListEnumAcademicGradeCalculationMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAcademicGradeCalculationMethodWithAggregatesFilter<$PrismaModel> | $Enums.AcademicGradeCalculationMethod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAcademicGradeCalculationMethodFilter<$PrismaModel>
 }
 
 

@@ -102,7 +102,11 @@ export const ModelName = {
   ExaminationGradingConfiguration: 'ExaminationGradingConfiguration',
   ExaminationHistory: 'ExaminationHistory',
   MarkRecord: 'MarkRecord',
-  MarkCorrection: 'MarkCorrection'
+  MarkCorrection: 'MarkCorrection',
+  AcademicGradingConfiguration: 'AcademicGradingConfiguration',
+  SubjectGradeResult: 'SubjectGradeResult',
+  SemesterAcademicAverage: 'SemesterAcademicAverage',
+  AnnualAcademicAverage: 'AnnualAcademicAverage'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1047,6 +1051,85 @@ export const MarkCorrectionScalarFieldEnum = {
 } as const
 
 export type MarkCorrectionScalarFieldEnum = (typeof MarkCorrectionScalarFieldEnum)[keyof typeof MarkCorrectionScalarFieldEnum]
+
+
+export const AcademicGradingConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  gradingSystemId: 'gradingSystemId',
+  calculationMethod: 'calculationMethod',
+  passingPercentage: 'passingPercentage',
+  decimalPlaces: 'decimalPlaces',
+  roundingMode: 'roundingMode',
+  requireAllAssessments: 'requireAllAssessments',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AcademicGradingConfigurationScalarFieldEnum = (typeof AcademicGradingConfigurationScalarFieldEnum)[keyof typeof AcademicGradingConfigurationScalarFieldEnum]
+
+
+export const SubjectGradeResultScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  subjectId: 'subjectId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  rawPercentage: 'rawPercentage',
+  finalPercentage: 'finalPercentage',
+  letterGrade: 'letterGrade',
+  gradePoint: 'gradePoint',
+  gradeRemark: 'gradeRemark',
+  assessmentCount: 'assessmentCount',
+  calculationDetails: 'calculationDetails',
+  calculatedAt: 'calculatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SubjectGradeResultScalarFieldEnum = (typeof SubjectGradeResultScalarFieldEnum)[keyof typeof SubjectGradeResultScalarFieldEnum]
+
+
+export const SemesterAcademicAverageScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  averagePercentage: 'averagePercentage',
+  averageGradePoint: 'averageGradePoint',
+  totalSubjects: 'totalSubjects',
+  passedSubjects: 'passedSubjects',
+  failedSubjects: 'failedSubjects',
+  calculationDetails: 'calculationDetails',
+  calculatedAt: 'calculatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SemesterAcademicAverageScalarFieldEnum = (typeof SemesterAcademicAverageScalarFieldEnum)[keyof typeof SemesterAcademicAverageScalarFieldEnum]
+
+
+export const AnnualAcademicAverageScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  academicYearId: 'academicYearId',
+  averagePercentage: 'averagePercentage',
+  averageGradePoint: 'averageGradePoint',
+  totalSemesters: 'totalSemesters',
+  passedSemesters: 'passedSemesters',
+  failedSemesters: 'failedSemesters',
+  calculationDetails: 'calculationDetails',
+  calculatedAt: 'calculatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AnnualAcademicAverageScalarFieldEnum = (typeof AnnualAcademicAverageScalarFieldEnum)[keyof typeof AnnualAcademicAverageScalarFieldEnum]
 
 
 export const SortOrder = {

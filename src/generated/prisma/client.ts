@@ -301,3 +301,23 @@ export type MarkRecord = Prisma.MarkRecordModel
  * 
  */
 export type MarkCorrection = Prisma.MarkCorrectionModel
+/**
+ * Model AcademicGradingConfiguration
+ * 
+ */
+export type AcademicGradingConfiguration = Prisma.AcademicGradingConfigurationModel
+/**
+ * Model SubjectGradeResult
+ * 
+ */
+export type SubjectGradeResult = Prisma.SubjectGradeResultModel
+/**
+ * Model SemesterAcademicAverage
+ * 
+ */
+export type SemesterAcademicAverage = Prisma.SemesterAcademicAverageModel
+/**
+ * Model AnnualAcademicAverage
+ * 
+ */
+export type AnnualAcademicAverage = Prisma.AnnualAcademicAverageModel

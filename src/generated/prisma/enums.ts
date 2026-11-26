@@ -433,3 +433,11 @@ export const MarkCorrectionStatus = {
 } as const
 
 export type MarkCorrectionStatus = (typeof MarkCorrectionStatus)[keyof typeof MarkCorrectionStatus]
+
+
+export const AcademicGradeCalculationMethod = {
+  WEIGHTED_AVERAGE: 'WEIGHTED_AVERAGE',
+  SIMPLE_AVERAGE: 'SIMPLE_AVERAGE'
+} as const
+
+export type AcademicGradeCalculationMethod = (typeof AcademicGradeCalculationMethod)[keyof typeof AcademicGradeCalculationMethod]
