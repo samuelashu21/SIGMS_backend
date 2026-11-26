@@ -188,6 +188,7 @@ import {
 } from '../../teachers/controllers/teacher-workload.controller.js';
 import parentRoutes from '../../parents/routes/parent.routes.js';
 import attendanceRoutes from '../../attendance/routes/attendance.routes.js';
+import examinationRoutes from '../../examinations/routes/examination.routes.js';
 
  
 const router = Router();
@@ -219,6 +220,8 @@ router.use('/:schoolId/parents', parentRoutes);
 
 // Attendance routes
 router.use('/:schoolId/attendance', attendanceRoutes);
+
+router.use('/:schoolId/examinations', examinationRoutes);
 
 // School profile
 router.get(

@@ -94,7 +94,9 @@ export const ModelName = {
   GuardianContact: 'GuardianContact',
   ClassAttendance: 'ClassAttendance',
   AttendanceRecord: 'AttendanceRecord',
-  AttendanceCorrection: 'AttendanceCorrection'
+  AttendanceCorrection: 'AttendanceCorrection',
+  Examination: 'Examination',
+  ExaminationTypeConfiguration: 'ExaminationTypeConfiguration'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -874,6 +876,51 @@ export const AttendanceCorrectionScalarFieldEnum = {
 } as const
 
 export type AttendanceCorrectionScalarFieldEnum = (typeof AttendanceCorrectionScalarFieldEnum)[keyof typeof AttendanceCorrectionScalarFieldEnum]
+
+
+export const ExaminationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  gradeId: 'gradeId',
+  sectionId: 'sectionId',
+  subjectId: 'subjectId',
+  name: 'name',
+  description: 'description',
+  type: 'type',
+  mode: 'mode',
+  status: 'status',
+  totalMarks: 'totalMarks',
+  passingMarks: 'passingMarks',
+  weight: 'weight',
+  examinationDate: 'examinationDate',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  room: 'room',
+  instructions: 'instructions',
+  createdById: 'createdById',
+  publishedAt: 'publishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ExaminationScalarFieldEnum = (typeof ExaminationScalarFieldEnum)[keyof typeof ExaminationScalarFieldEnum]
+
+
+export const ExaminationTypeConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  name: 'name',
+  code: 'code',
+  description: 'description',
+  isActive: 'isActive',
+  isDefault: 'isDefault',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ExaminationTypeConfigurationScalarFieldEnum = (typeof ExaminationTypeConfigurationScalarFieldEnum)[keyof typeof ExaminationTypeConfigurationScalarFieldEnum]
 
 
 export const SortOrder = {

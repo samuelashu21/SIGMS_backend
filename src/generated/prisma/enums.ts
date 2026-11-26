@@ -345,3 +345,39 @@ export const AttendanceCorrectionStatus = {
 } as const
 
 export type AttendanceCorrectionStatus = (typeof AttendanceCorrectionStatus)[keyof typeof AttendanceCorrectionStatus]
+
+
+export const ExaminationType = {
+  QUIZ: 'QUIZ',
+  TEST: 'TEST',
+  MIDTERM: 'MIDTERM',
+  FINAL: 'FINAL',
+  MOCK: 'MOCK',
+  NATIONAL: 'NATIONAL',
+  CONTINUOUS_ASSESSMENT: 'CONTINUOUS_ASSESSMENT',
+  OTHER: 'OTHER'
+} as const
+
+export type ExaminationType = (typeof ExaminationType)[keyof typeof ExaminationType]
+
+
+export const ExaminationStatus = {
+  DRAFT: 'DRAFT',
+  SCHEDULED: 'SCHEDULED',
+  ONGOING: 'ONGOING',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type ExaminationStatus = (typeof ExaminationStatus)[keyof typeof ExaminationStatus]
+
+
+export const ExaminationMode = {
+  WRITTEN: 'WRITTEN',
+  ORAL: 'ORAL',
+  PRACTICAL: 'PRACTICAL',
+  ONLINE: 'ONLINE',
+  MIXED: 'MIXED'
+} as const
+
+export type ExaminationMode = (typeof ExaminationMode)[keyof typeof ExaminationMode]

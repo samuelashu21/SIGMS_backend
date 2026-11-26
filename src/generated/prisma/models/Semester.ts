@@ -266,6 +266,7 @@ export type SemesterWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Semester"> | Date | string
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
   academicYear?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
+  examinations?: Prisma.ExaminationListRelationFilter
 }
 
 export type SemesterOrderByWithRelationInput = {
@@ -282,10 +283,12 @@ export type SemesterOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   school?: Prisma.SchoolOrderByWithRelationInput
   academicYear?: Prisma.AcademicYearOrderByWithRelationInput
+  examinations?: Prisma.ExaminationOrderByRelationAggregateInput
 }
 
 export type SemesterWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  id_schoolId?: Prisma.SemesterIdSchoolIdCompoundUniqueInput
   academicYearId_name?: Prisma.SemesterAcademicYearIdNameCompoundUniqueInput
   academicYearId_sequence?: Prisma.SemesterAcademicYearIdSequenceCompoundUniqueInput
   AND?: Prisma.SemesterWhereInput | Prisma.SemesterWhereInput[]
@@ -303,7 +306,8 @@ export type SemesterWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"Semester"> | Date | string
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
   academicYear?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
-}, "id" | "academicYearId_name" | "academicYearId_sequence">
+  examinations?: Prisma.ExaminationListRelationFilter
+}, "id" | "id_schoolId" | "academicYearId_name" | "academicYearId_sequence">
 
 export type SemesterOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -353,6 +357,7 @@ export type SemesterCreateInput = {
   updatedAt?: Date | string
   school: Prisma.SchoolCreateNestedOneWithoutSemestersInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateInput = {
@@ -367,6 +372,7 @@ export type SemesterUncheckedCreateInput = {
   isCurrent?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUpdateInput = {
@@ -381,6 +387,7 @@ export type SemesterUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   school?: Prisma.SchoolUpdateOneRequiredWithoutSemestersNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateInput = {
@@ -395,6 +402,7 @@ export type SemesterUncheckedUpdateInput = {
   isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterCreateManyInput = {
@@ -445,6 +453,11 @@ export type SemesterListRelationFilter = {
 
 export type SemesterOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type SemesterIdSchoolIdCompoundUniqueInput = {
+  id: string
+  schoolId: string
 }
 
 export type SemesterAcademicYearIdNameCompoundUniqueInput = {
@@ -505,6 +518,11 @@ export type SemesterMinOrderByAggregateInput = {
 
 export type SemesterSumOrderByAggregateInput = {
   sequence?: Prisma.SortOrder
+}
+
+export type SemesterNullableScalarRelationFilter = {
+  is?: Prisma.SemesterWhereInput | null
+  isNot?: Prisma.SemesterWhereInput | null
 }
 
 export type SemesterCreateNestedManyWithoutSchoolInput = {
@@ -595,6 +613,22 @@ export type EnumSemesterStatusFieldUpdateOperationsInput = {
   set?: $Enums.SemesterStatus
 }
 
+export type SemesterCreateNestedOneWithoutExaminationsInput = {
+  create?: Prisma.XOR<Prisma.SemesterCreateWithoutExaminationsInput, Prisma.SemesterUncheckedCreateWithoutExaminationsInput>
+  connectOrCreate?: Prisma.SemesterCreateOrConnectWithoutExaminationsInput
+  connect?: Prisma.SemesterWhereUniqueInput
+}
+
+export type SemesterUpdateOneWithoutExaminationsNestedInput = {
+  create?: Prisma.XOR<Prisma.SemesterCreateWithoutExaminationsInput, Prisma.SemesterUncheckedCreateWithoutExaminationsInput>
+  connectOrCreate?: Prisma.SemesterCreateOrConnectWithoutExaminationsInput
+  upsert?: Prisma.SemesterUpsertWithoutExaminationsInput
+  disconnect?: Prisma.SemesterWhereInput | boolean
+  delete?: Prisma.SemesterWhereInput | boolean
+  connect?: Prisma.SemesterWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SemesterUpdateToOneWithWhereWithoutExaminationsInput, Prisma.SemesterUpdateWithoutExaminationsInput>, Prisma.SemesterUncheckedUpdateWithoutExaminationsInput>
+}
+
 export type SemesterCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -606,6 +640,7 @@ export type SemesterCreateWithoutSchoolInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutSchoolInput = {
@@ -619,6 +654,7 @@ export type SemesterUncheckedCreateWithoutSchoolInput = {
   isCurrent?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutSchoolInput = {
@@ -675,6 +711,7 @@ export type SemesterCreateWithoutAcademicYearInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   school: Prisma.SchoolCreateNestedOneWithoutSemestersInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterUncheckedCreateWithoutAcademicYearInput = {
@@ -687,6 +724,7 @@ export type SemesterUncheckedCreateWithoutAcademicYearInput = {
   isCurrent?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSemesterInput
 }
 
 export type SemesterCreateOrConnectWithoutAcademicYearInput = {
@@ -715,6 +753,78 @@ export type SemesterUpdateManyWithWhereWithoutAcademicYearInput = {
   data: Prisma.XOR<Prisma.SemesterUpdateManyMutationInput, Prisma.SemesterUncheckedUpdateManyWithoutAcademicYearInput>
 }
 
+export type SemesterCreateWithoutExaminationsInput = {
+  id?: string
+  name: string
+  sequence: number
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.SemesterStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSemestersInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSemestersInput
+}
+
+export type SemesterUncheckedCreateWithoutExaminationsInput = {
+  id?: string
+  schoolId: string
+  academicYearId: string
+  name: string
+  sequence: number
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.SemesterStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type SemesterCreateOrConnectWithoutExaminationsInput = {
+  where: Prisma.SemesterWhereUniqueInput
+  create: Prisma.XOR<Prisma.SemesterCreateWithoutExaminationsInput, Prisma.SemesterUncheckedCreateWithoutExaminationsInput>
+}
+
+export type SemesterUpsertWithoutExaminationsInput = {
+  update: Prisma.XOR<Prisma.SemesterUpdateWithoutExaminationsInput, Prisma.SemesterUncheckedUpdateWithoutExaminationsInput>
+  create: Prisma.XOR<Prisma.SemesterCreateWithoutExaminationsInput, Prisma.SemesterUncheckedCreateWithoutExaminationsInput>
+  where?: Prisma.SemesterWhereInput
+}
+
+export type SemesterUpdateToOneWithWhereWithoutExaminationsInput = {
+  where?: Prisma.SemesterWhereInput
+  data: Prisma.XOR<Prisma.SemesterUpdateWithoutExaminationsInput, Prisma.SemesterUncheckedUpdateWithoutExaminationsInput>
+}
+
+export type SemesterUpdateWithoutExaminationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  sequence?: Prisma.IntFieldUpdateOperationsInput | number
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumSemesterStatusFieldUpdateOperationsInput | $Enums.SemesterStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSemestersNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
+}
+
+export type SemesterUncheckedUpdateWithoutExaminationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  sequence?: Prisma.IntFieldUpdateOperationsInput | number
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumSemesterStatusFieldUpdateOperationsInput | $Enums.SemesterStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
 export type SemesterCreateManySchoolInput = {
   id?: string
   academicYearId: string
@@ -739,6 +849,7 @@ export type SemesterUpdateWithoutSchoolInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSemestersNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutSchoolInput = {
@@ -752,6 +863,7 @@ export type SemesterUncheckedUpdateWithoutSchoolInput = {
   isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateManyWithoutSchoolInput = {
@@ -790,6 +902,7 @@ export type SemesterUpdateWithoutAcademicYearInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   school?: Prisma.SchoolUpdateOneRequiredWithoutSemestersNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateWithoutAcademicYearInput = {
@@ -802,6 +915,7 @@ export type SemesterUncheckedUpdateWithoutAcademicYearInput = {
   isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSemesterNestedInput
 }
 
 export type SemesterUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -816,6 +930,35 @@ export type SemesterUncheckedUpdateManyWithoutAcademicYearInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+
+/**
+ * Count Type SemesterCountOutputType
+ */
+
+export type SemesterCountOutputType = {
+  examinations: number
+}
+
+export type SemesterCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  examinations?: boolean | SemesterCountOutputTypeCountExaminationsArgs
+}
+
+/**
+ * SemesterCountOutputType without action
+ */
+export type SemesterCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SemesterCountOutputType
+   */
+  select?: Prisma.SemesterCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * SemesterCountOutputType without action
+ */
+export type SemesterCountOutputTypeCountExaminationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExaminationWhereInput
+}
 
 
 export type SemesterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -832,6 +975,8 @@ export type SemesterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   updatedAt?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  examinations?: boolean | Prisma.Semester$examinationsArgs<ExtArgs>
+  _count?: boolean | Prisma.SemesterCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["semester"]>
 
 export type SemesterSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -884,6 +1029,8 @@ export type SemesterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 export type SemesterInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  examinations?: boolean | Prisma.Semester$examinationsArgs<ExtArgs>
+  _count?: boolean | Prisma.SemesterCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type SemesterIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -899,6 +1046,7 @@ export type $SemesterPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   objects: {
     school: Prisma.$SchoolPayload<ExtArgs>
     academicYear: Prisma.$AcademicYearPayload<ExtArgs>
+    examinations: Prisma.$ExaminationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1308,6 +1456,7 @@ export interface Prisma__SemesterClient<T, Null = never, ExtArgs extends runtime
   readonly [Symbol.toStringTag]: "PrismaPromise"
   school<T extends Prisma.SchoolDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SchoolDefaultArgs<ExtArgs>>): Prisma.Prisma__SchoolClient<runtime.Types.Result.GetResult<Prisma.$SchoolPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   academicYear<T extends Prisma.AcademicYearDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYearDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicYearClient<runtime.Types.Result.GetResult<Prisma.$AcademicYearPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  examinations<T extends Prisma.Semester$examinationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Semester$examinationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExaminationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1746,6 +1895,30 @@ export type SemesterDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Limit how many Semesters to delete.
    */
   limit?: number
+}
+
+/**
+ * Semester.examinations
+ */
+export type Semester$examinationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Examination
+   */
+  select?: Prisma.ExaminationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Examination
+   */
+  omit?: Prisma.ExaminationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExaminationInclude<ExtArgs> | null
+  where?: Prisma.ExaminationWhereInput
+  orderBy?: Prisma.ExaminationOrderByWithRelationInput | Prisma.ExaminationOrderByWithRelationInput[]
+  cursor?: Prisma.ExaminationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExaminationScalarFieldEnum | Prisma.ExaminationScalarFieldEnum[]
 }
 
 /**

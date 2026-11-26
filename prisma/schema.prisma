@@ -54,6 +54,8 @@ model School {
   teacherProfiles TeacherProfile[]
   staffProfiles StaffProfile[]
   guardianProfiles GuardianProfile[]
+  examinations Examination[]
+  examinationTypeConfigurations ExaminationTypeConfiguration[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -167,6 +169,7 @@ model User {
   approvedAttendance ClassAttendance[] @relation("AttendanceApprover")
   requestedAttendanceCorrections AttendanceCorrection[] @relation("AttendanceCorrectionRequester")
   reviewedAttendanceCorrections AttendanceCorrection[] @relation("AttendanceCorrectionReviewer")
+  createdExaminations Examination[] @relation("ExaminationCreator")
 
   @@map("users")
 }
@@ -322,6 +325,7 @@ model AcademicYear {
   homeroomAssignments HomeroomTeacherAssignment[]
   teacherWorkloadRecords TeacherWorkloadRecord[]
   classAttendance ClassAttendance[]
+  examinations Examination[]
 
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
@@ -341,30 +345,38 @@ enum SemesterStatus {
   @@map("semester_statuses")
 }
 
+
 model Semester {
-  id            String         @id @default(uuid()) @db.Uuid
-  schoolId      String         @map("school_id") @db.Uuid
-  academicYearId String        @map("academic_year_id") @db.Uuid
-  name          String
-  sequence      Int
-  startDate     DateTime       @map("start_date") @db.Date
-  endDate       DateTime       @map("end_date") @db.Date
-  status        SemesterStatus @default(PLANNED)
-  isCurrent     Boolean        @default(false) @map("is_current")
+  id             String         @id @default(uuid()) @db.Uuid
+  schoolId       String         @map("school_id") @db.Uuid
+  academicYearId String         @map("academic_year_id") @db.Uuid
+  name           String
+  sequence       Int
+  startDate      DateTime       @map("start_date") @db.Date
+  endDate        DateTime       @map("end_date") @db.Date
+  status         SemesterStatus @default(PLANNED)
+  isCurrent      Boolean        @default(false) @map("is_current")
 
-  createdAt     DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
-  updatedAt     DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  school School @relation( fields: [schoolId], references: [id],  onDelete: Restrict)
+  school School @relation(fields: [schoolId],references: [id], onDelete: Restrict)
 
-  academicYear AcademicYear @relation(  fields: [academicYearId, schoolId], references: [id, schoolId],onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  examinations Examination[]
+
+  // ADD THIS
+  @@unique([id, schoolId], map: "semesters_id_school_key")
 
   @@unique([academicYearId, name], map: "semesters_year_name_key")
   @@unique([academicYearId, sequence], map: "semesters_year_sequence_key")
   @@index([schoolId, status], map: "semesters_school_status_idx")
   @@index([schoolId, academicYearId], map: "semesters_school_year_idx")
+
   @@map("semesters")
 }
+
 
 
 
@@ -387,6 +399,7 @@ model Grade {
   admissionApplications AdmissionApplication[]
   academicEnrollments AcademicEnrollment[]
   teacherAssignments TeacherSubjectAssignment[]
+  examinations Examination[]
 
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
@@ -421,6 +434,7 @@ model Section {
   teacherAssignments TeacherClassAssignment[]
   homeroomAssignments HomeroomTeacherAssignment[]
   classAttendance ClassAttendance[]
+  examinations Examination[]
 
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
@@ -451,6 +465,7 @@ model Subject {
 
   gradeAssignments GradeSubject[]
   teacherAssignments TeacherSubjectAssignment[]
+  examinations Examination[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -1677,4 +1692,109 @@ model AttendanceCorrection {
   @@index([schoolId, status, requestedAt], map: "attendance_corrections_status_idx")
   @@index([schoolId, requestedById], map: "attendance_corrections_requester_idx")
   @@map("attendance_corrections")
+}
+
+
+
+enum ExaminationType {
+  QUIZ
+  TEST
+  MIDTERM
+  FINAL
+  MOCK
+  NATIONAL
+  CONTINUOUS_ASSESSMENT
+  OTHER
+
+  @@map("examination_types")
+}
+
+enum ExaminationStatus {
+  DRAFT
+  SCHEDULED
+  ONGOING
+  COMPLETED
+  CANCELLED
+
+  @@map("examination_statuses")
+}
+
+enum ExaminationMode {
+  WRITTEN
+  ORAL
+  PRACTICAL
+  ONLINE
+  MIXED
+
+  @@map("examination_modes")
+}
+
+
+model Examination {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  semesterId     String? @map("semester_id") @db.Uuid
+  gradeId        String @map("grade_id") @db.Uuid
+  sectionId      String? @map("section_id") @db.Uuid
+  subjectId      String @map("subject_id") @db.Uuid
+
+  name        String
+  description String?
+  type        ExaminationType
+  mode        ExaminationMode @default(WRITTEN)
+  status      ExaminationStatus @default(DRAFT)
+
+  totalMarks  Decimal @map("total_marks") @db.Decimal(8, 2)
+  passingMarks Decimal? @map("passing_marks") @db.Decimal(8, 2)
+  weight      Decimal? @db.Decimal(5, 2)
+
+  examinationDate DateTime? @map("examination_date") @db.Date
+  startTime       DateTime? @map("start_time") @db.Time(0)
+  endTime         DateTime? @map("end_time") @db.Time(0)
+
+  room            String?
+  instructions    String?
+  createdById     String @map("created_by_id") @db.Uuid
+  publishedAt     DateTime? @map("published_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester? @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  grade        Grade @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  section      Section? @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  subject      Subject @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  createdBy    User @relation("ExaminationCreator", fields: [createdById], references: [id], onDelete: Restrict)
+
+  @@unique([id, schoolId], map: "examinations_id_school_key")
+  @@index([schoolId, academicYearId, status])
+  @@index([schoolId, gradeId, subjectId])
+  @@index([schoolId, examinationDate])
+  @@map("examinations")
+}
+
+
+
+model ExaminationTypeConfiguration {
+  id       String @id @default(uuid()) @db.Uuid
+  schoolId String @map("school_id") @db.Uuid
+
+  name        String
+  code        String
+  description String?
+  isActive    Boolean @default(true) @map("is_active")
+  isDefault   Boolean @default(false) @map("is_default")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@unique([schoolId, code], map: "examination_type_configurations_school_code_key")
+  @@unique([id, schoolId], map: "examination_type_configurations_id_school_key")
+  @@index([schoolId, isActive])
+  @@map("examination_type_configurations")
 }

@@ -440,7 +440,9 @@ export const ModelName = {
   GuardianContact: 'GuardianContact',
   ClassAttendance: 'ClassAttendance',
   AttendanceRecord: 'AttendanceRecord',
-  AttendanceCorrection: 'AttendanceCorrection'
+  AttendanceCorrection: 'AttendanceCorrection',
+  Examination: 'Examination',
+  ExaminationTypeConfiguration: 'ExaminationTypeConfiguration'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -456,7 +458,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -3716,6 +3718,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Examination: {
+      payload: Prisma.$ExaminationPayload<ExtArgs>
+      fields: Prisma.ExaminationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ExaminationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ExaminationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>
+        }
+        findFirst: {
+          args: Prisma.ExaminationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ExaminationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>
+        }
+        findMany: {
+          args: Prisma.ExaminationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>[]
+        }
+        create: {
+          args: Prisma.ExaminationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>
+        }
+        createMany: {
+          args: Prisma.ExaminationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ExaminationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>[]
+        }
+        delete: {
+          args: Prisma.ExaminationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>
+        }
+        update: {
+          args: Prisma.ExaminationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>
+        }
+        deleteMany: {
+          args: Prisma.ExaminationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ExaminationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ExaminationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>[]
+        }
+        upsert: {
+          args: Prisma.ExaminationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationPayload>
+        }
+        aggregate: {
+          args: Prisma.ExaminationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateExamination>
+        }
+        groupBy: {
+          args: Prisma.ExaminationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExaminationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ExaminationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExaminationCountAggregateOutputType> | number
+        }
+      }
+    }
+    ExaminationTypeConfiguration: {
+      payload: Prisma.$ExaminationTypeConfigurationPayload<ExtArgs>
+      fields: Prisma.ExaminationTypeConfigurationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ExaminationTypeConfigurationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ExaminationTypeConfigurationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>
+        }
+        findFirst: {
+          args: Prisma.ExaminationTypeConfigurationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ExaminationTypeConfigurationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>
+        }
+        findMany: {
+          args: Prisma.ExaminationTypeConfigurationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>[]
+        }
+        create: {
+          args: Prisma.ExaminationTypeConfigurationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>
+        }
+        createMany: {
+          args: Prisma.ExaminationTypeConfigurationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ExaminationTypeConfigurationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>[]
+        }
+        delete: {
+          args: Prisma.ExaminationTypeConfigurationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>
+        }
+        update: {
+          args: Prisma.ExaminationTypeConfigurationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>
+        }
+        deleteMany: {
+          args: Prisma.ExaminationTypeConfigurationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ExaminationTypeConfigurationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ExaminationTypeConfigurationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>[]
+        }
+        upsert: {
+          args: Prisma.ExaminationTypeConfigurationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExaminationTypeConfigurationPayload>
+        }
+        aggregate: {
+          args: Prisma.ExaminationTypeConfigurationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateExaminationTypeConfiguration>
+        }
+        groupBy: {
+          args: Prisma.ExaminationTypeConfigurationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExaminationTypeConfigurationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ExaminationTypeConfigurationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExaminationTypeConfigurationCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -4518,6 +4668,51 @@ export const AttendanceCorrectionScalarFieldEnum = {
 export type AttendanceCorrectionScalarFieldEnum = (typeof AttendanceCorrectionScalarFieldEnum)[keyof typeof AttendanceCorrectionScalarFieldEnum]
 
 
+export const ExaminationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  gradeId: 'gradeId',
+  sectionId: 'sectionId',
+  subjectId: 'subjectId',
+  name: 'name',
+  description: 'description',
+  type: 'type',
+  mode: 'mode',
+  status: 'status',
+  totalMarks: 'totalMarks',
+  passingMarks: 'passingMarks',
+  weight: 'weight',
+  examinationDate: 'examinationDate',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  room: 'room',
+  instructions: 'instructions',
+  createdById: 'createdById',
+  publishedAt: 'publishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ExaminationScalarFieldEnum = (typeof ExaminationScalarFieldEnum)[keyof typeof ExaminationScalarFieldEnum]
+
+
+export const ExaminationTypeConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  name: 'name',
+  code: 'code',
+  description: 'description',
+  isActive: 'isActive',
+  isDefault: 'isDefault',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ExaminationTypeConfigurationScalarFieldEnum = (typeof ExaminationTypeConfigurationScalarFieldEnum)[keyof typeof ExaminationTypeConfigurationScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -5091,6 +5286,48 @@ export type ListEnumAttendanceCorrectionStatusFieldRefInput<$PrismaModel> = Fiel
 
 
 /**
+ * Reference to a field of type 'ExaminationType'
+ */
+export type EnumExaminationTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ExaminationType'>
+    
+
+
+/**
+ * Reference to a field of type 'ExaminationType[]'
+ */
+export type ListEnumExaminationTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ExaminationType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'ExaminationMode'
+ */
+export type EnumExaminationModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ExaminationMode'>
+    
+
+
+/**
+ * Reference to a field of type 'ExaminationMode[]'
+ */
+export type ListEnumExaminationModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ExaminationMode[]'>
+    
+
+
+/**
+ * Reference to a field of type 'ExaminationStatus'
+ */
+export type EnumExaminationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ExaminationStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'ExaminationStatus[]'
+ */
+export type ListEnumExaminationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ExaminationStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -5298,6 +5535,8 @@ export type GlobalOmitConfig = {
   classAttendance?: Prisma.ClassAttendanceOmit
   attendanceRecord?: Prisma.AttendanceRecordOmit
   attendanceCorrection?: Prisma.AttendanceCorrectionOmit
+  examination?: Prisma.ExaminationOmit
+  examinationTypeConfiguration?: Prisma.ExaminationTypeConfigurationOmit
 }
 
 /* Types for Logging */

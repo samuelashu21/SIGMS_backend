@@ -263,6 +263,7 @@ export type SectionWhereInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentListRelationFilter
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentListRelationFilter
   classAttendance?: Prisma.ClassAttendanceListRelationFilter
+  examinations?: Prisma.ExaminationListRelationFilter
 }
 
 export type SectionOrderByWithRelationInput = {
@@ -283,6 +284,7 @@ export type SectionOrderByWithRelationInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentOrderByRelationAggregateInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentOrderByRelationAggregateInput
   classAttendance?: Prisma.ClassAttendanceOrderByRelationAggregateInput
+  examinations?: Prisma.ExaminationOrderByRelationAggregateInput
 }
 
 export type SectionWhereUniqueInput = Prisma.AtLeast<{
@@ -309,6 +311,7 @@ export type SectionWhereUniqueInput = Prisma.AtLeast<{
   teacherAssignments?: Prisma.TeacherClassAssignmentListRelationFilter
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentListRelationFilter
   classAttendance?: Prisma.ClassAttendanceListRelationFilter
+  examinations?: Prisma.ExaminationListRelationFilter
 }, "id" | "academicYearId_gradeId_name" | "id_schoolId" | "id_schoolId_gradeId_academicYearId">
 
 export type SectionOrderByWithAggregationInput = {
@@ -360,6 +363,7 @@ export type SectionCreateInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateInput = {
@@ -377,6 +381,7 @@ export type SectionUncheckedCreateInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUpdateInput = {
@@ -394,6 +399,7 @@ export type SectionUpdateInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateInput = {
@@ -411,6 +417,7 @@ export type SectionUncheckedUpdateInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionCreateManyInput = {
@@ -726,6 +733,22 @@ export type SectionUpdateOneRequiredWithoutClassAttendanceNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutClassAttendanceInput, Prisma.SectionUpdateWithoutClassAttendanceInput>, Prisma.SectionUncheckedUpdateWithoutClassAttendanceInput>
 }
 
+export type SectionCreateNestedOneWithoutExaminationsInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutExaminationsInput, Prisma.SectionUncheckedCreateWithoutExaminationsInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutExaminationsInput
+  connect?: Prisma.SectionWhereUniqueInput
+}
+
+export type SectionUpdateOneWithoutExaminationsNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutExaminationsInput, Prisma.SectionUncheckedCreateWithoutExaminationsInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutExaminationsInput
+  upsert?: Prisma.SectionUpsertWithoutExaminationsInput
+  disconnect?: Prisma.SectionWhereInput | boolean
+  delete?: Prisma.SectionWhereInput | boolean
+  connect?: Prisma.SectionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutExaminationsInput, Prisma.SectionUpdateWithoutExaminationsInput>, Prisma.SectionUncheckedUpdateWithoutExaminationsInput>
+}
+
 export type SectionCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -740,6 +763,7 @@ export type SectionCreateWithoutSchoolInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutSchoolInput = {
@@ -756,6 +780,7 @@ export type SectionUncheckedCreateWithoutSchoolInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutSchoolInput = {
@@ -814,6 +839,7 @@ export type SectionCreateWithoutAcademicYearInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutAcademicYearInput = {
@@ -829,6 +855,7 @@ export type SectionUncheckedCreateWithoutAcademicYearInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutAcademicYearInput = {
@@ -871,6 +898,7 @@ export type SectionCreateWithoutGradeInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutGradeInput = {
@@ -886,6 +914,7 @@ export type SectionUncheckedCreateWithoutGradeInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutGradeInput = {
@@ -928,6 +957,7 @@ export type SectionCreateWithoutAcademicEnrollmentsInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutAcademicEnrollmentsInput = {
@@ -944,6 +974,7 @@ export type SectionUncheckedCreateWithoutAcademicEnrollmentsInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutAcademicEnrollmentsInput = {
@@ -976,6 +1007,7 @@ export type SectionUpdateWithoutAcademicEnrollmentsInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutAcademicEnrollmentsInput = {
@@ -992,6 +1024,7 @@ export type SectionUncheckedUpdateWithoutAcademicEnrollmentsInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionCreateWithoutTeacherAssignmentsInput = {
@@ -1008,6 +1041,7 @@ export type SectionCreateWithoutTeacherAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutTeacherAssignmentsInput = {
@@ -1024,6 +1058,7 @@ export type SectionUncheckedCreateWithoutTeacherAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutTeacherAssignmentsInput = {
@@ -1056,6 +1091,7 @@ export type SectionUpdateWithoutTeacherAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutTeacherAssignmentsInput = {
@@ -1072,6 +1108,7 @@ export type SectionUncheckedUpdateWithoutTeacherAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionCreateWithoutHomeroomAssignmentsInput = {
@@ -1088,6 +1125,7 @@ export type SectionCreateWithoutHomeroomAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutHomeroomAssignmentsInput = {
@@ -1104,6 +1142,7 @@ export type SectionUncheckedCreateWithoutHomeroomAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutHomeroomAssignmentsInput = {
@@ -1136,6 +1175,7 @@ export type SectionUpdateWithoutHomeroomAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutHomeroomAssignmentsInput = {
@@ -1152,6 +1192,7 @@ export type SectionUncheckedUpdateWithoutHomeroomAssignmentsInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionCreateWithoutClassAttendanceInput = {
@@ -1168,6 +1209,7 @@ export type SectionCreateWithoutClassAttendanceInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
   teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
 }
 
 export type SectionUncheckedCreateWithoutClassAttendanceInput = {
@@ -1184,6 +1226,7 @@ export type SectionUncheckedCreateWithoutClassAttendanceInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
 }
 
 export type SectionCreateOrConnectWithoutClassAttendanceInput = {
@@ -1216,6 +1259,7 @@ export type SectionUpdateWithoutClassAttendanceInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutClassAttendanceInput = {
@@ -1232,6 +1276,91 @@ export type SectionUncheckedUpdateWithoutClassAttendanceInput = {
   academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
+}
+
+export type SectionCreateWithoutExaminationsInput = {
+  id?: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSectionsInput
+  grade: Prisma.GradeCreateNestedOneWithoutSectionsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSectionsInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+}
+
+export type SectionUncheckedCreateWithoutExaminationsInput = {
+  id?: string
+  schoolId: string
+  gradeId: string
+  academicYearId: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+}
+
+export type SectionCreateOrConnectWithoutExaminationsInput = {
+  where: Prisma.SectionWhereUniqueInput
+  create: Prisma.XOR<Prisma.SectionCreateWithoutExaminationsInput, Prisma.SectionUncheckedCreateWithoutExaminationsInput>
+}
+
+export type SectionUpsertWithoutExaminationsInput = {
+  update: Prisma.XOR<Prisma.SectionUpdateWithoutExaminationsInput, Prisma.SectionUncheckedUpdateWithoutExaminationsInput>
+  create: Prisma.XOR<Prisma.SectionCreateWithoutExaminationsInput, Prisma.SectionUncheckedCreateWithoutExaminationsInput>
+  where?: Prisma.SectionWhereInput
+}
+
+export type SectionUpdateToOneWithWhereWithoutExaminationsInput = {
+  where?: Prisma.SectionWhereInput
+  data: Prisma.XOR<Prisma.SectionUpdateWithoutExaminationsInput, Prisma.SectionUncheckedUpdateWithoutExaminationsInput>
+}
+
+export type SectionUpdateWithoutExaminationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSectionsNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutSectionsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSectionsNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+}
+
+export type SectionUncheckedUpdateWithoutExaminationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionCreateManySchoolInput = {
@@ -1260,6 +1389,7 @@ export type SectionUpdateWithoutSchoolInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutSchoolInput = {
@@ -1276,6 +1406,7 @@ export type SectionUncheckedUpdateWithoutSchoolInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutSchoolInput = {
@@ -1315,6 +1446,7 @@ export type SectionUpdateWithoutAcademicYearInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutAcademicYearInput = {
@@ -1330,6 +1462,7 @@ export type SectionUncheckedUpdateWithoutAcademicYearInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -1368,6 +1501,7 @@ export type SectionUpdateWithoutGradeInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutGradeInput = {
@@ -1383,6 +1517,7 @@ export type SectionUncheckedUpdateWithoutGradeInput = {
   teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
   classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutGradeInput = {
@@ -1406,6 +1541,7 @@ export type SectionCountOutputType = {
   teacherAssignments: number
   homeroomAssignments: number
   classAttendance: number
+  examinations: number
 }
 
 export type SectionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1413,6 +1549,7 @@ export type SectionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extension
   teacherAssignments?: boolean | SectionCountOutputTypeCountTeacherAssignmentsArgs
   homeroomAssignments?: boolean | SectionCountOutputTypeCountHomeroomAssignmentsArgs
   classAttendance?: boolean | SectionCountOutputTypeCountClassAttendanceArgs
+  examinations?: boolean | SectionCountOutputTypeCountExaminationsArgs
 }
 
 /**
@@ -1453,6 +1590,13 @@ export type SectionCountOutputTypeCountClassAttendanceArgs<ExtArgs extends runti
   where?: Prisma.ClassAttendanceWhereInput
 }
 
+/**
+ * SectionCountOutputType without action
+ */
+export type SectionCountOutputTypeCountExaminationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExaminationWhereInput
+}
+
 
 export type SectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1472,6 +1616,7 @@ export type SectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   teacherAssignments?: boolean | Prisma.Section$teacherAssignmentsArgs<ExtArgs>
   homeroomAssignments?: boolean | Prisma.Section$homeroomAssignmentsArgs<ExtArgs>
   classAttendance?: boolean | Prisma.Section$classAttendanceArgs<ExtArgs>
+  examinations?: boolean | Prisma.Section$examinationsArgs<ExtArgs>
   _count?: boolean | Prisma.SectionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["section"]>
 
@@ -1529,6 +1674,7 @@ export type SectionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   teacherAssignments?: boolean | Prisma.Section$teacherAssignmentsArgs<ExtArgs>
   homeroomAssignments?: boolean | Prisma.Section$homeroomAssignmentsArgs<ExtArgs>
   classAttendance?: boolean | Prisma.Section$classAttendanceArgs<ExtArgs>
+  examinations?: boolean | Prisma.Section$examinationsArgs<ExtArgs>
   _count?: boolean | Prisma.SectionCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type SectionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1552,6 +1698,7 @@ export type $SectionPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     teacherAssignments: Prisma.$TeacherClassAssignmentPayload<ExtArgs>[]
     homeroomAssignments: Prisma.$HomeroomTeacherAssignmentPayload<ExtArgs>[]
     classAttendance: Prisma.$ClassAttendancePayload<ExtArgs>[]
+    examinations: Prisma.$ExaminationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1965,6 +2112,7 @@ export interface Prisma__SectionClient<T, Null = never, ExtArgs extends runtime.
   teacherAssignments<T extends Prisma.Section$teacherAssignmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$teacherAssignmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherClassAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   homeroomAssignments<T extends Prisma.Section$homeroomAssignmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$homeroomAssignmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$HomeroomTeacherAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   classAttendance<T extends Prisma.Section$classAttendanceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$classAttendanceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassAttendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  examinations<T extends Prisma.Section$examinationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$examinationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExaminationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2498,6 +2646,30 @@ export type Section$classAttendanceArgs<ExtArgs extends runtime.Types.Extensions
   take?: number
   skip?: number
   distinct?: Prisma.ClassAttendanceScalarFieldEnum | Prisma.ClassAttendanceScalarFieldEnum[]
+}
+
+/**
+ * Section.examinations
+ */
+export type Section$examinationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Examination
+   */
+  select?: Prisma.ExaminationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Examination
+   */
+  omit?: Prisma.ExaminationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExaminationInclude<ExtArgs> | null
+  where?: Prisma.ExaminationWhereInput
+  orderBy?: Prisma.ExaminationOrderByWithRelationInput | Prisma.ExaminationOrderByWithRelationInput[]
+  cursor?: Prisma.ExaminationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExaminationScalarFieldEnum | Prisma.ExaminationScalarFieldEnum[]
 }
 
 /**

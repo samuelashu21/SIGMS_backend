@@ -261,3 +261,13 @@ export type AttendanceRecord = Prisma.AttendanceRecordModel
  * 
  */
 export type AttendanceCorrection = Prisma.AttendanceCorrectionModel
+/**
+ * Model Examination
+ * 
+ */
+export type Examination = Prisma.ExaminationModel
+/**
+ * Model ExaminationTypeConfiguration
+ * 
+ */
+export type ExaminationTypeConfiguration = Prisma.ExaminationTypeConfigurationModel
