@@ -247,3 +247,28 @@ export type Examination = Prisma.ExaminationModel
  * 
  */
 export type ExaminationTypeConfiguration = Prisma.ExaminationTypeConfigurationModel
+/**
+ * Model Quiz
+ * 
+ */
+export type Quiz = Prisma.QuizModel
+/**
+ * Model Assignment
+ * 
+ */
+export type Assignment = Prisma.AssignmentModel
+/**
+ * Model ExaminationGradingConfiguration
+ * 
+ */
+export type ExaminationGradingConfiguration = Prisma.ExaminationGradingConfigurationModel
+/**
+ * Model ExaminationHistory
+ * 
+ */
+export type ExaminationHistory = Prisma.ExaminationHistoryModel
+/**
+ * Model MarkRecord
+ * 
+ */
+export type MarkRecord = Prisma.MarkRecordModel

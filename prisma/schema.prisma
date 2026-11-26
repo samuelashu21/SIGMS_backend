@@ -56,6 +56,11 @@ model School {
   guardianProfiles GuardianProfile[]
   examinations Examination[]
   examinationTypeConfigurations ExaminationTypeConfiguration[]
+  quizzes Quiz[]
+  assignments Assignment[]
+  examinationGradingConfigurations ExaminationGradingConfiguration[]
+  examinationHistory ExaminationHistory[]
+  markRecords MarkRecord[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -90,6 +95,7 @@ model Student {
   academicRecords StudentAcademicRecord[]
   guardianRelationships StudentGuardianRelationship[]
   attendanceRecords AttendanceRecord[]
+  markRecords MarkRecord[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -170,6 +176,10 @@ model User {
   requestedAttendanceCorrections AttendanceCorrection[] @relation("AttendanceCorrectionRequester")
   reviewedAttendanceCorrections AttendanceCorrection[] @relation("AttendanceCorrectionReviewer")
   createdExaminations Examination[] @relation("ExaminationCreator")
+  examinationHistoryActions ExaminationHistory[]
+  enteredMarkRecords MarkRecord[] @relation("MarkRecordEnteredBy")
+  approvedMarkRecords MarkRecord[] @relation("MarkRecordApprovedBy")
+  reviewedMarkRecords MarkRecord[] @relation("MarkRecordReviewedBy")
 
   @@map("users")
 }
@@ -1744,6 +1754,8 @@ model Examination {
   type        ExaminationType
   mode        ExaminationMode @default(WRITTEN)
   status      ExaminationStatus @default(DRAFT)
+  quiz Quiz?
+  assignment Assignment?
 
   totalMarks  Decimal @map("total_marks") @db.Decimal(8, 2)
   passingMarks Decimal? @map("passing_marks") @db.Decimal(8, 2)
@@ -1765,6 +1777,10 @@ model Examination {
   academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
   semester     Semester? @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
   grade        Grade @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  gradingConfiguration ExaminationGradingConfiguration?
+  history ExaminationHistory[]
+  markRecords MarkRecord[]
+  statusReason String? @map("status_reason")
   section      Section? @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
   subject      Subject @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
   createdBy    User @relation("ExaminationCreator", fields: [createdById], references: [id], onDelete: Restrict)
@@ -1797,4 +1813,214 @@ model ExaminationTypeConfiguration {
   @@unique([id, schoolId], map: "examination_type_configurations_id_school_key")
   @@index([schoolId, isActive])
   @@map("examination_type_configurations")
+}
+
+
+
+
+model Quiz {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  examinationId String @map("examination_id") @db.Uuid
+
+  durationMinutes        Int     @map("duration_minutes")
+  attemptsAllowed        Int     @default(1) @map("attempts_allowed")
+  shuffleQuestions       Boolean @default(false) @map("shuffle_questions")
+  shuffleOptions         Boolean @default(false) @map("shuffle_options")
+  showResultsImmediately Boolean @default(false) @map("show_results_immediately")
+  allowReview            Boolean @default(true) @map("allow_review")
+  instructions           String?
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id],onDelete: Restrict)
+
+  examination Examination @relation(fields: [examinationId, schoolId],references: [id, schoolId],onDelete: Cascade)
+
+  @@unique([examinationId, schoolId], map: "quizzes_examination_school_key")
+  @@unique([id, schoolId])
+  @@index([schoolId])
+  @@map("quizzes")
+}
+
+
+
+
+
+model Assignment {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  examinationId String @map("examination_id") @db.Uuid
+
+  dueDate DateTime  @map("due_date") @db.Date
+  dueTime DateTime? @map("due_time") @db.Time(0)
+
+  allowLateSubmission     Boolean  @default(false) @map("allow_late_submission")
+  latePenaltyPercent      Decimal? @map("late_penalty_percent") @db.Decimal(5, 2)
+  attemptsAllowed         Int      @default(1) @map("attempts_allowed")
+  attachmentRequired      Boolean  @default(false) @map("attachment_required")
+  submissionInstructions  String?  @map("submission_instructions")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  examination Examination @relation(fields: [examinationId, schoolId],references: [id, schoolId],onDelete: Cascade)
+
+  @@unique([examinationId, schoolId], map: "assignments_examination_school_key")
+  @@unique([id, schoolId])
+  @@index([schoolId, dueDate])
+  @@map("assignments")
+}
+
+
+
+
+enum ExaminationGradingMethod {
+  NUMERIC
+  PERCENTAGE
+  LETTER_GRADE
+  PASS_FAIL
+
+  @@map("examination_grading_methods")
+}
+
+enum ExaminationRoundingMode {
+  ROUND
+  ROUND_UP
+  ROUND_DOWN
+
+  @@map("examination_rounding_modes")
+}
+
+
+model ExaminationGradingConfiguration {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  examinationId String @map("examination_id") @db.Uuid
+
+  gradingMethod ExaminationGradingMethod @default(NUMERIC) @map("grading_method")
+
+  maximumMarks Decimal @map("maximum_marks") @db.Decimal(8, 2)
+  passingMarks Decimal @map("passing_marks") @db.Decimal(8, 2)
+
+  decimalPlaces Int @default(2) @map("decimal_places")
+  roundingMode  ExaminationRoundingMode @default(ROUND) @map("rounding_mode")
+
+  allowNegativeMarks Boolean @default(false) @map("allow_negative_marks")
+  negativeMarkValue  Decimal? @map("negative_mark_value") @db.Decimal(8, 2)
+
+  allowBonusMarks  Boolean  @default(false) @map("allow_bonus_marks")
+  maximumBonusMarks Decimal? @map("maximum_bonus_marks") @db.Decimal(8, 2)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  examination Examination @relation(fields: [examinationId, schoolId],references: [id, schoolId],onDelete: Cascade)
+
+  @@unique([examinationId, schoolId], map: "examination_grading_configs_examination_school_key")
+  @@unique([id, schoolId])
+  @@index([schoolId])
+  @@map("examination_grading_configurations")
+}
+
+
+
+
+enum ExaminationHistoryAction {
+  CREATED
+  UPDATED
+  SCHEDULED
+  STATUS_CHANGED
+  GRADING_CONFIGURED
+  GRADING_UPDATED
+  CANCELLED
+
+  @@map("examination_history_actions")
+}
+
+model ExaminationHistory {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  examinationId String @map("examination_id") @db.Uuid
+  performedById String @map("performed_by_id") @db.Uuid
+
+  action        ExaminationHistoryAction
+  previousStatus ExaminationStatus? @map("previous_status")
+  newStatus      ExaminationStatus? @map("new_status")
+  description    String?
+  changes        Json?
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  examination Examination @relation(fields: [examinationId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  performedBy User @relation(fields: [performedById],references: [id],onDelete: Restrict)
+
+  @@index([schoolId, examinationId, createdAt])
+  @@index([schoolId, action, createdAt])
+  @@index([performedById, createdAt])
+  @@map("examination_history")
+}
+
+
+
+enum MarkRecordStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+  PUBLISHED
+
+  @@map("mark_record_statuses")
+}
+
+
+model MarkRecord {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  examinationId String @map("examination_id") @db.Uuid
+  studentId     String @map("student_id") @db.Uuid
+  enteredById   String @map("entered_by_id") @db.Uuid
+
+  obtainedMarks Decimal @map("obtained_marks") @db.Decimal(8, 2)
+  bonusMarks    Decimal @default(0) @map("bonus_marks") @db.Decimal(8, 2)
+  penaltyMarks  Decimal @default(0) @map("penalty_marks") @db.Decimal(8, 2)
+
+  remarks String?
+  status  MarkRecordStatus @default(DRAFT)
+
+  submittedAt DateTime? @map("submitted_at") @db.Timestamptz(3)
+  approvedAt  DateTime? @map("approved_at") @db.Timestamptz(3)
+  approvedById String? @map("approved_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  examination Examination @relation(fields: [examinationId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  enteredBy User @relation("MarkRecordEnteredBy",fields: [enteredById],references: [id],onDelete: Restrict)
+
+  approvedBy User? @relation("MarkRecordApprovedBy",fields: [approvedById],references: [id],onDelete: Restrict)
+  approvalNotes String? @map("approval_notes") @db.Text
+
+  reviewedById String? @map("reviewed_by_id") @db.Uuid
+  reviewedBy User? @relation("MarkRecordReviewedBy",fields: [reviewedById],references: [id],onDelete: SetNull)
+
+  @@unique([schoolId, examinationId, studentId])
+  @@unique([id, schoolId])
+  @@index([schoolId, examinationId, status])
+  @@index([schoolId, studentId])
+  @@index([enteredById, createdAt])
+  @@map("mark_records")
 }

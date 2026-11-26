@@ -990,6 +990,91 @@ export type EnumExaminationStatusWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumExaminationStatusFilter<$PrismaModel>
 }
 
+export type EnumExaminationGradingMethodFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationGradingMethod | Prisma.EnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationGradingMethodFilter<$PrismaModel> | $Enums.ExaminationGradingMethod
+}
+
+export type EnumExaminationRoundingModeFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationRoundingMode | Prisma.EnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationRoundingModeFilter<$PrismaModel> | $Enums.ExaminationRoundingMode
+}
+
+export type EnumExaminationGradingMethodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationGradingMethod | Prisma.EnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationGradingMethodWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationGradingMethod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationGradingMethodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationGradingMethodFilter<$PrismaModel>
+}
+
+export type EnumExaminationRoundingModeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationRoundingMode | Prisma.EnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationRoundingModeWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationRoundingMode
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationRoundingModeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationRoundingModeFilter<$PrismaModel>
+}
+
+export type EnumExaminationHistoryActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationHistoryAction | Prisma.EnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationHistoryActionFilter<$PrismaModel> | $Enums.ExaminationHistoryAction
+}
+
+export type EnumExaminationStatusNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationStatus | Prisma.EnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumExaminationStatusNullableFilter<$PrismaModel> | $Enums.ExaminationStatus | null
+}
+
+export type EnumExaminationHistoryActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationHistoryAction | Prisma.EnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationHistoryActionWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationHistoryAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationHistoryActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationHistoryActionFilter<$PrismaModel>
+}
+
+export type EnumExaminationStatusNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationStatus | Prisma.EnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumExaminationStatusNullableWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationStatus | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationStatusNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationStatusNullableFilter<$PrismaModel>
+}
+
+export type EnumMarkRecordStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkRecordStatus | Prisma.EnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel> | $Enums.MarkRecordStatus
+}
+
+export type EnumMarkRecordStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkRecordStatus | Prisma.EnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkRecordStatusWithAggregatesFilter<$PrismaModel> | $Enums.MarkRecordStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1946,6 +2031,91 @@ export type NestedEnumExaminationStatusWithAggregatesFilter<$PrismaModel = never
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumExaminationStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumExaminationStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumExaminationGradingMethodFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationGradingMethod | Prisma.EnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationGradingMethodFilter<$PrismaModel> | $Enums.ExaminationGradingMethod
+}
+
+export type NestedEnumExaminationRoundingModeFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationRoundingMode | Prisma.EnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationRoundingModeFilter<$PrismaModel> | $Enums.ExaminationRoundingMode
+}
+
+export type NestedEnumExaminationGradingMethodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationGradingMethod | Prisma.EnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationGradingMethod[] | Prisma.ListEnumExaminationGradingMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationGradingMethodWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationGradingMethod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationGradingMethodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationGradingMethodFilter<$PrismaModel>
+}
+
+export type NestedEnumExaminationRoundingModeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationRoundingMode | Prisma.EnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationRoundingMode[] | Prisma.ListEnumExaminationRoundingModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationRoundingModeWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationRoundingMode
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationRoundingModeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationRoundingModeFilter<$PrismaModel>
+}
+
+export type NestedEnumExaminationHistoryActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationHistoryAction | Prisma.EnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationHistoryActionFilter<$PrismaModel> | $Enums.ExaminationHistoryAction
+}
+
+export type NestedEnumExaminationStatusNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationStatus | Prisma.EnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumExaminationStatusNullableFilter<$PrismaModel> | $Enums.ExaminationStatus | null
+}
+
+export type NestedEnumExaminationHistoryActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationHistoryAction | Prisma.EnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  in?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ExaminationHistoryAction[] | Prisma.ListEnumExaminationHistoryActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumExaminationHistoryActionWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationHistoryAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationHistoryActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationHistoryActionFilter<$PrismaModel>
+}
+
+export type NestedEnumExaminationStatusNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ExaminationStatus | Prisma.EnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ExaminationStatus[] | Prisma.ListEnumExaminationStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumExaminationStatusNullableWithAggregatesFilter<$PrismaModel> | $Enums.ExaminationStatus | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumExaminationStatusNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumExaminationStatusNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumMarkRecordStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkRecordStatus | Prisma.EnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel> | $Enums.MarkRecordStatus
+}
+
+export type NestedEnumMarkRecordStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkRecordStatus | Prisma.EnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkRecordStatus[] | Prisma.ListEnumMarkRecordStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkRecordStatusWithAggregatesFilter<$PrismaModel> | $Enums.MarkRecordStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
 }
 
 

@@ -96,7 +96,12 @@ export const ModelName = {
   AttendanceRecord: 'AttendanceRecord',
   AttendanceCorrection: 'AttendanceCorrection',
   Examination: 'Examination',
-  ExaminationTypeConfiguration: 'ExaminationTypeConfiguration'
+  ExaminationTypeConfiguration: 'ExaminationTypeConfiguration',
+  Quiz: 'Quiz',
+  Assignment: 'Assignment',
+  ExaminationGradingConfiguration: 'ExaminationGradingConfiguration',
+  ExaminationHistory: 'ExaminationHistory',
+  MarkRecord: 'MarkRecord'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -902,7 +907,8 @@ export const ExaminationScalarFieldEnum = {
   createdById: 'createdById',
   publishedAt: 'publishedAt',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  statusReason: 'statusReason'
 } as const
 
 export type ExaminationScalarFieldEnum = (typeof ExaminationScalarFieldEnum)[keyof typeof ExaminationScalarFieldEnum]
@@ -921,6 +927,101 @@ export const ExaminationTypeConfigurationScalarFieldEnum = {
 } as const
 
 export type ExaminationTypeConfigurationScalarFieldEnum = (typeof ExaminationTypeConfigurationScalarFieldEnum)[keyof typeof ExaminationTypeConfigurationScalarFieldEnum]
+
+
+export const QuizScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  examinationId: 'examinationId',
+  durationMinutes: 'durationMinutes',
+  attemptsAllowed: 'attemptsAllowed',
+  shuffleQuestions: 'shuffleQuestions',
+  shuffleOptions: 'shuffleOptions',
+  showResultsImmediately: 'showResultsImmediately',
+  allowReview: 'allowReview',
+  instructions: 'instructions',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type QuizScalarFieldEnum = (typeof QuizScalarFieldEnum)[keyof typeof QuizScalarFieldEnum]
+
+
+export const AssignmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  examinationId: 'examinationId',
+  dueDate: 'dueDate',
+  dueTime: 'dueTime',
+  allowLateSubmission: 'allowLateSubmission',
+  latePenaltyPercent: 'latePenaltyPercent',
+  attemptsAllowed: 'attemptsAllowed',
+  attachmentRequired: 'attachmentRequired',
+  submissionInstructions: 'submissionInstructions',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AssignmentScalarFieldEnum = (typeof AssignmentScalarFieldEnum)[keyof typeof AssignmentScalarFieldEnum]
+
+
+export const ExaminationGradingConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  examinationId: 'examinationId',
+  gradingMethod: 'gradingMethod',
+  maximumMarks: 'maximumMarks',
+  passingMarks: 'passingMarks',
+  decimalPlaces: 'decimalPlaces',
+  roundingMode: 'roundingMode',
+  allowNegativeMarks: 'allowNegativeMarks',
+  negativeMarkValue: 'negativeMarkValue',
+  allowBonusMarks: 'allowBonusMarks',
+  maximumBonusMarks: 'maximumBonusMarks',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ExaminationGradingConfigurationScalarFieldEnum = (typeof ExaminationGradingConfigurationScalarFieldEnum)[keyof typeof ExaminationGradingConfigurationScalarFieldEnum]
+
+
+export const ExaminationHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  examinationId: 'examinationId',
+  performedById: 'performedById',
+  action: 'action',
+  previousStatus: 'previousStatus',
+  newStatus: 'newStatus',
+  description: 'description',
+  changes: 'changes',
+  createdAt: 'createdAt'
+} as const
+
+export type ExaminationHistoryScalarFieldEnum = (typeof ExaminationHistoryScalarFieldEnum)[keyof typeof ExaminationHistoryScalarFieldEnum]
+
+
+export const MarkRecordScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  examinationId: 'examinationId',
+  studentId: 'studentId',
+  enteredById: 'enteredById',
+  obtainedMarks: 'obtainedMarks',
+  bonusMarks: 'bonusMarks',
+  penaltyMarks: 'penaltyMarks',
+  remarks: 'remarks',
+  status: 'status',
+  submittedAt: 'submittedAt',
+  approvedAt: 'approvedAt',
+  approvedById: 'approvedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  approvalNotes: 'approvalNotes',
+  reviewedById: 'reviewedById'
+} as const
+
+export type MarkRecordScalarFieldEnum = (typeof MarkRecordScalarFieldEnum)[keyof typeof MarkRecordScalarFieldEnum]
 
 
 export const SortOrder = {

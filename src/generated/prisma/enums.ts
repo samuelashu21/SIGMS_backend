@@ -381,3 +381,46 @@ export const ExaminationMode = {
 } as const
 
 export type ExaminationMode = (typeof ExaminationMode)[keyof typeof ExaminationMode]
+
+
+export const ExaminationGradingMethod = {
+  NUMERIC: 'NUMERIC',
+  PERCENTAGE: 'PERCENTAGE',
+  LETTER_GRADE: 'LETTER_GRADE',
+  PASS_FAIL: 'PASS_FAIL'
+} as const
+
+export type ExaminationGradingMethod = (typeof ExaminationGradingMethod)[keyof typeof ExaminationGradingMethod]
+
+
+export const ExaminationRoundingMode = {
+  ROUND: 'ROUND',
+  ROUND_UP: 'ROUND_UP',
+  ROUND_DOWN: 'ROUND_DOWN'
+} as const
+
+export type ExaminationRoundingMode = (typeof ExaminationRoundingMode)[keyof typeof ExaminationRoundingMode]
+
+
+export const ExaminationHistoryAction = {
+  CREATED: 'CREATED',
+  UPDATED: 'UPDATED',
+  SCHEDULED: 'SCHEDULED',
+  STATUS_CHANGED: 'STATUS_CHANGED',
+  GRADING_CONFIGURED: 'GRADING_CONFIGURED',
+  GRADING_UPDATED: 'GRADING_UPDATED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type ExaminationHistoryAction = (typeof ExaminationHistoryAction)[keyof typeof ExaminationHistoryAction]
+
+
+export const MarkRecordStatus = {
+  DRAFT: 'DRAFT',
+  SUBMITTED: 'SUBMITTED',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  PUBLISHED: 'PUBLISHED'
+} as const
+
+export type MarkRecordStatus = (typeof MarkRecordStatus)[keyof typeof MarkRecordStatus]

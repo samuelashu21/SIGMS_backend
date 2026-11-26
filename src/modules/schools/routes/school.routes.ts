@@ -189,6 +189,7 @@ import {
 import parentRoutes from '../../parents/routes/parent.routes.js';
 import attendanceRoutes from '../../attendance/routes/attendance.routes.js';
 import examinationRoutes from '../../examinations/routes/examination.routes.js';
+import markRoutes from '../../marks/routes/mark.routes.js';
 
  
 const router = Router();
@@ -209,6 +210,7 @@ router.post(
   createSchoolAdministratorController
 );
 
+router.use('/:schoolId/marks', markRoutes);
 // School-specific authorization
 router.use('/:schoolId', requireSchoolMembership);
 

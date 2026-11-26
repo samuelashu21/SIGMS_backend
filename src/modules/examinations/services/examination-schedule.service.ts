@@ -27,6 +27,7 @@ export const scheduleExamination = async (
   input: ScheduleInput
 ) => {
   return prisma.$transaction(async (tx) => {
+    // Find examination within the current school.
     const examination = await tx.examination.findFirst({
       where: {
         id: examinationId,
@@ -41,6 +42,7 @@ export const scheduleExamination = async (
       throw new AppError('Examination not found.', 404);
     }
 
+    // Validate examination status.
     if (
       examination.status !== 'DRAFT' &&
       examination.status !== 'SCHEDULED'
@@ -51,12 +53,19 @@ export const scheduleExamination = async (
       );
     }
 
+    // Convert examination date.
     const examDate = new Date(
       `${input.examinationDate}T00:00:00.000Z`
     );
 
-    const yearStart = new Date(examination.academicYear.startDate);
-    const yearEnd = new Date(examination.academicYear.endDate);
+    // Validate academic year date range.
+    const yearStart = new Date(
+      examination.academicYear.startDate
+    );
+
+    const yearEnd = new Date(
+      examination.academicYear.endDate
+    );
 
     if (
       examDate < yearStart ||
@@ -68,16 +77,20 @@ export const scheduleExamination = async (
       );
     }
 
+    // Convert examination times.
     const start = toDatabaseTime(input.startTime);
     const end = toDatabaseTime(input.endTime);
 
+    // Find other scheduled examinations on the same date.
     const existingExaminations =
       await tx.examination.findMany({
         where: {
           schoolId,
           examinationDate: examDate,
           status: 'SCHEDULED',
-          id: { not: examinationId }
+          id: {
+            not: examinationId
+          }
         },
         select: {
           id: true,
@@ -90,6 +103,7 @@ export const scheduleExamination = async (
         }
       });
 
+    // Check room and class scheduling conflicts.
     for (const existing of existingExaminations) {
       if (!existing.startTime || !existing.endTime) {
         continue;
@@ -103,17 +117,18 @@ export const scheduleExamination = async (
         existing.endTime
       ).getTime();
 
-      if (
-        !overlaps(
-          start.getTime(),
-          end.getTime(),
-          existingStart,
-          existingEnd
-        )
-      ) {
+      const hasOverlap = overlaps(
+        start.getTime(),
+        end.getTime(),
+        existingStart,
+        existingEnd
+      );
+
+      if (!hasOverlap) {
         continue;
       }
 
+      // Check room conflict.
       if (
         existing.room?.trim().toLowerCase() ===
         input.room.trim().toLowerCase()
@@ -124,7 +139,9 @@ export const scheduleExamination = async (
         );
       }
 
-      const sameGrade = existing.gradeId === examination.gradeId;
+      // Check grade and section conflict.
+      const sameGrade =
+        existing.gradeId === examination.gradeId;
 
       const sameClass =
         sameGrade &&
@@ -142,6 +159,7 @@ export const scheduleExamination = async (
       }
     }
 
+    // Update examination schedule.
     return tx.examination.update({
       where: {
         id: examinationId
@@ -151,10 +169,16 @@ export const scheduleExamination = async (
         startTime: start,
         endTime: end,
         room: input.room,
+
         ...(input.instructions !== undefined && {
           instructions: input.instructions
         }),
-        status: 'SCHEDULED'
+
+        status: 'SCHEDULED',
+
+        // Preserve the original publication timestamp.
+        publishedAt:
+          examination.publishedAt ?? new Date()
       },
       include: {
         academicYear: true,
@@ -167,6 +191,7 @@ export const scheduleExamination = async (
   });
 };
 
+// Retrieve examination schedule.
 export const getExaminationSchedule = async (
   schoolId: string,
   filters: {
@@ -180,18 +205,23 @@ export const getExaminationSchedule = async (
   return prisma.examination.findMany({
     where: {
       schoolId,
+
       status: {
         in: ['SCHEDULED', 'ONGOING']
       },
+
       ...(filters.academicYearId && {
         academicYearId: filters.academicYearId
       }),
+
       ...(filters.gradeId && {
         gradeId: filters.gradeId
       }),
+
       ...(filters.sectionId && {
         sectionId: filters.sectionId
       }),
+
       ...(filters.startDate || filters.endDate
         ? {
             examinationDate: {
@@ -200,6 +230,7 @@ export const getExaminationSchedule = async (
                   `${filters.startDate}T00:00:00.000Z`
                 )
               }),
+
               ...(filters.endDate && {
                 lte: new Date(
                   `${filters.endDate}T00:00:00.000Z`
@@ -209,6 +240,7 @@ export const getExaminationSchedule = async (
           }
         : {})
     },
+
     include: {
       grade: true,
       section: true,
@@ -216,9 +248,14 @@ export const getExaminationSchedule = async (
       academicYear: true,
       semester: true
     },
+
     orderBy: [
-      { examinationDate: 'asc' },
-      { startTime: 'asc' }
+      {
+        examinationDate: 'asc'
+      },
+      {
+        startTime: 'asc'
+      }
     ]
   });
 };
