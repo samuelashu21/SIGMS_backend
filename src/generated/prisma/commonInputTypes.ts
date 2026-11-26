@@ -1075,6 +1075,23 @@ export type EnumMarkRecordStatusWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
 }
 
+export type EnumMarkCorrectionStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkCorrectionStatus | Prisma.EnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel> | $Enums.MarkCorrectionStatus
+}
+
+export type EnumMarkCorrectionStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkCorrectionStatus | Prisma.EnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkCorrectionStatusWithAggregatesFilter<$PrismaModel> | $Enums.MarkCorrectionStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -2116,6 +2133,23 @@ export type NestedEnumMarkRecordStatusWithAggregatesFilter<$PrismaModel = never>
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumMarkRecordStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumMarkCorrectionStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkCorrectionStatus | Prisma.EnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel> | $Enums.MarkCorrectionStatus
+}
+
+export type NestedEnumMarkCorrectionStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.MarkCorrectionStatus | Prisma.EnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.MarkCorrectionStatus[] | Prisma.ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumMarkCorrectionStatusWithAggregatesFilter<$PrismaModel> | $Enums.MarkCorrectionStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumMarkCorrectionStatusFilter<$PrismaModel>
 }
 
 

@@ -22,3 +22,13 @@ export * from './validators/mark-approval.validator.js';
 
 export * from './controllers/mark-submission.controller.js';
 export * from './controllers/mark-approval.controller.js';
+
+
+export * from './services/mark-correction.service.js';
+export * from './services/mark-publication.service.js';
+
+export * from './validators/mark-correction.validator.js';
+export * from './validators/mark-publication.validator.js';
+
+export * from './controllers/mark-correction.controller.js';
+export * from './controllers/mark-publication.controller.js';

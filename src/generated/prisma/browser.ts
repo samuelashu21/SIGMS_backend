@@ -272,3 +272,8 @@ export type ExaminationHistory = Prisma.ExaminationHistoryModel
  * 
  */
 export type MarkRecord = Prisma.MarkRecordModel
+/**
+ * Model MarkCorrection
+ * 
+ */
+export type MarkCorrection = Prisma.MarkCorrectionModel

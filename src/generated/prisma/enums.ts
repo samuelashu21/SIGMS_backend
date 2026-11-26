@@ -424,3 +424,12 @@ export const MarkRecordStatus = {
 } as const
 
 export type MarkRecordStatus = (typeof MarkRecordStatus)[keyof typeof MarkRecordStatus]
+
+
+export const MarkCorrectionStatus = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type MarkCorrectionStatus = (typeof MarkCorrectionStatus)[keyof typeof MarkCorrectionStatus]

@@ -14,6 +14,8 @@ import { createExaminationMarkController, getExaminationMarksController } from '
 import { createBulkMarkEntriesController } from '../controllers/bulk-mark.controller.js';
 import { getSubmittedExaminationMarksController, submitExaminationMarksController } from '../controllers/mark-submission.controller.js';
 import { getMarksPendingApprovalController, reviewExaminationMarksController } from '../controllers/mark-approval.controller.js';
+import { getMarkCorrectionsController, getPendingMarkCorrectionsController, requestMarkCorrectionController, reviewMarkCorrectionController } from '../controllers/mark-correction.controller.js';
+import { getPublishedExaminationMarksController, publishExaminationMarksController } from '../controllers/mark-publication.controller.js';
 
 const router = Router();
 
@@ -107,6 +109,61 @@ router.post(
   '/examinations/:examinationId/review',
   authorizeSchoolRoles(...marksApprovalRoles),
   reviewExaminationMarksController
+);
+
+const marksPublicationRoles = [
+  'SCHOOL_ADMIN',
+  'PRINCIPAL',
+  'VICE_PRINCIPAL'
+] as const;
+
+router.post(
+  '/examinations/:examinationId/publish',
+  authorizeSchoolRoles(...marksPublicationRoles),
+  publishExaminationMarksController
+);
+
+router.get(
+  '/examinations/:examinationId/published',
+  authorizeSchoolRoles(...marksViewRoles),
+  getPublishedExaminationMarksController
+);
+
+router.post(
+  '/:markRecordId/corrections',
+  authorizeSchoolRoles(
+    'TEACHER',
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL'
+  ),
+  requestMarkCorrectionController
+);
+
+router.get(
+  '/:markRecordId/corrections',
+  authorizeSchoolRoles(...marksViewRoles),
+  getMarkCorrectionsController
+);
+
+router.get(
+  '/examinations/:examinationId/pending-corrections',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL'
+  ),
+  getPendingMarkCorrectionsController
+);
+
+router.post(
+  '/corrections/:correctionId/review',
+  authorizeSchoolRoles(
+    'SCHOOL_ADMIN',
+    'PRINCIPAL',
+    'VICE_PRINCIPAL'
+  ),
+  reviewMarkCorrectionController
 );
 
 router.get(

@@ -56,6 +56,8 @@ export type MarkRecordMinAggregateOutputType = {
   updatedAt: Date | null
   approvalNotes: string | null
   reviewedById: string | null
+  publishedAt: Date | null
+  publishedById: string | null
 }
 
 export type MarkRecordMaxAggregateOutputType = {
@@ -76,6 +78,8 @@ export type MarkRecordMaxAggregateOutputType = {
   updatedAt: Date | null
   approvalNotes: string | null
   reviewedById: string | null
+  publishedAt: Date | null
+  publishedById: string | null
 }
 
 export type MarkRecordCountAggregateOutputType = {
@@ -96,6 +100,8 @@ export type MarkRecordCountAggregateOutputType = {
   updatedAt: number
   approvalNotes: number
   reviewedById: number
+  publishedAt: number
+  publishedById: number
   _all: number
 }
 
@@ -130,6 +136,8 @@ export type MarkRecordMinAggregateInputType = {
   updatedAt?: true
   approvalNotes?: true
   reviewedById?: true
+  publishedAt?: true
+  publishedById?: true
 }
 
 export type MarkRecordMaxAggregateInputType = {
@@ -150,6 +158,8 @@ export type MarkRecordMaxAggregateInputType = {
   updatedAt?: true
   approvalNotes?: true
   reviewedById?: true
+  publishedAt?: true
+  publishedById?: true
 }
 
 export type MarkRecordCountAggregateInputType = {
@@ -170,6 +180,8 @@ export type MarkRecordCountAggregateInputType = {
   updatedAt?: true
   approvalNotes?: true
   reviewedById?: true
+  publishedAt?: true
+  publishedById?: true
   _all?: true
 }
 
@@ -277,6 +289,8 @@ export type MarkRecordGroupByOutputType = {
   updatedAt: Date
   approvalNotes: string | null
   reviewedById: string | null
+  publishedAt: Date | null
+  publishedById: string | null
   _count: MarkRecordCountAggregateOutputType | null
   _avg: MarkRecordAvgAggregateOutputType | null
   _sum: MarkRecordSumAggregateOutputType | null
@@ -320,12 +334,16 @@ export type MarkRecordWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"MarkRecord"> | Date | string
   approvalNotes?: Prisma.StringNullableFilter<"MarkRecord"> | string | null
   reviewedById?: Prisma.UuidNullableFilter<"MarkRecord"> | string | null
+  publishedAt?: Prisma.DateTimeNullableFilter<"MarkRecord"> | Date | string | null
+  publishedById?: Prisma.UuidNullableFilter<"MarkRecord"> | string | null
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
   examination?: Prisma.XOR<Prisma.ExaminationScalarRelationFilter, Prisma.ExaminationWhereInput>
   student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
   enteredBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   approvedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   reviewedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  corrections?: Prisma.MarkCorrectionListRelationFilter
+  publishedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type MarkRecordOrderByWithRelationInput = {
@@ -346,12 +364,16 @@ export type MarkRecordOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   approvalNotes?: Prisma.SortOrderInput | Prisma.SortOrder
   reviewedById?: Prisma.SortOrderInput | Prisma.SortOrder
+  publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  publishedById?: Prisma.SortOrderInput | Prisma.SortOrder
   school?: Prisma.SchoolOrderByWithRelationInput
   examination?: Prisma.ExaminationOrderByWithRelationInput
   student?: Prisma.StudentOrderByWithRelationInput
   enteredBy?: Prisma.UserOrderByWithRelationInput
   approvedBy?: Prisma.UserOrderByWithRelationInput
   reviewedBy?: Prisma.UserOrderByWithRelationInput
+  corrections?: Prisma.MarkCorrectionOrderByRelationAggregateInput
+  publishedBy?: Prisma.UserOrderByWithRelationInput
 }
 
 export type MarkRecordWhereUniqueInput = Prisma.AtLeast<{
@@ -377,12 +399,16 @@ export type MarkRecordWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"MarkRecord"> | Date | string
   approvalNotes?: Prisma.StringNullableFilter<"MarkRecord"> | string | null
   reviewedById?: Prisma.UuidNullableFilter<"MarkRecord"> | string | null
+  publishedAt?: Prisma.DateTimeNullableFilter<"MarkRecord"> | Date | string | null
+  publishedById?: Prisma.UuidNullableFilter<"MarkRecord"> | string | null
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
   examination?: Prisma.XOR<Prisma.ExaminationScalarRelationFilter, Prisma.ExaminationWhereInput>
   student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
   enteredBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   approvedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   reviewedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  corrections?: Prisma.MarkCorrectionListRelationFilter
+  publishedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "schoolId_examinationId_studentId" | "id_schoolId">
 
 export type MarkRecordOrderByWithAggregationInput = {
@@ -403,6 +429,8 @@ export type MarkRecordOrderByWithAggregationInput = {
   updatedAt?: Prisma.SortOrder
   approvalNotes?: Prisma.SortOrderInput | Prisma.SortOrder
   reviewedById?: Prisma.SortOrderInput | Prisma.SortOrder
+  publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  publishedById?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.MarkRecordCountOrderByAggregateInput
   _avg?: Prisma.MarkRecordAvgOrderByAggregateInput
   _max?: Prisma.MarkRecordMaxOrderByAggregateInput
@@ -431,6 +459,8 @@ export type MarkRecordScalarWhereWithAggregatesInput = {
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"MarkRecord"> | Date | string
   approvalNotes?: Prisma.StringNullableWithAggregatesFilter<"MarkRecord"> | string | null
   reviewedById?: Prisma.UuidNullableWithAggregatesFilter<"MarkRecord"> | string | null
+  publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"MarkRecord"> | Date | string | null
+  publishedById?: Prisma.UuidNullableWithAggregatesFilter<"MarkRecord"> | string | null
 }
 
 export type MarkRecordCreateInput = {
@@ -445,12 +475,15 @@ export type MarkRecordCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
   examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
   student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
   enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
   approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
   reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateInput = {
@@ -471,6 +504,9 @@ export type MarkRecordUncheckedCreateInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordUpdateInput = {
@@ -485,12 +521,15 @@ export type MarkRecordUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
   examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
   enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
   approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
   reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateInput = {
@@ -511,6 +550,9 @@ export type MarkRecordUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordCreateManyInput = {
@@ -531,6 +573,8 @@ export type MarkRecordCreateManyInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type MarkRecordUpdateManyMutationInput = {
@@ -545,6 +589,7 @@ export type MarkRecordUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type MarkRecordUncheckedUpdateManyInput = {
@@ -565,6 +610,8 @@ export type MarkRecordUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type MarkRecordListRelationFilter = {
@@ -606,6 +653,8 @@ export type MarkRecordCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   approvalNotes?: Prisma.SortOrder
   reviewedById?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  publishedById?: Prisma.SortOrder
 }
 
 export type MarkRecordAvgOrderByAggregateInput = {
@@ -632,6 +681,8 @@ export type MarkRecordMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   approvalNotes?: Prisma.SortOrder
   reviewedById?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  publishedById?: Prisma.SortOrder
 }
 
 export type MarkRecordMinOrderByAggregateInput = {
@@ -652,12 +703,19 @@ export type MarkRecordMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   approvalNotes?: Prisma.SortOrder
   reviewedById?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  publishedById?: Prisma.SortOrder
 }
 
 export type MarkRecordSumOrderByAggregateInput = {
   obtainedMarks?: Prisma.SortOrder
   bonusMarks?: Prisma.SortOrder
   penaltyMarks?: Prisma.SortOrder
+}
+
+export type MarkRecordScalarRelationFilter = {
+  is?: Prisma.MarkRecordWhereInput
+  isNot?: Prisma.MarkRecordWhereInput
 }
 
 export type MarkRecordCreateNestedManyWithoutSchoolInput = {
@@ -765,6 +823,13 @@ export type MarkRecordCreateNestedManyWithoutReviewedByInput = {
   connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
 }
 
+export type MarkRecordCreateNestedManyWithoutPublishedByInput = {
+  create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutPublishedByInput, Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput> | Prisma.MarkRecordCreateWithoutPublishedByInput[] | Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput | Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput[]
+  createMany?: Prisma.MarkRecordCreateManyPublishedByInputEnvelope
+  connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+}
+
 export type MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput = {
   create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutEnteredByInput, Prisma.MarkRecordUncheckedCreateWithoutEnteredByInput> | Prisma.MarkRecordCreateWithoutEnteredByInput[] | Prisma.MarkRecordUncheckedCreateWithoutEnteredByInput[]
   connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutEnteredByInput | Prisma.MarkRecordCreateOrConnectWithoutEnteredByInput[]
@@ -783,6 +848,13 @@ export type MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput = {
   create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutReviewedByInput, Prisma.MarkRecordUncheckedCreateWithoutReviewedByInput> | Prisma.MarkRecordCreateWithoutReviewedByInput[] | Prisma.MarkRecordUncheckedCreateWithoutReviewedByInput[]
   connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutReviewedByInput | Prisma.MarkRecordCreateOrConnectWithoutReviewedByInput[]
   createMany?: Prisma.MarkRecordCreateManyReviewedByInputEnvelope
+  connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+}
+
+export type MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput = {
+  create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutPublishedByInput, Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput> | Prisma.MarkRecordCreateWithoutPublishedByInput[] | Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput | Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput[]
+  createMany?: Prisma.MarkRecordCreateManyPublishedByInputEnvelope
   connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
 }
 
@@ -828,6 +900,20 @@ export type MarkRecordUpdateManyWithoutReviewedByNestedInput = {
   deleteMany?: Prisma.MarkRecordScalarWhereInput | Prisma.MarkRecordScalarWhereInput[]
 }
 
+export type MarkRecordUpdateManyWithoutPublishedByNestedInput = {
+  create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutPublishedByInput, Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput> | Prisma.MarkRecordCreateWithoutPublishedByInput[] | Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput | Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput[]
+  upsert?: Prisma.MarkRecordUpsertWithWhereUniqueWithoutPublishedByInput | Prisma.MarkRecordUpsertWithWhereUniqueWithoutPublishedByInput[]
+  createMany?: Prisma.MarkRecordCreateManyPublishedByInputEnvelope
+  set?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  disconnect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  delete?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  update?: Prisma.MarkRecordUpdateWithWhereUniqueWithoutPublishedByInput | Prisma.MarkRecordUpdateWithWhereUniqueWithoutPublishedByInput[]
+  updateMany?: Prisma.MarkRecordUpdateManyWithWhereWithoutPublishedByInput | Prisma.MarkRecordUpdateManyWithWhereWithoutPublishedByInput[]
+  deleteMany?: Prisma.MarkRecordScalarWhereInput | Prisma.MarkRecordScalarWhereInput[]
+}
+
 export type MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput = {
   create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutEnteredByInput, Prisma.MarkRecordUncheckedCreateWithoutEnteredByInput> | Prisma.MarkRecordCreateWithoutEnteredByInput[] | Prisma.MarkRecordUncheckedCreateWithoutEnteredByInput[]
   connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutEnteredByInput | Prisma.MarkRecordCreateOrConnectWithoutEnteredByInput[]
@@ -867,6 +953,20 @@ export type MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput = {
   connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
   update?: Prisma.MarkRecordUpdateWithWhereUniqueWithoutReviewedByInput | Prisma.MarkRecordUpdateWithWhereUniqueWithoutReviewedByInput[]
   updateMany?: Prisma.MarkRecordUpdateManyWithWhereWithoutReviewedByInput | Prisma.MarkRecordUpdateManyWithWhereWithoutReviewedByInput[]
+  deleteMany?: Prisma.MarkRecordScalarWhereInput | Prisma.MarkRecordScalarWhereInput[]
+}
+
+export type MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput = {
+  create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutPublishedByInput, Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput> | Prisma.MarkRecordCreateWithoutPublishedByInput[] | Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput | Prisma.MarkRecordCreateOrConnectWithoutPublishedByInput[]
+  upsert?: Prisma.MarkRecordUpsertWithWhereUniqueWithoutPublishedByInput | Prisma.MarkRecordUpsertWithWhereUniqueWithoutPublishedByInput[]
+  createMany?: Prisma.MarkRecordCreateManyPublishedByInputEnvelope
+  set?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  disconnect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  delete?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  connect?: Prisma.MarkRecordWhereUniqueInput | Prisma.MarkRecordWhereUniqueInput[]
+  update?: Prisma.MarkRecordUpdateWithWhereUniqueWithoutPublishedByInput | Prisma.MarkRecordUpdateWithWhereUniqueWithoutPublishedByInput[]
+  updateMany?: Prisma.MarkRecordUpdateManyWithWhereWithoutPublishedByInput | Prisma.MarkRecordUpdateManyWithWhereWithoutPublishedByInput[]
   deleteMany?: Prisma.MarkRecordScalarWhereInput | Prisma.MarkRecordScalarWhereInput[]
 }
 
@@ -916,6 +1016,20 @@ export type EnumMarkRecordStatusFieldUpdateOperationsInput = {
   set?: $Enums.MarkRecordStatus
 }
 
+export type MarkRecordCreateNestedOneWithoutCorrectionsInput = {
+  create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutCorrectionsInput, Prisma.MarkRecordUncheckedCreateWithoutCorrectionsInput>
+  connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutCorrectionsInput
+  connect?: Prisma.MarkRecordWhereUniqueInput
+}
+
+export type MarkRecordUpdateOneRequiredWithoutCorrectionsNestedInput = {
+  create?: Prisma.XOR<Prisma.MarkRecordCreateWithoutCorrectionsInput, Prisma.MarkRecordUncheckedCreateWithoutCorrectionsInput>
+  connectOrCreate?: Prisma.MarkRecordCreateOrConnectWithoutCorrectionsInput
+  upsert?: Prisma.MarkRecordUpsertWithoutCorrectionsInput
+  connect?: Prisma.MarkRecordWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.MarkRecordUpdateToOneWithWhereWithoutCorrectionsInput, Prisma.MarkRecordUpdateWithoutCorrectionsInput>, Prisma.MarkRecordUncheckedUpdateWithoutCorrectionsInput>
+}
+
 export type MarkRecordCreateWithoutSchoolInput = {
   id?: string
   obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -928,11 +1042,14 @@ export type MarkRecordCreateWithoutSchoolInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
   student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
   enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
   approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
   reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateWithoutSchoolInput = {
@@ -952,6 +1069,9 @@ export type MarkRecordUncheckedCreateWithoutSchoolInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordCreateOrConnectWithoutSchoolInput = {
@@ -1001,6 +1121,8 @@ export type MarkRecordScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"MarkRecord"> | Date | string
   approvalNotes?: Prisma.StringNullableFilter<"MarkRecord"> | string | null
   reviewedById?: Prisma.UuidNullableFilter<"MarkRecord"> | string | null
+  publishedAt?: Prisma.DateTimeNullableFilter<"MarkRecord"> | Date | string | null
+  publishedById?: Prisma.UuidNullableFilter<"MarkRecord"> | string | null
 }
 
 export type MarkRecordCreateWithoutStudentInput = {
@@ -1015,11 +1137,14 @@ export type MarkRecordCreateWithoutStudentInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
   examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
   enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
   approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
   reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateWithoutStudentInput = {
@@ -1038,6 +1163,9 @@ export type MarkRecordUncheckedCreateWithoutStudentInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordCreateOrConnectWithoutStudentInput = {
@@ -1078,11 +1206,14 @@ export type MarkRecordCreateWithoutEnteredByInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
   examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
   student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
   approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
   reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateWithoutEnteredByInput = {
@@ -1102,6 +1233,9 @@ export type MarkRecordUncheckedCreateWithoutEnteredByInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordCreateOrConnectWithoutEnteredByInput = {
@@ -1126,11 +1260,14 @@ export type MarkRecordCreateWithoutApprovedByInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
   examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
   student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
   enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
   reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateWithoutApprovedByInput = {
@@ -1150,6 +1287,9 @@ export type MarkRecordUncheckedCreateWithoutApprovedByInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordCreateOrConnectWithoutApprovedByInput = {
@@ -1174,11 +1314,14 @@ export type MarkRecordCreateWithoutReviewedByInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
   examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
   student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
   enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
   approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateWithoutReviewedByInput = {
@@ -1198,6 +1341,9 @@ export type MarkRecordUncheckedCreateWithoutReviewedByInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordCreateOrConnectWithoutReviewedByInput = {
@@ -1207,6 +1353,60 @@ export type MarkRecordCreateOrConnectWithoutReviewedByInput = {
 
 export type MarkRecordCreateManyReviewedByInputEnvelope = {
   data: Prisma.MarkRecordCreateManyReviewedByInput | Prisma.MarkRecordCreateManyReviewedByInput[]
+  skipDuplicates?: boolean
+}
+
+export type MarkRecordCreateWithoutPublishedByInput = {
+  id?: string
+  obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: string | null
+  status?: $Enums.MarkRecordStatus
+  submittedAt?: Date | string | null
+  approvedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  approvalNotes?: string | null
+  publishedAt?: Date | string | null
+  school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
+  examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
+  student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
+  enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
+  approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
+  reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+}
+
+export type MarkRecordUncheckedCreateWithoutPublishedByInput = {
+  id?: string
+  schoolId: string
+  examinationId: string
+  studentId: string
+  enteredById: string
+  obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: string | null
+  status?: $Enums.MarkRecordStatus
+  submittedAt?: Date | string | null
+  approvedAt?: Date | string | null
+  approvedById?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  approvalNotes?: string | null
+  reviewedById?: string | null
+  publishedAt?: Date | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
+}
+
+export type MarkRecordCreateOrConnectWithoutPublishedByInput = {
+  where: Prisma.MarkRecordWhereUniqueInput
+  create: Prisma.XOR<Prisma.MarkRecordCreateWithoutPublishedByInput, Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput>
+}
+
+export type MarkRecordCreateManyPublishedByInputEnvelope = {
+  data: Prisma.MarkRecordCreateManyPublishedByInput | Prisma.MarkRecordCreateManyPublishedByInput[]
   skipDuplicates?: boolean
 }
 
@@ -1258,6 +1458,22 @@ export type MarkRecordUpdateManyWithWhereWithoutReviewedByInput = {
   data: Prisma.XOR<Prisma.MarkRecordUpdateManyMutationInput, Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByInput>
 }
 
+export type MarkRecordUpsertWithWhereUniqueWithoutPublishedByInput = {
+  where: Prisma.MarkRecordWhereUniqueInput
+  update: Prisma.XOR<Prisma.MarkRecordUpdateWithoutPublishedByInput, Prisma.MarkRecordUncheckedUpdateWithoutPublishedByInput>
+  create: Prisma.XOR<Prisma.MarkRecordCreateWithoutPublishedByInput, Prisma.MarkRecordUncheckedCreateWithoutPublishedByInput>
+}
+
+export type MarkRecordUpdateWithWhereUniqueWithoutPublishedByInput = {
+  where: Prisma.MarkRecordWhereUniqueInput
+  data: Prisma.XOR<Prisma.MarkRecordUpdateWithoutPublishedByInput, Prisma.MarkRecordUncheckedUpdateWithoutPublishedByInput>
+}
+
+export type MarkRecordUpdateManyWithWhereWithoutPublishedByInput = {
+  where: Prisma.MarkRecordScalarWhereInput
+  data: Prisma.XOR<Prisma.MarkRecordUpdateManyMutationInput, Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByInput>
+}
+
 export type MarkRecordCreateWithoutExaminationInput = {
   id?: string
   obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -1270,11 +1486,14 @@ export type MarkRecordCreateWithoutExaminationInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
   student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
   enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
   approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
   reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  corrections?: Prisma.MarkCorrectionCreateNestedManyWithoutMarkRecordInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
 }
 
 export type MarkRecordUncheckedCreateWithoutExaminationInput = {
@@ -1293,6 +1512,9 @@ export type MarkRecordUncheckedCreateWithoutExaminationInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+  corrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutMarkRecordInput
 }
 
 export type MarkRecordCreateOrConnectWithoutExaminationInput = {
@@ -1321,6 +1543,110 @@ export type MarkRecordUpdateManyWithWhereWithoutExaminationInput = {
   data: Prisma.XOR<Prisma.MarkRecordUpdateManyMutationInput, Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationInput>
 }
 
+export type MarkRecordCreateWithoutCorrectionsInput = {
+  id?: string
+  obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: string | null
+  status?: $Enums.MarkRecordStatus
+  submittedAt?: Date | string | null
+  approvedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  approvalNotes?: string | null
+  publishedAt?: Date | string | null
+  school: Prisma.SchoolCreateNestedOneWithoutMarkRecordsInput
+  examination: Prisma.ExaminationCreateNestedOneWithoutMarkRecordsInput
+  student: Prisma.StudentCreateNestedOneWithoutMarkRecordsInput
+  enteredBy: Prisma.UserCreateNestedOneWithoutEnteredMarkRecordsInput
+  approvedBy?: Prisma.UserCreateNestedOneWithoutApprovedMarkRecordsInput
+  reviewedBy?: Prisma.UserCreateNestedOneWithoutReviewedMarkRecordsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedMarkRecordsInput
+}
+
+export type MarkRecordUncheckedCreateWithoutCorrectionsInput = {
+  id?: string
+  schoolId: string
+  examinationId: string
+  studentId: string
+  enteredById: string
+  obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: string | null
+  status?: $Enums.MarkRecordStatus
+  submittedAt?: Date | string | null
+  approvedAt?: Date | string | null
+  approvedById?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  approvalNotes?: string | null
+  reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+}
+
+export type MarkRecordCreateOrConnectWithoutCorrectionsInput = {
+  where: Prisma.MarkRecordWhereUniqueInput
+  create: Prisma.XOR<Prisma.MarkRecordCreateWithoutCorrectionsInput, Prisma.MarkRecordUncheckedCreateWithoutCorrectionsInput>
+}
+
+export type MarkRecordUpsertWithoutCorrectionsInput = {
+  update: Prisma.XOR<Prisma.MarkRecordUpdateWithoutCorrectionsInput, Prisma.MarkRecordUncheckedUpdateWithoutCorrectionsInput>
+  create: Prisma.XOR<Prisma.MarkRecordCreateWithoutCorrectionsInput, Prisma.MarkRecordUncheckedCreateWithoutCorrectionsInput>
+  where?: Prisma.MarkRecordWhereInput
+}
+
+export type MarkRecordUpdateToOneWithWhereWithoutCorrectionsInput = {
+  where?: Prisma.MarkRecordWhereInput
+  data: Prisma.XOR<Prisma.MarkRecordUpdateWithoutCorrectionsInput, Prisma.MarkRecordUncheckedUpdateWithoutCorrectionsInput>
+}
+
+export type MarkRecordUpdateWithoutCorrectionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  obtainedMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumMarkRecordStatusFieldUpdateOperationsInput | $Enums.MarkRecordStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
+  examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
+  enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
+  approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
+  reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
+}
+
+export type MarkRecordUncheckedUpdateWithoutCorrectionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  examinationId?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  enteredById?: Prisma.StringFieldUpdateOperationsInput | string
+  obtainedMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumMarkRecordStatusFieldUpdateOperationsInput | $Enums.MarkRecordStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
 export type MarkRecordCreateManySchoolInput = {
   id?: string
   examinationId: string
@@ -1338,6 +1664,8 @@ export type MarkRecordCreateManySchoolInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type MarkRecordUpdateWithoutSchoolInput = {
@@ -1352,11 +1680,14 @@ export type MarkRecordUpdateWithoutSchoolInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
   enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
   approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
   reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateWithoutSchoolInput = {
@@ -1376,6 +1707,9 @@ export type MarkRecordUncheckedUpdateWithoutSchoolInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordUncheckedUpdateManyWithoutSchoolInput = {
@@ -1395,6 +1729,8 @@ export type MarkRecordUncheckedUpdateManyWithoutSchoolInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type MarkRecordCreateManyStudentInput = {
@@ -1413,6 +1749,8 @@ export type MarkRecordCreateManyStudentInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type MarkRecordUpdateWithoutStudentInput = {
@@ -1427,11 +1765,14 @@ export type MarkRecordUpdateWithoutStudentInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
   examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
   enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
   approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
   reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateWithoutStudentInput = {
@@ -1450,6 +1791,9 @@ export type MarkRecordUncheckedUpdateWithoutStudentInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordUncheckedUpdateManyWithoutStudentInput = {
@@ -1468,6 +1812,8 @@ export type MarkRecordUncheckedUpdateManyWithoutStudentInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type MarkRecordCreateManyEnteredByInput = {
@@ -1487,6 +1833,8 @@ export type MarkRecordCreateManyEnteredByInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type MarkRecordCreateManyApprovedByInput = {
@@ -1506,6 +1854,8 @@ export type MarkRecordCreateManyApprovedByInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type MarkRecordCreateManyReviewedByInput = {
@@ -1525,6 +1875,29 @@ export type MarkRecordCreateManyReviewedByInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   approvalNotes?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+}
+
+export type MarkRecordCreateManyPublishedByInput = {
+  id?: string
+  schoolId: string
+  examinationId: string
+  studentId: string
+  enteredById: string
+  obtainedMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: string | null
+  status?: $Enums.MarkRecordStatus
+  submittedAt?: Date | string | null
+  approvedAt?: Date | string | null
+  approvedById?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  approvalNotes?: string | null
+  reviewedById?: string | null
+  publishedAt?: Date | string | null
 }
 
 export type MarkRecordUpdateWithoutEnteredByInput = {
@@ -1539,11 +1912,14 @@ export type MarkRecordUpdateWithoutEnteredByInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
   examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
   approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
   reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateWithoutEnteredByInput = {
@@ -1563,6 +1939,9 @@ export type MarkRecordUncheckedUpdateWithoutEnteredByInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordUncheckedUpdateManyWithoutEnteredByInput = {
@@ -1582,6 +1961,8 @@ export type MarkRecordUncheckedUpdateManyWithoutEnteredByInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type MarkRecordUpdateWithoutApprovedByInput = {
@@ -1596,11 +1977,14 @@ export type MarkRecordUpdateWithoutApprovedByInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
   examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
   enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
   reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateWithoutApprovedByInput = {
@@ -1620,6 +2004,9 @@ export type MarkRecordUncheckedUpdateWithoutApprovedByInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordUncheckedUpdateManyWithoutApprovedByInput = {
@@ -1639,6 +2026,8 @@ export type MarkRecordUncheckedUpdateManyWithoutApprovedByInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type MarkRecordUpdateWithoutReviewedByInput = {
@@ -1653,11 +2042,14 @@ export type MarkRecordUpdateWithoutReviewedByInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
   examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
   enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
   approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateWithoutReviewedByInput = {
@@ -1677,6 +2069,9 @@ export type MarkRecordUncheckedUpdateWithoutReviewedByInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordUncheckedUpdateManyWithoutReviewedByInput = {
@@ -1696,6 +2091,73 @@ export type MarkRecordUncheckedUpdateManyWithoutReviewedByInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type MarkRecordUpdateWithoutPublishedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  obtainedMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumMarkRecordStatusFieldUpdateOperationsInput | $Enums.MarkRecordStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
+  examination?: Prisma.ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
+  enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
+  approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
+  reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+}
+
+export type MarkRecordUncheckedUpdateWithoutPublishedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  examinationId?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  enteredById?: Prisma.StringFieldUpdateOperationsInput | string
+  obtainedMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumMarkRecordStatusFieldUpdateOperationsInput | $Enums.MarkRecordStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
+}
+
+export type MarkRecordUncheckedUpdateManyWithoutPublishedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  examinationId?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  enteredById?: Prisma.StringFieldUpdateOperationsInput | string
+  obtainedMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  bonusMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  penaltyMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  remarks?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumMarkRecordStatusFieldUpdateOperationsInput | $Enums.MarkRecordStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  approvedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type MarkRecordCreateManyExaminationInput = {
@@ -1714,6 +2176,8 @@ export type MarkRecordCreateManyExaminationInput = {
   updatedAt?: Date | string
   approvalNotes?: string | null
   reviewedById?: string | null
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type MarkRecordUpdateWithoutExaminationInput = {
@@ -1728,11 +2192,14 @@ export type MarkRecordUpdateWithoutExaminationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutMarkRecordsNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutMarkRecordsNestedInput
   enteredBy?: Prisma.UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput
   approvedBy?: Prisma.UserUpdateOneWithoutApprovedMarkRecordsNestedInput
   reviewedBy?: Prisma.UserUpdateOneWithoutReviewedMarkRecordsNestedInput
+  corrections?: Prisma.MarkCorrectionUpdateManyWithoutMarkRecordNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedMarkRecordsNestedInput
 }
 
 export type MarkRecordUncheckedUpdateWithoutExaminationInput = {
@@ -1751,6 +2218,9 @@ export type MarkRecordUncheckedUpdateWithoutExaminationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  corrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutMarkRecordNestedInput
 }
 
 export type MarkRecordUncheckedUpdateManyWithoutExaminationInput = {
@@ -1769,8 +2239,39 @@ export type MarkRecordUncheckedUpdateManyWithoutExaminationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   approvalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   reviewedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
+
+/**
+ * Count Type MarkRecordCountOutputType
+ */
+
+export type MarkRecordCountOutputType = {
+  corrections: number
+}
+
+export type MarkRecordCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  corrections?: boolean | MarkRecordCountOutputTypeCountCorrectionsArgs
+}
+
+/**
+ * MarkRecordCountOutputType without action
+ */
+export type MarkRecordCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MarkRecordCountOutputType
+   */
+  select?: Prisma.MarkRecordCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * MarkRecordCountOutputType without action
+ */
+export type MarkRecordCountOutputTypeCountCorrectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MarkCorrectionWhereInput
+}
 
 
 export type MarkRecordSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1791,12 +2292,17 @@ export type MarkRecordSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   updatedAt?: boolean
   approvalNotes?: boolean
   reviewedById?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   examination?: boolean | Prisma.ExaminationDefaultArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   enteredBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   approvedBy?: boolean | Prisma.MarkRecord$approvedByArgs<ExtArgs>
   reviewedBy?: boolean | Prisma.MarkRecord$reviewedByArgs<ExtArgs>
+  corrections?: boolean | Prisma.MarkRecord$correctionsArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.MarkRecord$publishedByArgs<ExtArgs>
+  _count?: boolean | Prisma.MarkRecordCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["markRecord"]>
 
 export type MarkRecordSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1817,12 +2323,15 @@ export type MarkRecordSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   updatedAt?: boolean
   approvalNotes?: boolean
   reviewedById?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   examination?: boolean | Prisma.ExaminationDefaultArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   enteredBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   approvedBy?: boolean | Prisma.MarkRecord$approvedByArgs<ExtArgs>
   reviewedBy?: boolean | Prisma.MarkRecord$reviewedByArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.MarkRecord$publishedByArgs<ExtArgs>
 }, ExtArgs["result"]["markRecord"]>
 
 export type MarkRecordSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1843,12 +2352,15 @@ export type MarkRecordSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   updatedAt?: boolean
   approvalNotes?: boolean
   reviewedById?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   examination?: boolean | Prisma.ExaminationDefaultArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   enteredBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   approvedBy?: boolean | Prisma.MarkRecord$approvedByArgs<ExtArgs>
   reviewedBy?: boolean | Prisma.MarkRecord$reviewedByArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.MarkRecord$publishedByArgs<ExtArgs>
 }, ExtArgs["result"]["markRecord"]>
 
 export type MarkRecordSelectScalar = {
@@ -1869,9 +2381,11 @@ export type MarkRecordSelectScalar = {
   updatedAt?: boolean
   approvalNotes?: boolean
   reviewedById?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
 }
 
-export type MarkRecordOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "schoolId" | "examinationId" | "studentId" | "enteredById" | "obtainedMarks" | "bonusMarks" | "penaltyMarks" | "remarks" | "status" | "submittedAt" | "approvedAt" | "approvedById" | "createdAt" | "updatedAt" | "approvalNotes" | "reviewedById", ExtArgs["result"]["markRecord"]>
+export type MarkRecordOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "schoolId" | "examinationId" | "studentId" | "enteredById" | "obtainedMarks" | "bonusMarks" | "penaltyMarks" | "remarks" | "status" | "submittedAt" | "approvedAt" | "approvedById" | "createdAt" | "updatedAt" | "approvalNotes" | "reviewedById" | "publishedAt" | "publishedById", ExtArgs["result"]["markRecord"]>
 export type MarkRecordInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   examination?: boolean | Prisma.ExaminationDefaultArgs<ExtArgs>
@@ -1879,6 +2393,9 @@ export type MarkRecordInclude<ExtArgs extends runtime.Types.Extensions.InternalA
   enteredBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   approvedBy?: boolean | Prisma.MarkRecord$approvedByArgs<ExtArgs>
   reviewedBy?: boolean | Prisma.MarkRecord$reviewedByArgs<ExtArgs>
+  corrections?: boolean | Prisma.MarkRecord$correctionsArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.MarkRecord$publishedByArgs<ExtArgs>
+  _count?: boolean | Prisma.MarkRecordCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type MarkRecordIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -1887,6 +2404,7 @@ export type MarkRecordIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.E
   enteredBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   approvedBy?: boolean | Prisma.MarkRecord$approvedByArgs<ExtArgs>
   reviewedBy?: boolean | Prisma.MarkRecord$reviewedByArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.MarkRecord$publishedByArgs<ExtArgs>
 }
 export type MarkRecordIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -1895,6 +2413,7 @@ export type MarkRecordIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   enteredBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   approvedBy?: boolean | Prisma.MarkRecord$approvedByArgs<ExtArgs>
   reviewedBy?: boolean | Prisma.MarkRecord$reviewedByArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.MarkRecord$publishedByArgs<ExtArgs>
 }
 
 export type $MarkRecordPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1906,6 +2425,8 @@ export type $MarkRecordPayload<ExtArgs extends runtime.Types.Extensions.Internal
     enteredBy: Prisma.$UserPayload<ExtArgs>
     approvedBy: Prisma.$UserPayload<ExtArgs> | null
     reviewedBy: Prisma.$UserPayload<ExtArgs> | null
+    corrections: Prisma.$MarkCorrectionPayload<ExtArgs>[]
+    publishedBy: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1925,6 +2446,8 @@ export type $MarkRecordPayload<ExtArgs extends runtime.Types.Extensions.Internal
     updatedAt: Date
     approvalNotes: string | null
     reviewedById: string | null
+    publishedAt: Date | null
+    publishedById: string | null
   }, ExtArgs["result"]["markRecord"]>
   composites: {}
 }
@@ -2325,6 +2848,8 @@ export interface Prisma__MarkRecordClient<T, Null = never, ExtArgs extends runti
   enteredBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   approvedBy<T extends Prisma.MarkRecord$approvedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarkRecord$approvedByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   reviewedBy<T extends Prisma.MarkRecord$reviewedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarkRecord$reviewedByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  corrections<T extends Prisma.MarkRecord$correctionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarkRecord$correctionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkCorrectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  publishedBy<T extends Prisma.MarkRecord$publishedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarkRecord$publishedByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2371,6 +2896,8 @@ export interface MarkRecordFieldRefs {
   readonly updatedAt: Prisma.FieldRef<"MarkRecord", 'DateTime'>
   readonly approvalNotes: Prisma.FieldRef<"MarkRecord", 'String'>
   readonly reviewedById: Prisma.FieldRef<"MarkRecord", 'String'>
+  readonly publishedAt: Prisma.FieldRef<"MarkRecord", 'DateTime'>
+  readonly publishedById: Prisma.FieldRef<"MarkRecord", 'String'>
 }
     
 
@@ -2794,6 +3321,49 @@ export type MarkRecord$approvedByArgs<ExtArgs extends runtime.Types.Extensions.I
  * MarkRecord.reviewedBy
  */
 export type MarkRecord$reviewedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * MarkRecord.corrections
+ */
+export type MarkRecord$correctionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MarkCorrection
+   */
+  select?: Prisma.MarkCorrectionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MarkCorrection
+   */
+  omit?: Prisma.MarkCorrectionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MarkCorrectionInclude<ExtArgs> | null
+  where?: Prisma.MarkCorrectionWhereInput
+  orderBy?: Prisma.MarkCorrectionOrderByWithRelationInput | Prisma.MarkCorrectionOrderByWithRelationInput[]
+  cursor?: Prisma.MarkCorrectionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MarkCorrectionScalarFieldEnum | Prisma.MarkCorrectionScalarFieldEnum[]
+}
+
+/**
+ * MarkRecord.publishedBy
+ */
+export type MarkRecord$publishedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the User
    */

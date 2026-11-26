@@ -60,7 +60,9 @@ model School {
   assignments Assignment[]
   examinationGradingConfigurations ExaminationGradingConfiguration[]
   examinationHistory ExaminationHistory[]
+
   markRecords MarkRecord[]
+  markCorrections MarkCorrection[]
 
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
@@ -180,6 +182,9 @@ model User {
   enteredMarkRecords MarkRecord[] @relation("MarkRecordEnteredBy")
   approvedMarkRecords MarkRecord[] @relation("MarkRecordApprovedBy")
   reviewedMarkRecords MarkRecord[] @relation("MarkRecordReviewedBy")
+  requestedMarkCorrections MarkCorrection[] @relation("MarkCorrectionRequester")
+  reviewedMarkCorrections MarkCorrection[] @relation("MarkCorrectionReviewer")
+  publishedMarkRecords MarkRecord[] @relation("MarkRecordPublisher")
 
   @@map("users")
 }
@@ -2016,6 +2021,12 @@ model MarkRecord {
 
   reviewedById String? @map("reviewed_by_id") @db.Uuid
   reviewedBy User? @relation("MarkRecordReviewedBy",fields: [reviewedById],references: [id],onDelete: SetNull)
+  corrections MarkCorrection[]
+
+  publishedAt   DateTime? @map("published_at") @db.Timestamptz(3)
+  publishedById String?  @map("published_by_id") @db.Uuid
+
+  publishedBy User? @relation("MarkRecordPublisher",fields: [publishedById],references: [id],onDelete: SetNull)
 
   @@unique([schoolId, examinationId, studentId])
   @@unique([id, schoolId])
@@ -2023,4 +2034,48 @@ model MarkRecord {
   @@index([schoolId, studentId])
   @@index([enteredById, createdAt])
   @@map("mark_records")
+}
+
+
+
+enum MarkCorrectionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+
+  @@map("mark_correction_statuses")
+}
+
+model MarkCorrection {
+  id             String               @id @default(uuid()) @db.Uuid
+  schoolId       String               @map("school_id") @db.Uuid
+  markRecordId   String               @map("mark_record_id") @db.Uuid
+  requestedById  String               @map("requested_by_id") @db.Uuid
+  reviewedById   String?              @map("reviewed_by_id") @db.Uuid
+
+  previousObtainedMarks Decimal        @map("previous_obtained_marks") @db.Decimal(8, 2)
+  requestedObtainedMarks Decimal       @map("requested_obtained_marks") @db.Decimal(8, 2)
+
+  previousBonusMarks Decimal           @map("previous_bonus_marks") @db.Decimal(8, 2)
+  requestedBonusMarks Decimal          @map("requested_bonus_marks") @db.Decimal(8, 2)
+
+  previousPenaltyMarks Decimal         @map("previous_penalty_marks") @db.Decimal(8, 2)
+  requestedPenaltyMarks Decimal        @map("requested_penalty_marks") @db.Decimal(8, 2)
+
+  reason          String              @db.Text
+  reviewNotes     String?             @map("review_notes") @db.Text
+  status          MarkCorrectionStatus @default(PENDING)
+
+  requestedAt     DateTime            @default(now()) @map("requested_at") @db.Timestamptz(3)
+  reviewedAt      DateTime?           @map("reviewed_at") @db.Timestamptz(3)
+
+  school          School              @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  markRecord      MarkRecord          @relation(fields: [markRecordId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  requestedBy     User                @relation("MarkCorrectionRequester", fields: [requestedById], references: [id], onDelete: Restrict)
+  reviewedBy      User?               @relation("MarkCorrectionReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  @@unique([id, schoolId])
+  @@index([schoolId, markRecordId, status])
+  @@index([schoolId, requestedAt])
+  @@map("mark_corrections")
 }

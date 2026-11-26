@@ -101,7 +101,8 @@ export const ModelName = {
   Assignment: 'Assignment',
   ExaminationGradingConfiguration: 'ExaminationGradingConfiguration',
   ExaminationHistory: 'ExaminationHistory',
-  MarkRecord: 'MarkRecord'
+  MarkRecord: 'MarkRecord',
+  MarkCorrection: 'MarkCorrection'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1018,10 +1019,34 @@ export const MarkRecordScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   approvalNotes: 'approvalNotes',
-  reviewedById: 'reviewedById'
+  reviewedById: 'reviewedById',
+  publishedAt: 'publishedAt',
+  publishedById: 'publishedById'
 } as const
 
 export type MarkRecordScalarFieldEnum = (typeof MarkRecordScalarFieldEnum)[keyof typeof MarkRecordScalarFieldEnum]
+
+
+export const MarkCorrectionScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  markRecordId: 'markRecordId',
+  requestedById: 'requestedById',
+  reviewedById: 'reviewedById',
+  previousObtainedMarks: 'previousObtainedMarks',
+  requestedObtainedMarks: 'requestedObtainedMarks',
+  previousBonusMarks: 'previousBonusMarks',
+  requestedBonusMarks: 'requestedBonusMarks',
+  previousPenaltyMarks: 'previousPenaltyMarks',
+  requestedPenaltyMarks: 'requestedPenaltyMarks',
+  reason: 'reason',
+  reviewNotes: 'reviewNotes',
+  status: 'status',
+  requestedAt: 'requestedAt',
+  reviewedAt: 'reviewedAt'
+} as const
+
+export type MarkCorrectionScalarFieldEnum = (typeof MarkCorrectionScalarFieldEnum)[keyof typeof MarkCorrectionScalarFieldEnum]
 
 
 export const SortOrder = {

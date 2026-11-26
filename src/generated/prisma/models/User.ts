@@ -241,6 +241,9 @@ export type UserWhereInput = {
   enteredMarkRecords?: Prisma.MarkRecordListRelationFilter
   approvedMarkRecords?: Prisma.MarkRecordListRelationFilter
   reviewedMarkRecords?: Prisma.MarkRecordListRelationFilter
+  requestedMarkCorrections?: Prisma.MarkCorrectionListRelationFilter
+  reviewedMarkCorrections?: Prisma.MarkCorrectionListRelationFilter
+  publishedMarkRecords?: Prisma.MarkRecordListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -280,6 +283,9 @@ export type UserOrderByWithRelationInput = {
   enteredMarkRecords?: Prisma.MarkRecordOrderByRelationAggregateInput
   approvedMarkRecords?: Prisma.MarkRecordOrderByRelationAggregateInput
   reviewedMarkRecords?: Prisma.MarkRecordOrderByRelationAggregateInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionOrderByRelationAggregateInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionOrderByRelationAggregateInput
+  publishedMarkRecords?: Prisma.MarkRecordOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -322,6 +328,9 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   enteredMarkRecords?: Prisma.MarkRecordListRelationFilter
   approvedMarkRecords?: Prisma.MarkRecordListRelationFilter
   reviewedMarkRecords?: Prisma.MarkRecordListRelationFilter
+  requestedMarkCorrections?: Prisma.MarkCorrectionListRelationFilter
+  reviewedMarkCorrections?: Prisma.MarkCorrectionListRelationFilter
+  publishedMarkRecords?: Prisma.MarkRecordListRelationFilter
 }, "id" | "email" | "username">
 
 export type UserOrderByWithAggregationInput = {
@@ -391,6 +400,9 @@ export type UserCreateInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -430,6 +442,9 @@ export type UserUncheckedCreateInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUpdateInput = {
@@ -469,6 +484,9 @@ export type UserUpdateInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -508,6 +526,9 @@ export type UserUncheckedUpdateInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -962,6 +983,12 @@ export type UserCreateNestedOneWithoutReviewedMarkRecordsInput = {
   connect?: Prisma.UserWhereUniqueInput
 }
 
+export type UserCreateNestedOneWithoutPublishedMarkRecordsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPublishedMarkRecordsInput, Prisma.UserUncheckedCreateWithoutPublishedMarkRecordsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPublishedMarkRecordsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
 export type UserUpdateOneRequiredWithoutEnteredMarkRecordsNestedInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutEnteredMarkRecordsInput, Prisma.UserUncheckedCreateWithoutEnteredMarkRecordsInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutEnteredMarkRecordsInput
@@ -988,6 +1015,46 @@ export type UserUpdateOneWithoutReviewedMarkRecordsNestedInput = {
   delete?: Prisma.UserWhereInput | boolean
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReviewedMarkRecordsInput, Prisma.UserUpdateWithoutReviewedMarkRecordsInput>, Prisma.UserUncheckedUpdateWithoutReviewedMarkRecordsInput>
+}
+
+export type UserUpdateOneWithoutPublishedMarkRecordsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPublishedMarkRecordsInput, Prisma.UserUncheckedCreateWithoutPublishedMarkRecordsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPublishedMarkRecordsInput
+  upsert?: Prisma.UserUpsertWithoutPublishedMarkRecordsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPublishedMarkRecordsInput, Prisma.UserUpdateWithoutPublishedMarkRecordsInput>, Prisma.UserUncheckedUpdateWithoutPublishedMarkRecordsInput>
+}
+
+export type UserCreateNestedOneWithoutRequestedMarkCorrectionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRequestedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutRequestedMarkCorrectionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRequestedMarkCorrectionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutReviewedMarkCorrectionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReviewedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutReviewedMarkCorrectionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewedMarkCorrectionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutRequestedMarkCorrectionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRequestedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutRequestedMarkCorrectionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRequestedMarkCorrectionsInput
+  upsert?: Prisma.UserUpsertWithoutRequestedMarkCorrectionsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutRequestedMarkCorrectionsInput, Prisma.UserUpdateWithoutRequestedMarkCorrectionsInput>, Prisma.UserUncheckedUpdateWithoutRequestedMarkCorrectionsInput>
+}
+
+export type UserUpdateOneWithoutReviewedMarkCorrectionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReviewedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutReviewedMarkCorrectionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewedMarkCorrectionsInput
+  upsert?: Prisma.UserUpsertWithoutReviewedMarkCorrectionsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReviewedMarkCorrectionsInput, Prisma.UserUpdateWithoutReviewedMarkCorrectionsInput>, Prisma.UserUncheckedUpdateWithoutReviewedMarkCorrectionsInput>
 }
 
 export type UserCreateWithoutSessionsInput = {
@@ -1026,6 +1093,9 @@ export type UserCreateWithoutSessionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -1064,6 +1134,9 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -1118,6 +1191,9 @@ export type UserUpdateWithoutSessionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -1156,6 +1232,9 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutPasswordResetTokensInput = {
@@ -1194,6 +1273,9 @@ export type UserCreateWithoutPasswordResetTokensInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
@@ -1232,6 +1314,9 @@ export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutPasswordResetTokensInput = {
@@ -1286,6 +1371,9 @@ export type UserUpdateWithoutPasswordResetTokensInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
@@ -1324,6 +1412,9 @@ export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutActorActivityLogsInput = {
@@ -1362,6 +1453,9 @@ export type UserCreateWithoutActorActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutActorActivityLogsInput = {
@@ -1400,6 +1494,9 @@ export type UserUncheckedCreateWithoutActorActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutActorActivityLogsInput = {
@@ -1443,6 +1540,9 @@ export type UserCreateWithoutTargetActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
@@ -1481,6 +1581,9 @@ export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutTargetActivityLogsInput = {
@@ -1535,6 +1638,9 @@ export type UserUpdateWithoutActorActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
@@ -1573,6 +1679,9 @@ export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutTargetActivityLogsInput = {
@@ -1622,6 +1731,9 @@ export type UserUpdateWithoutTargetActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
@@ -1660,6 +1772,9 @@ export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutMembershipsInput = {
@@ -1698,6 +1813,9 @@ export type UserCreateWithoutMembershipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutMembershipsInput = {
@@ -1736,6 +1854,9 @@ export type UserUncheckedCreateWithoutMembershipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutMembershipsInput = {
@@ -1790,6 +1911,9 @@ export type UserUpdateWithoutMembershipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMembershipsInput = {
@@ -1828,6 +1952,9 @@ export type UserUncheckedUpdateWithoutMembershipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutCreatedAdmissionApplicationsInput = {
@@ -1866,6 +1993,9 @@ export type UserCreateWithoutCreatedAdmissionApplicationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput = {
@@ -1904,6 +2034,9 @@ export type UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutCreatedAdmissionApplicationsInput = {
@@ -1947,6 +2080,9 @@ export type UserCreateWithoutAdmissionDecisionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutAdmissionDecisionsInput = {
@@ -1985,6 +2121,9 @@ export type UserUncheckedCreateWithoutAdmissionDecisionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutAdmissionDecisionsInput = {
@@ -2039,6 +2178,9 @@ export type UserUpdateWithoutCreatedAdmissionApplicationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput = {
@@ -2077,6 +2219,9 @@ export type UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutAdmissionDecisionsInput = {
@@ -2126,6 +2271,9 @@ export type UserUpdateWithoutAdmissionDecisionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAdmissionDecisionsInput = {
@@ -2164,6 +2312,9 @@ export type UserUncheckedUpdateWithoutAdmissionDecisionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutUploadedAdmissionDocumentsInput = {
@@ -2202,6 +2353,9 @@ export type UserCreateWithoutUploadedAdmissionDocumentsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutUploadedAdmissionDocumentsInput = {
@@ -2240,6 +2394,9 @@ export type UserUncheckedCreateWithoutUploadedAdmissionDocumentsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutUploadedAdmissionDocumentsInput = {
@@ -2294,6 +2451,9 @@ export type UserUpdateWithoutUploadedAdmissionDocumentsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutUploadedAdmissionDocumentsInput = {
@@ -2332,6 +2492,9 @@ export type UserUncheckedUpdateWithoutUploadedAdmissionDocumentsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutAdmissionReviewsInput = {
@@ -2370,6 +2533,9 @@ export type UserCreateWithoutAdmissionReviewsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutAdmissionReviewsInput = {
@@ -2408,6 +2574,9 @@ export type UserUncheckedCreateWithoutAdmissionReviewsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutAdmissionReviewsInput = {
@@ -2462,6 +2631,9 @@ export type UserUpdateWithoutAdmissionReviewsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAdmissionReviewsInput = {
@@ -2500,6 +2672,9 @@ export type UserUncheckedUpdateWithoutAdmissionReviewsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutAdmissionStatusChangesInput = {
@@ -2538,6 +2713,9 @@ export type UserCreateWithoutAdmissionStatusChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutAdmissionStatusChangesInput = {
@@ -2576,6 +2754,9 @@ export type UserUncheckedCreateWithoutAdmissionStatusChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutAdmissionStatusChangesInput = {
@@ -2630,6 +2811,9 @@ export type UserUpdateWithoutAdmissionStatusChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAdmissionStatusChangesInput = {
@@ -2668,6 +2852,9 @@ export type UserUncheckedUpdateWithoutAdmissionStatusChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutRequestedStudentTransfersInput = {
@@ -2706,6 +2893,9 @@ export type UserCreateWithoutRequestedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutRequestedStudentTransfersInput = {
@@ -2744,6 +2934,9 @@ export type UserUncheckedCreateWithoutRequestedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutRequestedStudentTransfersInput = {
@@ -2787,6 +2980,9 @@ export type UserCreateWithoutReviewedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutReviewedStudentTransfersInput = {
@@ -2825,6 +3021,9 @@ export type UserUncheckedCreateWithoutReviewedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutReviewedStudentTransfersInput = {
@@ -2879,6 +3078,9 @@ export type UserUpdateWithoutRequestedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRequestedStudentTransfersInput = {
@@ -2917,6 +3119,9 @@ export type UserUncheckedUpdateWithoutRequestedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutReviewedStudentTransfersInput = {
@@ -2966,6 +3171,9 @@ export type UserUpdateWithoutReviewedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReviewedStudentTransfersInput = {
@@ -3004,6 +3212,9 @@ export type UserUncheckedUpdateWithoutReviewedStudentTransfersInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutEnrollmentHistoryChangesInput = {
@@ -3042,6 +3253,9 @@ export type UserCreateWithoutEnrollmentHistoryChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutEnrollmentHistoryChangesInput = {
@@ -3080,6 +3294,9 @@ export type UserUncheckedCreateWithoutEnrollmentHistoryChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutEnrollmentHistoryChangesInput = {
@@ -3134,6 +3351,9 @@ export type UserUpdateWithoutEnrollmentHistoryChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutEnrollmentHistoryChangesInput = {
@@ -3172,6 +3392,9 @@ export type UserUncheckedUpdateWithoutEnrollmentHistoryChangesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutCreatedStudentAcademicRecordsInput = {
@@ -3210,6 +3433,9 @@ export type UserCreateWithoutCreatedStudentAcademicRecordsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutCreatedStudentAcademicRecordsInput = {
@@ -3248,6 +3474,9 @@ export type UserUncheckedCreateWithoutCreatedStudentAcademicRecordsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutCreatedStudentAcademicRecordsInput = {
@@ -3302,6 +3531,9 @@ export type UserUpdateWithoutCreatedStudentAcademicRecordsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCreatedStudentAcademicRecordsInput = {
@@ -3340,6 +3572,9 @@ export type UserUncheckedUpdateWithoutCreatedStudentAcademicRecordsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutTeacherProfilesInput = {
@@ -3378,6 +3613,9 @@ export type UserCreateWithoutTeacherProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutTeacherProfilesInput = {
@@ -3416,6 +3654,9 @@ export type UserUncheckedCreateWithoutTeacherProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutTeacherProfilesInput = {
@@ -3470,6 +3711,9 @@ export type UserUpdateWithoutTeacherProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTeacherProfilesInput = {
@@ -3508,6 +3752,9 @@ export type UserUncheckedUpdateWithoutTeacherProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutStaffProfilesInput = {
@@ -3546,6 +3793,9 @@ export type UserCreateWithoutStaffProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutStaffProfilesInput = {
@@ -3584,6 +3834,9 @@ export type UserUncheckedCreateWithoutStaffProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutStaffProfilesInput = {
@@ -3638,6 +3891,9 @@ export type UserUpdateWithoutStaffProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStaffProfilesInput = {
@@ -3676,6 +3932,9 @@ export type UserUncheckedUpdateWithoutStaffProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutGuardianProfilesInput = {
@@ -3714,6 +3973,9 @@ export type UserCreateWithoutGuardianProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutGuardianProfilesInput = {
@@ -3752,6 +4014,9 @@ export type UserUncheckedCreateWithoutGuardianProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutGuardianProfilesInput = {
@@ -3806,6 +4071,9 @@ export type UserUpdateWithoutGuardianProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGuardianProfilesInput = {
@@ -3844,6 +4112,9 @@ export type UserUncheckedUpdateWithoutGuardianProfilesInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutVerifiedGuardianRelationshipsInput = {
@@ -3882,6 +4153,9 @@ export type UserCreateWithoutVerifiedGuardianRelationshipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutVerifiedGuardianRelationshipsInput = {
@@ -3920,6 +4194,9 @@ export type UserUncheckedCreateWithoutVerifiedGuardianRelationshipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutVerifiedGuardianRelationshipsInput = {
@@ -3974,6 +4251,9 @@ export type UserUpdateWithoutVerifiedGuardianRelationshipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutVerifiedGuardianRelationshipsInput = {
@@ -4012,6 +4292,9 @@ export type UserUncheckedUpdateWithoutVerifiedGuardianRelationshipsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutRecordedAttendanceInput = {
@@ -4050,6 +4333,9 @@ export type UserCreateWithoutRecordedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutRecordedAttendanceInput = {
@@ -4088,6 +4374,9 @@ export type UserUncheckedCreateWithoutRecordedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutRecordedAttendanceInput = {
@@ -4131,6 +4420,9 @@ export type UserCreateWithoutApprovedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutApprovedAttendanceInput = {
@@ -4169,6 +4461,9 @@ export type UserUncheckedCreateWithoutApprovedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutApprovedAttendanceInput = {
@@ -4223,6 +4518,9 @@ export type UserUpdateWithoutRecordedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRecordedAttendanceInput = {
@@ -4261,6 +4559,9 @@ export type UserUncheckedUpdateWithoutRecordedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutApprovedAttendanceInput = {
@@ -4310,6 +4611,9 @@ export type UserUpdateWithoutApprovedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutApprovedAttendanceInput = {
@@ -4348,6 +4652,9 @@ export type UserUncheckedUpdateWithoutApprovedAttendanceInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutRequestedAttendanceCorrectionsInput = {
@@ -4386,6 +4693,9 @@ export type UserCreateWithoutRequestedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutRequestedAttendanceCorrectionsInput = {
@@ -4424,6 +4734,9 @@ export type UserUncheckedCreateWithoutRequestedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutRequestedAttendanceCorrectionsInput = {
@@ -4467,6 +4780,9 @@ export type UserCreateWithoutReviewedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutReviewedAttendanceCorrectionsInput = {
@@ -4505,6 +4821,9 @@ export type UserUncheckedCreateWithoutReviewedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutReviewedAttendanceCorrectionsInput = {
@@ -4559,6 +4878,9 @@ export type UserUpdateWithoutRequestedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRequestedAttendanceCorrectionsInput = {
@@ -4597,6 +4919,9 @@ export type UserUncheckedUpdateWithoutRequestedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutReviewedAttendanceCorrectionsInput = {
@@ -4646,6 +4971,9 @@ export type UserUpdateWithoutReviewedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReviewedAttendanceCorrectionsInput = {
@@ -4684,6 +5012,9 @@ export type UserUncheckedUpdateWithoutReviewedAttendanceCorrectionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutCreatedExaminationsInput = {
@@ -4722,6 +5053,9 @@ export type UserCreateWithoutCreatedExaminationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutCreatedExaminationsInput = {
@@ -4760,6 +5094,9 @@ export type UserUncheckedCreateWithoutCreatedExaminationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutCreatedExaminationsInput = {
@@ -4814,6 +5151,9 @@ export type UserUpdateWithoutCreatedExaminationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCreatedExaminationsInput = {
@@ -4852,6 +5192,9 @@ export type UserUncheckedUpdateWithoutCreatedExaminationsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutExaminationHistoryActionsInput = {
@@ -4890,6 +5233,9 @@ export type UserCreateWithoutExaminationHistoryActionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutExaminationHistoryActionsInput = {
@@ -4928,6 +5274,9 @@ export type UserUncheckedCreateWithoutExaminationHistoryActionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutExaminationHistoryActionsInput = {
@@ -4982,6 +5331,9 @@ export type UserUpdateWithoutExaminationHistoryActionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutExaminationHistoryActionsInput = {
@@ -5020,6 +5372,9 @@ export type UserUncheckedUpdateWithoutExaminationHistoryActionsInput = {
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserCreateWithoutEnteredMarkRecordsInput = {
@@ -5058,6 +5413,9 @@ export type UserCreateWithoutEnteredMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutEnteredMarkRecordsInput = {
@@ -5096,6 +5454,9 @@ export type UserUncheckedCreateWithoutEnteredMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutEnteredMarkRecordsInput = {
@@ -5139,6 +5500,9 @@ export type UserCreateWithoutApprovedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutApprovedMarkRecordsInput = {
@@ -5177,6 +5541,9 @@ export type UserUncheckedCreateWithoutApprovedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutApprovedMarkRecordsInput = {
@@ -5220,6 +5587,9 @@ export type UserCreateWithoutReviewedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
   enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserUncheckedCreateWithoutReviewedMarkRecordsInput = {
@@ -5258,11 +5628,101 @@ export type UserUncheckedCreateWithoutReviewedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
   enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
 }
 
 export type UserCreateOrConnectWithoutReviewedMarkRecordsInput = {
   where: Prisma.UserWhereUniqueInput
   create: Prisma.XOR<Prisma.UserCreateWithoutReviewedMarkRecordsInput, Prisma.UserUncheckedCreateWithoutReviewedMarkRecordsInput>
+}
+
+export type UserCreateWithoutPublishedMarkRecordsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+}
+
+export type UserUncheckedCreateWithoutPublishedMarkRecordsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+}
+
+export type UserCreateOrConnectWithoutPublishedMarkRecordsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPublishedMarkRecordsInput, Prisma.UserUncheckedCreateWithoutPublishedMarkRecordsInput>
 }
 
 export type UserUpsertWithoutEnteredMarkRecordsInput = {
@@ -5312,6 +5772,9 @@ export type UserUpdateWithoutEnteredMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutEnteredMarkRecordsInput = {
@@ -5350,6 +5813,9 @@ export type UserUncheckedUpdateWithoutEnteredMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutApprovedMarkRecordsInput = {
@@ -5399,6 +5865,9 @@ export type UserUpdateWithoutApprovedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutApprovedMarkRecordsInput = {
@@ -5437,6 +5906,9 @@ export type UserUncheckedUpdateWithoutApprovedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUpsertWithoutReviewedMarkRecordsInput = {
@@ -5486,6 +5958,9 @@ export type UserUpdateWithoutReviewedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
   enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReviewedMarkRecordsInput = {
@@ -5524,6 +5999,462 @@ export type UserUncheckedUpdateWithoutReviewedMarkRecordsInput = {
   examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
   enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
   approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+}
+
+export type UserUpsertWithoutPublishedMarkRecordsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPublishedMarkRecordsInput, Prisma.UserUncheckedUpdateWithoutPublishedMarkRecordsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPublishedMarkRecordsInput, Prisma.UserUncheckedCreateWithoutPublishedMarkRecordsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPublishedMarkRecordsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPublishedMarkRecordsInput, Prisma.UserUncheckedUpdateWithoutPublishedMarkRecordsInput>
+}
+
+export type UserUpdateWithoutPublishedMarkRecordsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPublishedMarkRecordsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+}
+
+export type UserCreateWithoutRequestedMarkCorrectionsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+}
+
+export type UserUncheckedCreateWithoutRequestedMarkCorrectionsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+}
+
+export type UserCreateOrConnectWithoutRequestedMarkCorrectionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutRequestedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutRequestedMarkCorrectionsInput>
+}
+
+export type UserCreateWithoutReviewedMarkCorrectionsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+}
+
+export type UserUncheckedCreateWithoutReviewedMarkCorrectionsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+}
+
+export type UserCreateOrConnectWithoutReviewedMarkCorrectionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutReviewedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutReviewedMarkCorrectionsInput>
+}
+
+export type UserUpsertWithoutRequestedMarkCorrectionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutRequestedMarkCorrectionsInput, Prisma.UserUncheckedUpdateWithoutRequestedMarkCorrectionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutRequestedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutRequestedMarkCorrectionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutRequestedMarkCorrectionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutRequestedMarkCorrectionsInput, Prisma.UserUncheckedUpdateWithoutRequestedMarkCorrectionsInput>
+}
+
+export type UserUpdateWithoutRequestedMarkCorrectionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutRequestedMarkCorrectionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+}
+
+export type UserUpsertWithoutReviewedMarkCorrectionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutReviewedMarkCorrectionsInput, Prisma.UserUncheckedUpdateWithoutReviewedMarkCorrectionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutReviewedMarkCorrectionsInput, Prisma.UserUncheckedCreateWithoutReviewedMarkCorrectionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutReviewedMarkCorrectionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutReviewedMarkCorrectionsInput, Prisma.UserUncheckedUpdateWithoutReviewedMarkCorrectionsInput>
+}
+
+export type UserUpdateWithoutReviewedMarkCorrectionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutReviewedMarkCorrectionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
 }
 
 
@@ -5559,6 +6490,9 @@ export type UserCountOutputType = {
   enteredMarkRecords: number
   approvedMarkRecords: number
   reviewedMarkRecords: number
+  requestedMarkCorrections: number
+  reviewedMarkCorrections: number
+  publishedMarkRecords: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -5589,6 +6523,9 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   enteredMarkRecords?: boolean | UserCountOutputTypeCountEnteredMarkRecordsArgs
   approvedMarkRecords?: boolean | UserCountOutputTypeCountApprovedMarkRecordsArgs
   reviewedMarkRecords?: boolean | UserCountOutputTypeCountReviewedMarkRecordsArgs
+  requestedMarkCorrections?: boolean | UserCountOutputTypeCountRequestedMarkCorrectionsArgs
+  reviewedMarkCorrections?: boolean | UserCountOutputTypeCountReviewedMarkCorrectionsArgs
+  publishedMarkRecords?: boolean | UserCountOutputTypeCountPublishedMarkRecordsArgs
 }
 
 /**
@@ -5790,6 +6727,27 @@ export type UserCountOutputTypeCountReviewedMarkRecordsArgs<ExtArgs extends runt
   where?: Prisma.MarkRecordWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountRequestedMarkCorrectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MarkCorrectionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountReviewedMarkCorrectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MarkCorrectionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPublishedMarkRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MarkRecordWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -5828,6 +6786,9 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   enteredMarkRecords?: boolean | Prisma.User$enteredMarkRecordsArgs<ExtArgs>
   approvedMarkRecords?: boolean | Prisma.User$approvedMarkRecordsArgs<ExtArgs>
   reviewedMarkRecords?: boolean | Prisma.User$reviewedMarkRecordsArgs<ExtArgs>
+  requestedMarkCorrections?: boolean | Prisma.User$requestedMarkCorrectionsArgs<ExtArgs>
+  reviewedMarkCorrections?: boolean | Prisma.User$reviewedMarkCorrectionsArgs<ExtArgs>
+  publishedMarkRecords?: boolean | Prisma.User$publishedMarkRecordsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -5896,6 +6857,9 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   enteredMarkRecords?: boolean | Prisma.User$enteredMarkRecordsArgs<ExtArgs>
   approvedMarkRecords?: boolean | Prisma.User$approvedMarkRecordsArgs<ExtArgs>
   reviewedMarkRecords?: boolean | Prisma.User$reviewedMarkRecordsArgs<ExtArgs>
+  requestedMarkCorrections?: boolean | Prisma.User$requestedMarkCorrectionsArgs<ExtArgs>
+  reviewedMarkCorrections?: boolean | Prisma.User$reviewedMarkCorrectionsArgs<ExtArgs>
+  publishedMarkRecords?: boolean | Prisma.User$publishedMarkRecordsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -5931,6 +6895,9 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     enteredMarkRecords: Prisma.$MarkRecordPayload<ExtArgs>[]
     approvedMarkRecords: Prisma.$MarkRecordPayload<ExtArgs>[]
     reviewedMarkRecords: Prisma.$MarkRecordPayload<ExtArgs>[]
+    requestedMarkCorrections: Prisma.$MarkCorrectionPayload<ExtArgs>[]
+    reviewedMarkCorrections: Prisma.$MarkCorrectionPayload<ExtArgs>[]
+    publishedMarkRecords: Prisma.$MarkRecordPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -6363,6 +7330,9 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   enteredMarkRecords<T extends Prisma.User$enteredMarkRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$enteredMarkRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   approvedMarkRecords<T extends Prisma.User$approvedMarkRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$approvedMarkRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reviewedMarkRecords<T extends Prisma.User$reviewedMarkRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewedMarkRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  requestedMarkCorrections<T extends Prisma.User$requestedMarkCorrectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$requestedMarkCorrectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkCorrectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reviewedMarkCorrections<T extends Prisma.User$reviewedMarkCorrectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewedMarkCorrectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkCorrectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  publishedMarkRecords<T extends Prisma.User$publishedMarkRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$publishedMarkRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarkRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7421,6 +8391,78 @@ export type User$approvedMarkRecordsArgs<ExtArgs extends runtime.Types.Extension
  * User.reviewedMarkRecords
  */
 export type User$reviewedMarkRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MarkRecord
+   */
+  select?: Prisma.MarkRecordSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MarkRecord
+   */
+  omit?: Prisma.MarkRecordOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MarkRecordInclude<ExtArgs> | null
+  where?: Prisma.MarkRecordWhereInput
+  orderBy?: Prisma.MarkRecordOrderByWithRelationInput | Prisma.MarkRecordOrderByWithRelationInput[]
+  cursor?: Prisma.MarkRecordWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MarkRecordScalarFieldEnum | Prisma.MarkRecordScalarFieldEnum[]
+}
+
+/**
+ * User.requestedMarkCorrections
+ */
+export type User$requestedMarkCorrectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MarkCorrection
+   */
+  select?: Prisma.MarkCorrectionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MarkCorrection
+   */
+  omit?: Prisma.MarkCorrectionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MarkCorrectionInclude<ExtArgs> | null
+  where?: Prisma.MarkCorrectionWhereInput
+  orderBy?: Prisma.MarkCorrectionOrderByWithRelationInput | Prisma.MarkCorrectionOrderByWithRelationInput[]
+  cursor?: Prisma.MarkCorrectionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MarkCorrectionScalarFieldEnum | Prisma.MarkCorrectionScalarFieldEnum[]
+}
+
+/**
+ * User.reviewedMarkCorrections
+ */
+export type User$reviewedMarkCorrectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MarkCorrection
+   */
+  select?: Prisma.MarkCorrectionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MarkCorrection
+   */
+  omit?: Prisma.MarkCorrectionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MarkCorrectionInclude<ExtArgs> | null
+  where?: Prisma.MarkCorrectionWhereInput
+  orderBy?: Prisma.MarkCorrectionOrderByWithRelationInput | Prisma.MarkCorrectionOrderByWithRelationInput[]
+  cursor?: Prisma.MarkCorrectionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MarkCorrectionScalarFieldEnum | Prisma.MarkCorrectionScalarFieldEnum[]
+}
+
+/**
+ * User.publishedMarkRecords
+ */
+export type User$publishedMarkRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the MarkRecord
    */

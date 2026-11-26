@@ -447,7 +447,8 @@ export const ModelName = {
   Assignment: 'Assignment',
   ExaminationGradingConfiguration: 'ExaminationGradingConfiguration',
   ExaminationHistory: 'ExaminationHistory',
-  MarkRecord: 'MarkRecord'
+  MarkRecord: 'MarkRecord',
+  MarkCorrection: 'MarkCorrection'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -463,7 +464,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration" | "quiz" | "assignment" | "examinationGradingConfiguration" | "examinationHistory" | "markRecord"
+    modelProps: "school" | "student" | "authSession" | "user" | "passwordResetToken" | "userActivityLog" | "userSchoolMembership" | "schoolConfiguration" | "academicYear" | "semester" | "grade" | "section" | "subject" | "gradeSubject" | "academicConfiguration" | "gradingSystem" | "gradeScale" | "academicCalendarEvent" | "admissionApplication" | "applicantInformation" | "admissionDocument" | "admissionReview" | "admissionStatusHistory" | "studentProfile" | "studentIdSequence" | "academicEnrollment" | "studentTransfer" | "enrollmentHistory" | "studentAcademicRecord" | "teacherProfile" | "teacherEmployment" | "teacherQualification" | "teacherSubjectAssignment" | "teacherClassAssignment" | "homeroomTeacherAssignment" | "staffProfile" | "teacherWorkloadRecord" | "guardianProfile" | "studentGuardianRelationship" | "guardianPermission" | "guardianContact" | "classAttendance" | "attendanceRecord" | "attendanceCorrection" | "examination" | "examinationTypeConfiguration" | "quiz" | "assignment" | "examinationGradingConfiguration" | "examinationHistory" | "markRecord" | "markCorrection"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -4241,6 +4242,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    MarkCorrection: {
+      payload: Prisma.$MarkCorrectionPayload<ExtArgs>
+      fields: Prisma.MarkCorrectionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.MarkCorrectionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.MarkCorrectionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>
+        }
+        findFirst: {
+          args: Prisma.MarkCorrectionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.MarkCorrectionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>
+        }
+        findMany: {
+          args: Prisma.MarkCorrectionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>[]
+        }
+        create: {
+          args: Prisma.MarkCorrectionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>
+        }
+        createMany: {
+          args: Prisma.MarkCorrectionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.MarkCorrectionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>[]
+        }
+        delete: {
+          args: Prisma.MarkCorrectionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>
+        }
+        update: {
+          args: Prisma.MarkCorrectionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>
+        }
+        deleteMany: {
+          args: Prisma.MarkCorrectionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.MarkCorrectionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.MarkCorrectionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>[]
+        }
+        upsert: {
+          args: Prisma.MarkCorrectionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MarkCorrectionPayload>
+        }
+        aggregate: {
+          args: Prisma.MarkCorrectionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateMarkCorrection>
+        }
+        groupBy: {
+          args: Prisma.MarkCorrectionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MarkCorrectionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.MarkCorrectionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MarkCorrectionCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -5178,10 +5253,34 @@ export const MarkRecordScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   approvalNotes: 'approvalNotes',
-  reviewedById: 'reviewedById'
+  reviewedById: 'reviewedById',
+  publishedAt: 'publishedAt',
+  publishedById: 'publishedById'
 } as const
 
 export type MarkRecordScalarFieldEnum = (typeof MarkRecordScalarFieldEnum)[keyof typeof MarkRecordScalarFieldEnum]
+
+
+export const MarkCorrectionScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  markRecordId: 'markRecordId',
+  requestedById: 'requestedById',
+  reviewedById: 'reviewedById',
+  previousObtainedMarks: 'previousObtainedMarks',
+  requestedObtainedMarks: 'requestedObtainedMarks',
+  previousBonusMarks: 'previousBonusMarks',
+  requestedBonusMarks: 'requestedBonusMarks',
+  previousPenaltyMarks: 'previousPenaltyMarks',
+  requestedPenaltyMarks: 'requestedPenaltyMarks',
+  reason: 'reason',
+  reviewNotes: 'reviewNotes',
+  status: 'status',
+  requestedAt: 'requestedAt',
+  reviewedAt: 'reviewedAt'
+} as const
+
+export type MarkCorrectionScalarFieldEnum = (typeof MarkCorrectionScalarFieldEnum)[keyof typeof MarkCorrectionScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -5855,6 +5954,20 @@ export type ListEnumMarkRecordStatusFieldRefInput<$PrismaModel> = FieldRefInputT
 
 
 /**
+ * Reference to a field of type 'MarkCorrectionStatus'
+ */
+export type EnumMarkCorrectionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MarkCorrectionStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'MarkCorrectionStatus[]'
+ */
+export type ListEnumMarkCorrectionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MarkCorrectionStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -6069,6 +6182,7 @@ export type GlobalOmitConfig = {
   examinationGradingConfiguration?: Prisma.ExaminationGradingConfigurationOmit
   examinationHistory?: Prisma.ExaminationHistoryOmit
   markRecord?: Prisma.MarkRecordOmit
+  markCorrection?: Prisma.MarkCorrectionOmit
 }
 
 /* Types for Logging */
