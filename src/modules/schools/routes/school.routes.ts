@@ -211,6 +211,10 @@ import attendanceRoutes from "../../attendance/routes/attendance.routes.js";
 import examinationRoutes from "../../examinations/routes/examination.routes.js";
 import markRoutes from "../../marks/routes/mark.routes.js";
 import gradeRoutes from "../../grades/routes/grade.routes.js";
+import annualReportRoutes from "../../reports/routes/annual-report.routes.js";
+import semesterReportRoutes from "../../reports/routes/semester-report.routes.js";
+import transcriptRoutes from "../../reports/routes/transcript.routes.js";
+import attendanceReportRoutes from "../../reports/routes/attendance-report.routes.js";
 
 const router = Router();
 
@@ -1258,5 +1262,14 @@ router.get(
   ),
   getTeacherWorkloadSummaryController,
 );
+
+router.use('/:schoolId/reports/semester', semesterReportRoutes);
+router.use('/:schoolId/reports/annual', annualReportRoutes);
+
+
+router.use('/:schoolId/reports/transcripts', transcriptRoutes);
+
+
+router.use('/:schoolId/reports/attendance', attendanceReportRoutes);
 
 export default router;

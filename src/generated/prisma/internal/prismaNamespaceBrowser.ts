@@ -112,7 +112,15 @@ export const ModelName = {
   AcademicPerformanceSummary: 'AcademicPerformanceSummary',
   AcademicRankingConfiguration: 'AcademicRankingConfiguration',
   AcademicStudentRanking: 'AcademicStudentRanking',
-  AcademicPerformanceHistory: 'AcademicPerformanceHistory'
+  AcademicPerformanceHistory: 'AcademicPerformanceHistory',
+  ReportCard: 'ReportCard',
+  ReportCardSubject: 'ReportCardSubject',
+  ReportCardAttendance: 'ReportCardAttendance',
+  ReportCardHistory: 'ReportCardHistory',
+  StudentAcademicTranscript: 'StudentAcademicTranscript',
+  AcademicTranscriptEntry: 'AcademicTranscriptEntry',
+  AcademicTranscriptHistory: 'AcademicTranscriptHistory',
+  AttendanceReport: 'AttendanceReport'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1251,6 +1259,174 @@ export const AcademicPerformanceHistoryScalarFieldEnum = {
 } as const
 
 export type AcademicPerformanceHistoryScalarFieldEnum = (typeof AcademicPerformanceHistoryScalarFieldEnum)[keyof typeof AcademicPerformanceHistoryScalarFieldEnum]
+
+
+export const ReportCardScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  enrollmentId: 'enrollmentId',
+  academicYearId: 'academicYearId',
+  semesterId: 'semesterId',
+  reportNumber: 'reportNumber',
+  periodType: 'periodType',
+  status: 'status',
+  gradeId: 'gradeId',
+  sectionId: 'sectionId',
+  overallPercentage: 'overallPercentage',
+  overallGradePoint: 'overallGradePoint',
+  totalSubjects: 'totalSubjects',
+  passedSubjects: 'passedSubjects',
+  failedSubjects: 'failedSubjects',
+  attendancePercentage: 'attendancePercentage',
+  teacherRemarks: 'teacherRemarks',
+  principalRemarks: 'principalRemarks',
+  generatedAt: 'generatedAt',
+  publishedAt: 'publishedAt',
+  publishedById: 'publishedById',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ReportCardScalarFieldEnum = (typeof ReportCardScalarFieldEnum)[keyof typeof ReportCardScalarFieldEnum]
+
+
+export const ReportCardSubjectScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  reportCardId: 'reportCardId',
+  subjectId: 'subjectId',
+  subjectName: 'subjectName',
+  maximumMarks: 'maximumMarks',
+  obtainedMarks: 'obtainedMarks',
+  percentage: 'percentage',
+  letterGrade: 'letterGrade',
+  gradePoint: 'gradePoint',
+  gradeRemark: 'gradeRemark',
+  teacherRemarks: 'teacherRemarks',
+  createdAt: 'createdAt'
+} as const
+
+export type ReportCardSubjectScalarFieldEnum = (typeof ReportCardSubjectScalarFieldEnum)[keyof typeof ReportCardSubjectScalarFieldEnum]
+
+
+export const ReportCardAttendanceScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  reportCardId: 'reportCardId',
+  totalSessions: 'totalSessions',
+  presentDays: 'presentDays',
+  absentDays: 'absentDays',
+  lateDays: 'lateDays',
+  excusedDays: 'excusedDays',
+  halfDays: 'halfDays',
+  attendancePercentage: 'attendancePercentage',
+  createdAt: 'createdAt'
+} as const
+
+export type ReportCardAttendanceScalarFieldEnum = (typeof ReportCardAttendanceScalarFieldEnum)[keyof typeof ReportCardAttendanceScalarFieldEnum]
+
+
+export const ReportCardHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  reportCardId: 'reportCardId',
+  performedById: 'performedById',
+  action: 'action',
+  description: 'description',
+  previousValues: 'previousValues',
+  newValues: 'newValues',
+  createdAt: 'createdAt'
+} as const
+
+export type ReportCardHistoryScalarFieldEnum = (typeof ReportCardHistoryScalarFieldEnum)[keyof typeof ReportCardHistoryScalarFieldEnum]
+
+
+export const StudentAcademicTranscriptScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  transcriptNumber: 'transcriptNumber',
+  status: 'status',
+  totalAcademicYears: 'totalAcademicYears',
+  totalSubjects: 'totalSubjects',
+  cumulativeGradePoint: 'cumulativeGradePoint',
+  cumulativePercentage: 'cumulativePercentage',
+  generatedAt: 'generatedAt',
+  publishedAt: 'publishedAt',
+  publishedById: 'publishedById',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentAcademicTranscriptScalarFieldEnum = (typeof StudentAcademicTranscriptScalarFieldEnum)[keyof typeof StudentAcademicTranscriptScalarFieldEnum]
+
+
+export const AcademicTranscriptEntryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  transcriptId: 'transcriptId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  semesterId: 'semesterId',
+  subjectId: 'subjectId',
+  periodKey: 'periodKey',
+  academicYearName: 'academicYearName',
+  gradeName: 'gradeName',
+  semesterName: 'semesterName',
+  subjectName: 'subjectName',
+  percentage: 'percentage',
+  letterGrade: 'letterGrade',
+  gradePoint: 'gradePoint',
+  gradeRemark: 'gradeRemark',
+  createdAt: 'createdAt'
+} as const
+
+export type AcademicTranscriptEntryScalarFieldEnum = (typeof AcademicTranscriptEntryScalarFieldEnum)[keyof typeof AcademicTranscriptEntryScalarFieldEnum]
+
+
+export const AcademicTranscriptHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  transcriptId: 'transcriptId',
+  performedById: 'performedById',
+  action: 'action',
+  description: 'description',
+  previousValues: 'previousValues',
+  newValues: 'newValues',
+  createdAt: 'createdAt'
+} as const
+
+export type AcademicTranscriptHistoryScalarFieldEnum = (typeof AcademicTranscriptHistoryScalarFieldEnum)[keyof typeof AcademicTranscriptHistoryScalarFieldEnum]
+
+
+export const AttendanceReportScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  studentId: 'studentId',
+  sectionId: 'sectionId',
+  semesterId: 'semesterId',
+  reportNumber: 'reportNumber',
+  scope: 'scope',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  totalSessions: 'totalSessions',
+  presentCount: 'presentCount',
+  absentCount: 'absentCount',
+  lateCount: 'lateCount',
+  excusedCount: 'excusedCount',
+  halfDayCount: 'halfDayCount',
+  attendancePercentage: 'attendancePercentage',
+  reportDetails: 'reportDetails',
+  generatedById: 'generatedById',
+  generatedAt: 'generatedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type AttendanceReportScalarFieldEnum = (typeof AttendanceReportScalarFieldEnum)[keyof typeof AttendanceReportScalarFieldEnum]
 
 
 export const SortOrder = {

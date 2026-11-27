@@ -78,6 +78,16 @@ model School {
 
   academicPerformanceHistory AcademicPerformanceHistory[]
 
+  reportCards ReportCard[]
+  reportCardSubjects ReportCardSubject[]
+  reportCardHistory ReportCardHistory[]
+
+  studentAcademicTranscripts StudentAcademicTranscript[]
+  academicTranscriptEntries AcademicTranscriptEntry[]
+  academicTranscriptHistory AcademicTranscriptHistory[]
+
+  attendanceReports AttendanceReport[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -119,6 +129,12 @@ model Student {
   academicPerformanceSummaries AcademicPerformanceSummary[]
   academicStudentRankings AcademicStudentRanking[]
   academicPerformanceHistory AcademicPerformanceHistory[]
+
+  reportCards ReportCard[]
+
+  academicTranscripts StudentAcademicTranscript[]
+
+  attendanceReports AttendanceReport[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -207,6 +223,16 @@ model User {
   reviewedMarkCorrections MarkCorrection[] @relation("MarkCorrectionReviewer")
   publishedMarkRecords MarkRecord[] @relation("MarkRecordPublisher")
   academicPerformanceHistoryActions AcademicPerformanceHistory[] @relation("AcademicPerformanceHistoryActor")
+
+  createdReportCards ReportCard[] @relation("ReportCardCreator")
+  publishedReportCards ReportCard[] @relation("ReportCardPublisher")
+  reportCardHistoryActions ReportCardHistory[] @relation("ReportCardHistoryActor")
+
+  createdTranscripts StudentAcademicTranscript[] @relation("TranscriptCreator")
+  publishedTranscripts StudentAcademicTranscript[] @relation("TranscriptPublisher")
+  transcriptHistoryActions AcademicTranscriptHistory[] @relation("TranscriptHistoryActor")
+
+  generatedAttendanceReports AttendanceReport[] @relation("AttendanceReportGenerator")
 
   @@map("users")
 }
@@ -377,6 +403,12 @@ model AcademicYear {
   academicStudentRankings AcademicStudentRanking[]
   academicPerformanceHistory AcademicPerformanceHistory[]
 
+  reportCards ReportCard[]
+
+  academicTranscriptEntries AcademicTranscriptEntry[]
+
+  attendanceReports AttendanceReport[]
+
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
   @@unique([schoolId, name], map: "academic_years_school_name_key")
@@ -425,6 +457,12 @@ model Semester {
 
   academicPerformanceHistory AcademicPerformanceHistory[]
 
+  reportCards ReportCard[]
+
+  academicTranscriptEntries AcademicTranscriptEntry[]
+
+  attendanceReports AttendanceReport[]
+
   // ADD THIS
   @@unique([id, schoolId], map: "semesters_id_school_key")
 
@@ -464,6 +502,10 @@ model Grade {
   academicRankingConfigurations AcademicRankingConfiguration[]
   academicStudentRankings AcademicStudentRanking[]
 
+  reportCards ReportCard[]
+
+  academicTranscriptEntries AcademicTranscriptEntry[]
+
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
   @@unique([id, schoolId], map: "grades_id_school_key")
@@ -501,6 +543,10 @@ model Section {
 
   academicStudentRankings AcademicStudentRanking[]
 
+  reportCards ReportCard[]
+
+  attendanceReports AttendanceReport[]
+
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
   @@index([schoolId, gradeId], map: "sections_school_grade_idx")
@@ -533,6 +579,10 @@ model Subject {
   examinations Examination[]
   subjectGradeResults SubjectGradeResult[]
   academicSubjectWeights AcademicSubjectWeight[]
+
+  reportCardSubjects ReportCardSubject[]
+
+  academicTranscriptEntries AcademicTranscriptEntry[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -956,6 +1006,8 @@ model AcademicEnrollment {
   statusChangedAt DateTime @default(now()) @map("status_changed_at") @db.Timestamptz(3)
   history EnrollmentHistory[]
   academicRecords StudentAcademicRecord[]
+
+  reportCards ReportCard[]
 
   @@unique([id, schoolId], map: "academic_enrollments_id_school_key")
 
@@ -2503,4 +2555,340 @@ model AcademicPerformanceHistory {
   @@index([schoolId, historyType, action, createdAt])
   @@index([sourceId])
   @@map("academic_performance_history")
+}
+
+
+
+
+enum ReportCardStatus {
+  DRAFT
+  GENERATED
+  PUBLISHED
+  WITHDRAWN
+
+  @@map("report_card_statuses")
+}
+
+enum ReportPeriodType {
+  SEMESTER
+  ANNUAL
+
+  @@map("report_period_types")
+}
+
+
+model ReportCard {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  studentId      String @map("student_id") @db.Uuid
+  enrollmentId   String @map("enrollment_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  semesterId     String? @map("semester_id") @db.Uuid
+
+  reportNumber String @map("report_number") @db.VarChar(100)
+  periodType   ReportPeriodType @map("period_type")
+  status       ReportCardStatus @default(DRAFT)
+
+  gradeId   String @map("grade_id") @db.Uuid
+  sectionId String @map("section_id") @db.Uuid
+
+  overallPercentage Decimal? @map("overall_percentage") @db.Decimal(8, 2)
+  overallGradePoint Decimal? @map("overall_grade_point") @db.Decimal(5, 2)
+
+  totalSubjects  Int @default(0) @map("total_subjects")
+  passedSubjects Int @default(0) @map("passed_subjects")
+  failedSubjects Int @default(0) @map("failed_subjects")
+
+  attendancePercentage Decimal? @map("attendance_percentage") @db.Decimal(8, 2)
+
+  teacherRemarks   String? @map("teacher_remarks") @db.Text
+  principalRemarks String? @map("principal_remarks") @db.Text
+
+  generatedAt DateTime? @map("generated_at") @db.Timestamptz(3)
+  publishedAt DateTime? @map("published_at") @db.Timestamptz(3)
+  publishedById String? @map("published_by_id") @db.Uuid
+
+  createdById String @map("created_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school       School       @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student      Student      @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  enrollment   AcademicEnrollment @relation(fields: [enrollmentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester     Semester?    @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  grade        Grade        @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  section      Section      @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  createdBy  User @relation("ReportCardCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  publishedBy User? @relation("ReportCardPublisher", fields: [publishedById], references: [id], onDelete: SetNull)
+
+  subjects ReportCardSubject[]
+  attendance ReportCardAttendance?
+  history ReportCardHistory[]
+
+  @@unique([schoolId, reportNumber])
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, academicYearId])
+  @@index([schoolId, academicYearId, semesterId, status])
+  @@map("report_cards")
+}
+
+
+
+model ReportCardSubject {
+  id          String @id @default(uuid()) @db.Uuid
+  schoolId    String @map("school_id") @db.Uuid
+  reportCardId String @map("report_card_id") @db.Uuid
+  subjectId   String @map("subject_id") @db.Uuid
+
+  subjectName String @map("subject_name") @db.VarChar(150)
+  maximumMarks Decimal @map("maximum_marks") @db.Decimal(8, 2)
+  obtainedMarks Decimal @map("obtained_marks") @db.Decimal(8, 2)
+  percentage Decimal @db.Decimal(8, 2)
+
+  letterGrade String? @map("letter_grade") @db.VarChar(10)
+  gradePoint  Decimal? @map("grade_point") @db.Decimal(5, 2)
+  gradeRemark String? @map("grade_remark") @db.VarChar(50)
+
+  teacherRemarks String? @map("teacher_remarks") @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  reportCard ReportCard @relation(fields: [reportCardId, schoolId], references: [id, schoolId], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@unique([schoolId, reportCardId, subjectId])
+  @@unique([id, schoolId])
+  @@map("report_card_subjects")
+}
+
+
+
+model ReportCardAttendance {
+  id          String @id @default(uuid()) @db.Uuid
+  schoolId    String @map("school_id") @db.Uuid
+  reportCardId String @unique @map("report_card_id") @db.Uuid
+
+  totalSessions Int @default(0) @map("total_sessions")
+  presentDays   Int @default(0) @map("present_days")
+  absentDays    Int @default(0) @map("absent_days")
+  lateDays      Int @default(0) @map("late_days")
+  excusedDays   Int @default(0) @map("excused_days")
+  halfDays      Int @default(0) @map("half_days")
+
+  attendancePercentage Decimal? @map("attendance_percentage") @db.Decimal(8, 2)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  reportCard ReportCard @relation(fields: [reportCardId, schoolId], references: [id, schoolId], onDelete: Cascade)
+
+  @@unique([reportCardId, schoolId])
+  @@unique([id, schoolId])
+  @@map("report_card_attendance")
+}
+
+
+
+enum ReportCardHistoryAction {
+  CREATED
+  GENERATED
+  UPDATED
+  PUBLISHED
+  WITHDRAWN
+
+  @@map("report_card_history_actions")
+}
+
+model ReportCardHistory {
+  id           String @id @default(uuid()) @db.Uuid
+  schoolId     String @map("school_id") @db.Uuid
+  reportCardId String @map("report_card_id") @db.Uuid
+  performedById String @map("performed_by_id") @db.Uuid
+
+  action ReportCardHistoryAction
+  description String? @db.Text
+  previousValues Json? @map("previous_values")
+  newValues Json? @map("new_values")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  reportCard ReportCard @relation(fields: [reportCardId, schoolId], references: [id, schoolId], onDelete: Cascade)
+  performedBy User @relation("ReportCardHistoryActor", fields: [performedById], references: [id], onDelete: Restrict)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@index([schoolId, reportCardId, createdAt])
+  @@map("report_card_history")
+}
+
+
+
+enum TranscriptStatus {
+  DRAFT
+  GENERATED
+  PUBLISHED
+  WITHDRAWN
+
+  @@map("transcript_statuses")
+}
+
+
+model StudentAcademicTranscript {
+  id        String @id @default(uuid()) @db.Uuid
+  schoolId  String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+
+  transcriptNumber String @map("transcript_number") @db.VarChar(100)
+  status TranscriptStatus @default(DRAFT)
+
+  totalAcademicYears Int @default(0) @map("total_academic_years")
+  totalSubjects      Int @default(0) @map("total_subjects")
+
+  cumulativeGradePoint Decimal? @map("cumulative_grade_point") @db.Decimal(5, 2)
+  cumulativePercentage Decimal? @map("cumulative_percentage") @db.Decimal(8, 2)
+
+  generatedAt DateTime? @map("generated_at") @db.Timestamptz(3)
+  publishedAt DateTime? @map("published_at") @db.Timestamptz(3)
+  publishedById String? @map("published_by_id") @db.Uuid
+
+  createdById String @map("created_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student Student @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  createdBy User @relation("TranscriptCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  publishedBy User? @relation("TranscriptPublisher", fields: [publishedById], references: [id], onDelete: SetNull)
+
+  entries AcademicTranscriptEntry[]
+  history AcademicTranscriptHistory[]
+
+  @@unique([schoolId, transcriptNumber])
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, createdAt])
+  @@index([schoolId, status])
+  @@map("student_academic_transcripts")
+}
+
+model AcademicTranscriptEntry {
+  id           String @id @default(uuid()) @db.Uuid
+  schoolId     String @map("school_id") @db.Uuid
+  transcriptId String @map("transcript_id") @db.Uuid
+
+  academicYearId String @map("academic_year_id") @db.Uuid
+  gradeId        String @map("grade_id") @db.Uuid
+  semesterId     String? @map("semester_id") @db.Uuid
+  subjectId      String @map("subject_id") @db.Uuid
+
+  periodKey String @map("period_key") @db.VarChar(100)
+
+  academicYearName String @map("academic_year_name") @db.VarChar(100)
+  gradeName        String @map("grade_name") @db.VarChar(100)
+  semesterName     String? @map("semester_name") @db.VarChar(100)
+  subjectName      String @map("subject_name") @db.VarChar(150)
+
+  percentage Decimal @db.Decimal(8, 2)
+  letterGrade String? @map("letter_grade") @db.VarChar(10)
+  gradePoint Decimal? @map("grade_point") @db.Decimal(5, 2)
+  gradeRemark String? @map("grade_remark") @db.VarChar(50)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  transcript StudentAcademicTranscript @relation(fields: [transcriptId, schoolId],references: [id, schoolId],onDelete: Cascade)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  grade Grade @relation(fields: [gradeId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester Semester? @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  subject Subject @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@unique([schoolId, transcriptId, periodKey, subjectId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, gradeId])
+  @@map("academic_transcript_entries")
+}
+
+model AcademicTranscriptHistory {
+  id           String @id @default(uuid()) @db.Uuid
+  schoolId     String @map("school_id") @db.Uuid
+  transcriptId String @map("transcript_id") @db.Uuid
+  performedById String @map("performed_by_id") @db.Uuid
+
+  action String @db.VarChar(50)
+  description String? @db.Text
+  previousValues Json? @map("previous_values")
+  newValues Json? @map("new_values")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  transcript StudentAcademicTranscript @relation(fields: [transcriptId, schoolId],references: [id, schoolId],onDelete: Cascade)
+  performedBy User @relation("TranscriptHistoryActor", fields: [performedById], references: [id], onDelete: Restrict)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  @@index([schoolId, transcriptId, createdAt])
+  @@map("academic_transcript_history")
+}
+
+
+
+
+
+enum AttendanceReportScope {
+  STUDENT
+  SECTION
+
+  @@map("attendance_report_scopes")
+}
+
+model AttendanceReport {
+  id             String @id @default(uuid()) @db.Uuid
+  schoolId       String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  studentId  String? @map("student_id") @db.Uuid
+  sectionId  String? @map("section_id") @db.Uuid
+  semesterId String? @map("semester_id") @db.Uuid
+
+  reportNumber String @map("report_number") @db.VarChar(100)
+  scope AttendanceReportScope
+
+  startDate DateTime @map("start_date") @db.Date
+  endDate   DateTime @map("end_date") @db.Date
+
+  totalSessions Int @default(0) @map("total_sessions")
+  presentCount  Int @default(0) @map("present_count")
+  absentCount   Int @default(0) @map("absent_count")
+  lateCount     Int @default(0) @map("late_count")
+  excusedCount  Int @default(0) @map("excused_count")
+  halfDayCount  Int @default(0) @map("half_day_count")
+
+  attendancePercentage Decimal? @map("attendance_percentage") @db.Decimal(8, 2)
+
+  reportDetails Json? @map("report_details")
+
+  generatedById String @map("generated_by_id") @db.Uuid
+  generatedAt DateTime @default(now()) @map("generated_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  student Student? @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  section Section? @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  semester Semester? @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  generatedBy User @relation("AttendanceReportGenerator", fields: [generatedById], references: [id], onDelete: Restrict)
+
+  @@unique([id, schoolId])
+  @@unique([schoolId, reportNumber])
+  @@index([schoolId, studentId, academicYearId])
+  @@index([schoolId, sectionId, academicYearId])
+  @@index([schoolId, generatedAt])
+  @@map("attendance_reports")
 }

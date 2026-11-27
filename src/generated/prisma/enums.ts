@@ -487,3 +487,50 @@ export const AcademicPerformanceHistoryAction = {
 } as const
 
 export type AcademicPerformanceHistoryAction = (typeof AcademicPerformanceHistoryAction)[keyof typeof AcademicPerformanceHistoryAction]
+
+
+export const ReportCardStatus = {
+  DRAFT: 'DRAFT',
+  GENERATED: 'GENERATED',
+  PUBLISHED: 'PUBLISHED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type ReportCardStatus = (typeof ReportCardStatus)[keyof typeof ReportCardStatus]
+
+
+export const ReportPeriodType = {
+  SEMESTER: 'SEMESTER',
+  ANNUAL: 'ANNUAL'
+} as const
+
+export type ReportPeriodType = (typeof ReportPeriodType)[keyof typeof ReportPeriodType]
+
+
+export const ReportCardHistoryAction = {
+  CREATED: 'CREATED',
+  GENERATED: 'GENERATED',
+  UPDATED: 'UPDATED',
+  PUBLISHED: 'PUBLISHED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type ReportCardHistoryAction = (typeof ReportCardHistoryAction)[keyof typeof ReportCardHistoryAction]
+
+
+export const TranscriptStatus = {
+  DRAFT: 'DRAFT',
+  GENERATED: 'GENERATED',
+  PUBLISHED: 'PUBLISHED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type TranscriptStatus = (typeof TranscriptStatus)[keyof typeof TranscriptStatus]
+
+
+export const AttendanceReportScope = {
+  STUDENT: 'STUDENT',
+  SECTION: 'SECTION'
+} as const
+
+export type AttendanceReportScope = (typeof AttendanceReportScope)[keyof typeof AttendanceReportScope]

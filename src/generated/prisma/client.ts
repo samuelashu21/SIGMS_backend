@@ -351,3 +351,43 @@ export type AcademicStudentRanking = Prisma.AcademicStudentRankingModel
  * 
  */
 export type AcademicPerformanceHistory = Prisma.AcademicPerformanceHistoryModel
+/**
+ * Model ReportCard
+ * 
+ */
+export type ReportCard = Prisma.ReportCardModel
+/**
+ * Model ReportCardSubject
+ * 
+ */
+export type ReportCardSubject = Prisma.ReportCardSubjectModel
+/**
+ * Model ReportCardAttendance
+ * 
+ */
+export type ReportCardAttendance = Prisma.ReportCardAttendanceModel
+/**
+ * Model ReportCardHistory
+ * 
+ */
+export type ReportCardHistory = Prisma.ReportCardHistoryModel
+/**
+ * Model StudentAcademicTranscript
+ * 
+ */
+export type StudentAcademicTranscript = Prisma.StudentAcademicTranscriptModel
+/**
+ * Model AcademicTranscriptEntry
+ * 
+ */
+export type AcademicTranscriptEntry = Prisma.AcademicTranscriptEntryModel
+/**
+ * Model AcademicTranscriptHistory
+ * 
+ */
+export type AcademicTranscriptHistory = Prisma.AcademicTranscriptHistoryModel
+/**
+ * Model AttendanceReport
+ * 
+ */
+export type AttendanceReport = Prisma.AttendanceReportModel

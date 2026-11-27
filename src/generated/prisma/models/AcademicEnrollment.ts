@@ -245,6 +245,7 @@ export type AcademicEnrollmentWhereInput = {
   section?: Prisma.XOR<Prisma.SectionNullableScalarRelationFilter, Prisma.SectionWhereInput> | null
   history?: Prisma.EnrollmentHistoryListRelationFilter
   academicRecords?: Prisma.StudentAcademicRecordListRelationFilter
+  reportCards?: Prisma.ReportCardListRelationFilter
 }
 
 export type AcademicEnrollmentOrderByWithRelationInput = {
@@ -267,6 +268,7 @@ export type AcademicEnrollmentOrderByWithRelationInput = {
   section?: Prisma.SectionOrderByWithRelationInput
   history?: Prisma.EnrollmentHistoryOrderByRelationAggregateInput
   academicRecords?: Prisma.StudentAcademicRecordOrderByRelationAggregateInput
+  reportCards?: Prisma.ReportCardOrderByRelationAggregateInput
 }
 
 export type AcademicEnrollmentWhereUniqueInput = Prisma.AtLeast<{
@@ -294,6 +296,7 @@ export type AcademicEnrollmentWhereUniqueInput = Prisma.AtLeast<{
   section?: Prisma.XOR<Prisma.SectionNullableScalarRelationFilter, Prisma.SectionWhereInput> | null
   history?: Prisma.EnrollmentHistoryListRelationFilter
   academicRecords?: Prisma.StudentAcademicRecordListRelationFilter
+  reportCards?: Prisma.ReportCardListRelationFilter
 }, "id" | "id_schoolId" | "studentId_academicYearId">
 
 export type AcademicEnrollmentOrderByWithAggregationInput = {
@@ -347,6 +350,7 @@ export type AcademicEnrollmentCreateInput = {
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateInput = {
@@ -364,6 +368,7 @@ export type AcademicEnrollmentUncheckedCreateInput = {
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUpdateInput = {
@@ -381,6 +386,7 @@ export type AcademicEnrollmentUpdateInput = {
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateInput = {
@@ -398,6 +404,7 @@ export type AcademicEnrollmentUncheckedUpdateInput = {
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentCreateManyInput = {
@@ -759,6 +766,20 @@ export type AcademicEnrollmentUpdateOneWithoutAcademicRecordsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicEnrollmentUpdateToOneWithWhereWithoutAcademicRecordsInput, Prisma.AcademicEnrollmentUpdateWithoutAcademicRecordsInput>, Prisma.AcademicEnrollmentUncheckedUpdateWithoutAcademicRecordsInput>
 }
 
+export type AcademicEnrollmentCreateNestedOneWithoutReportCardsInput = {
+  create?: Prisma.XOR<Prisma.AcademicEnrollmentCreateWithoutReportCardsInput, Prisma.AcademicEnrollmentUncheckedCreateWithoutReportCardsInput>
+  connectOrCreate?: Prisma.AcademicEnrollmentCreateOrConnectWithoutReportCardsInput
+  connect?: Prisma.AcademicEnrollmentWhereUniqueInput
+}
+
+export type AcademicEnrollmentUpdateOneRequiredWithoutReportCardsNestedInput = {
+  create?: Prisma.XOR<Prisma.AcademicEnrollmentCreateWithoutReportCardsInput, Prisma.AcademicEnrollmentUncheckedCreateWithoutReportCardsInput>
+  connectOrCreate?: Prisma.AcademicEnrollmentCreateOrConnectWithoutReportCardsInput
+  upsert?: Prisma.AcademicEnrollmentUpsertWithoutReportCardsInput
+  connect?: Prisma.AcademicEnrollmentWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicEnrollmentUpdateToOneWithWhereWithoutReportCardsInput, Prisma.AcademicEnrollmentUpdateWithoutReportCardsInput>, Prisma.AcademicEnrollmentUncheckedUpdateWithoutReportCardsInput>
+}
+
 export type AcademicEnrollmentCreateWithoutSchoolInput = {
   id?: string
   enrollmentDate: Date | string
@@ -773,6 +794,7 @@ export type AcademicEnrollmentCreateWithoutSchoolInput = {
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutSchoolInput = {
@@ -789,6 +811,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutSchoolInput = {
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutSchoolInput = {
@@ -849,6 +872,7 @@ export type AcademicEnrollmentCreateWithoutStudentInput = {
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutStudentInput = {
@@ -864,6 +888,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutStudentInput = {
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutStudentInput = {
@@ -906,6 +931,7 @@ export type AcademicEnrollmentCreateWithoutAcademicYearInput = {
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutAcademicYearInput = {
@@ -921,6 +947,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutAcademicYearInput = {
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutAcademicYearInput = {
@@ -963,6 +990,7 @@ export type AcademicEnrollmentCreateWithoutGradeInput = {
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutGradeInput = {
@@ -978,6 +1006,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutGradeInput = {
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutGradeInput = {
@@ -1020,6 +1049,7 @@ export type AcademicEnrollmentCreateWithoutSectionInput = {
   grade?: Prisma.GradeCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutSectionInput = {
@@ -1033,6 +1063,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutSectionInput = {
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutSectionInput = {
@@ -1075,6 +1106,7 @@ export type AcademicEnrollmentCreateWithoutHistoryInput = {
   grade?: Prisma.GradeCreateNestedOneWithoutAcademicEnrollmentsInput
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutHistoryInput = {
@@ -1091,6 +1123,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutHistoryInput = {
   statusReason?: string | null
   statusChangedAt?: Date | string
   academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutHistoryInput = {
@@ -1123,6 +1156,7 @@ export type AcademicEnrollmentUpdateWithoutHistoryInput = {
   grade?: Prisma.GradeUpdateOneWithoutAcademicEnrollmentsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutHistoryInput = {
@@ -1139,6 +1173,7 @@ export type AcademicEnrollmentUncheckedUpdateWithoutHistoryInput = {
   statusReason?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentCreateWithoutAcademicRecordsInput = {
@@ -1155,6 +1190,7 @@ export type AcademicEnrollmentCreateWithoutAcademicRecordsInput = {
   grade?: Prisma.GradeCreateNestedOneWithoutAcademicEnrollmentsInput
   section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
   history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentUncheckedCreateWithoutAcademicRecordsInput = {
@@ -1171,6 +1207,7 @@ export type AcademicEnrollmentUncheckedCreateWithoutAcademicRecordsInput = {
   statusReason?: string | null
   statusChangedAt?: Date | string
   history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutEnrollmentInput
 }
 
 export type AcademicEnrollmentCreateOrConnectWithoutAcademicRecordsInput = {
@@ -1203,6 +1240,7 @@ export type AcademicEnrollmentUpdateWithoutAcademicRecordsInput = {
   grade?: Prisma.GradeUpdateOneWithoutAcademicEnrollmentsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutAcademicRecordsInput = {
@@ -1219,6 +1257,91 @@ export type AcademicEnrollmentUncheckedUpdateWithoutAcademicRecordsInput = {
   statusReason?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
+}
+
+export type AcademicEnrollmentCreateWithoutReportCardsInput = {
+  id?: string
+  enrollmentDate: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  status?: $Enums.AcademicEnrollmentStatus
+  statusReason?: string | null
+  statusChangedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAcademicEnrollmentsInput
+  student: Prisma.StudentCreateNestedOneWithoutAcademicEnrollmentsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutEnrollmentsInput
+  grade?: Prisma.GradeCreateNestedOneWithoutAcademicEnrollmentsInput
+  section?: Prisma.SectionCreateNestedOneWithoutAcademicEnrollmentsInput
+  history?: Prisma.EnrollmentHistoryCreateNestedManyWithoutEnrollmentInput
+  academicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutEnrollmentInput
+}
+
+export type AcademicEnrollmentUncheckedCreateWithoutReportCardsInput = {
+  id?: string
+  schoolId: string
+  studentId: string
+  academicYearId: string
+  gradeId?: string | null
+  sectionId?: string | null
+  enrollmentDate: Date | string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  status?: $Enums.AcademicEnrollmentStatus
+  statusReason?: string | null
+  statusChangedAt?: Date | string
+  history?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutEnrollmentInput
+  academicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutEnrollmentInput
+}
+
+export type AcademicEnrollmentCreateOrConnectWithoutReportCardsInput = {
+  where: Prisma.AcademicEnrollmentWhereUniqueInput
+  create: Prisma.XOR<Prisma.AcademicEnrollmentCreateWithoutReportCardsInput, Prisma.AcademicEnrollmentUncheckedCreateWithoutReportCardsInput>
+}
+
+export type AcademicEnrollmentUpsertWithoutReportCardsInput = {
+  update: Prisma.XOR<Prisma.AcademicEnrollmentUpdateWithoutReportCardsInput, Prisma.AcademicEnrollmentUncheckedUpdateWithoutReportCardsInput>
+  create: Prisma.XOR<Prisma.AcademicEnrollmentCreateWithoutReportCardsInput, Prisma.AcademicEnrollmentUncheckedCreateWithoutReportCardsInput>
+  where?: Prisma.AcademicEnrollmentWhereInput
+}
+
+export type AcademicEnrollmentUpdateToOneWithWhereWithoutReportCardsInput = {
+  where?: Prisma.AcademicEnrollmentWhereInput
+  data: Prisma.XOR<Prisma.AcademicEnrollmentUpdateWithoutReportCardsInput, Prisma.AcademicEnrollmentUncheckedUpdateWithoutReportCardsInput>
+}
+
+export type AcademicEnrollmentUpdateWithoutReportCardsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  enrollmentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicEnrollmentStatusFieldUpdateOperationsInput | $Enums.AcademicEnrollmentStatus
+  statusReason?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAcademicEnrollmentsNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutAcademicEnrollmentsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutEnrollmentsNestedInput
+  grade?: Prisma.GradeUpdateOneWithoutAcademicEnrollmentsNestedInput
+  section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
+  history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
+  academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+}
+
+export type AcademicEnrollmentUncheckedUpdateWithoutReportCardsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sectionId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  enrollmentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicEnrollmentStatusFieldUpdateOperationsInput | $Enums.AcademicEnrollmentStatus
+  statusReason?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
+  academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentCreateManySchoolInput = {
@@ -1249,6 +1372,7 @@ export type AcademicEnrollmentUpdateWithoutSchoolInput = {
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutSchoolInput = {
@@ -1265,6 +1389,7 @@ export type AcademicEnrollmentUncheckedUpdateWithoutSchoolInput = {
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateManyWithoutSchoolInput = {
@@ -1308,6 +1433,7 @@ export type AcademicEnrollmentUpdateWithoutStudentInput = {
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutStudentInput = {
@@ -1323,6 +1449,7 @@ export type AcademicEnrollmentUncheckedUpdateWithoutStudentInput = {
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateManyWithoutStudentInput = {
@@ -1365,6 +1492,7 @@ export type AcademicEnrollmentUpdateWithoutAcademicYearInput = {
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutAcademicYearInput = {
@@ -1380,6 +1508,7 @@ export type AcademicEnrollmentUncheckedUpdateWithoutAcademicYearInput = {
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -1422,6 +1551,7 @@ export type AcademicEnrollmentUpdateWithoutGradeInput = {
   section?: Prisma.SectionUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutGradeInput = {
@@ -1437,6 +1567,7 @@ export type AcademicEnrollmentUncheckedUpdateWithoutGradeInput = {
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateManyWithoutGradeInput = {
@@ -1477,6 +1608,7 @@ export type AcademicEnrollmentUpdateWithoutSectionInput = {
   grade?: Prisma.GradeUpdateOneWithoutAcademicEnrollmentsNestedInput
   history?: Prisma.EnrollmentHistoryUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateWithoutSectionInput = {
@@ -1490,6 +1622,7 @@ export type AcademicEnrollmentUncheckedUpdateWithoutSectionInput = {
   statusChangedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   history?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutEnrollmentNestedInput
   academicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutEnrollmentNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutEnrollmentNestedInput
 }
 
 export type AcademicEnrollmentUncheckedUpdateManyWithoutSectionInput = {
@@ -1511,11 +1644,13 @@ export type AcademicEnrollmentUncheckedUpdateManyWithoutSectionInput = {
 export type AcademicEnrollmentCountOutputType = {
   history: number
   academicRecords: number
+  reportCards: number
 }
 
 export type AcademicEnrollmentCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   history?: boolean | AcademicEnrollmentCountOutputTypeCountHistoryArgs
   academicRecords?: boolean | AcademicEnrollmentCountOutputTypeCountAcademicRecordsArgs
+  reportCards?: boolean | AcademicEnrollmentCountOutputTypeCountReportCardsArgs
 }
 
 /**
@@ -1542,6 +1677,13 @@ export type AcademicEnrollmentCountOutputTypeCountAcademicRecordsArgs<ExtArgs ex
   where?: Prisma.StudentAcademicRecordWhereInput
 }
 
+/**
+ * AcademicEnrollmentCountOutputType without action
+ */
+export type AcademicEnrollmentCountOutputTypeCountReportCardsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ReportCardWhereInput
+}
+
 
 export type AcademicEnrollmentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1563,6 +1705,7 @@ export type AcademicEnrollmentSelect<ExtArgs extends runtime.Types.Extensions.In
   section?: boolean | Prisma.AcademicEnrollment$sectionArgs<ExtArgs>
   history?: boolean | Prisma.AcademicEnrollment$historyArgs<ExtArgs>
   academicRecords?: boolean | Prisma.AcademicEnrollment$academicRecordsArgs<ExtArgs>
+  reportCards?: boolean | Prisma.AcademicEnrollment$reportCardsArgs<ExtArgs>
   _count?: boolean | Prisma.AcademicEnrollmentCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["academicEnrollment"]>
 
@@ -1630,6 +1773,7 @@ export type AcademicEnrollmentInclude<ExtArgs extends runtime.Types.Extensions.I
   section?: boolean | Prisma.AcademicEnrollment$sectionArgs<ExtArgs>
   history?: boolean | Prisma.AcademicEnrollment$historyArgs<ExtArgs>
   academicRecords?: boolean | Prisma.AcademicEnrollment$academicRecordsArgs<ExtArgs>
+  reportCards?: boolean | Prisma.AcademicEnrollment$reportCardsArgs<ExtArgs>
   _count?: boolean | Prisma.AcademicEnrollmentCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AcademicEnrollmentIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1657,6 +1801,7 @@ export type $AcademicEnrollmentPayload<ExtArgs extends runtime.Types.Extensions.
     section: Prisma.$SectionPayload<ExtArgs> | null
     history: Prisma.$EnrollmentHistoryPayload<ExtArgs>[]
     academicRecords: Prisma.$StudentAcademicRecordPayload<ExtArgs>[]
+    reportCards: Prisma.$ReportCardPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2072,6 +2217,7 @@ export interface Prisma__AcademicEnrollmentClient<T, Null = never, ExtArgs exten
   section<T extends Prisma.AcademicEnrollment$sectionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicEnrollment$sectionArgs<ExtArgs>>): Prisma.Prisma__SectionClient<runtime.Types.Result.GetResult<Prisma.$SectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   history<T extends Prisma.AcademicEnrollment$historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicEnrollment$historyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EnrollmentHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   academicRecords<T extends Prisma.AcademicEnrollment$academicRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicEnrollment$academicRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentAcademicRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reportCards<T extends Prisma.AcademicEnrollment$reportCardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicEnrollment$reportCardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReportCardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2597,6 +2743,30 @@ export type AcademicEnrollment$academicRecordsArgs<ExtArgs extends runtime.Types
   take?: number
   skip?: number
   distinct?: Prisma.StudentAcademicRecordScalarFieldEnum | Prisma.StudentAcademicRecordScalarFieldEnum[]
+}
+
+/**
+ * AcademicEnrollment.reportCards
+ */
+export type AcademicEnrollment$reportCardsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ReportCard
+   */
+  select?: Prisma.ReportCardSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ReportCard
+   */
+  omit?: Prisma.ReportCardOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ReportCardInclude<ExtArgs> | null
+  where?: Prisma.ReportCardWhereInput
+  orderBy?: Prisma.ReportCardOrderByWithRelationInput | Prisma.ReportCardOrderByWithRelationInput[]
+  cursor?: Prisma.ReportCardWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ReportCardScalarFieldEnum | Prisma.ReportCardScalarFieldEnum[]
 }
 
 /**
