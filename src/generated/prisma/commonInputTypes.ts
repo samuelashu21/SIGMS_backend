@@ -1496,6 +1496,74 @@ export type EnumAcademicProgressionActionWithAggregatesFilter<$PrismaModel = nev
   _max?: Prisma.NestedEnumAcademicProgressionActionFilter<$PrismaModel>
 }
 
+export type EnumTimetablePeriodTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetablePeriodType | Prisma.EnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetablePeriodTypeFilter<$PrismaModel> | $Enums.TimetablePeriodType
+}
+
+export type EnumTimetablePeriodTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetablePeriodType | Prisma.EnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetablePeriodTypeWithAggregatesFilter<$PrismaModel> | $Enums.TimetablePeriodType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTimetablePeriodTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTimetablePeriodTypeFilter<$PrismaModel>
+}
+
+export type EnumTimetableStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableStatus | Prisma.EnumTimetableStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableStatusFilter<$PrismaModel> | $Enums.TimetableStatus
+}
+
+export type EnumTimetableStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableStatus | Prisma.EnumTimetableStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableStatusWithAggregatesFilter<$PrismaModel> | $Enums.TimetableStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTimetableStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTimetableStatusFilter<$PrismaModel>
+}
+
+export type EnumTimetableDayFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableDay | Prisma.EnumTimetableDayFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableDayFilter<$PrismaModel> | $Enums.TimetableDay
+}
+
+export type EnumTimetableDayWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableDay | Prisma.EnumTimetableDayFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableDayWithAggregatesFilter<$PrismaModel> | $Enums.TimetableDay
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTimetableDayFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTimetableDayFilter<$PrismaModel>
+}
+
+export type EnumSchoolHolidayTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolHolidayType | Prisma.EnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolHolidayTypeFilter<$PrismaModel> | $Enums.SchoolHolidayType
+}
+
+export type EnumSchoolHolidayTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolHolidayType | Prisma.EnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolHolidayTypeWithAggregatesFilter<$PrismaModel> | $Enums.SchoolHolidayType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSchoolHolidayTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSchoolHolidayTypeFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -2931,6 +2999,74 @@ export type NestedEnumAcademicProgressionActionWithAggregatesFilter<$PrismaModel
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAcademicProgressionActionFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAcademicProgressionActionFilter<$PrismaModel>
+}
+
+export type NestedEnumTimetablePeriodTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetablePeriodType | Prisma.EnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetablePeriodTypeFilter<$PrismaModel> | $Enums.TimetablePeriodType
+}
+
+export type NestedEnumTimetablePeriodTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetablePeriodType | Prisma.EnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetablePeriodType[] | Prisma.ListEnumTimetablePeriodTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetablePeriodTypeWithAggregatesFilter<$PrismaModel> | $Enums.TimetablePeriodType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTimetablePeriodTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTimetablePeriodTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumTimetableStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableStatus | Prisma.EnumTimetableStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableStatusFilter<$PrismaModel> | $Enums.TimetableStatus
+}
+
+export type NestedEnumTimetableStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableStatus | Prisma.EnumTimetableStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableStatus[] | Prisma.ListEnumTimetableStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableStatusWithAggregatesFilter<$PrismaModel> | $Enums.TimetableStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTimetableStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTimetableStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumTimetableDayFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableDay | Prisma.EnumTimetableDayFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableDayFilter<$PrismaModel> | $Enums.TimetableDay
+}
+
+export type NestedEnumTimetableDayWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TimetableDay | Prisma.EnumTimetableDayFieldRefInput<$PrismaModel>
+  in?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TimetableDay[] | Prisma.ListEnumTimetableDayFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTimetableDayWithAggregatesFilter<$PrismaModel> | $Enums.TimetableDay
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTimetableDayFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTimetableDayFilter<$PrismaModel>
+}
+
+export type NestedEnumSchoolHolidayTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolHolidayType | Prisma.EnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolHolidayTypeFilter<$PrismaModel> | $Enums.SchoolHolidayType
+}
+
+export type NestedEnumSchoolHolidayTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SchoolHolidayType | Prisma.EnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SchoolHolidayType[] | Prisma.ListEnumSchoolHolidayTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSchoolHolidayTypeWithAggregatesFilter<$PrismaModel> | $Enums.SchoolHolidayType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSchoolHolidayTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSchoolHolidayTypeFilter<$PrismaModel>
 }
 
 

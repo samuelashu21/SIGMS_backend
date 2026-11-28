@@ -620,3 +620,47 @@ export const AcademicProgressionAction = {
 } as const
 
 export type AcademicProgressionAction = (typeof AcademicProgressionAction)[keyof typeof AcademicProgressionAction]
+
+
+export const TimetableDay = {
+  MONDAY: 'MONDAY',
+  TUESDAY: 'TUESDAY',
+  WEDNESDAY: 'WEDNESDAY',
+  THURSDAY: 'THURSDAY',
+  FRIDAY: 'FRIDAY',
+  SATURDAY: 'SATURDAY',
+  SUNDAY: 'SUNDAY'
+} as const
+
+export type TimetableDay = (typeof TimetableDay)[keyof typeof TimetableDay]
+
+
+export const TimetablePeriodType = {
+  LESSON: 'LESSON',
+  BREAK: 'BREAK',
+  LUNCH: 'LUNCH',
+  ASSEMBLY: 'ASSEMBLY',
+  OTHER: 'OTHER'
+} as const
+
+export type TimetablePeriodType = (typeof TimetablePeriodType)[keyof typeof TimetablePeriodType]
+
+
+export const TimetableStatus = {
+  DRAFT: 'DRAFT',
+  PUBLISHED: 'PUBLISHED',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type TimetableStatus = (typeof TimetableStatus)[keyof typeof TimetableStatus]
+
+
+export const SchoolHolidayType = {
+  PUBLIC_HOLIDAY: 'PUBLIC_HOLIDAY',
+  RELIGIOUS_HOLIDAY: 'RELIGIOUS_HOLIDAY',
+  SCHOOL_BREAK: 'SCHOOL_BREAK',
+  EMERGENCY_CLOSURE: 'EMERGENCY_CLOSURE',
+  OTHER: 'OTHER'
+} as const
+
+export type SchoolHolidayType = (typeof SchoolHolidayType)[keyof typeof SchoolHolidayType]

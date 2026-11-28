@@ -220,6 +220,15 @@ import reportPdfRoutes from "../../reports/routes/report-pdf.routes.js";
 import reportPublicationRoutes from "../../reports/routes/report-publication.routes.js";
 import accessibleReportRoutes from "../../reports/routes/accessible-report.routes.js";
 import promotionRoutes from "../../promotions/routes/promotion.routes.js";
+import timetableRoutes from '../../timetables/routes/timetable.routes.js';
+import classTimetableRoutes from '../../timetables/routes/class-timetable.routes.js';
+import teacherTimetableRoutes from '../../timetables/routes/teacher-timetable.routes.js';
+import subjectSchedulingRoutes from '../../timetables/routes/subject-scheduling.routes.js';
+import examinationScheduleRoutes from '../../timetables/routes/examination-schedule.routes.js';
+import schoolHolidayRoutes from '../../timetables/routes/school-holiday.routes.js';
+import academicCalendarEventRoutes from '../../timetables/routes/academic-calendar-event.routes.js';
+import timetablePublicationRoutes from '../../timetables/routes/timetable-publication.routes.js';
+ 
 
 const router = Router();
 
@@ -1286,5 +1295,18 @@ router.use('/:schoolId/reports/publication', reportPublicationRoutes);
 router.use('/:schoolId/reports/access', accessibleReportRoutes);
 
 router.use('/:schoolId/promotions', promotionRoutes);
+router.use('/:schoolId/timetables', timetableRoutes);
 
+router.use('/:schoolId/class-timetables', classTimetableRoutes);
+
+router.use('/:schoolId/teacher-timetables', teacherTimetableRoutes);
+
+router.use('/:schoolId/subject-scheduling', subjectSchedulingRoutes);
+
+router.use('/:schoolId/examination-schedules', examinationScheduleRoutes);
+
+router.use('/:schoolId/holidays', schoolHolidayRoutes);
+router.use('/:schoolId/calendar-events', academicCalendarEventRoutes);
+
+router.use('/:schoolId/timetables', timetablePublicationRoutes);
 export default router;

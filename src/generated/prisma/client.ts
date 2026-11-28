@@ -446,3 +446,33 @@ export type GraduationRecord = Prisma.GraduationRecordModel
  * 
  */
 export type AcademicProgressionHistory = Prisma.AcademicProgressionHistoryModel
+/**
+ * Model SchoolTimetableConfiguration
+ * 
+ */
+export type SchoolTimetableConfiguration = Prisma.SchoolTimetableConfigurationModel
+/**
+ * Model TimetablePeriod
+ * 
+ */
+export type TimetablePeriod = Prisma.TimetablePeriodModel
+/**
+ * Model Timetable
+ * 
+ */
+export type Timetable = Prisma.TimetableModel
+/**
+ * Model TimetableEntry
+ * 
+ */
+export type TimetableEntry = Prisma.TimetableEntryModel
+/**
+ * Model SubjectSchedulingRequirement
+ * 
+ */
+export type SubjectSchedulingRequirement = Prisma.SubjectSchedulingRequirementModel
+/**
+ * Model SchoolHoliday
+ * 
+ */
+export type SchoolHoliday = Prisma.SchoolHolidayModel

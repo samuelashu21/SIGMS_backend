@@ -248,6 +248,10 @@ export type AcademicYearWhereInput = {
   graduationCandidates?: Prisma.GraduationCandidateListRelationFilter
   graduationRecords?: Prisma.GraduationRecordListRelationFilter
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryListRelationFilter
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationListRelationFilter
+  timetables?: Prisma.TimetableListRelationFilter
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementListRelationFilter
+  schoolHolidays?: Prisma.SchoolHolidayListRelationFilter
 }
 
 export type AcademicYearOrderByWithRelationInput = {
@@ -294,6 +298,10 @@ export type AcademicYearOrderByWithRelationInput = {
   graduationCandidates?: Prisma.GraduationCandidateOrderByRelationAggregateInput
   graduationRecords?: Prisma.GraduationRecordOrderByRelationAggregateInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryOrderByRelationAggregateInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationOrderByRelationAggregateInput
+  timetables?: Prisma.TimetableOrderByRelationAggregateInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementOrderByRelationAggregateInput
+  schoolHolidays?: Prisma.SchoolHolidayOrderByRelationAggregateInput
 }
 
 export type AcademicYearWhereUniqueInput = Prisma.AtLeast<{
@@ -345,6 +353,10 @@ export type AcademicYearWhereUniqueInput = Prisma.AtLeast<{
   graduationCandidates?: Prisma.GraduationCandidateListRelationFilter
   graduationRecords?: Prisma.GraduationRecordListRelationFilter
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryListRelationFilter
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationListRelationFilter
+  timetables?: Prisma.TimetableListRelationFilter
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementListRelationFilter
+  schoolHolidays?: Prisma.SchoolHolidayListRelationFilter
 }, "id" | "id_schoolId" | "schoolId_name">
 
 export type AcademicYearOrderByWithAggregationInput = {
@@ -420,6 +432,10 @@ export type AcademicYearCreateInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateInput = {
@@ -465,6 +481,10 @@ export type AcademicYearUncheckedCreateInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUpdateInput = {
@@ -510,6 +530,10 @@ export type AcademicYearUpdateInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateInput = {
@@ -555,6 +579,10 @@ export type AcademicYearUncheckedUpdateInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateManyInput = {
@@ -1161,6 +1189,62 @@ export type AcademicYearUpdateOneRequiredWithoutAcademicProgressionHistoryNested
   update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicYearUpdateToOneWithWhereWithoutAcademicProgressionHistoryInput, Prisma.AcademicYearUpdateWithoutAcademicProgressionHistoryInput>, Prisma.AcademicYearUncheckedUpdateWithoutAcademicProgressionHistoryInput>
 }
 
+export type AcademicYearCreateNestedOneWithoutTimetableConfigurationsInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetableConfigurationsInput, Prisma.AcademicYearUncheckedCreateWithoutTimetableConfigurationsInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutTimetableConfigurationsInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+}
+
+export type AcademicYearUpdateOneRequiredWithoutTimetableConfigurationsNestedInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetableConfigurationsInput, Prisma.AcademicYearUncheckedCreateWithoutTimetableConfigurationsInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutTimetableConfigurationsInput
+  upsert?: Prisma.AcademicYearUpsertWithoutTimetableConfigurationsInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicYearUpdateToOneWithWhereWithoutTimetableConfigurationsInput, Prisma.AcademicYearUpdateWithoutTimetableConfigurationsInput>, Prisma.AcademicYearUncheckedUpdateWithoutTimetableConfigurationsInput>
+}
+
+export type AcademicYearCreateNestedOneWithoutTimetablesInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetablesInput, Prisma.AcademicYearUncheckedCreateWithoutTimetablesInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutTimetablesInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+}
+
+export type AcademicYearUpdateOneRequiredWithoutTimetablesNestedInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetablesInput, Prisma.AcademicYearUncheckedCreateWithoutTimetablesInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutTimetablesInput
+  upsert?: Prisma.AcademicYearUpsertWithoutTimetablesInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicYearUpdateToOneWithWhereWithoutTimetablesInput, Prisma.AcademicYearUpdateWithoutTimetablesInput>, Prisma.AcademicYearUncheckedUpdateWithoutTimetablesInput>
+}
+
+export type AcademicYearCreateNestedOneWithoutSubjectSchedulingRequirementsInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUncheckedCreateWithoutSubjectSchedulingRequirementsInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutSubjectSchedulingRequirementsInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+}
+
+export type AcademicYearUpdateOneRequiredWithoutSubjectSchedulingRequirementsNestedInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUncheckedCreateWithoutSubjectSchedulingRequirementsInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutSubjectSchedulingRequirementsInput
+  upsert?: Prisma.AcademicYearUpsertWithoutSubjectSchedulingRequirementsInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicYearUpdateToOneWithWhereWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUpdateWithoutSubjectSchedulingRequirementsInput>, Prisma.AcademicYearUncheckedUpdateWithoutSubjectSchedulingRequirementsInput>
+}
+
+export type AcademicYearCreateNestedOneWithoutSchoolHolidaysInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutSchoolHolidaysInput, Prisma.AcademicYearUncheckedCreateWithoutSchoolHolidaysInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutSchoolHolidaysInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+}
+
+export type AcademicYearUpdateOneRequiredWithoutSchoolHolidaysNestedInput = {
+  create?: Prisma.XOR<Prisma.AcademicYearCreateWithoutSchoolHolidaysInput, Prisma.AcademicYearUncheckedCreateWithoutSchoolHolidaysInput>
+  connectOrCreate?: Prisma.AcademicYearCreateOrConnectWithoutSchoolHolidaysInput
+  upsert?: Prisma.AcademicYearUpsertWithoutSchoolHolidaysInput
+  connect?: Prisma.AcademicYearWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicYearUpdateToOneWithWhereWithoutSchoolHolidaysInput, Prisma.AcademicYearUpdateWithoutSchoolHolidaysInput>, Prisma.AcademicYearUncheckedUpdateWithoutSchoolHolidaysInput>
+}
+
 export type AcademicYearCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -1203,6 +1287,10 @@ export type AcademicYearCreateWithoutSchoolInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutSchoolInput = {
@@ -1247,6 +1335,10 @@ export type AcademicYearUncheckedCreateWithoutSchoolInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutSchoolInput = {
@@ -1332,6 +1424,10 @@ export type AcademicYearCreateWithoutSemestersInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutSemestersInput = {
@@ -1376,6 +1472,10 @@ export type AcademicYearUncheckedCreateWithoutSemestersInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutSemestersInput = {
@@ -1436,6 +1536,10 @@ export type AcademicYearUpdateWithoutSemestersInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutSemestersInput = {
@@ -1480,6 +1584,10 @@ export type AcademicYearUncheckedUpdateWithoutSemestersInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutSectionsInput = {
@@ -1524,6 +1632,10 @@ export type AcademicYearCreateWithoutSectionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutSectionsInput = {
@@ -1568,6 +1680,10 @@ export type AcademicYearUncheckedCreateWithoutSectionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutSectionsInput = {
@@ -1628,6 +1744,10 @@ export type AcademicYearUpdateWithoutSectionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutSectionsInput = {
@@ -1672,6 +1792,10 @@ export type AcademicYearUncheckedUpdateWithoutSectionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutCalendarEventsInput = {
@@ -1716,6 +1840,10 @@ export type AcademicYearCreateWithoutCalendarEventsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutCalendarEventsInput = {
@@ -1760,6 +1888,10 @@ export type AcademicYearUncheckedCreateWithoutCalendarEventsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutCalendarEventsInput = {
@@ -1820,6 +1952,10 @@ export type AcademicYearUpdateWithoutCalendarEventsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutCalendarEventsInput = {
@@ -1864,6 +2000,10 @@ export type AcademicYearUncheckedUpdateWithoutCalendarEventsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAdmissionApplicationsInput = {
@@ -1908,6 +2048,10 @@ export type AcademicYearCreateWithoutAdmissionApplicationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAdmissionApplicationsInput = {
@@ -1952,6 +2096,10 @@ export type AcademicYearUncheckedCreateWithoutAdmissionApplicationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAdmissionApplicationsInput = {
@@ -2012,6 +2160,10 @@ export type AcademicYearUpdateWithoutAdmissionApplicationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAdmissionApplicationsInput = {
@@ -2056,6 +2208,10 @@ export type AcademicYearUncheckedUpdateWithoutAdmissionApplicationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutStudentIdSequencesInput = {
@@ -2100,6 +2256,10 @@ export type AcademicYearCreateWithoutStudentIdSequencesInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutStudentIdSequencesInput = {
@@ -2144,6 +2304,10 @@ export type AcademicYearUncheckedCreateWithoutStudentIdSequencesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutStudentIdSequencesInput = {
@@ -2204,6 +2368,10 @@ export type AcademicYearUpdateWithoutStudentIdSequencesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutStudentIdSequencesInput = {
@@ -2248,6 +2416,10 @@ export type AcademicYearUncheckedUpdateWithoutStudentIdSequencesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutEnrollmentsInput = {
@@ -2292,6 +2464,10 @@ export type AcademicYearCreateWithoutEnrollmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutEnrollmentsInput = {
@@ -2336,6 +2512,10 @@ export type AcademicYearUncheckedCreateWithoutEnrollmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutEnrollmentsInput = {
@@ -2396,6 +2576,10 @@ export type AcademicYearUpdateWithoutEnrollmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutEnrollmentsInput = {
@@ -2440,6 +2624,10 @@ export type AcademicYearUncheckedUpdateWithoutEnrollmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutTeacherAssignmentsInput = {
@@ -2484,6 +2672,10 @@ export type AcademicYearCreateWithoutTeacherAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutTeacherAssignmentsInput = {
@@ -2528,6 +2720,10 @@ export type AcademicYearUncheckedCreateWithoutTeacherAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutTeacherAssignmentsInput = {
@@ -2588,6 +2784,10 @@ export type AcademicYearUpdateWithoutTeacherAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutTeacherAssignmentsInput = {
@@ -2632,6 +2832,10 @@ export type AcademicYearUncheckedUpdateWithoutTeacherAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutTeacherClassAssignmentsInput = {
@@ -2676,6 +2880,10 @@ export type AcademicYearCreateWithoutTeacherClassAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutTeacherClassAssignmentsInput = {
@@ -2720,6 +2928,10 @@ export type AcademicYearUncheckedCreateWithoutTeacherClassAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutTeacherClassAssignmentsInput = {
@@ -2780,6 +2992,10 @@ export type AcademicYearUpdateWithoutTeacherClassAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutTeacherClassAssignmentsInput = {
@@ -2824,6 +3040,10 @@ export type AcademicYearUncheckedUpdateWithoutTeacherClassAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutHomeroomAssignmentsInput = {
@@ -2868,6 +3088,10 @@ export type AcademicYearCreateWithoutHomeroomAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutHomeroomAssignmentsInput = {
@@ -2912,6 +3136,10 @@ export type AcademicYearUncheckedCreateWithoutHomeroomAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutHomeroomAssignmentsInput = {
@@ -2972,6 +3200,10 @@ export type AcademicYearUpdateWithoutHomeroomAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutHomeroomAssignmentsInput = {
@@ -3016,6 +3248,10 @@ export type AcademicYearUncheckedUpdateWithoutHomeroomAssignmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutTeacherWorkloadRecordsInput = {
@@ -3060,6 +3296,10 @@ export type AcademicYearCreateWithoutTeacherWorkloadRecordsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutTeacherWorkloadRecordsInput = {
@@ -3104,6 +3344,10 @@ export type AcademicYearUncheckedCreateWithoutTeacherWorkloadRecordsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutTeacherWorkloadRecordsInput = {
@@ -3164,6 +3408,10 @@ export type AcademicYearUpdateWithoutTeacherWorkloadRecordsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutTeacherWorkloadRecordsInput = {
@@ -3208,6 +3456,10 @@ export type AcademicYearUncheckedUpdateWithoutTeacherWorkloadRecordsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutClassAttendanceInput = {
@@ -3252,6 +3504,10 @@ export type AcademicYearCreateWithoutClassAttendanceInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutClassAttendanceInput = {
@@ -3296,6 +3552,10 @@ export type AcademicYearUncheckedCreateWithoutClassAttendanceInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutClassAttendanceInput = {
@@ -3356,6 +3616,10 @@ export type AcademicYearUpdateWithoutClassAttendanceInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutClassAttendanceInput = {
@@ -3400,6 +3664,10 @@ export type AcademicYearUncheckedUpdateWithoutClassAttendanceInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutExaminationsInput = {
@@ -3444,6 +3712,10 @@ export type AcademicYearCreateWithoutExaminationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutExaminationsInput = {
@@ -3488,6 +3760,10 @@ export type AcademicYearUncheckedCreateWithoutExaminationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutExaminationsInput = {
@@ -3548,6 +3824,10 @@ export type AcademicYearUpdateWithoutExaminationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutExaminationsInput = {
@@ -3592,6 +3872,10 @@ export type AcademicYearUncheckedUpdateWithoutExaminationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicGradingConfigurationsInput = {
@@ -3636,6 +3920,10 @@ export type AcademicYearCreateWithoutAcademicGradingConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicGradingConfigurationsInput = {
@@ -3680,6 +3968,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicGradingConfigurationsInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicGradingConfigurationsInput = {
@@ -3740,6 +4032,10 @@ export type AcademicYearUpdateWithoutAcademicGradingConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicGradingConfigurationsInput = {
@@ -3784,6 +4080,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicGradingConfigurationsInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutSubjectGradeResultsInput = {
@@ -3828,6 +4128,10 @@ export type AcademicYearCreateWithoutSubjectGradeResultsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutSubjectGradeResultsInput = {
@@ -3872,6 +4176,10 @@ export type AcademicYearUncheckedCreateWithoutSubjectGradeResultsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutSubjectGradeResultsInput = {
@@ -3932,6 +4240,10 @@ export type AcademicYearUpdateWithoutSubjectGradeResultsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutSubjectGradeResultsInput = {
@@ -3976,6 +4288,10 @@ export type AcademicYearUncheckedUpdateWithoutSubjectGradeResultsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutSemesterAcademicAveragesInput = {
@@ -4020,6 +4336,10 @@ export type AcademicYearCreateWithoutSemesterAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutSemesterAcademicAveragesInput = {
@@ -4064,6 +4384,10 @@ export type AcademicYearUncheckedCreateWithoutSemesterAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutSemesterAcademicAveragesInput = {
@@ -4124,6 +4448,10 @@ export type AcademicYearUpdateWithoutSemesterAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutSemesterAcademicAveragesInput = {
@@ -4168,6 +4496,10 @@ export type AcademicYearUncheckedUpdateWithoutSemesterAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAnnualAcademicAveragesInput = {
@@ -4212,6 +4544,10 @@ export type AcademicYearCreateWithoutAnnualAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAnnualAcademicAveragesInput = {
@@ -4256,6 +4592,10 @@ export type AcademicYearUncheckedCreateWithoutAnnualAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAnnualAcademicAveragesInput = {
@@ -4316,6 +4656,10 @@ export type AcademicYearUpdateWithoutAnnualAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAnnualAcademicAveragesInput = {
@@ -4360,6 +4704,10 @@ export type AcademicYearUncheckedUpdateWithoutAnnualAcademicAveragesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicSubjectWeightsInput = {
@@ -4404,6 +4752,10 @@ export type AcademicYearCreateWithoutAcademicSubjectWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicSubjectWeightsInput = {
@@ -4448,6 +4800,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicSubjectWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicSubjectWeightsInput = {
@@ -4508,6 +4864,10 @@ export type AcademicYearUpdateWithoutAcademicSubjectWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicSubjectWeightsInput = {
@@ -4552,6 +4912,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicSubjectWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicSemesterWeightsInput = {
@@ -4596,6 +4960,10 @@ export type AcademicYearCreateWithoutAcademicSemesterWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicSemesterWeightsInput = {
@@ -4640,6 +5008,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicSemesterWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicSemesterWeightsInput = {
@@ -4700,6 +5072,10 @@ export type AcademicYearUpdateWithoutAcademicSemesterWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicSemesterWeightsInput = {
@@ -4744,6 +5120,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicSemesterWeightsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicPerformanceSummariesInput = {
@@ -4788,6 +5168,10 @@ export type AcademicYearCreateWithoutAcademicPerformanceSummariesInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicPerformanceSummariesInput = {
@@ -4832,6 +5216,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicPerformanceSummariesInput 
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicPerformanceSummariesInput = {
@@ -4892,6 +5280,10 @@ export type AcademicYearUpdateWithoutAcademicPerformanceSummariesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicPerformanceSummariesInput = {
@@ -4936,6 +5328,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicPerformanceSummariesInput 
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicRankingConfigurationsInput = {
@@ -4980,6 +5376,10 @@ export type AcademicYearCreateWithoutAcademicRankingConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicRankingConfigurationsInput = {
@@ -5024,6 +5424,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicRankingConfigurationsInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicRankingConfigurationsInput = {
@@ -5084,6 +5488,10 @@ export type AcademicYearUpdateWithoutAcademicRankingConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicRankingConfigurationsInput = {
@@ -5128,6 +5536,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicRankingConfigurationsInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicStudentRankingsInput = {
@@ -5172,6 +5584,10 @@ export type AcademicYearCreateWithoutAcademicStudentRankingsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicStudentRankingsInput = {
@@ -5216,6 +5632,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicStudentRankingsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicStudentRankingsInput = {
@@ -5276,6 +5696,10 @@ export type AcademicYearUpdateWithoutAcademicStudentRankingsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicStudentRankingsInput = {
@@ -5320,6 +5744,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicStudentRankingsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicPerformanceHistoryInput = {
@@ -5364,6 +5792,10 @@ export type AcademicYearCreateWithoutAcademicPerformanceHistoryInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicPerformanceHistoryInput = {
@@ -5408,6 +5840,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicPerformanceHistoryInput = 
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicPerformanceHistoryInput = {
@@ -5468,6 +5904,10 @@ export type AcademicYearUpdateWithoutAcademicPerformanceHistoryInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicPerformanceHistoryInput = {
@@ -5512,6 +5952,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicPerformanceHistoryInput = 
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutReportCardsInput = {
@@ -5556,6 +6000,10 @@ export type AcademicYearCreateWithoutReportCardsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutReportCardsInput = {
@@ -5600,6 +6048,10 @@ export type AcademicYearUncheckedCreateWithoutReportCardsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutReportCardsInput = {
@@ -5660,6 +6112,10 @@ export type AcademicYearUpdateWithoutReportCardsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutReportCardsInput = {
@@ -5704,6 +6160,10 @@ export type AcademicYearUncheckedUpdateWithoutReportCardsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicTranscriptEntriesInput = {
@@ -5748,6 +6208,10 @@ export type AcademicYearCreateWithoutAcademicTranscriptEntriesInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicTranscriptEntriesInput = {
@@ -5792,6 +6256,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicTranscriptEntriesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicTranscriptEntriesInput = {
@@ -5852,6 +6320,10 @@ export type AcademicYearUpdateWithoutAcademicTranscriptEntriesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicTranscriptEntriesInput = {
@@ -5896,6 +6368,10 @@ export type AcademicYearUncheckedUpdateWithoutAcademicTranscriptEntriesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAttendanceReportsInput = {
@@ -5940,6 +6416,10 @@ export type AcademicYearCreateWithoutAttendanceReportsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAttendanceReportsInput = {
@@ -5984,6 +6464,10 @@ export type AcademicYearUncheckedCreateWithoutAttendanceReportsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAttendanceReportsInput = {
@@ -6044,6 +6528,10 @@ export type AcademicYearUpdateWithoutAttendanceReportsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAttendanceReportsInput = {
@@ -6088,6 +6576,10 @@ export type AcademicYearUncheckedUpdateWithoutAttendanceReportsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutPromotionConfigurationsInput = {
@@ -6132,6 +6624,10 @@ export type AcademicYearCreateWithoutPromotionConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutPromotionConfigurationsInput = {
@@ -6176,6 +6672,10 @@ export type AcademicYearUncheckedCreateWithoutPromotionConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutPromotionConfigurationsInput = {
@@ -6236,6 +6736,10 @@ export type AcademicYearUpdateWithoutPromotionConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutPromotionConfigurationsInput = {
@@ -6280,6 +6784,10 @@ export type AcademicYearUncheckedUpdateWithoutPromotionConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutPromotionEligibilityAssessmentsInput = {
@@ -6324,6 +6832,10 @@ export type AcademicYearCreateWithoutPromotionEligibilityAssessmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutPromotionEligibilityAssessmentsInput = {
@@ -6368,6 +6880,10 @@ export type AcademicYearUncheckedCreateWithoutPromotionEligibilityAssessmentsInp
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutPromotionEligibilityAssessmentsInput = {
@@ -6428,6 +6944,10 @@ export type AcademicYearUpdateWithoutPromotionEligibilityAssessmentsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutPromotionEligibilityAssessmentsInput = {
@@ -6472,6 +6992,10 @@ export type AcademicYearUncheckedUpdateWithoutPromotionEligibilityAssessmentsInp
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutPromotionDecisionsInput = {
@@ -6516,6 +7040,10 @@ export type AcademicYearCreateWithoutPromotionDecisionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutPromotionDecisionsInput = {
@@ -6560,6 +7088,10 @@ export type AcademicYearUncheckedCreateWithoutPromotionDecisionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutPromotionDecisionsInput = {
@@ -6620,6 +7152,10 @@ export type AcademicYearUpdateWithoutPromotionDecisionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutPromotionDecisionsInput = {
@@ -6664,6 +7200,10 @@ export type AcademicYearUncheckedUpdateWithoutPromotionDecisionsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutGradeProgressionRulesInput = {
@@ -6708,6 +7248,10 @@ export type AcademicYearCreateWithoutGradeProgressionRulesInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutGradeProgressionRulesInput = {
@@ -6752,6 +7296,10 @@ export type AcademicYearUncheckedCreateWithoutGradeProgressionRulesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutGradeProgressionRulesInput = {
@@ -6812,6 +7360,10 @@ export type AcademicYearUpdateWithoutGradeProgressionRulesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutGradeProgressionRulesInput = {
@@ -6856,6 +7408,10 @@ export type AcademicYearUncheckedUpdateWithoutGradeProgressionRulesInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutGraduationConfigurationsInput = {
@@ -6900,6 +7456,10 @@ export type AcademicYearCreateWithoutGraduationConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutGraduationConfigurationsInput = {
@@ -6944,6 +7504,10 @@ export type AcademicYearUncheckedCreateWithoutGraduationConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutGraduationConfigurationsInput = {
@@ -7004,6 +7568,10 @@ export type AcademicYearUpdateWithoutGraduationConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutGraduationConfigurationsInput = {
@@ -7048,6 +7616,10 @@ export type AcademicYearUncheckedUpdateWithoutGraduationConfigurationsInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutGraduationCandidatesInput = {
@@ -7092,6 +7664,10 @@ export type AcademicYearCreateWithoutGraduationCandidatesInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutGraduationCandidatesInput = {
@@ -7136,6 +7712,10 @@ export type AcademicYearUncheckedCreateWithoutGraduationCandidatesInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutGraduationCandidatesInput = {
@@ -7196,6 +7776,10 @@ export type AcademicYearUpdateWithoutGraduationCandidatesInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutGraduationCandidatesInput = {
@@ -7240,6 +7824,10 @@ export type AcademicYearUncheckedUpdateWithoutGraduationCandidatesInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutGraduationRecordsInput = {
@@ -7284,6 +7872,10 @@ export type AcademicYearCreateWithoutGraduationRecordsInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutGraduationRecordsInput = {
@@ -7328,6 +7920,10 @@ export type AcademicYearUncheckedCreateWithoutGraduationRecordsInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutGraduationRecordsInput = {
@@ -7388,6 +7984,10 @@ export type AcademicYearUpdateWithoutGraduationRecordsInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutGraduationRecordsInput = {
@@ -7432,6 +8032,10 @@ export type AcademicYearUncheckedUpdateWithoutGraduationRecordsInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateWithoutAcademicProgressionHistoryInput = {
@@ -7476,6 +8080,10 @@ export type AcademicYearCreateWithoutAcademicProgressionHistoryInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
   graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearUncheckedCreateWithoutAcademicProgressionHistoryInput = {
@@ -7520,6 +8128,10 @@ export type AcademicYearUncheckedCreateWithoutAcademicProgressionHistoryInput = 
   graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
   graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
 }
 
 export type AcademicYearCreateOrConnectWithoutAcademicProgressionHistoryInput = {
@@ -7580,6 +8192,10 @@ export type AcademicYearUpdateWithoutAcademicProgressionHistoryInput = {
   graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutAcademicProgressionHistoryInput = {
@@ -7624,6 +8240,842 @@ export type AcademicYearUncheckedUpdateWithoutAcademicProgressionHistoryInput = 
   graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearCreateWithoutTimetableConfigurationsInput = {
+  id?: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAcademicYearsInput
+  semesters?: Prisma.SemesterCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearUncheckedCreateWithoutTimetableConfigurationsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  semesters?: Prisma.SemesterUncheckedCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearCreateOrConnectWithoutTimetableConfigurationsInput = {
+  where: Prisma.AcademicYearWhereUniqueInput
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetableConfigurationsInput, Prisma.AcademicYearUncheckedCreateWithoutTimetableConfigurationsInput>
+}
+
+export type AcademicYearUpsertWithoutTimetableConfigurationsInput = {
+  update: Prisma.XOR<Prisma.AcademicYearUpdateWithoutTimetableConfigurationsInput, Prisma.AcademicYearUncheckedUpdateWithoutTimetableConfigurationsInput>
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetableConfigurationsInput, Prisma.AcademicYearUncheckedCreateWithoutTimetableConfigurationsInput>
+  where?: Prisma.AcademicYearWhereInput
+}
+
+export type AcademicYearUpdateToOneWithWhereWithoutTimetableConfigurationsInput = {
+  where?: Prisma.AcademicYearWhereInput
+  data: Prisma.XOR<Prisma.AcademicYearUpdateWithoutTimetableConfigurationsInput, Prisma.AcademicYearUncheckedUpdateWithoutTimetableConfigurationsInput>
+}
+
+export type AcademicYearUpdateWithoutTimetableConfigurationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAcademicYearsNestedInput
+  semesters?: Prisma.SemesterUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearUncheckedUpdateWithoutTimetableConfigurationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  semesters?: Prisma.SemesterUncheckedUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearCreateWithoutTimetablesInput = {
+  id?: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAcademicYearsInput
+  semesters?: Prisma.SemesterCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearUncheckedCreateWithoutTimetablesInput = {
+  id?: string
+  schoolId: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  semesters?: Prisma.SemesterUncheckedCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearCreateOrConnectWithoutTimetablesInput = {
+  where: Prisma.AcademicYearWhereUniqueInput
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetablesInput, Prisma.AcademicYearUncheckedCreateWithoutTimetablesInput>
+}
+
+export type AcademicYearUpsertWithoutTimetablesInput = {
+  update: Prisma.XOR<Prisma.AcademicYearUpdateWithoutTimetablesInput, Prisma.AcademicYearUncheckedUpdateWithoutTimetablesInput>
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutTimetablesInput, Prisma.AcademicYearUncheckedCreateWithoutTimetablesInput>
+  where?: Prisma.AcademicYearWhereInput
+}
+
+export type AcademicYearUpdateToOneWithWhereWithoutTimetablesInput = {
+  where?: Prisma.AcademicYearWhereInput
+  data: Prisma.XOR<Prisma.AcademicYearUpdateWithoutTimetablesInput, Prisma.AcademicYearUncheckedUpdateWithoutTimetablesInput>
+}
+
+export type AcademicYearUpdateWithoutTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAcademicYearsNestedInput
+  semesters?: Prisma.SemesterUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearUncheckedUpdateWithoutTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  semesters?: Prisma.SemesterUncheckedUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearCreateWithoutSubjectSchedulingRequirementsInput = {
+  id?: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAcademicYearsInput
+  semesters?: Prisma.SemesterCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearUncheckedCreateWithoutSubjectSchedulingRequirementsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  semesters?: Prisma.SemesterUncheckedCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearCreateOrConnectWithoutSubjectSchedulingRequirementsInput = {
+  where: Prisma.AcademicYearWhereUniqueInput
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUncheckedCreateWithoutSubjectSchedulingRequirementsInput>
+}
+
+export type AcademicYearUpsertWithoutSubjectSchedulingRequirementsInput = {
+  update: Prisma.XOR<Prisma.AcademicYearUpdateWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUncheckedUpdateWithoutSubjectSchedulingRequirementsInput>
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUncheckedCreateWithoutSubjectSchedulingRequirementsInput>
+  where?: Prisma.AcademicYearWhereInput
+}
+
+export type AcademicYearUpdateToOneWithWhereWithoutSubjectSchedulingRequirementsInput = {
+  where?: Prisma.AcademicYearWhereInput
+  data: Prisma.XOR<Prisma.AcademicYearUpdateWithoutSubjectSchedulingRequirementsInput, Prisma.AcademicYearUncheckedUpdateWithoutSubjectSchedulingRequirementsInput>
+}
+
+export type AcademicYearUpdateWithoutSubjectSchedulingRequirementsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAcademicYearsNestedInput
+  semesters?: Prisma.SemesterUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearUncheckedUpdateWithoutSubjectSchedulingRequirementsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  semesters?: Prisma.SemesterUncheckedUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearCreateWithoutSchoolHolidaysInput = {
+  id?: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutAcademicYearsInput
+  semesters?: Prisma.SemesterCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearUncheckedCreateWithoutSchoolHolidaysInput = {
+  id?: string
+  schoolId: string
+  name: string
+  startDate: Date | string
+  endDate: Date | string
+  status?: $Enums.AcademicYearStatus
+  isCurrent?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  semesters?: Prisma.SemesterUncheckedCreateNestedManyWithoutAcademicYearInput
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutAcademicYearInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedCreateNestedManyWithoutAcademicYearInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutAcademicYearInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedCreateNestedManyWithoutAcademicYearInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutAcademicYearInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutAcademicYearInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutAcademicYearInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAcademicYearInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutNextAcademicYearInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAcademicYearInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutAcademicYearInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutAcademicYearInput
+  timetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutAcademicYearInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedCreateNestedManyWithoutAcademicYearInput
+}
+
+export type AcademicYearCreateOrConnectWithoutSchoolHolidaysInput = {
+  where: Prisma.AcademicYearWhereUniqueInput
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutSchoolHolidaysInput, Prisma.AcademicYearUncheckedCreateWithoutSchoolHolidaysInput>
+}
+
+export type AcademicYearUpsertWithoutSchoolHolidaysInput = {
+  update: Prisma.XOR<Prisma.AcademicYearUpdateWithoutSchoolHolidaysInput, Prisma.AcademicYearUncheckedUpdateWithoutSchoolHolidaysInput>
+  create: Prisma.XOR<Prisma.AcademicYearCreateWithoutSchoolHolidaysInput, Prisma.AcademicYearUncheckedCreateWithoutSchoolHolidaysInput>
+  where?: Prisma.AcademicYearWhereInput
+}
+
+export type AcademicYearUpdateToOneWithWhereWithoutSchoolHolidaysInput = {
+  where?: Prisma.AcademicYearWhereInput
+  data: Prisma.XOR<Prisma.AcademicYearUpdateWithoutSchoolHolidaysInput, Prisma.AcademicYearUncheckedUpdateWithoutSchoolHolidaysInput>
+}
+
+export type AcademicYearUpdateWithoutSchoolHolidaysInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAcademicYearsNestedInput
+  semesters?: Prisma.SemesterUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+}
+
+export type AcademicYearUncheckedUpdateWithoutSchoolHolidaysInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumAcademicYearStatusFieldUpdateOperationsInput | $Enums.AcademicYearStatus
+  isCurrent?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  semesters?: Prisma.SemesterUncheckedUpdateManyWithoutAcademicYearNestedInput
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutAcademicYearNestedInput
+  calendarEvents?: Prisma.AcademicCalendarEventUncheckedUpdateManyWithoutAcademicYearNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  studentIdSequences?: Prisma.StudentIdSequenceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  enrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherClassAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  teacherWorkloadRecords?: Prisma.TeacherWorkloadRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutAcademicYearNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicGradingConfigurations?: Prisma.AcademicGradingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutAcademicYearNestedInput
+  semesterAcademicAverages?: Prisma.SemesterAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  annualAcademicAverages?: Prisma.AnnualAcademicAverageUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicSemesterWeights?: Prisma.AcademicSemesterWeightUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceSummaries?: Prisma.AcademicPerformanceSummaryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicPerformanceHistory?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAcademicYearNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutNextAcademicYearNestedInput
+  gradeProgressionRules?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
+  academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearCreateManySchoolInput = {
@@ -7679,6 +9131,10 @@ export type AcademicYearUpdateWithoutSchoolInput = {
   graduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateWithoutSchoolInput = {
@@ -7723,6 +9179,10 @@ export type AcademicYearUncheckedUpdateWithoutSchoolInput = {
   graduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAcademicYearNestedInput
   graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutAcademicYearNestedInput
   academicProgressionHistory?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutAcademicYearNestedInput
+  timetables?: Prisma.TimetableUncheckedUpdateManyWithoutAcademicYearNestedInput
+  subjectSchedulingRequirements?: Prisma.SubjectSchedulingRequirementUncheckedUpdateManyWithoutAcademicYearNestedInput
+  schoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutAcademicYearNestedInput
 }
 
 export type AcademicYearUncheckedUpdateManyWithoutSchoolInput = {
@@ -7775,6 +9235,10 @@ export type AcademicYearCountOutputType = {
   graduationCandidates: number
   graduationRecords: number
   academicProgressionHistory: number
+  timetableConfigurations: number
+  timetables: number
+  subjectSchedulingRequirements: number
+  schoolHolidays: number
 }
 
 export type AcademicYearCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -7811,6 +9275,10 @@ export type AcademicYearCountOutputTypeSelect<ExtArgs extends runtime.Types.Exte
   graduationCandidates?: boolean | AcademicYearCountOutputTypeCountGraduationCandidatesArgs
   graduationRecords?: boolean | AcademicYearCountOutputTypeCountGraduationRecordsArgs
   academicProgressionHistory?: boolean | AcademicYearCountOutputTypeCountAcademicProgressionHistoryArgs
+  timetableConfigurations?: boolean | AcademicYearCountOutputTypeCountTimetableConfigurationsArgs
+  timetables?: boolean | AcademicYearCountOutputTypeCountTimetablesArgs
+  subjectSchedulingRequirements?: boolean | AcademicYearCountOutputTypeCountSubjectSchedulingRequirementsArgs
+  schoolHolidays?: boolean | AcademicYearCountOutputTypeCountSchoolHolidaysArgs
 }
 
 /**
@@ -8054,6 +9522,34 @@ export type AcademicYearCountOutputTypeCountAcademicProgressionHistoryArgs<ExtAr
   where?: Prisma.AcademicProgressionHistoryWhereInput
 }
 
+/**
+ * AcademicYearCountOutputType without action
+ */
+export type AcademicYearCountOutputTypeCountTimetableConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SchoolTimetableConfigurationWhereInput
+}
+
+/**
+ * AcademicYearCountOutputType without action
+ */
+export type AcademicYearCountOutputTypeCountTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TimetableWhereInput
+}
+
+/**
+ * AcademicYearCountOutputType without action
+ */
+export type AcademicYearCountOutputTypeCountSubjectSchedulingRequirementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SubjectSchedulingRequirementWhereInput
+}
+
+/**
+ * AcademicYearCountOutputType without action
+ */
+export type AcademicYearCountOutputTypeCountSchoolHolidaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SchoolHolidayWhereInput
+}
+
 
 export type AcademicYearSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -8099,6 +9595,10 @@ export type AcademicYearSelect<ExtArgs extends runtime.Types.Extensions.Internal
   graduationCandidates?: boolean | Prisma.AcademicYear$graduationCandidatesArgs<ExtArgs>
   graduationRecords?: boolean | Prisma.AcademicYear$graduationRecordsArgs<ExtArgs>
   academicProgressionHistory?: boolean | Prisma.AcademicYear$academicProgressionHistoryArgs<ExtArgs>
+  timetableConfigurations?: boolean | Prisma.AcademicYear$timetableConfigurationsArgs<ExtArgs>
+  timetables?: boolean | Prisma.AcademicYear$timetablesArgs<ExtArgs>
+  subjectSchedulingRequirements?: boolean | Prisma.AcademicYear$subjectSchedulingRequirementsArgs<ExtArgs>
+  schoolHolidays?: boolean | Prisma.AcademicYear$schoolHolidaysArgs<ExtArgs>
   _count?: boolean | Prisma.AcademicYearCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["academicYear"]>
 
@@ -8176,6 +9676,10 @@ export type AcademicYearInclude<ExtArgs extends runtime.Types.Extensions.Interna
   graduationCandidates?: boolean | Prisma.AcademicYear$graduationCandidatesArgs<ExtArgs>
   graduationRecords?: boolean | Prisma.AcademicYear$graduationRecordsArgs<ExtArgs>
   academicProgressionHistory?: boolean | Prisma.AcademicYear$academicProgressionHistoryArgs<ExtArgs>
+  timetableConfigurations?: boolean | Prisma.AcademicYear$timetableConfigurationsArgs<ExtArgs>
+  timetables?: boolean | Prisma.AcademicYear$timetablesArgs<ExtArgs>
+  subjectSchedulingRequirements?: boolean | Prisma.AcademicYear$subjectSchedulingRequirementsArgs<ExtArgs>
+  schoolHolidays?: boolean | Prisma.AcademicYear$schoolHolidaysArgs<ExtArgs>
   _count?: boolean | Prisma.AcademicYearCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AcademicYearIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -8222,6 +9726,10 @@ export type $AcademicYearPayload<ExtArgs extends runtime.Types.Extensions.Intern
     graduationCandidates: Prisma.$GraduationCandidatePayload<ExtArgs>[]
     graduationRecords: Prisma.$GraduationRecordPayload<ExtArgs>[]
     academicProgressionHistory: Prisma.$AcademicProgressionHistoryPayload<ExtArgs>[]
+    timetableConfigurations: Prisma.$SchoolTimetableConfigurationPayload<ExtArgs>[]
+    timetables: Prisma.$TimetablePayload<ExtArgs>[]
+    subjectSchedulingRequirements: Prisma.$SubjectSchedulingRequirementPayload<ExtArgs>[]
+    schoolHolidays: Prisma.$SchoolHolidayPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -8661,6 +10169,10 @@ export interface Prisma__AcademicYearClient<T, Null = never, ExtArgs extends run
   graduationCandidates<T extends Prisma.AcademicYear$graduationCandidatesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$graduationCandidatesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GraduationCandidatePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   graduationRecords<T extends Prisma.AcademicYear$graduationRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$graduationRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GraduationRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   academicProgressionHistory<T extends Prisma.AcademicYear$academicProgressionHistoryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$academicProgressionHistoryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicProgressionHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  timetableConfigurations<T extends Prisma.AcademicYear$timetableConfigurationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$timetableConfigurationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SchoolTimetableConfigurationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  timetables<T extends Prisma.AcademicYear$timetablesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$timetablesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TimetablePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  subjectSchedulingRequirements<T extends Prisma.AcademicYear$subjectSchedulingRequirementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$subjectSchedulingRequirementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubjectSchedulingRequirementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  schoolHolidays<T extends Prisma.AcademicYear$schoolHolidaysArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYear$schoolHolidaysArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SchoolHolidayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9889,6 +11401,102 @@ export type AcademicYear$academicProgressionHistoryArgs<ExtArgs extends runtime.
   take?: number
   skip?: number
   distinct?: Prisma.AcademicProgressionHistoryScalarFieldEnum | Prisma.AcademicProgressionHistoryScalarFieldEnum[]
+}
+
+/**
+ * AcademicYear.timetableConfigurations
+ */
+export type AcademicYear$timetableConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SchoolTimetableConfiguration
+   */
+  select?: Prisma.SchoolTimetableConfigurationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SchoolTimetableConfiguration
+   */
+  omit?: Prisma.SchoolTimetableConfigurationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SchoolTimetableConfigurationInclude<ExtArgs> | null
+  where?: Prisma.SchoolTimetableConfigurationWhereInput
+  orderBy?: Prisma.SchoolTimetableConfigurationOrderByWithRelationInput | Prisma.SchoolTimetableConfigurationOrderByWithRelationInput[]
+  cursor?: Prisma.SchoolTimetableConfigurationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SchoolTimetableConfigurationScalarFieldEnum | Prisma.SchoolTimetableConfigurationScalarFieldEnum[]
+}
+
+/**
+ * AcademicYear.timetables
+ */
+export type AcademicYear$timetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Timetable
+   */
+  select?: Prisma.TimetableSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Timetable
+   */
+  omit?: Prisma.TimetableOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimetableInclude<ExtArgs> | null
+  where?: Prisma.TimetableWhereInput
+  orderBy?: Prisma.TimetableOrderByWithRelationInput | Prisma.TimetableOrderByWithRelationInput[]
+  cursor?: Prisma.TimetableWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TimetableScalarFieldEnum | Prisma.TimetableScalarFieldEnum[]
+}
+
+/**
+ * AcademicYear.subjectSchedulingRequirements
+ */
+export type AcademicYear$subjectSchedulingRequirementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SubjectSchedulingRequirement
+   */
+  select?: Prisma.SubjectSchedulingRequirementSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SubjectSchedulingRequirement
+   */
+  omit?: Prisma.SubjectSchedulingRequirementOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SubjectSchedulingRequirementInclude<ExtArgs> | null
+  where?: Prisma.SubjectSchedulingRequirementWhereInput
+  orderBy?: Prisma.SubjectSchedulingRequirementOrderByWithRelationInput | Prisma.SubjectSchedulingRequirementOrderByWithRelationInput[]
+  cursor?: Prisma.SubjectSchedulingRequirementWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SubjectSchedulingRequirementScalarFieldEnum | Prisma.SubjectSchedulingRequirementScalarFieldEnum[]
+}
+
+/**
+ * AcademicYear.schoolHolidays
+ */
+export type AcademicYear$schoolHolidaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SchoolHoliday
+   */
+  select?: Prisma.SchoolHolidaySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SchoolHoliday
+   */
+  omit?: Prisma.SchoolHolidayOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SchoolHolidayInclude<ExtArgs> | null
+  where?: Prisma.SchoolHolidayWhereInput
+  orderBy?: Prisma.SchoolHolidayOrderByWithRelationInput | Prisma.SchoolHolidayOrderByWithRelationInput[]
+  cursor?: Prisma.SchoolHolidayWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SchoolHolidayScalarFieldEnum | Prisma.SchoolHolidayScalarFieldEnum[]
 }
 
 /**

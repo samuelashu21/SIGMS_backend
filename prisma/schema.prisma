@@ -108,6 +108,13 @@ model School {
 
   academicProgressionHistory AcademicProgressionHistory[]
 
+  timetableConfigurations SchoolTimetableConfiguration[]
+  timetables Timetable[]
+  timetableEntries TimetableEntry[]
+
+  subjectSchedulingRequirements SubjectSchedulingRequirement[]
+  schoolHolidays SchoolHoliday[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -289,6 +296,15 @@ model User {
 
   academicProgressionActions AcademicProgressionHistory[] @relation("AcademicProgressionActor")
 
+  createdTimetableConfigurations SchoolTimetableConfiguration[] @relation("TimetableConfigurationCreator")
+  createdTimetables Timetable[] @relation("TimetableCreator")
+  publishedTimetables Timetable[] @relation("TimetablePublisher")
+
+  createdSchoolHolidays SchoolHoliday[] @relation("SchoolHolidayCreator")
+
+  submittedTimetables Timetable[] @relation("TimetableSubmitter")
+  approvedTimetables Timetable[] @relation("TimetableApprover")
+ 
   createdPromotionConfigurations PromotionConfiguration[] @relation("PromotionConfigurationCreator")
   updatedPromotionConfigurations PromotionConfiguration[] @relation("PromotionConfigurationUpdater")
 
@@ -482,6 +498,12 @@ model AcademicYear {
 
   academicProgressionHistory AcademicProgressionHistory[]
 
+  timetableConfigurations SchoolTimetableConfiguration[]
+  timetables Timetable[]
+
+  subjectSchedulingRequirements SubjectSchedulingRequirement[]
+  schoolHolidays SchoolHoliday[]
+
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
   @@unique([schoolId, name], map: "academic_years_school_name_key")
@@ -593,6 +615,8 @@ model Grade {
   progressionHistoryAsPrevious AcademicProgressionHistory[] @relation("ProgressionPreviousGrade")
   progressionHistoryAsNew AcademicProgressionHistory[] @relation("ProgressionNewGrade")
 
+  subjectSchedulingRequirements SubjectSchedulingRequirement[]
+
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
   @@unique([id, schoolId], map: "grades_id_school_key")
@@ -641,6 +665,8 @@ model Section {
   progressionHistoryAsPrevious AcademicProgressionHistory[] @relation("ProgressionPreviousSection")
   progressionHistoryAsNew AcademicProgressionHistory[] @relation("ProgressionNewSection")
 
+  timetables Timetable[]
+
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
   @@index([schoolId, gradeId], map: "sections_school_grade_idx")
@@ -679,6 +705,10 @@ model Subject {
   academicTranscriptEntries AcademicTranscriptEntry[]
 
   examinationReports ExaminationReport[]
+
+  timetableEntries TimetableEntry[]
+
+  subjectSchedulingRequirements SubjectSchedulingRequirement[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -1321,6 +1351,8 @@ model TeacherProfile {
   classAssignments TeacherClassAssignment[]
   homeroomAssignments HomeroomTeacherAssignment[]
   workloadRecords TeacherWorkloadRecord[]
+
+  timetableEntries TimetableEntry[]
 
   @@unique([schoolId, userId], map: "teacher_profiles_school_user_key")
   @@unique([id, schoolId], map: "teacher_profiles_id_school_key")
@@ -3600,4 +3632,285 @@ model AcademicProgressionHistory {
   @@index([schoolId, academicYearId, action])
   @@index([schoolId, action, performedAt])
   @@map("academic_progression_history")
+}
+
+
+
+
+enum TimetableDay {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+  @@map("timetable_days")
+}
+
+enum TimetablePeriodType {
+  LESSON
+  BREAK
+  LUNCH
+  ASSEMBLY
+  OTHER
+  @@map("timetable_period_types")
+}
+
+enum TimetableStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+  @@map("timetable_statuses")
+}
+
+
+model SchoolTimetableConfiguration {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  name String @db.VarChar(150)
+  description String? @db.Text
+
+  teachingDays TimetableDay[] @map("teaching_days")
+
+  schoolStartTime DateTime @map("school_start_time") @db.Time(0)
+  schoolEndTime DateTime @map("school_end_time") @db.Time(0)
+
+  allowTeacherDoubleBooking Boolean @default(false) @map("allow_teacher_double_booking")
+  allowSectionDoubleBooking Boolean @default(false) @map("allow_section_double_booking")
+
+  isActive Boolean @default(true) @map("is_active")
+
+  createdById String @map("created_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  createdBy User @relation("TimetableConfigurationCreator",fields: [createdById], references: [id],onDelete: Restrict)
+
+  periods TimetablePeriod[]
+  timetables Timetable[]
+
+  @@unique([schoolId, name, academicYearId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, isActive])
+  @@map("school_timetable_configurations")
+}
+
+
+
+model TimetablePeriod {
+  id String @id @default(uuid()) @db.Uuid
+
+  configurationId String @map("configuration_id") @db.Uuid
+
+  periodNumber Int @map("period_number")
+  label String @db.VarChar(100)
+
+  startsAt DateTime @map("starts_at") @db.Time(0)
+  endsAt DateTime @map("ends_at") @db.Time(0)
+
+  type TimetablePeriodType @default(LESSON)
+  isTeachingPeriod Boolean @default(true) @map("is_teaching_period")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  configuration SchoolTimetableConfiguration @relation(fields: [configurationId],references: [id],onDelete: Cascade)
+
+  entries TimetableEntry[]
+
+  @@unique([configurationId, periodNumber])
+  @@unique([id, configurationId])
+  @@index([configurationId, startsAt])
+  @@map("timetable_periods")
+}
+
+
+
+model Timetable {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  configurationId String @map("configuration_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  sectionId String @map("section_id") @db.Uuid
+
+  name String @db.VarChar(150)
+  version Int @default(1)
+
+  status TimetableStatus @default(DRAFT)
+
+  effectiveFrom DateTime? @map("effective_from") @db.Date
+  effectiveUntil DateTime? @map("effective_until") @db.Date
+
+  
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  configuration SchoolTimetableConfiguration @relation(fields: [configurationId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  section Section @relation(fields: [sectionId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  createdBy User @relation("TimetableCreator",fields: [createdById],references: [id],onDelete: Restrict)
+
+  publishedBy User? @relation( "TimetablePublisher",fields: [publishedById],references: [id],onDelete: Restrict)
+
+    createdById String @map("created_by_id") @db.Uuid
+  publishedById String? @map("published_by_id") @db.Uuid
+
+  // Timetable submission and approval workflow
+  submittedById String? @map("submitted_by_id") @db.Uuid
+  approvedById String? @map("approved_by_id") @db.Uuid
+
+  publishedAt DateTime? @map("published_at") @db.Timestamptz(3)
+
+  entries TimetableEntry[]
+
+
+  submittedAt DateTime? @map("submitted_at") @db.Timestamptz(3)
+ 
+  approvedAt DateTime? @map("approved_at") @db.Timestamptz(3)
+  
+  submissionRemarks String? @map("submission_remarks") @db.Text
+  approvalRemarks String? @map("approval_remarks") @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  submittedBy User? @relation( "TimetableSubmitter",fields: [submittedById],references: [id],onDelete: Restrict)
+  approvedBy User? @relation("TimetableApprover",fields: [approvedById],references: [id],onDelete: Restrict)
+  
+  publicationRemarks String? @map("publication_remarks") @db.Text
+
+  @@unique([id, schoolId])
+  @@unique([schoolId, sectionId, academicYearId, version])
+  @@index([schoolId, academicYearId, status])
+  @@index([schoolId, sectionId, status])
+  @@map("timetables")
+}
+
+
+
+model TimetableEntry {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  school   School @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  timetableId String @map("timetable_id") @db.Uuid
+  configurationId String @map("configuration_id") @db.Uuid
+  periodId String @map("period_id") @db.Uuid
+
+  day TimetableDay
+
+  subjectId String @map("subject_id") @db.Uuid
+  teacherProfileId String @map("teacher_profile_id") @db.Uuid
+
+  roomLabel String? @map("room_label") @db.VarChar(100)
+  notes String? @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  timetable Timetable @relation(fields: [timetableId, schoolId],references: [id, schoolId],onDelete: Cascade)
+
+  period TimetablePeriod @relation(fields: [periodId, configurationId],references: [id, configurationId],onDelete: Restrict)
+
+  subject Subject @relation(fields: [subjectId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  teacherProfile TeacherProfile @relation(fields: [teacherProfileId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([id, schoolId])
+  @@index([schoolId, timetableId, day, periodId])
+  @@index([schoolId, teacherProfileId, day])
+  @@index([schoolId, subjectId])
+  @@map("timetable_entries")
+}
+
+
+
+
+model SubjectSchedulingRequirement {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  gradeId String @map("grade_id") @db.Uuid
+  subjectId String @map("subject_id") @db.Uuid
+
+  requiredPeriodsPerWeek Int @map("required_periods_per_week")
+  maximumPeriodsPerDay Int @default(1) @map("maximum_periods_per_day")
+
+  allowConsecutivePeriods Boolean @default(false) @map("allow_consecutive_periods")
+  isActive Boolean @default(true) @map("is_active")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId],references: [id],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  grade Grade @relation(fields: [gradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  subject Subject @relation(fields: [subjectId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId, gradeId, subjectId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, gradeId])
+  @@map("subject_scheduling_requirements")
+}
+
+
+
+
+enum SchoolHolidayType {
+  PUBLIC_HOLIDAY
+  RELIGIOUS_HOLIDAY
+  SCHOOL_BREAK
+  EMERGENCY_CLOSURE
+  OTHER
+  @@map("school_holiday_types")
+}
+
+model SchoolHoliday {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  name String @db.VarChar(150)
+  description String? @db.Text
+
+  type SchoolHolidayType @default(OTHER)
+
+  startDate DateTime @map("start_date") @db.Date
+  endDate DateTime @map("end_date") @db.Date
+
+  isRecurring Boolean @default(false) @map("is_recurring")
+  isActive Boolean @default(true) @map("is_active")
+
+  createdById String @map("created_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation( fields: [schoolId], references: [id],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  createdBy User @relation( "SchoolHolidayCreator",fields: [createdById],references: [id],onDelete: Restrict)
+
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, startDate, endDate])
+  @@index([schoolId, isActive])
+  @@map("school_holidays")
 }

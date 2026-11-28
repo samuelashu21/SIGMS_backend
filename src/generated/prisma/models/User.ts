@@ -264,6 +264,12 @@ export type UserWhereInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordListRelationFilter
   revokedGraduationRecords?: Prisma.GraduationRecordListRelationFilter
   academicProgressionActions?: Prisma.AcademicProgressionHistoryListRelationFilter
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationListRelationFilter
+  createdTimetables?: Prisma.TimetableListRelationFilter
+  publishedTimetables?: Prisma.TimetableListRelationFilter
+  createdSchoolHolidays?: Prisma.SchoolHolidayListRelationFilter
+  submittedTimetables?: Prisma.TimetableListRelationFilter
+  approvedTimetables?: Prisma.TimetableListRelationFilter
   createdPromotionConfigurations?: Prisma.PromotionConfigurationListRelationFilter
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationListRelationFilter
 }
@@ -328,6 +334,12 @@ export type UserOrderByWithRelationInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordOrderByRelationAggregateInput
   revokedGraduationRecords?: Prisma.GraduationRecordOrderByRelationAggregateInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryOrderByRelationAggregateInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationOrderByRelationAggregateInput
+  createdTimetables?: Prisma.TimetableOrderByRelationAggregateInput
+  publishedTimetables?: Prisma.TimetableOrderByRelationAggregateInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayOrderByRelationAggregateInput
+  submittedTimetables?: Prisma.TimetableOrderByRelationAggregateInput
+  approvedTimetables?: Prisma.TimetableOrderByRelationAggregateInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationOrderByRelationAggregateInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationOrderByRelationAggregateInput
 }
@@ -395,6 +407,12 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   approvedGraduationRecords?: Prisma.GraduationRecordListRelationFilter
   revokedGraduationRecords?: Prisma.GraduationRecordListRelationFilter
   academicProgressionActions?: Prisma.AcademicProgressionHistoryListRelationFilter
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationListRelationFilter
+  createdTimetables?: Prisma.TimetableListRelationFilter
+  publishedTimetables?: Prisma.TimetableListRelationFilter
+  createdSchoolHolidays?: Prisma.SchoolHolidayListRelationFilter
+  submittedTimetables?: Prisma.TimetableListRelationFilter
+  approvedTimetables?: Prisma.TimetableListRelationFilter
   createdPromotionConfigurations?: Prisma.PromotionConfigurationListRelationFilter
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationListRelationFilter
 }, "id" | "email" | "username">
@@ -489,6 +507,12 @@ export type UserCreateInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -553,6 +577,12 @@ export type UserUncheckedCreateInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -617,6 +647,12 @@ export type UserUpdateInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -681,6 +717,12 @@ export type UserUncheckedUpdateInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -1535,6 +1577,96 @@ export type UserUpdateOneRequiredWithoutAcademicProgressionActionsNestedInput = 
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAcademicProgressionActionsInput, Prisma.UserUpdateWithoutAcademicProgressionActionsInput>, Prisma.UserUncheckedUpdateWithoutAcademicProgressionActionsInput>
 }
 
+export type UserCreateNestedOneWithoutCreatedTimetableConfigurationsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetableConfigurationsInput, Prisma.UserUncheckedCreateWithoutCreatedTimetableConfigurationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedTimetableConfigurationsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCreatedTimetableConfigurationsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetableConfigurationsInput, Prisma.UserUncheckedCreateWithoutCreatedTimetableConfigurationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedTimetableConfigurationsInput
+  upsert?: Prisma.UserUpsertWithoutCreatedTimetableConfigurationsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCreatedTimetableConfigurationsInput, Prisma.UserUpdateWithoutCreatedTimetableConfigurationsInput>, Prisma.UserUncheckedUpdateWithoutCreatedTimetableConfigurationsInput>
+}
+
+export type UserCreateNestedOneWithoutCreatedTimetablesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetablesInput, Prisma.UserUncheckedCreateWithoutCreatedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedTimetablesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutPublishedTimetablesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPublishedTimetablesInput, Prisma.UserUncheckedCreateWithoutPublishedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPublishedTimetablesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutSubmittedTimetablesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSubmittedTimetablesInput, Prisma.UserUncheckedCreateWithoutSubmittedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSubmittedTimetablesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutApprovedTimetablesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutApprovedTimetablesInput, Prisma.UserUncheckedCreateWithoutApprovedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutApprovedTimetablesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCreatedTimetablesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetablesInput, Prisma.UserUncheckedCreateWithoutCreatedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedTimetablesInput
+  upsert?: Prisma.UserUpsertWithoutCreatedTimetablesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCreatedTimetablesInput, Prisma.UserUpdateWithoutCreatedTimetablesInput>, Prisma.UserUncheckedUpdateWithoutCreatedTimetablesInput>
+}
+
+export type UserUpdateOneWithoutPublishedTimetablesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPublishedTimetablesInput, Prisma.UserUncheckedCreateWithoutPublishedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPublishedTimetablesInput
+  upsert?: Prisma.UserUpsertWithoutPublishedTimetablesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPublishedTimetablesInput, Prisma.UserUpdateWithoutPublishedTimetablesInput>, Prisma.UserUncheckedUpdateWithoutPublishedTimetablesInput>
+}
+
+export type UserUpdateOneWithoutSubmittedTimetablesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSubmittedTimetablesInput, Prisma.UserUncheckedCreateWithoutSubmittedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSubmittedTimetablesInput
+  upsert?: Prisma.UserUpsertWithoutSubmittedTimetablesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutSubmittedTimetablesInput, Prisma.UserUpdateWithoutSubmittedTimetablesInput>, Prisma.UserUncheckedUpdateWithoutSubmittedTimetablesInput>
+}
+
+export type UserUpdateOneWithoutApprovedTimetablesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutApprovedTimetablesInput, Prisma.UserUncheckedCreateWithoutApprovedTimetablesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutApprovedTimetablesInput
+  upsert?: Prisma.UserUpsertWithoutApprovedTimetablesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutApprovedTimetablesInput, Prisma.UserUpdateWithoutApprovedTimetablesInput>, Prisma.UserUncheckedUpdateWithoutApprovedTimetablesInput>
+}
+
+export type UserCreateNestedOneWithoutCreatedSchoolHolidaysInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedSchoolHolidaysInput, Prisma.UserUncheckedCreateWithoutCreatedSchoolHolidaysInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedSchoolHolidaysInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCreatedSchoolHolidaysNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedSchoolHolidaysInput, Prisma.UserUncheckedCreateWithoutCreatedSchoolHolidaysInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedSchoolHolidaysInput
+  upsert?: Prisma.UserUpsertWithoutCreatedSchoolHolidaysInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCreatedSchoolHolidaysInput, Prisma.UserUpdateWithoutCreatedSchoolHolidaysInput>, Prisma.UserUncheckedUpdateWithoutCreatedSchoolHolidaysInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   id?: string
   email?: string | null
@@ -1594,6 +1726,12 @@ export type UserCreateWithoutSessionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -1657,6 +1795,12 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -1736,6 +1880,12 @@ export type UserUpdateWithoutSessionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -1799,6 +1949,12 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -1862,6 +2018,12 @@ export type UserCreateWithoutPasswordResetTokensInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -1925,6 +2087,12 @@ export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -2004,6 +2172,12 @@ export type UserUpdateWithoutPasswordResetTokensInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2067,6 +2241,12 @@ export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2130,6 +2310,12 @@ export type UserCreateWithoutActorActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -2193,6 +2379,12 @@ export type UserUncheckedCreateWithoutActorActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -2261,6 +2453,12 @@ export type UserCreateWithoutTargetActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -2324,6 +2522,12 @@ export type UserUncheckedCreateWithoutTargetActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -2403,6 +2607,12 @@ export type UserUpdateWithoutActorActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2466,6 +2676,12 @@ export type UserUncheckedUpdateWithoutActorActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2540,6 +2756,12 @@ export type UserUpdateWithoutTargetActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2603,6 +2825,12 @@ export type UserUncheckedUpdateWithoutTargetActivityLogsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2666,6 +2894,12 @@ export type UserCreateWithoutMembershipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -2729,6 +2963,12 @@ export type UserUncheckedCreateWithoutMembershipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -2808,6 +3048,12 @@ export type UserUpdateWithoutMembershipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2871,6 +3117,12 @@ export type UserUncheckedUpdateWithoutMembershipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -2934,6 +3186,12 @@ export type UserCreateWithoutCreatedAdmissionApplicationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -2997,6 +3255,12 @@ export type UserUncheckedCreateWithoutCreatedAdmissionApplicationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -3065,6 +3329,12 @@ export type UserCreateWithoutAdmissionDecisionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -3128,6 +3398,12 @@ export type UserUncheckedCreateWithoutAdmissionDecisionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -3207,6 +3483,12 @@ export type UserUpdateWithoutCreatedAdmissionApplicationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3270,6 +3552,12 @@ export type UserUncheckedUpdateWithoutCreatedAdmissionApplicationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3344,6 +3632,12 @@ export type UserUpdateWithoutAdmissionDecisionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3407,6 +3701,12 @@ export type UserUncheckedUpdateWithoutAdmissionDecisionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3470,6 +3770,12 @@ export type UserCreateWithoutUploadedAdmissionDocumentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -3533,6 +3839,12 @@ export type UserUncheckedCreateWithoutUploadedAdmissionDocumentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -3612,6 +3924,12 @@ export type UserUpdateWithoutUploadedAdmissionDocumentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3675,6 +3993,12 @@ export type UserUncheckedUpdateWithoutUploadedAdmissionDocumentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3738,6 +4062,12 @@ export type UserCreateWithoutAdmissionReviewsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -3801,6 +4131,12 @@ export type UserUncheckedCreateWithoutAdmissionReviewsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -3880,6 +4216,12 @@ export type UserUpdateWithoutAdmissionReviewsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -3943,6 +4285,12 @@ export type UserUncheckedUpdateWithoutAdmissionReviewsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4006,6 +4354,12 @@ export type UserCreateWithoutAdmissionStatusChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -4069,6 +4423,12 @@ export type UserUncheckedCreateWithoutAdmissionStatusChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -4148,6 +4508,12 @@ export type UserUpdateWithoutAdmissionStatusChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4211,6 +4577,12 @@ export type UserUncheckedUpdateWithoutAdmissionStatusChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4274,6 +4646,12 @@ export type UserCreateWithoutRequestedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -4337,6 +4715,12 @@ export type UserUncheckedCreateWithoutRequestedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -4405,6 +4789,12 @@ export type UserCreateWithoutReviewedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -4468,6 +4858,12 @@ export type UserUncheckedCreateWithoutReviewedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -4547,6 +4943,12 @@ export type UserUpdateWithoutRequestedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4610,6 +5012,12 @@ export type UserUncheckedUpdateWithoutRequestedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4684,6 +5092,12 @@ export type UserUpdateWithoutReviewedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4747,6 +5161,12 @@ export type UserUncheckedUpdateWithoutReviewedStudentTransfersInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -4810,6 +5230,12 @@ export type UserCreateWithoutEnrollmentHistoryChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -4873,6 +5299,12 @@ export type UserUncheckedCreateWithoutEnrollmentHistoryChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -4952,6 +5384,12 @@ export type UserUpdateWithoutEnrollmentHistoryChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5015,6 +5453,12 @@ export type UserUncheckedUpdateWithoutEnrollmentHistoryChangesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5078,6 +5522,12 @@ export type UserCreateWithoutCreatedStudentAcademicRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -5141,6 +5591,12 @@ export type UserUncheckedCreateWithoutCreatedStudentAcademicRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -5220,6 +5676,12 @@ export type UserUpdateWithoutCreatedStudentAcademicRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5283,6 +5745,12 @@ export type UserUncheckedUpdateWithoutCreatedStudentAcademicRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5346,6 +5814,12 @@ export type UserCreateWithoutTeacherProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -5409,6 +5883,12 @@ export type UserUncheckedCreateWithoutTeacherProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -5488,6 +5968,12 @@ export type UserUpdateWithoutTeacherProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5551,6 +6037,12 @@ export type UserUncheckedUpdateWithoutTeacherProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5614,6 +6106,12 @@ export type UserCreateWithoutStaffProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -5677,6 +6175,12 @@ export type UserUncheckedCreateWithoutStaffProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -5756,6 +6260,12 @@ export type UserUpdateWithoutStaffProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5819,6 +6329,12 @@ export type UserUncheckedUpdateWithoutStaffProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -5882,6 +6398,12 @@ export type UserCreateWithoutGuardianProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -5945,6 +6467,12 @@ export type UserUncheckedCreateWithoutGuardianProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -6024,6 +6552,12 @@ export type UserUpdateWithoutGuardianProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6087,6 +6621,12 @@ export type UserUncheckedUpdateWithoutGuardianProfilesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6150,6 +6690,12 @@ export type UserCreateWithoutVerifiedGuardianRelationshipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -6213,6 +6759,12 @@ export type UserUncheckedCreateWithoutVerifiedGuardianRelationshipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -6292,6 +6844,12 @@ export type UserUpdateWithoutVerifiedGuardianRelationshipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6355,6 +6913,12 @@ export type UserUncheckedUpdateWithoutVerifiedGuardianRelationshipsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6418,6 +6982,12 @@ export type UserCreateWithoutRecordedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -6481,6 +7051,12 @@ export type UserUncheckedCreateWithoutRecordedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -6549,6 +7125,12 @@ export type UserCreateWithoutApprovedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -6612,6 +7194,12 @@ export type UserUncheckedCreateWithoutApprovedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -6691,6 +7279,12 @@ export type UserUpdateWithoutRecordedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6754,6 +7348,12 @@ export type UserUncheckedUpdateWithoutRecordedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6828,6 +7428,12 @@ export type UserUpdateWithoutApprovedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6891,6 +7497,12 @@ export type UserUncheckedUpdateWithoutApprovedAttendanceInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -6954,6 +7566,12 @@ export type UserCreateWithoutRequestedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -7017,6 +7635,12 @@ export type UserUncheckedCreateWithoutRequestedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -7085,6 +7709,12 @@ export type UserCreateWithoutReviewedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -7148,6 +7778,12 @@ export type UserUncheckedCreateWithoutReviewedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -7227,6 +7863,12 @@ export type UserUpdateWithoutRequestedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7290,6 +7932,12 @@ export type UserUncheckedUpdateWithoutRequestedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7364,6 +8012,12 @@ export type UserUpdateWithoutReviewedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7427,6 +8081,12 @@ export type UserUncheckedUpdateWithoutReviewedAttendanceCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7490,6 +8150,12 @@ export type UserCreateWithoutCreatedExaminationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -7553,6 +8219,12 @@ export type UserUncheckedCreateWithoutCreatedExaminationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -7632,6 +8304,12 @@ export type UserUpdateWithoutCreatedExaminationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7695,6 +8373,12 @@ export type UserUncheckedUpdateWithoutCreatedExaminationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7758,6 +8442,12 @@ export type UserCreateWithoutExaminationHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -7821,6 +8511,12 @@ export type UserUncheckedCreateWithoutExaminationHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -7900,6 +8596,12 @@ export type UserUpdateWithoutExaminationHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -7963,6 +8665,12 @@ export type UserUncheckedUpdateWithoutExaminationHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8026,6 +8734,12 @@ export type UserCreateWithoutEnteredMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -8089,6 +8803,12 @@ export type UserUncheckedCreateWithoutEnteredMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -8157,6 +8877,12 @@ export type UserCreateWithoutApprovedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -8220,6 +8946,12 @@ export type UserUncheckedCreateWithoutApprovedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -8288,6 +9020,12 @@ export type UserCreateWithoutReviewedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -8351,6 +9089,12 @@ export type UserUncheckedCreateWithoutReviewedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -8419,6 +9163,12 @@ export type UserCreateWithoutPublishedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -8482,6 +9232,12 @@ export type UserUncheckedCreateWithoutPublishedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -8561,6 +9317,12 @@ export type UserUpdateWithoutEnteredMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8624,6 +9386,12 @@ export type UserUncheckedUpdateWithoutEnteredMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8698,6 +9466,12 @@ export type UserUpdateWithoutApprovedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8761,6 +9535,12 @@ export type UserUncheckedUpdateWithoutApprovedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8835,6 +9615,12 @@ export type UserUpdateWithoutReviewedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8898,6 +9684,12 @@ export type UserUncheckedUpdateWithoutReviewedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -8972,6 +9764,12 @@ export type UserUpdateWithoutPublishedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9035,6 +9833,12 @@ export type UserUncheckedUpdateWithoutPublishedMarkRecordsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9098,6 +9902,12 @@ export type UserCreateWithoutRequestedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -9161,6 +9971,12 @@ export type UserUncheckedCreateWithoutRequestedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -9229,6 +10045,12 @@ export type UserCreateWithoutReviewedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -9292,6 +10114,12 @@ export type UserUncheckedCreateWithoutReviewedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -9371,6 +10199,12 @@ export type UserUpdateWithoutRequestedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9434,6 +10268,12 @@ export type UserUncheckedUpdateWithoutRequestedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9508,6 +10348,12 @@ export type UserUpdateWithoutReviewedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9571,6 +10417,12 @@ export type UserUncheckedUpdateWithoutReviewedMarkCorrectionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9634,6 +10486,12 @@ export type UserCreateWithoutAcademicPerformanceHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -9697,6 +10555,12 @@ export type UserUncheckedCreateWithoutAcademicPerformanceHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -9776,6 +10640,12 @@ export type UserUpdateWithoutAcademicPerformanceHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9839,6 +10709,12 @@ export type UserUncheckedUpdateWithoutAcademicPerformanceHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -9902,6 +10778,12 @@ export type UserCreateWithoutCreatedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -9965,6 +10847,12 @@ export type UserUncheckedCreateWithoutCreatedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -10033,6 +10921,12 @@ export type UserCreateWithoutPublishedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -10096,6 +10990,12 @@ export type UserUncheckedCreateWithoutPublishedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -10175,6 +11075,12 @@ export type UserUpdateWithoutCreatedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -10238,6 +11144,12 @@ export type UserUncheckedUpdateWithoutCreatedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -10312,6 +11224,12 @@ export type UserUpdateWithoutPublishedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -10375,6 +11293,12 @@ export type UserUncheckedUpdateWithoutPublishedReportCardsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -10438,6 +11362,12 @@ export type UserCreateWithoutReportCardHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -10501,6 +11431,12 @@ export type UserUncheckedCreateWithoutReportCardHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -10580,6 +11516,12 @@ export type UserUpdateWithoutReportCardHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -10643,6 +11585,12 @@ export type UserUncheckedUpdateWithoutReportCardHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -10706,6 +11654,12 @@ export type UserCreateWithoutCreatedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -10769,6 +11723,12 @@ export type UserUncheckedCreateWithoutCreatedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -10837,6 +11797,12 @@ export type UserCreateWithoutPublishedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -10900,6 +11866,12 @@ export type UserUncheckedCreateWithoutPublishedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -10979,6 +11951,12 @@ export type UserUpdateWithoutCreatedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11042,6 +12020,12 @@ export type UserUncheckedUpdateWithoutCreatedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11116,6 +12100,12 @@ export type UserUpdateWithoutPublishedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11179,6 +12169,12 @@ export type UserUncheckedUpdateWithoutPublishedTranscriptsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11242,6 +12238,12 @@ export type UserCreateWithoutTranscriptHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -11305,6 +12307,12 @@ export type UserUncheckedCreateWithoutTranscriptHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -11384,6 +12392,12 @@ export type UserUpdateWithoutTranscriptHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11447,6 +12461,12 @@ export type UserUncheckedUpdateWithoutTranscriptHistoryActionsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11510,6 +12530,12 @@ export type UserCreateWithoutGeneratedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -11573,6 +12599,12 @@ export type UserUncheckedCreateWithoutGeneratedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -11641,6 +12673,12 @@ export type UserCreateWithoutPublishedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -11704,6 +12742,12 @@ export type UserUncheckedCreateWithoutPublishedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -11783,6 +12827,12 @@ export type UserUpdateWithoutGeneratedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11846,6 +12896,12 @@ export type UserUncheckedUpdateWithoutGeneratedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11920,6 +12976,12 @@ export type UserUpdateWithoutPublishedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -11983,6 +13045,12 @@ export type UserUncheckedUpdateWithoutPublishedAttendanceReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12046,6 +13114,12 @@ export type UserCreateWithoutGeneratedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -12109,6 +13183,12 @@ export type UserUncheckedCreateWithoutGeneratedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -12177,6 +13257,12 @@ export type UserCreateWithoutPublishedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -12240,6 +13326,12 @@ export type UserUncheckedCreateWithoutPublishedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -12319,6 +13411,12 @@ export type UserUpdateWithoutGeneratedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12382,6 +13480,12 @@ export type UserUncheckedUpdateWithoutGeneratedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12456,6 +13560,12 @@ export type UserUpdateWithoutPublishedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12519,6 +13629,12 @@ export type UserUncheckedUpdateWithoutPublishedExaminationReportsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12582,6 +13698,12 @@ export type UserCreateWithoutStudentAccountLinksInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -12645,6 +13767,12 @@ export type UserUncheckedCreateWithoutStudentAccountLinksInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -12724,6 +13852,12 @@ export type UserUpdateWithoutStudentAccountLinksInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12787,6 +13921,12 @@ export type UserUncheckedUpdateWithoutStudentAccountLinksInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -12851,6 +13991,12 @@ export type UserCreateWithoutCreatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
 
@@ -12914,6 +14060,12 @@ export type UserUncheckedCreateWithoutCreatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
 
@@ -12982,6 +14134,12 @@ export type UserCreateWithoutUpdatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
 }
 
@@ -13045,6 +14203,12 @@ export type UserUncheckedCreateWithoutUpdatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
@@ -13124,6 +14288,12 @@ export type UserUpdateWithoutCreatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
 
@@ -13187,6 +14357,12 @@ export type UserUncheckedUpdateWithoutCreatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
 
@@ -13261,6 +14437,12 @@ export type UserUpdateWithoutUpdatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
 }
 
@@ -13324,6 +14506,12 @@ export type UserUncheckedUpdateWithoutUpdatedPromotionConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
@@ -13386,6 +14574,12 @@ export type UserCreateWithoutPromotionEligibilityAssessmentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -13449,6 +14643,12 @@ export type UserUncheckedCreateWithoutPromotionEligibilityAssessmentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -13528,6 +14728,12 @@ export type UserUpdateWithoutPromotionEligibilityAssessmentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -13591,6 +14797,12 @@ export type UserUncheckedUpdateWithoutPromotionEligibilityAssessmentsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -13654,6 +14866,12 @@ export type UserCreateWithoutPromotionDecisionsMadeInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -13717,6 +14935,12 @@ export type UserUncheckedCreateWithoutPromotionDecisionsMadeInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -13796,6 +15020,12 @@ export type UserUpdateWithoutPromotionDecisionsMadeInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -13859,6 +15089,12 @@ export type UserUncheckedUpdateWithoutPromotionDecisionsMadeInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -13922,6 +15158,12 @@ export type UserCreateWithoutCreatedGraduationConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -13985,6 +15227,12 @@ export type UserUncheckedCreateWithoutCreatedGraduationConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -14064,6 +15312,12 @@ export type UserUpdateWithoutCreatedGraduationConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -14127,6 +15381,12 @@ export type UserUncheckedUpdateWithoutCreatedGraduationConfigurationsInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -14190,6 +15450,12 @@ export type UserCreateWithoutAssessedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -14253,6 +15519,12 @@ export type UserUncheckedCreateWithoutAssessedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -14321,6 +15593,12 @@ export type UserCreateWithoutReviewedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -14384,6 +15662,12 @@ export type UserUncheckedCreateWithoutReviewedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -14463,6 +15747,12 @@ export type UserUpdateWithoutAssessedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -14526,6 +15816,12 @@ export type UserUncheckedUpdateWithoutAssessedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -14600,6 +15896,12 @@ export type UserUpdateWithoutReviewedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -14663,6 +15965,12 @@ export type UserUncheckedUpdateWithoutReviewedGraduationCandidatesInput = {
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -14726,6 +16034,12 @@ export type UserCreateWithoutApprovedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -14789,6 +16103,12 @@ export type UserUncheckedCreateWithoutApprovedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -14857,6 +16177,12 @@ export type UserCreateWithoutRevokedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -14920,6 +16246,12 @@ export type UserUncheckedCreateWithoutRevokedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -14999,6 +16331,12 @@ export type UserUpdateWithoutApprovedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -15062,6 +16400,12 @@ export type UserUncheckedUpdateWithoutApprovedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -15136,6 +16480,12 @@ export type UserUpdateWithoutRevokedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -15199,6 +16549,12 @@ export type UserUncheckedUpdateWithoutRevokedGraduationRecordsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -15262,6 +16618,12 @@ export type UserCreateWithoutAcademicProgressionActionsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
   approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
 }
@@ -15325,6 +16687,12 @@ export type UserUncheckedCreateWithoutAcademicProgressionActionsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
 }
@@ -15404,6 +16772,12 @@ export type UserUpdateWithoutAcademicProgressionActionsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
   approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
 }
@@ -15467,6 +16841,1764 @@ export type UserUncheckedUpdateWithoutAcademicProgressionActionsInput = {
   reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
   approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
   revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserCreateWithoutCreatedTimetableConfigurationsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserUncheckedCreateWithoutCreatedTimetableConfigurationsInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserCreateOrConnectWithoutCreatedTimetableConfigurationsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetableConfigurationsInput, Prisma.UserUncheckedCreateWithoutCreatedTimetableConfigurationsInput>
+}
+
+export type UserUpsertWithoutCreatedTimetableConfigurationsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCreatedTimetableConfigurationsInput, Prisma.UserUncheckedUpdateWithoutCreatedTimetableConfigurationsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetableConfigurationsInput, Prisma.UserUncheckedCreateWithoutCreatedTimetableConfigurationsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCreatedTimetableConfigurationsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCreatedTimetableConfigurationsInput, Prisma.UserUncheckedUpdateWithoutCreatedTimetableConfigurationsInput>
+}
+
+export type UserUpdateWithoutCreatedTimetableConfigurationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCreatedTimetableConfigurationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserCreateWithoutCreatedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserUncheckedCreateWithoutCreatedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserCreateOrConnectWithoutCreatedTimetablesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetablesInput, Prisma.UserUncheckedCreateWithoutCreatedTimetablesInput>
+}
+
+export type UserCreateWithoutPublishedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserUncheckedCreateWithoutPublishedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserCreateOrConnectWithoutPublishedTimetablesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPublishedTimetablesInput, Prisma.UserUncheckedCreateWithoutPublishedTimetablesInput>
+}
+
+export type UserCreateWithoutSubmittedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserUncheckedCreateWithoutSubmittedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserCreateOrConnectWithoutSubmittedTimetablesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutSubmittedTimetablesInput, Prisma.UserUncheckedCreateWithoutSubmittedTimetablesInput>
+}
+
+export type UserCreateWithoutApprovedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserUncheckedCreateWithoutApprovedTimetablesInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedCreateNestedManyWithoutCreatedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserCreateOrConnectWithoutApprovedTimetablesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutApprovedTimetablesInput, Prisma.UserUncheckedCreateWithoutApprovedTimetablesInput>
+}
+
+export type UserUpsertWithoutCreatedTimetablesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCreatedTimetablesInput, Prisma.UserUncheckedUpdateWithoutCreatedTimetablesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedTimetablesInput, Prisma.UserUncheckedCreateWithoutCreatedTimetablesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCreatedTimetablesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCreatedTimetablesInput, Prisma.UserUncheckedUpdateWithoutCreatedTimetablesInput>
+}
+
+export type UserUpdateWithoutCreatedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCreatedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUpsertWithoutPublishedTimetablesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPublishedTimetablesInput, Prisma.UserUncheckedUpdateWithoutPublishedTimetablesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPublishedTimetablesInput, Prisma.UserUncheckedCreateWithoutPublishedTimetablesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPublishedTimetablesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPublishedTimetablesInput, Prisma.UserUncheckedUpdateWithoutPublishedTimetablesInput>
+}
+
+export type UserUpdateWithoutPublishedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPublishedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUpsertWithoutSubmittedTimetablesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutSubmittedTimetablesInput, Prisma.UserUncheckedUpdateWithoutSubmittedTimetablesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutSubmittedTimetablesInput, Prisma.UserUncheckedCreateWithoutSubmittedTimetablesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutSubmittedTimetablesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutSubmittedTimetablesInput, Prisma.UserUncheckedUpdateWithoutSubmittedTimetablesInput>
+}
+
+export type UserUpdateWithoutSubmittedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutSubmittedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUpsertWithoutApprovedTimetablesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutApprovedTimetablesInput, Prisma.UserUncheckedUpdateWithoutApprovedTimetablesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutApprovedTimetablesInput, Prisma.UserUncheckedCreateWithoutApprovedTimetablesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutApprovedTimetablesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutApprovedTimetablesInput, Prisma.UserUncheckedUpdateWithoutApprovedTimetablesInput>
+}
+
+export type UserUpdateWithoutApprovedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutApprovedTimetablesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  createdSchoolHolidays?: Prisma.SchoolHolidayUncheckedUpdateManyWithoutCreatedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserCreateWithoutCreatedSchoolHolidaysInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableCreateNestedManyWithoutPublishedByInput
+  submittedTimetables?: Prisma.TimetableCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserUncheckedCreateWithoutCreatedSchoolHolidaysInput = {
+  id?: string
+  email?: string | null
+  username?: string | null
+  passwordHash: string
+  role: $Enums.UserRole
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.AuthSessionUncheckedCreateNestedManyWithoutUserInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutActorInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedCreateNestedManyWithoutTargetUserInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedCreateNestedManyWithoutUserInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutCreatedByInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedCreateNestedManyWithoutReviewerInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutDecisionByInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedCreateNestedManyWithoutReviewedByInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedCreateNestedManyWithoutCreatedByInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutUserInput
+  staffProfiles?: Prisma.StaffProfileUncheckedCreateNestedManyWithoutUserInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedCreateNestedManyWithoutUserInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedCreateNestedManyWithoutVerifiedByInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutApprovedByInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  createdExaminations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutCreatedByInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutEnteredByInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutReviewedByInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutRequestedByInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutPublishedByInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedReportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutPublishedByInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedCreateNestedManyWithoutPublishedByInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutPublishedByInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedCreateNestedManyWithoutUserInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedCreateNestedManyWithoutAssessedByInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutDecidedByInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutAssessedByInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedCreateNestedManyWithoutReviewedByInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutApprovedByInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutRevokedByInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPerformedByInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  createdTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutCreatedByInput
+  publishedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutPublishedByInput
+  submittedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutSubmittedByInput
+  approvedTimetables?: Prisma.TimetableUncheckedCreateNestedManyWithoutApprovedByInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutCreatedByInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedCreateNestedManyWithoutUpdatedByInput
+}
+
+export type UserCreateOrConnectWithoutCreatedSchoolHolidaysInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedSchoolHolidaysInput, Prisma.UserUncheckedCreateWithoutCreatedSchoolHolidaysInput>
+}
+
+export type UserUpsertWithoutCreatedSchoolHolidaysInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCreatedSchoolHolidaysInput, Prisma.UserUncheckedUpdateWithoutCreatedSchoolHolidaysInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedSchoolHolidaysInput, Prisma.UserUncheckedCreateWithoutCreatedSchoolHolidaysInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCreatedSchoolHolidaysInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCreatedSchoolHolidaysInput, Prisma.UserUncheckedUpdateWithoutCreatedSchoolHolidaysInput>
+}
+
+export type UserUpdateWithoutCreatedSchoolHolidaysInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUpdateManyWithoutPublishedByNestedInput
+  submittedTimetables?: Prisma.TimetableUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUpdateManyWithoutApprovedByNestedInput
+  createdPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutCreatedByNestedInput
+  updatedPromotionConfigurations?: Prisma.PromotionConfigurationUpdateManyWithoutUpdatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCreatedSchoolHolidaysInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.AuthSessionUncheckedUpdateManyWithoutUserNestedInput
+  actorActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutActorNestedInput
+  targetActivityLogs?: Prisma.UserActivityLogUncheckedUpdateManyWithoutTargetUserNestedInput
+  memberships?: Prisma.UserSchoolMembershipUncheckedUpdateManyWithoutUserNestedInput
+  createdAdmissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutCreatedByNestedInput
+  uploadedAdmissionDocuments?: Prisma.AdmissionDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  admissionReviews?: Prisma.AdmissionReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  admissionDecisions?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutDecisionByNestedInput
+  admissionStatusChanges?: Prisma.AdmissionStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  requestedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedStudentTransfers?: Prisma.StudentTransferUncheckedUpdateManyWithoutReviewedByNestedInput
+  enrollmentHistoryChanges?: Prisma.EnrollmentHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  createdStudentAcademicRecords?: Prisma.StudentAcademicRecordUncheckedUpdateManyWithoutCreatedByNestedInput
+  teacherProfiles?: Prisma.TeacherProfileUncheckedUpdateManyWithoutUserNestedInput
+  staffProfiles?: Prisma.StaffProfileUncheckedUpdateManyWithoutUserNestedInput
+  guardianProfiles?: Prisma.GuardianProfileUncheckedUpdateManyWithoutUserNestedInput
+  verifiedGuardianRelationships?: Prisma.StudentGuardianRelationshipUncheckedUpdateManyWithoutVerifiedByNestedInput
+  recordedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  approvedAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutApprovedByNestedInput
+  requestedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedAttendanceCorrections?: Prisma.AttendanceCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  createdExaminations?: Prisma.ExaminationUncheckedUpdateManyWithoutCreatedByNestedInput
+  examinationHistoryActions?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  enteredMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutEnteredByNestedInput
+  approvedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  reviewedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutReviewedByNestedInput
+  requestedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutRequestedByNestedInput
+  reviewedMarkCorrections?: Prisma.MarkCorrectionUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedMarkRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutPublishedByNestedInput
+  academicPerformanceHistoryActions?: Prisma.AcademicPerformanceHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedReportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutPublishedByNestedInput
+  reportCardHistoryActions?: Prisma.ReportCardHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTranscripts?: Prisma.StudentAcademicTranscriptUncheckedUpdateManyWithoutPublishedByNestedInput
+  transcriptHistoryActions?: Prisma.AcademicTranscriptHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  generatedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  generatedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  publishedAttendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  publishedExaminationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutPublishedByNestedInput
+  studentAccountLinks?: Prisma.StudentAccountLinkUncheckedUpdateManyWithoutUserNestedInput
+  promotionEligibilityAssessments?: Prisma.PromotionEligibilityAssessmentUncheckedUpdateManyWithoutAssessedByNestedInput
+  promotionDecisionsMade?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutDecidedByNestedInput
+  createdGraduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  assessedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutAssessedByNestedInput
+  reviewedGraduationCandidates?: Prisma.GraduationCandidateUncheckedUpdateManyWithoutReviewedByNestedInput
+  approvedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutApprovedByNestedInput
+  revokedGraduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutRevokedByNestedInput
+  academicProgressionActions?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPerformedByNestedInput
+  createdTimetableConfigurations?: Prisma.SchoolTimetableConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutCreatedByNestedInput
+  publishedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutPublishedByNestedInput
+  submittedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutSubmittedByNestedInput
+  approvedTimetables?: Prisma.TimetableUncheckedUpdateManyWithoutApprovedByNestedInput
   createdPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutCreatedByNestedInput
   updatedPromotionConfigurations?: Prisma.PromotionConfigurationUncheckedUpdateManyWithoutUpdatedByNestedInput
 }
@@ -15527,6 +18659,12 @@ export type UserCountOutputType = {
   approvedGraduationRecords: number
   revokedGraduationRecords: number
   academicProgressionActions: number
+  createdTimetableConfigurations: number
+  createdTimetables: number
+  publishedTimetables: number
+  createdSchoolHolidays: number
+  submittedTimetables: number
+  approvedTimetables: number
   createdPromotionConfigurations: number
   updatedPromotionConfigurations: number
 }
@@ -15582,6 +18720,12 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   approvedGraduationRecords?: boolean | UserCountOutputTypeCountApprovedGraduationRecordsArgs
   revokedGraduationRecords?: boolean | UserCountOutputTypeCountRevokedGraduationRecordsArgs
   academicProgressionActions?: boolean | UserCountOutputTypeCountAcademicProgressionActionsArgs
+  createdTimetableConfigurations?: boolean | UserCountOutputTypeCountCreatedTimetableConfigurationsArgs
+  createdTimetables?: boolean | UserCountOutputTypeCountCreatedTimetablesArgs
+  publishedTimetables?: boolean | UserCountOutputTypeCountPublishedTimetablesArgs
+  createdSchoolHolidays?: boolean | UserCountOutputTypeCountCreatedSchoolHolidaysArgs
+  submittedTimetables?: boolean | UserCountOutputTypeCountSubmittedTimetablesArgs
+  approvedTimetables?: boolean | UserCountOutputTypeCountApprovedTimetablesArgs
   createdPromotionConfigurations?: boolean | UserCountOutputTypeCountCreatedPromotionConfigurationsArgs
   updatedPromotionConfigurations?: boolean | UserCountOutputTypeCountUpdatedPromotionConfigurationsArgs
 }
@@ -15949,6 +19093,48 @@ export type UserCountOutputTypeCountAcademicProgressionActionsArgs<ExtArgs exten
 /**
  * UserCountOutputType without action
  */
+export type UserCountOutputTypeCountCreatedTimetableConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SchoolTimetableConfigurationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCreatedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TimetableWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPublishedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TimetableWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCreatedSchoolHolidaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SchoolHolidayWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSubmittedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TimetableWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountApprovedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TimetableWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
 export type UserCountOutputTypeCountCreatedPromotionConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.PromotionConfigurationWhereInput
 }
@@ -16021,6 +19207,12 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   approvedGraduationRecords?: boolean | Prisma.User$approvedGraduationRecordsArgs<ExtArgs>
   revokedGraduationRecords?: boolean | Prisma.User$revokedGraduationRecordsArgs<ExtArgs>
   academicProgressionActions?: boolean | Prisma.User$academicProgressionActionsArgs<ExtArgs>
+  createdTimetableConfigurations?: boolean | Prisma.User$createdTimetableConfigurationsArgs<ExtArgs>
+  createdTimetables?: boolean | Prisma.User$createdTimetablesArgs<ExtArgs>
+  publishedTimetables?: boolean | Prisma.User$publishedTimetablesArgs<ExtArgs>
+  createdSchoolHolidays?: boolean | Prisma.User$createdSchoolHolidaysArgs<ExtArgs>
+  submittedTimetables?: boolean | Prisma.User$submittedTimetablesArgs<ExtArgs>
+  approvedTimetables?: boolean | Prisma.User$approvedTimetablesArgs<ExtArgs>
   createdPromotionConfigurations?: boolean | Prisma.User$createdPromotionConfigurationsArgs<ExtArgs>
   updatedPromotionConfigurations?: boolean | Prisma.User$updatedPromotionConfigurationsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -16114,6 +19306,12 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   approvedGraduationRecords?: boolean | Prisma.User$approvedGraduationRecordsArgs<ExtArgs>
   revokedGraduationRecords?: boolean | Prisma.User$revokedGraduationRecordsArgs<ExtArgs>
   academicProgressionActions?: boolean | Prisma.User$academicProgressionActionsArgs<ExtArgs>
+  createdTimetableConfigurations?: boolean | Prisma.User$createdTimetableConfigurationsArgs<ExtArgs>
+  createdTimetables?: boolean | Prisma.User$createdTimetablesArgs<ExtArgs>
+  publishedTimetables?: boolean | Prisma.User$publishedTimetablesArgs<ExtArgs>
+  createdSchoolHolidays?: boolean | Prisma.User$createdSchoolHolidaysArgs<ExtArgs>
+  submittedTimetables?: boolean | Prisma.User$submittedTimetablesArgs<ExtArgs>
+  approvedTimetables?: boolean | Prisma.User$approvedTimetablesArgs<ExtArgs>
   createdPromotionConfigurations?: boolean | Prisma.User$createdPromotionConfigurationsArgs<ExtArgs>
   updatedPromotionConfigurations?: boolean | Prisma.User$updatedPromotionConfigurationsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -16174,6 +19372,12 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     approvedGraduationRecords: Prisma.$GraduationRecordPayload<ExtArgs>[]
     revokedGraduationRecords: Prisma.$GraduationRecordPayload<ExtArgs>[]
     academicProgressionActions: Prisma.$AcademicProgressionHistoryPayload<ExtArgs>[]
+    createdTimetableConfigurations: Prisma.$SchoolTimetableConfigurationPayload<ExtArgs>[]
+    createdTimetables: Prisma.$TimetablePayload<ExtArgs>[]
+    publishedTimetables: Prisma.$TimetablePayload<ExtArgs>[]
+    createdSchoolHolidays: Prisma.$SchoolHolidayPayload<ExtArgs>[]
+    submittedTimetables: Prisma.$TimetablePayload<ExtArgs>[]
+    approvedTimetables: Prisma.$TimetablePayload<ExtArgs>[]
     createdPromotionConfigurations: Prisma.$PromotionConfigurationPayload<ExtArgs>[]
     updatedPromotionConfigurations: Prisma.$PromotionConfigurationPayload<ExtArgs>[]
   }
@@ -16631,6 +19835,12 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   approvedGraduationRecords<T extends Prisma.User$approvedGraduationRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$approvedGraduationRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GraduationRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   revokedGraduationRecords<T extends Prisma.User$revokedGraduationRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$revokedGraduationRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GraduationRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   academicProgressionActions<T extends Prisma.User$academicProgressionActionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$academicProgressionActionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicProgressionHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdTimetableConfigurations<T extends Prisma.User$createdTimetableConfigurationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdTimetableConfigurationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SchoolTimetableConfigurationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdTimetables<T extends Prisma.User$createdTimetablesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdTimetablesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TimetablePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  publishedTimetables<T extends Prisma.User$publishedTimetablesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$publishedTimetablesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TimetablePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdSchoolHolidays<T extends Prisma.User$createdSchoolHolidaysArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdSchoolHolidaysArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SchoolHolidayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  submittedTimetables<T extends Prisma.User$submittedTimetablesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$submittedTimetablesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TimetablePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  approvedTimetables<T extends Prisma.User$approvedTimetablesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$approvedTimetablesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TimetablePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   createdPromotionConfigurations<T extends Prisma.User$createdPromotionConfigurationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdPromotionConfigurationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromotionConfigurationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   updatedPromotionConfigurations<T extends Prisma.User$updatedPromotionConfigurationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$updatedPromotionConfigurationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromotionConfigurationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -18261,6 +21471,150 @@ export type User$academicProgressionActionsArgs<ExtArgs extends runtime.Types.Ex
   take?: number
   skip?: number
   distinct?: Prisma.AcademicProgressionHistoryScalarFieldEnum | Prisma.AcademicProgressionHistoryScalarFieldEnum[]
+}
+
+/**
+ * User.createdTimetableConfigurations
+ */
+export type User$createdTimetableConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SchoolTimetableConfiguration
+   */
+  select?: Prisma.SchoolTimetableConfigurationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SchoolTimetableConfiguration
+   */
+  omit?: Prisma.SchoolTimetableConfigurationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SchoolTimetableConfigurationInclude<ExtArgs> | null
+  where?: Prisma.SchoolTimetableConfigurationWhereInput
+  orderBy?: Prisma.SchoolTimetableConfigurationOrderByWithRelationInput | Prisma.SchoolTimetableConfigurationOrderByWithRelationInput[]
+  cursor?: Prisma.SchoolTimetableConfigurationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SchoolTimetableConfigurationScalarFieldEnum | Prisma.SchoolTimetableConfigurationScalarFieldEnum[]
+}
+
+/**
+ * User.createdTimetables
+ */
+export type User$createdTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Timetable
+   */
+  select?: Prisma.TimetableSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Timetable
+   */
+  omit?: Prisma.TimetableOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimetableInclude<ExtArgs> | null
+  where?: Prisma.TimetableWhereInput
+  orderBy?: Prisma.TimetableOrderByWithRelationInput | Prisma.TimetableOrderByWithRelationInput[]
+  cursor?: Prisma.TimetableWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TimetableScalarFieldEnum | Prisma.TimetableScalarFieldEnum[]
+}
+
+/**
+ * User.publishedTimetables
+ */
+export type User$publishedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Timetable
+   */
+  select?: Prisma.TimetableSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Timetable
+   */
+  omit?: Prisma.TimetableOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimetableInclude<ExtArgs> | null
+  where?: Prisma.TimetableWhereInput
+  orderBy?: Prisma.TimetableOrderByWithRelationInput | Prisma.TimetableOrderByWithRelationInput[]
+  cursor?: Prisma.TimetableWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TimetableScalarFieldEnum | Prisma.TimetableScalarFieldEnum[]
+}
+
+/**
+ * User.createdSchoolHolidays
+ */
+export type User$createdSchoolHolidaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SchoolHoliday
+   */
+  select?: Prisma.SchoolHolidaySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SchoolHoliday
+   */
+  omit?: Prisma.SchoolHolidayOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SchoolHolidayInclude<ExtArgs> | null
+  where?: Prisma.SchoolHolidayWhereInput
+  orderBy?: Prisma.SchoolHolidayOrderByWithRelationInput | Prisma.SchoolHolidayOrderByWithRelationInput[]
+  cursor?: Prisma.SchoolHolidayWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SchoolHolidayScalarFieldEnum | Prisma.SchoolHolidayScalarFieldEnum[]
+}
+
+/**
+ * User.submittedTimetables
+ */
+export type User$submittedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Timetable
+   */
+  select?: Prisma.TimetableSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Timetable
+   */
+  omit?: Prisma.TimetableOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimetableInclude<ExtArgs> | null
+  where?: Prisma.TimetableWhereInput
+  orderBy?: Prisma.TimetableOrderByWithRelationInput | Prisma.TimetableOrderByWithRelationInput[]
+  cursor?: Prisma.TimetableWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TimetableScalarFieldEnum | Prisma.TimetableScalarFieldEnum[]
+}
+
+/**
+ * User.approvedTimetables
+ */
+export type User$approvedTimetablesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Timetable
+   */
+  select?: Prisma.TimetableSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Timetable
+   */
+  omit?: Prisma.TimetableOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TimetableInclude<ExtArgs> | null
+  where?: Prisma.TimetableWhereInput
+  orderBy?: Prisma.TimetableOrderByWithRelationInput | Prisma.TimetableOrderByWithRelationInput[]
+  cursor?: Prisma.TimetableWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TimetableScalarFieldEnum | Prisma.TimetableScalarFieldEnum[]
 }
 
 /**

@@ -131,7 +131,13 @@ export const ModelName = {
   GraduationConfiguration: 'GraduationConfiguration',
   GraduationCandidate: 'GraduationCandidate',
   GraduationRecord: 'GraduationRecord',
-  AcademicProgressionHistory: 'AcademicProgressionHistory'
+  AcademicProgressionHistory: 'AcademicProgressionHistory',
+  SchoolTimetableConfiguration: 'SchoolTimetableConfiguration',
+  TimetablePeriod: 'TimetablePeriod',
+  Timetable: 'Timetable',
+  TimetableEntry: 'TimetableEntry',
+  SubjectSchedulingRequirement: 'SubjectSchedulingRequirement',
+  SchoolHoliday: 'SchoolHoliday'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1692,6 +1698,124 @@ export const AcademicProgressionHistoryScalarFieldEnum = {
 } as const
 
 export type AcademicProgressionHistoryScalarFieldEnum = (typeof AcademicProgressionHistoryScalarFieldEnum)[keyof typeof AcademicProgressionHistoryScalarFieldEnum]
+
+
+export const SchoolTimetableConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  name: 'name',
+  description: 'description',
+  teachingDays: 'teachingDays',
+  schoolStartTime: 'schoolStartTime',
+  schoolEndTime: 'schoolEndTime',
+  allowTeacherDoubleBooking: 'allowTeacherDoubleBooking',
+  allowSectionDoubleBooking: 'allowSectionDoubleBooking',
+  isActive: 'isActive',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SchoolTimetableConfigurationScalarFieldEnum = (typeof SchoolTimetableConfigurationScalarFieldEnum)[keyof typeof SchoolTimetableConfigurationScalarFieldEnum]
+
+
+export const TimetablePeriodScalarFieldEnum = {
+  id: 'id',
+  configurationId: 'configurationId',
+  periodNumber: 'periodNumber',
+  label: 'label',
+  startsAt: 'startsAt',
+  endsAt: 'endsAt',
+  type: 'type',
+  isTeachingPeriod: 'isTeachingPeriod',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TimetablePeriodScalarFieldEnum = (typeof TimetablePeriodScalarFieldEnum)[keyof typeof TimetablePeriodScalarFieldEnum]
+
+
+export const TimetableScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  configurationId: 'configurationId',
+  academicYearId: 'academicYearId',
+  sectionId: 'sectionId',
+  name: 'name',
+  version: 'version',
+  status: 'status',
+  effectiveFrom: 'effectiveFrom',
+  effectiveUntil: 'effectiveUntil',
+  createdById: 'createdById',
+  publishedById: 'publishedById',
+  submittedById: 'submittedById',
+  approvedById: 'approvedById',
+  publishedAt: 'publishedAt',
+  submittedAt: 'submittedAt',
+  approvedAt: 'approvedAt',
+  submissionRemarks: 'submissionRemarks',
+  approvalRemarks: 'approvalRemarks',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  publicationRemarks: 'publicationRemarks'
+} as const
+
+export type TimetableScalarFieldEnum = (typeof TimetableScalarFieldEnum)[keyof typeof TimetableScalarFieldEnum]
+
+
+export const TimetableEntryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  timetableId: 'timetableId',
+  configurationId: 'configurationId',
+  periodId: 'periodId',
+  day: 'day',
+  subjectId: 'subjectId',
+  teacherProfileId: 'teacherProfileId',
+  roomLabel: 'roomLabel',
+  notes: 'notes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TimetableEntryScalarFieldEnum = (typeof TimetableEntryScalarFieldEnum)[keyof typeof TimetableEntryScalarFieldEnum]
+
+
+export const SubjectSchedulingRequirementScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  gradeId: 'gradeId',
+  subjectId: 'subjectId',
+  requiredPeriodsPerWeek: 'requiredPeriodsPerWeek',
+  maximumPeriodsPerDay: 'maximumPeriodsPerDay',
+  allowConsecutivePeriods: 'allowConsecutivePeriods',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SubjectSchedulingRequirementScalarFieldEnum = (typeof SubjectSchedulingRequirementScalarFieldEnum)[keyof typeof SubjectSchedulingRequirementScalarFieldEnum]
+
+
+export const SchoolHolidayScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  name: 'name',
+  description: 'description',
+  type: 'type',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  isRecurring: 'isRecurring',
+  isActive: 'isActive',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SchoolHolidayScalarFieldEnum = (typeof SchoolHolidayScalarFieldEnum)[keyof typeof SchoolHolidayScalarFieldEnum]
 
 
 export const SortOrder = {
