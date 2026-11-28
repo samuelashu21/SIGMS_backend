@@ -214,6 +214,7 @@ export type SubjectWhereInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightListRelationFilter
   reportCardSubjects?: Prisma.ReportCardSubjectListRelationFilter
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryListRelationFilter
+  examinationReports?: Prisma.ExaminationReportListRelationFilter
 }
 
 export type SubjectOrderByWithRelationInput = {
@@ -233,6 +234,7 @@ export type SubjectOrderByWithRelationInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightOrderByRelationAggregateInput
   reportCardSubjects?: Prisma.ReportCardSubjectOrderByRelationAggregateInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryOrderByRelationAggregateInput
+  examinationReports?: Prisma.ExaminationReportOrderByRelationAggregateInput
 }
 
 export type SubjectWhereUniqueInput = Prisma.AtLeast<{
@@ -258,6 +260,7 @@ export type SubjectWhereUniqueInput = Prisma.AtLeast<{
   academicSubjectWeights?: Prisma.AcademicSubjectWeightListRelationFilter
   reportCardSubjects?: Prisma.ReportCardSubjectListRelationFilter
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryListRelationFilter
+  examinationReports?: Prisma.ExaminationReportListRelationFilter
 }, "id" | "schoolId_code" | "schoolId_name" | "id_schoolId">
 
 export type SubjectOrderByWithAggregationInput = {
@@ -304,6 +307,7 @@ export type SubjectCreateInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateInput = {
@@ -322,6 +326,7 @@ export type SubjectUncheckedCreateInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUpdateInput = {
@@ -340,6 +345,7 @@ export type SubjectUpdateInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateInput = {
@@ -358,6 +364,7 @@ export type SubjectUncheckedUpdateInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateManyInput = {
@@ -453,6 +460,11 @@ export type SubjectMinOrderByAggregateInput = {
 export type SubjectScalarRelationFilter = {
   is?: Prisma.SubjectWhereInput
   isNot?: Prisma.SubjectWhereInput
+}
+
+export type SubjectNullableScalarRelationFilter = {
+  is?: Prisma.SubjectWhereInput | null
+  isNot?: Prisma.SubjectWhereInput | null
 }
 
 export type SubjectCreateNestedManyWithoutSchoolInput = {
@@ -595,6 +607,22 @@ export type SubjectUpdateOneRequiredWithoutAcademicTranscriptEntriesNestedInput 
   update?: Prisma.XOR<Prisma.XOR<Prisma.SubjectUpdateToOneWithWhereWithoutAcademicTranscriptEntriesInput, Prisma.SubjectUpdateWithoutAcademicTranscriptEntriesInput>, Prisma.SubjectUncheckedUpdateWithoutAcademicTranscriptEntriesInput>
 }
 
+export type SubjectCreateNestedOneWithoutExaminationReportsInput = {
+  create?: Prisma.XOR<Prisma.SubjectCreateWithoutExaminationReportsInput, Prisma.SubjectUncheckedCreateWithoutExaminationReportsInput>
+  connectOrCreate?: Prisma.SubjectCreateOrConnectWithoutExaminationReportsInput
+  connect?: Prisma.SubjectWhereUniqueInput
+}
+
+export type SubjectUpdateOneWithoutExaminationReportsNestedInput = {
+  create?: Prisma.XOR<Prisma.SubjectCreateWithoutExaminationReportsInput, Prisma.SubjectUncheckedCreateWithoutExaminationReportsInput>
+  connectOrCreate?: Prisma.SubjectCreateOrConnectWithoutExaminationReportsInput
+  upsert?: Prisma.SubjectUpsertWithoutExaminationReportsInput
+  disconnect?: Prisma.SubjectWhereInput | boolean
+  delete?: Prisma.SubjectWhereInput | boolean
+  connect?: Prisma.SubjectWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SubjectUpdateToOneWithWhereWithoutExaminationReportsInput, Prisma.SubjectUpdateWithoutExaminationReportsInput>, Prisma.SubjectUncheckedUpdateWithoutExaminationReportsInput>
+}
+
 export type SubjectCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -610,6 +638,7 @@ export type SubjectCreateWithoutSchoolInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutSchoolInput = {
@@ -627,6 +656,7 @@ export type SubjectUncheckedCreateWithoutSchoolInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutSchoolInput = {
@@ -684,6 +714,7 @@ export type SubjectCreateWithoutGradeAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutGradeAssignmentsInput = {
@@ -701,6 +732,7 @@ export type SubjectUncheckedCreateWithoutGradeAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutGradeAssignmentsInput = {
@@ -734,6 +766,7 @@ export type SubjectUpdateWithoutGradeAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutGradeAssignmentsInput = {
@@ -751,6 +784,7 @@ export type SubjectUncheckedUpdateWithoutGradeAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateWithoutTeacherAssignmentsInput = {
@@ -768,6 +802,7 @@ export type SubjectCreateWithoutTeacherAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutTeacherAssignmentsInput = {
@@ -785,6 +820,7 @@ export type SubjectUncheckedCreateWithoutTeacherAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutTeacherAssignmentsInput = {
@@ -818,6 +854,7 @@ export type SubjectUpdateWithoutTeacherAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutTeacherAssignmentsInput = {
@@ -835,6 +872,7 @@ export type SubjectUncheckedUpdateWithoutTeacherAssignmentsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateWithoutExaminationsInput = {
@@ -852,6 +890,7 @@ export type SubjectCreateWithoutExaminationsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutExaminationsInput = {
@@ -869,6 +908,7 @@ export type SubjectUncheckedCreateWithoutExaminationsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutExaminationsInput = {
@@ -902,6 +942,7 @@ export type SubjectUpdateWithoutExaminationsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutExaminationsInput = {
@@ -919,6 +960,7 @@ export type SubjectUncheckedUpdateWithoutExaminationsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateWithoutSubjectGradeResultsInput = {
@@ -936,6 +978,7 @@ export type SubjectCreateWithoutSubjectGradeResultsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutSubjectGradeResultsInput = {
@@ -953,6 +996,7 @@ export type SubjectUncheckedCreateWithoutSubjectGradeResultsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutSubjectGradeResultsInput = {
@@ -986,6 +1030,7 @@ export type SubjectUpdateWithoutSubjectGradeResultsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutSubjectGradeResultsInput = {
@@ -1003,6 +1048,7 @@ export type SubjectUncheckedUpdateWithoutSubjectGradeResultsInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateWithoutAcademicSubjectWeightsInput = {
@@ -1020,6 +1066,7 @@ export type SubjectCreateWithoutAcademicSubjectWeightsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutAcademicSubjectWeightsInput = {
@@ -1037,6 +1084,7 @@ export type SubjectUncheckedCreateWithoutAcademicSubjectWeightsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutAcademicSubjectWeightsInput = {
@@ -1070,6 +1118,7 @@ export type SubjectUpdateWithoutAcademicSubjectWeightsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutAcademicSubjectWeightsInput = {
@@ -1087,6 +1136,7 @@ export type SubjectUncheckedUpdateWithoutAcademicSubjectWeightsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateWithoutReportCardSubjectsInput = {
@@ -1104,6 +1154,7 @@ export type SubjectCreateWithoutReportCardSubjectsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSubjectInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutReportCardSubjectsInput = {
@@ -1121,6 +1172,7 @@ export type SubjectUncheckedCreateWithoutReportCardSubjectsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSubjectInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutReportCardSubjectsInput = {
@@ -1154,6 +1206,7 @@ export type SubjectUpdateWithoutReportCardSubjectsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSubjectNestedInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutReportCardSubjectsInput = {
@@ -1171,6 +1224,7 @@ export type SubjectUncheckedUpdateWithoutReportCardSubjectsInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSubjectNestedInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateWithoutAcademicTranscriptEntriesInput = {
@@ -1188,6 +1242,7 @@ export type SubjectCreateWithoutAcademicTranscriptEntriesInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSubjectInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectUncheckedCreateWithoutAcademicTranscriptEntriesInput = {
@@ -1205,6 +1260,7 @@ export type SubjectUncheckedCreateWithoutAcademicTranscriptEntriesInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSubjectInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSubjectInput
 }
 
 export type SubjectCreateOrConnectWithoutAcademicTranscriptEntriesInput = {
@@ -1238,6 +1294,7 @@ export type SubjectUpdateWithoutAcademicTranscriptEntriesInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSubjectNestedInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutAcademicTranscriptEntriesInput = {
@@ -1255,6 +1312,95 @@ export type SubjectUncheckedUpdateWithoutAcademicTranscriptEntriesInput = {
   subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSubjectNestedInput
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
+}
+
+export type SubjectCreateWithoutExaminationReportsInput = {
+  id?: string
+  name: string
+  code: string
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSubjectsInput
+  gradeAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutSubjectInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutSubjectInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSubjectInput
+  subjectGradeResults?: Prisma.SubjectGradeResultCreateNestedManyWithoutSubjectInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutSubjectInput
+  reportCardSubjects?: Prisma.ReportCardSubjectCreateNestedManyWithoutSubjectInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutSubjectInput
+}
+
+export type SubjectUncheckedCreateWithoutExaminationReportsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  code: string
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  gradeAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutSubjectInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutSubjectInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSubjectInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedCreateNestedManyWithoutSubjectInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutSubjectInput
+  reportCardSubjects?: Prisma.ReportCardSubjectUncheckedCreateNestedManyWithoutSubjectInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutSubjectInput
+}
+
+export type SubjectCreateOrConnectWithoutExaminationReportsInput = {
+  where: Prisma.SubjectWhereUniqueInput
+  create: Prisma.XOR<Prisma.SubjectCreateWithoutExaminationReportsInput, Prisma.SubjectUncheckedCreateWithoutExaminationReportsInput>
+}
+
+export type SubjectUpsertWithoutExaminationReportsInput = {
+  update: Prisma.XOR<Prisma.SubjectUpdateWithoutExaminationReportsInput, Prisma.SubjectUncheckedUpdateWithoutExaminationReportsInput>
+  create: Prisma.XOR<Prisma.SubjectCreateWithoutExaminationReportsInput, Prisma.SubjectUncheckedCreateWithoutExaminationReportsInput>
+  where?: Prisma.SubjectWhereInput
+}
+
+export type SubjectUpdateToOneWithWhereWithoutExaminationReportsInput = {
+  where?: Prisma.SubjectWhereInput
+  data: Prisma.XOR<Prisma.SubjectUpdateWithoutExaminationReportsInput, Prisma.SubjectUncheckedUpdateWithoutExaminationReportsInput>
+}
+
+export type SubjectUpdateWithoutExaminationReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSubjectsNestedInput
+  gradeAssignments?: Prisma.GradeSubjectUpdateManyWithoutSubjectNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutSubjectNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSubjectNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUpdateManyWithoutSubjectNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
+  reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+}
+
+export type SubjectUncheckedUpdateWithoutExaminationReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  code?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  gradeAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutSubjectNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutSubjectNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSubjectNestedInput
+  subjectGradeResults?: Prisma.SubjectGradeResultUncheckedUpdateManyWithoutSubjectNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
+  reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectCreateManySchoolInput = {
@@ -1282,6 +1428,7 @@ export type SubjectUpdateWithoutSchoolInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateWithoutSchoolInput = {
@@ -1299,6 +1446,7 @@ export type SubjectUncheckedUpdateWithoutSchoolInput = {
   academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutSubjectNestedInput
   reportCardSubjects?: Prisma.ReportCardSubjectUncheckedUpdateManyWithoutSubjectNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutSubjectNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSubjectNestedInput
 }
 
 export type SubjectUncheckedUpdateManyWithoutSchoolInput = {
@@ -1324,6 +1472,7 @@ export type SubjectCountOutputType = {
   academicSubjectWeights: number
   reportCardSubjects: number
   academicTranscriptEntries: number
+  examinationReports: number
 }
 
 export type SubjectCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1334,6 +1483,7 @@ export type SubjectCountOutputTypeSelect<ExtArgs extends runtime.Types.Extension
   academicSubjectWeights?: boolean | SubjectCountOutputTypeCountAcademicSubjectWeightsArgs
   reportCardSubjects?: boolean | SubjectCountOutputTypeCountReportCardSubjectsArgs
   academicTranscriptEntries?: boolean | SubjectCountOutputTypeCountAcademicTranscriptEntriesArgs
+  examinationReports?: boolean | SubjectCountOutputTypeCountExaminationReportsArgs
 }
 
 /**
@@ -1395,6 +1545,13 @@ export type SubjectCountOutputTypeCountAcademicTranscriptEntriesArgs<ExtArgs ext
   where?: Prisma.AcademicTranscriptEntryWhereInput
 }
 
+/**
+ * SubjectCountOutputType without action
+ */
+export type SubjectCountOutputTypeCountExaminationReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExaminationReportWhereInput
+}
+
 
 export type SubjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1413,6 +1570,7 @@ export type SubjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   academicSubjectWeights?: boolean | Prisma.Subject$academicSubjectWeightsArgs<ExtArgs>
   reportCardSubjects?: boolean | Prisma.Subject$reportCardSubjectsArgs<ExtArgs>
   academicTranscriptEntries?: boolean | Prisma.Subject$academicTranscriptEntriesArgs<ExtArgs>
+  examinationReports?: boolean | Prisma.Subject$examinationReportsArgs<ExtArgs>
   _count?: boolean | Prisma.SubjectCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["subject"]>
 
@@ -1461,6 +1619,7 @@ export type SubjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   academicSubjectWeights?: boolean | Prisma.Subject$academicSubjectWeightsArgs<ExtArgs>
   reportCardSubjects?: boolean | Prisma.Subject$reportCardSubjectsArgs<ExtArgs>
   academicTranscriptEntries?: boolean | Prisma.Subject$academicTranscriptEntriesArgs<ExtArgs>
+  examinationReports?: boolean | Prisma.Subject$examinationReportsArgs<ExtArgs>
   _count?: boolean | Prisma.SubjectCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type SubjectIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1481,6 +1640,7 @@ export type $SubjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     academicSubjectWeights: Prisma.$AcademicSubjectWeightPayload<ExtArgs>[]
     reportCardSubjects: Prisma.$ReportCardSubjectPayload<ExtArgs>[]
     academicTranscriptEntries: Prisma.$AcademicTranscriptEntryPayload<ExtArgs>[]
+    examinationReports: Prisma.$ExaminationReportPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1893,6 +2053,7 @@ export interface Prisma__SubjectClient<T, Null = never, ExtArgs extends runtime.
   academicSubjectWeights<T extends Prisma.Subject$academicSubjectWeightsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Subject$academicSubjectWeightsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicSubjectWeightPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reportCardSubjects<T extends Prisma.Subject$reportCardSubjectsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Subject$reportCardSubjectsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReportCardSubjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   academicTranscriptEntries<T extends Prisma.Subject$academicTranscriptEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Subject$academicTranscriptEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicTranscriptEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  examinationReports<T extends Prisma.Subject$examinationReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Subject$examinationReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExaminationReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2496,6 +2657,30 @@ export type Subject$academicTranscriptEntriesArgs<ExtArgs extends runtime.Types.
   take?: number
   skip?: number
   distinct?: Prisma.AcademicTranscriptEntryScalarFieldEnum | Prisma.AcademicTranscriptEntryScalarFieldEnum[]
+}
+
+/**
+ * Subject.examinationReports
+ */
+export type Subject$examinationReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExaminationReport
+   */
+  select?: Prisma.ExaminationReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExaminationReport
+   */
+  omit?: Prisma.ExaminationReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExaminationReportInclude<ExtArgs> | null
+  where?: Prisma.ExaminationReportWhereInput
+  orderBy?: Prisma.ExaminationReportOrderByWithRelationInput | Prisma.ExaminationReportOrderByWithRelationInput[]
+  cursor?: Prisma.ExaminationReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExaminationReportScalarFieldEnum | Prisma.ExaminationReportScalarFieldEnum[]
 }
 
 /**

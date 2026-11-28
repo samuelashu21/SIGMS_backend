@@ -215,6 +215,11 @@ import annualReportRoutes from "../../reports/routes/annual-report.routes.js";
 import semesterReportRoutes from "../../reports/routes/semester-report.routes.js";
 import transcriptRoutes from "../../reports/routes/transcript.routes.js";
 import attendanceReportRoutes from "../../reports/routes/attendance-report.routes.js";
+import examinationReportRoutes from "../../reports/routes/examination-report.routes.js";
+import reportPdfRoutes from "../../reports/routes/report-pdf.routes.js";
+import reportPublicationRoutes from "../../reports/routes/report-publication.routes.js";
+import accessibleReportRoutes from "../../reports/routes/accessible-report.routes.js";
+import promotionRoutes from "../../promotions/routes/promotion.routes.js";
 
 const router = Router();
 
@@ -1271,5 +1276,15 @@ router.use('/:schoolId/reports/transcripts', transcriptRoutes);
 
 
 router.use('/:schoolId/reports/attendance', attendanceReportRoutes);
+
+router.use('/:schoolId/reports/examinations', examinationReportRoutes);
+ 
+router.use('/:schoolId/reports', reportPdfRoutes);
+
+router.use('/:schoolId/reports/publication', reportPublicationRoutes);
+ 
+router.use('/:schoolId/reports/access', accessibleReportRoutes);
+
+router.use('/:schoolId/promotions', promotionRoutes);
 
 export default router;

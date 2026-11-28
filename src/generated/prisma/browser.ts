@@ -367,3 +367,58 @@ export type AcademicTranscriptHistory = Prisma.AcademicTranscriptHistoryModel
  * 
  */
 export type AttendanceReport = Prisma.AttendanceReportModel
+/**
+ * Model ExaminationReport
+ * 
+ */
+export type ExaminationReport = Prisma.ExaminationReportModel
+/**
+ * Model StudentAccountLink
+ * 
+ */
+export type StudentAccountLink = Prisma.StudentAccountLinkModel
+/**
+ * Model PromotionConfiguration
+ * 
+ */
+export type PromotionConfiguration = Prisma.PromotionConfigurationModel
+/**
+ * Model PromotionGradeRule
+ * 
+ */
+export type PromotionGradeRule = Prisma.PromotionGradeRuleModel
+/**
+ * Model PromotionEligibilityAssessment
+ * 
+ */
+export type PromotionEligibilityAssessment = Prisma.PromotionEligibilityAssessmentModel
+/**
+ * Model PromotionDecision
+ * 
+ */
+export type PromotionDecision = Prisma.PromotionDecisionModel
+/**
+ * Model GradeProgressionRule
+ * 
+ */
+export type GradeProgressionRule = Prisma.GradeProgressionRuleModel
+/**
+ * Model GraduationConfiguration
+ * 
+ */
+export type GraduationConfiguration = Prisma.GraduationConfigurationModel
+/**
+ * Model GraduationCandidate
+ * 
+ */
+export type GraduationCandidate = Prisma.GraduationCandidateModel
+/**
+ * Model GraduationRecord
+ * 
+ */
+export type GraduationRecord = Prisma.GraduationRecordModel
+/**
+ * Model AcademicProgressionHistory
+ * 
+ */
+export type AcademicProgressionHistory = Prisma.AcademicProgressionHistoryModel

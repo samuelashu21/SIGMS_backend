@@ -88,6 +88,26 @@ model School {
 
   attendanceReports AttendanceReport[]
 
+  examinationReports ExaminationReport[]
+
+  studentAccountLinks StudentAccountLink[]
+
+  promotionConfigurations PromotionConfiguration[]
+  promotionGradeRules PromotionGradeRule[]
+
+  promotionEligibilityAssessments PromotionEligibilityAssessment[]
+
+  promotionDecisions PromotionDecision[]
+
+  gradeProgressionRules GradeProgressionRule[]
+
+  graduationConfigurations GraduationConfiguration[]
+  graduationCandidates GraduationCandidate[]
+
+  graduationRecords GraduationRecord[]
+
+  academicProgressionHistory AcademicProgressionHistory[]
+
   @@index([schoolType], map: "schools_school_type_idx")
   @@index([region, zone], map: "schools_region_zone_idx")
   @@index([isActive], map: "schools_is_active_idx")
@@ -135,6 +155,20 @@ model Student {
   academicTranscripts StudentAcademicTranscript[]
 
   attendanceReports AttendanceReport[]
+
+  examinationReports ExaminationReport[]
+
+  accountLinks StudentAccountLink[]
+
+  promotionEligibilityAssessments PromotionEligibilityAssessment[]
+
+  promotionDecisions PromotionDecision[]
+
+  graduationCandidates GraduationCandidate[]
+
+  graduationRecords GraduationRecord[]
+
+  academicProgressionHistory AcademicProgressionHistory[]
 
   @@unique([schoolId, studentNumber], map: "students_school_student_number_key")
   @@unique([id, schoolId], map: "students_id_school_key")
@@ -233,6 +267,30 @@ model User {
   transcriptHistoryActions AcademicTranscriptHistory[] @relation("TranscriptHistoryActor")
 
   generatedAttendanceReports AttendanceReport[] @relation("AttendanceReportGenerator")
+  
+  generatedExaminationReports ExaminationReport[] @relation("ExaminationReportGenerator")
+
+  publishedAttendanceReports AttendanceReport[] @relation("AttendanceReportPublisher")
+
+  publishedExaminationReports ExaminationReport[] @relation("ExaminationReportPublisher")
+
+  studentAccountLinks StudentAccountLink[]
+
+  promotionEligibilityAssessments PromotionEligibilityAssessment[] @relation("PromotionEligibilityAssessor")
+
+  promotionDecisionsMade PromotionDecision[] @relation("PromotionDecisionMaker")
+
+  createdGraduationConfigurations GraduationConfiguration[] @relation("GraduationConfigurationCreator")
+  assessedGraduationCandidates GraduationCandidate[] @relation("GraduationCandidateAssessor")
+  reviewedGraduationCandidates GraduationCandidate[] @relation("GraduationCandidateReviewer")
+
+  approvedGraduationRecords GraduationRecord[] @relation("GraduationRecordApprover")
+  revokedGraduationRecords GraduationRecord[] @relation("GraduationRecordRevoker")
+
+  academicProgressionActions AcademicProgressionHistory[] @relation("AcademicProgressionActor")
+
+  createdPromotionConfigurations PromotionConfiguration[] @relation("PromotionConfigurationCreator")
+  updatedPromotionConfigurations PromotionConfiguration[] @relation("PromotionConfigurationUpdater")
 
   @@map("users")
 }
@@ -409,6 +467,21 @@ model AcademicYear {
 
   attendanceReports AttendanceReport[]
 
+  promotionConfigurations PromotionConfiguration[]
+
+  promotionEligibilityAssessments PromotionEligibilityAssessment[]
+
+  promotionDecisions PromotionDecision[]
+
+  gradeProgressionRules GradeProgressionRule[]
+
+  graduationConfigurations GraduationConfiguration[]
+  graduationCandidates GraduationCandidate[]
+
+  graduationRecords GraduationRecord[]
+
+  academicProgressionHistory AcademicProgressionHistory[]
+
   @@unique([id, schoolId], map: "academic_years_id_school_key")
 
   @@unique([schoolId, name], map: "academic_years_school_name_key")
@@ -506,6 +579,20 @@ model Grade {
 
   academicTranscriptEntries AcademicTranscriptEntry[]
 
+  promotionGradeRules PromotionGradeRule[]
+
+  promotionDecisions PromotionDecision[]
+
+  progressionsFrom GradeProgressionRule[] @relation("GradeProgressionCurrent")
+  progressionsTo GradeProgressionRule[] @relation("GradeProgressionNext")
+
+  graduationConfigurations GraduationConfiguration[]
+
+  graduationRecords GraduationRecord[]
+
+  progressionHistoryAsPrevious AcademicProgressionHistory[] @relation("ProgressionPreviousGrade")
+  progressionHistoryAsNew AcademicProgressionHistory[] @relation("ProgressionNewGrade")
+
   @@unique([schoolId, name], map: "grades_school_name_key")
   @@unique([schoolId, gradeLevel], map: "grades_school_level_key")
   @@unique([id, schoolId], map: "grades_id_school_key")
@@ -547,6 +634,13 @@ model Section {
 
   attendanceReports AttendanceReport[]
 
+  examinationReports ExaminationReport[]
+
+  promotionDecisions PromotionDecision[]
+
+  progressionHistoryAsPrevious AcademicProgressionHistory[] @relation("ProgressionPreviousSection")
+  progressionHistoryAsNew AcademicProgressionHistory[] @relation("ProgressionNewSection")
+
   @@unique([academicYearId, gradeId, name], map: "sections_year_grade_name_key")
   @@index([schoolId, academicYearId], map: "sections_school_year_idx")
   @@index([schoolId, gradeId], map: "sections_school_grade_idx")
@@ -583,6 +677,8 @@ model Subject {
   reportCardSubjects ReportCardSubject[]
 
   academicTranscriptEntries AcademicTranscriptEntry[]
+
+  examinationReports ExaminationReport[]
 
   @@unique([schoolId, code], map: "subjects_school_code_key")
   @@unique([schoolId, name], map: "subjects_school_name_key")
@@ -1008,6 +1104,18 @@ model AcademicEnrollment {
   academicRecords StudentAcademicRecord[]
 
   reportCards ReportCard[]
+
+  promotionEligibilityAssessments PromotionEligibilityAssessment[]
+
+  promotionDecisionsAsCurrent PromotionDecision[] @relation("PromotionDecisionCurrentEnrollment")
+  promotionDecisionsAsNext PromotionDecision[] @relation("PromotionDecisionNextEnrollment")
+
+  graduationCandidates GraduationCandidate[]
+
+  graduationRecords GraduationRecord[]
+
+  progressionHistoryAsCurrent AcademicProgressionHistory[] @relation("ProgressionCurrentEnrollment")
+  progressionHistoryAsPrevious AcademicProgressionHistory[] @relation("ProgressionPreviousEnrollment")
 
   @@unique([id, schoolId], map: "academic_enrollments_id_school_key")
 
@@ -1894,6 +2002,8 @@ model Examination {
   section      Section? @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
   subject      Subject @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
   createdBy    User @relation("ExaminationCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  
+  reports ExaminationReport[]
 
   @@unique([id, schoolId], map: "examinations_id_school_key")
   @@index([schoolId, academicYearId, status])
@@ -2885,10 +2995,609 @@ model AttendanceReport {
   semester Semester? @relation(fields: [semesterId, schoolId], references: [id, schoolId], onDelete: Restrict)
   generatedBy User @relation("AttendanceReportGenerator", fields: [generatedById], references: [id], onDelete: Restrict)
 
+  status        ReportPublicationStatus @default(GENERATED)
+  publishedAt   DateTime?               @map("published_at") @db.Timestamptz(3)
+  publishedById String?                 @map("published_by_id") @db.Uuid
+
+  publishedBy User? @relation( "AttendanceReportPublisher",fields: [publishedById],references: [id],onDelete: SetNull)
+  
   @@unique([id, schoolId])
   @@unique([schoolId, reportNumber])
   @@index([schoolId, studentId, academicYearId])
   @@index([schoolId, sectionId, academicYearId])
   @@index([schoolId, generatedAt])
   @@map("attendance_reports")
+}
+
+
+
+
+enum ExaminationReportScope {
+  EXAMINATION
+  STUDENT
+  SECTION
+  SUBJECT
+
+  @@map("examination_report_scopes")
+}
+
+model ExaminationReport {
+  id            String @id @default(uuid()) @db.Uuid
+  schoolId      String @map("school_id") @db.Uuid
+  examinationId String @map("examination_id") @db.Uuid
+
+  studentId String? @map("student_id") @db.Uuid
+  sectionId String? @map("section_id") @db.Uuid
+  subjectId String? @map("subject_id") @db.Uuid
+
+  reportNumber String @map("report_number") @db.VarChar(100)
+  scope ExaminationReportScope
+
+  totalStudents Int @default(0) @map("total_students")
+  submittedMarks Int @default(0) @map("submitted_marks")
+  approvedMarks Int @default(0) @map("approved_marks")
+
+  averageMarks Decimal? @map("average_marks") @db.Decimal(8, 2)
+  highestMarks Decimal? @map("highest_marks") @db.Decimal(8, 2)
+  lowestMarks Decimal? @map("lowest_marks") @db.Decimal(8, 2)
+  passCount Int @default(0) @map("pass_count")
+  failCount Int @default(0) @map("fail_count")
+  passPercentage Decimal? @map("pass_percentage") @db.Decimal(8, 2)
+
+  reportDetails Json? @map("report_details")
+
+  generatedById String @map("generated_by_id") @db.Uuid
+  generatedAt DateTime @default(now()) @map("generated_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  examination Examination @relation(fields: [examinationId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  student Student? @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  section Section? @relation(fields: [sectionId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  subject Subject? @relation(fields: [subjectId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  generatedBy User @relation("ExaminationReportGenerator", fields: [generatedById], references: [id], onDelete: Restrict)
+
+  status        ReportPublicationStatus @default(GENERATED)
+  publishedAt   DateTime?               @map("published_at") @db.Timestamptz(3)
+  publishedById String?                 @map("published_by_id") @db.Uuid
+
+  publishedBy User? @relation("ExaminationReportPublisher", fields: [publishedById],references: [id],onDelete: SetNull)
+
+  @@unique([id, schoolId])
+  @@unique([schoolId, reportNumber])
+  @@index([schoolId, examinationId])
+  @@index([schoolId, studentId])
+  @@index([schoolId, sectionId])
+  @@map("examination_reports")
+}
+
+
+enum ReportPublicationStatus {
+  GENERATED
+  PUBLISHED
+  WITHDRAWN
+
+  @@map("report_publication_statuses")
+}
+
+
+
+model StudentAccountLink {
+  id        String @id @default(uuid()) @db.Uuid
+  schoolId  String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+  userId    String @map("user_id") @db.Uuid
+
+  isActive  Boolean @default(true) @map("is_active")
+  verifiedAt DateTime? @map("verified_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student Student @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  user User @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@unique([schoolId, studentId])
+  @@unique([schoolId, userId])
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, isActive])
+  @@map("student_account_links")
+}
+
+
+
+
+enum PromotionDecisionType {
+  AUTOMATIC_ELIGIBILITY
+  MANUAL_REVIEW
+  EXAMINATION_BASED
+  PERFORMANCE_BASED
+  @@map("promotion_decision_types")
+}
+
+enum PromotionConfigurationStatus {
+  ACTIVE
+  INACTIVE
+  @@map("promotion_configuration_statuses")
+}
+
+enum PromotionEligibilityStatus {
+  ELIGIBLE
+  NOT_ELIGIBLE
+  REVIEW_REQUIRED
+  @@map("promotion_eligibility_statuses")
+}
+
+enum PromotionAction {
+  PROMOTED
+  RETAINED
+  GRADUATED
+  @@map("promotion_actions")
+}
+
+
+
+model PromotionConfiguration {
+  id           String @id @default(uuid()) @db.Uuid
+  schoolId     String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  name String @db.VarChar(150)
+
+  decisionType PromotionDecisionType @map("decision_type")
+
+  minimumOverallPercentage Decimal? @map("minimum_overall_percentage") @db.Decimal(5, 2)
+  minimumGradePoint Decimal? @map("minimum_grade_point") @db.Decimal(5, 2)
+  minimumAttendancePercentage Decimal? @map("minimum_attendance_percentage") @db.Decimal(5, 2)
+
+  minimumPassedSubjects Int @default(0) @map("minimum_passed_subjects")
+  maximumFailedSubjects Int @default(0) @map("maximum_failed_subjects")
+
+  requireAllCoreSubjectsPassed Boolean @default(true) @map("require_all_core_subjects_passed")
+  requireCompletedExaminations Boolean @default(true) @map("require_completed_examinations")
+  requireApprovedResults Boolean @default(true) @map("require_approved_results")
+
+  allowManualOverride Boolean @default(false) @map("allow_manual_override")
+  requirePrincipalApproval Boolean @default(true) @map("require_principal_approval")
+
+  status PromotionConfigurationStatus @default(ACTIVE)
+
+  createdById String @map("created_by_id") @db.Uuid
+  updatedById String? @map("updated_by_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  createdBy User @relation("PromotionConfigurationCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  updatedBy User? @relation("PromotionConfigurationUpdater", fields: [updatedById], references: [id], onDelete: SetNull)
+
+  gradeRules PromotionGradeRule[]
+
+  eligibilityAssessments PromotionEligibilityAssessment[]
+
+  promotionDecisions PromotionDecision[]
+
+  @@unique([schoolId, academicYearId, name])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, status])
+  @@map("promotion_configurations")
+}
+
+
+
+model PromotionGradeRule {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId        String @map("school_id") @db.Uuid
+  configurationId String @map("configuration_id") @db.Uuid
+  gradeId         String @map("grade_id") @db.Uuid
+
+  minimumOverallPercentage     Decimal? @map("minimum_overall_percentage") @db.Decimal(5, 2)
+  minimumGradePoint             Decimal? @map("minimum_grade_point") @db.Decimal(5, 2)
+  minimumAttendancePercentage  Decimal? @map("minimum_attendance_percentage") @db.Decimal(5, 2)
+
+  minimumPassedSubjects Int? @map("minimum_passed_subjects")
+  maximumFailedSubjects Int? @map("maximum_failed_subjects")
+
+  requireAllCoreSubjectsPassed Boolean? @map("require_all_core_subjects_passed")
+
+  allowPromotion Boolean @default(true) @map("allow_promotion")
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  // Relations
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  configuration PromotionConfiguration @relation( fields: [configurationId, schoolId],references: [id, schoolId],onDelete: Cascade)
+
+  grade Grade @relation(fields: [gradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, configurationId, gradeId])
+  @@unique([id, schoolId])
+  @@index([schoolId, gradeId])
+  @@map("promotion_grade_rules")
+} 
+
+
+
+model PromotionEligibilityAssessment {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+  enrollmentId String @map("enrollment_id") @db.Uuid
+  configurationId String @map("configuration_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  status PromotionEligibilityStatus
+
+  overallPercentage Decimal? @map("overall_percentage") @db.Decimal(5, 2)
+  averageGradePoint Decimal? @map("average_grade_point") @db.Decimal(5, 2)
+  attendancePercentage Decimal? @map("attendance_percentage") @db.Decimal(5, 2)
+
+  totalSubjects Int @default(0) @map("total_subjects")
+  passedSubjects Int @default(0) @map("passed_subjects")
+  failedSubjects Int @default(0) @map("failed_subjects")
+
+  completedExaminations Boolean @default(false) @map("completed_examinations")
+  approvedResults Boolean @default(false) @map("approved_results")
+
+  reasons Json?
+  assessedById String @map("assessed_by_id") @db.Uuid
+  assessedAt DateTime @default(now()) @map("assessed_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  student Student @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  enrollment AcademicEnrollment @relation(fields: [enrollmentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  configuration PromotionConfiguration @relation(fields: [configurationId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId], references: [id, schoolId], onDelete: Restrict)
+  assessedBy User @relation("PromotionEligibilityAssessor", fields: [assessedById], references: [id], onDelete: Restrict)
+
+  promotionDecision PromotionDecision?
+
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, academicYearId])
+  @@index([schoolId, configurationId, status])
+  @@index([schoolId, assessedAt])
+  @@map("promotion_eligibility_assessments")
+}
+
+
+
+model PromotionDecision {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+
+  currentEnrollmentId String @map("current_enrollment_id") @db.Uuid
+  nextEnrollmentId String @map("next_enrollment_id") @db.Uuid
+
+  eligibilityAssessmentId String @map("eligibility_assessment_id") @db.Uuid
+  configurationId String @map("configuration_id") @db.Uuid
+
+  nextAcademicYearId String @map("next_academic_year_id") @db.Uuid
+  targetGradeId String @map("target_grade_id") @db.Uuid
+  targetSectionId String @map("target_section_id") @db.Uuid
+
+  action PromotionAction
+
+  reason String? @db.Text
+  overrideReason String? @map("override_reason") @db.Text
+
+  decidedById String @map("decided_by_id") @db.Uuid
+  decidedAt DateTime @default(now()) @map("decided_at") @db.Timestamptz(3)
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId], references: [id, schoolId], onDelete: Restrict)
+
+  currentEnrollment AcademicEnrollment @relation("PromotionDecisionCurrentEnrollment",fields: [currentEnrollmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  nextEnrollment AcademicEnrollment @relation("PromotionDecisionNextEnrollment",fields: [nextEnrollmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  eligibilityAssessment PromotionEligibilityAssessment @relation(fields: [eligibilityAssessmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  configuration PromotionConfiguration @relation(fields: [configurationId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  nextAcademicYear AcademicYear @relation(fields: [nextAcademicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  targetGrade Grade @relation(fields: [targetGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  targetSection Section @relation(fields: [targetSectionId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  decidedBy User @relation("PromotionDecisionMaker",fields: [decidedById],references: [id],onDelete: Restrict)
+
+  @@unique([schoolId, currentEnrollmentId])
+  @@unique([schoolId, nextEnrollmentId])
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, decidedAt])
+  @@index([schoolId, nextAcademicYearId, targetGradeId])
+  @@map("promotion_decisions")
+  @@unique([eligibilityAssessmentId, schoolId])
+}
+
+
+
+
+model GradeProgressionRule {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  currentGradeId String @map("current_grade_id") @db.Uuid
+  nextGradeId String? @map("next_grade_id") @db.Uuid
+
+  isGraduationGrade Boolean @default(false) @map("is_graduation_grade")
+  isActive Boolean @default(true) @map("is_active")
+
+  description String? @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  currentGrade Grade @relation( "GradeProgressionCurrent",fields: [currentGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  nextGrade Grade? @relation("GradeProgressionNext",fields: [nextGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  @@unique([schoolId, academicYearId, currentGradeId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, isActive])
+  @@map("grade_progression_rules")
+}
+
+
+
+enum GraduationCandidateStatus {
+  PENDING
+  ELIGIBLE
+  NOT_ELIGIBLE
+  REVIEW_REQUIRED
+  APPROVED
+  REJECTED
+  @@map("graduation_candidate_statuses")
+}
+
+model GraduationConfiguration {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+  terminalGradeId String @map("terminal_grade_id") @db.Uuid
+
+  name String @db.VarChar(150)
+
+  minimumOverallPercentage Decimal? @map("minimum_overall_percentage") @db.Decimal(5, 2)
+  minimumGradePoint Decimal? @map("minimum_grade_point") @db.Decimal(5, 2)
+  minimumAttendancePercentage Decimal? @map("minimum_attendance_percentage") @db.Decimal(5, 2)
+
+  minimumPassedSubjects Int @default(0) @map("minimum_passed_subjects")
+  maximumFailedSubjects Int @default(0) @map("maximum_failed_subjects")
+
+  requireCompletedExaminations Boolean @default(true) @map("require_completed_examinations")
+  requireApprovedResults Boolean @default(true) @map("require_approved_results")
+
+  requireAllCoreSubjectsPassed Boolean @default(true) @map("require_all_core_subjects_passed")
+
+  status PromotionConfigurationStatus @default(ACTIVE)
+
+  createdById String @map("created_by_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  academicYear AcademicYear @relation( fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict )
+
+  terminalGrade Grade @relation(fields: [terminalGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  createdBy User @relation("GraduationConfigurationCreator",fields: [createdById],references: [id], onDelete: Restrict)
+
+  candidates GraduationCandidate[]
+
+  @@unique([schoolId, academicYearId, terminalGradeId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, status])
+  @@map("graduation_configurations")
+}
+
+model GraduationCandidate {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+  enrollmentId String @map("enrollment_id") @db.Uuid
+  configurationId String @map("configuration_id") @db.Uuid
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  status GraduationCandidateStatus @default(PENDING)
+
+  overallPercentage Decimal? @map("overall_percentage") @db.Decimal(5, 2)
+  averageGradePoint Decimal? @map("average_grade_point") @db.Decimal(5, 2)
+  attendancePercentage Decimal? @map("attendance_percentage") @db.Decimal(5, 2)
+
+  totalSubjects Int @default(0) @map("total_subjects")
+  passedSubjects Int @default(0) @map("passed_subjects")
+  failedSubjects Int @default(0) @map("failed_subjects")
+
+  completedExaminations Boolean @default(false) @map("completed_examinations")
+  approvedResults Boolean @default(false) @map("approved_results")
+
+  assessmentReasons Json? @map("assessment_reasons")
+
+  assessedById String @map("assessed_by_id") @db.Uuid
+  assessedAt DateTime @default(now()) @map("assessed_at") @db.Timestamptz(3)
+
+  reviewedById String? @map("reviewed_by_id") @db.Uuid
+  reviewedAt DateTime? @map("reviewed_at") @db.Timestamptz(3)
+  reviewNotes String? @map("review_notes") @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  enrollment AcademicEnrollment @relation(fields: [enrollmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  configuration GraduationConfiguration @relation(fields: [configurationId, schoolId], references: [id, schoolId], onDelete: Restrict )
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  assessedBy User @relation("GraduationCandidateAssessor",fields: [assessedById],references: [id],onDelete: Restrict)
+
+  reviewedBy User? @relation( "GraduationCandidateReviewer",fields: [reviewedById], references: [id], onDelete: Restrict)
+  
+  graduationRecord GraduationRecord?
+
+  @@unique([schoolId, studentId, academicYearId])
+  @@unique([id, schoolId])
+  @@index([schoolId, configurationId, status])
+  @@index([schoolId, academicYearId, status])
+  @@map("graduation_candidates")
+}
+
+
+
+
+enum GraduationRecordStatus {
+  CONFIRMED
+  REVOKED
+  @@map("graduation_record_statuses")
+}
+
+model GraduationRecord {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+  enrollmentId String @map("enrollment_id") @db.Uuid
+  candidateId String @map("candidate_id") @db.Uuid
+
+  academicYearId String @map("academic_year_id") @db.Uuid
+  terminalGradeId String @map("terminal_grade_id") @db.Uuid
+
+  graduationNumber String @map("graduation_number") @db.VarChar(100)
+  graduationDate DateTime @map("graduation_date") @db.Date
+
+  qualification String? @db.VarChar(200)
+  distinction String? @db.VarChar(150)
+  remarks String? @db.Text
+
+  status GraduationRecordStatus @default(CONFIRMED)
+
+  approvedById String @map("approved_by_id") @db.Uuid
+  approvedAt DateTime @default(now()) @map("approved_at") @db.Timestamptz(3)
+
+  revokedById String? @map("revoked_by_id") @db.Uuid
+  revokedAt DateTime? @map("revoked_at") @db.Timestamptz(3)
+  revocationReason String? @map("revocation_reason") @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  enrollment AcademicEnrollment @relation(fields: [enrollmentId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  candidate GraduationCandidate @relation(fields: [candidateId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  terminalGrade Grade @relation(fields: [terminalGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  approvedBy User @relation( "GraduationRecordApprover", fields: [approvedById],references: [id],onDelete: Restrict)
+
+  revokedBy User? @relation("GraduationRecordRevoker",fields: [revokedById],references: [id],onDelete: Restrict)
+
+  @@unique([schoolId, graduationNumber])
+  @@unique([schoolId, studentId, academicYearId])
+  @@unique([id, schoolId])
+  @@index([schoolId, academicYearId, status])
+  @@index([schoolId, studentId])
+  @@map("graduation_records")
+  @@unique([candidateId, schoolId])
+}
+
+
+
+
+enum AcademicProgressionAction {
+  ENROLLED
+  PROMOTED
+  RETAINED
+  GRADUATED
+  CORRECTED
+  @@map("academic_progression_actions")
+}
+
+
+model AcademicProgressionHistory {
+  id String @id @default(uuid()) @db.Uuid
+
+  schoolId String @map("school_id") @db.Uuid
+  studentId String @map("student_id") @db.Uuid
+
+  currentEnrollmentId String? @map("current_enrollment_id") @db.Uuid
+  previousEnrollmentId String? @map("previous_enrollment_id") @db.Uuid
+
+  academicYearId String @map("academic_year_id") @db.Uuid
+
+  previousGradeId String? @map("previous_grade_id") @db.Uuid
+  newGradeId String? @map("new_grade_id") @db.Uuid
+
+  previousSectionId String? @map("previous_section_id") @db.Uuid
+  newSectionId String? @map("new_section_id") @db.Uuid
+
+  action AcademicProgressionAction
+
+  reason String? @db.Text
+  details Json?
+
+  performedById String @map("performed_by_id") @db.Uuid
+  performedAt DateTime @default(now()) @map("performed_at") @db.Timestamptz(3)
+
+  school School @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+
+  student Student @relation(fields: [studentId, schoolId],references: [id, schoolId], onDelete: Restrict)
+
+  currentEnrollment AcademicEnrollment? @relation("ProgressionCurrentEnrollment", fields: [currentEnrollmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  previousEnrollment AcademicEnrollment? @relation("ProgressionPreviousEnrollment", fields: [previousEnrollmentId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  academicYear AcademicYear @relation(fields: [academicYearId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  previousGrade Grade? @relation("ProgressionPreviousGrade",fields: [previousGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  newGrade Grade? @relation("ProgressionNewGrade",fields: [newGradeId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  previousSection Section? @relation("ProgressionPreviousSection",fields: [previousSectionId, schoolId],references: [id, schoolId],onDelete: Restrict )
+
+  newSection Section? @relation("ProgressionNewSection",fields: [newSectionId, schoolId],references: [id, schoolId],onDelete: Restrict)
+
+  performedBy User @relation("AcademicProgressionActor",fields: [performedById],references: [id],onDelete: Restrict)
+
+  @@unique([id, schoolId])
+  @@index([schoolId, studentId, performedAt])
+  @@index([schoolId, academicYearId, action])
+  @@index([schoolId, action, performedAt])
+  @@map("academic_progression_history")
 }

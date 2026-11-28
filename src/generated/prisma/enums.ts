@@ -534,3 +534,89 @@ export const AttendanceReportScope = {
 } as const
 
 export type AttendanceReportScope = (typeof AttendanceReportScope)[keyof typeof AttendanceReportScope]
+
+
+export const ExaminationReportScope = {
+  EXAMINATION: 'EXAMINATION',
+  STUDENT: 'STUDENT',
+  SECTION: 'SECTION',
+  SUBJECT: 'SUBJECT'
+} as const
+
+export type ExaminationReportScope = (typeof ExaminationReportScope)[keyof typeof ExaminationReportScope]
+
+
+export const ReportPublicationStatus = {
+  GENERATED: 'GENERATED',
+  PUBLISHED: 'PUBLISHED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type ReportPublicationStatus = (typeof ReportPublicationStatus)[keyof typeof ReportPublicationStatus]
+
+
+export const PromotionDecisionType = {
+  AUTOMATIC_ELIGIBILITY: 'AUTOMATIC_ELIGIBILITY',
+  MANUAL_REVIEW: 'MANUAL_REVIEW',
+  EXAMINATION_BASED: 'EXAMINATION_BASED',
+  PERFORMANCE_BASED: 'PERFORMANCE_BASED'
+} as const
+
+export type PromotionDecisionType = (typeof PromotionDecisionType)[keyof typeof PromotionDecisionType]
+
+
+export const PromotionConfigurationStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE'
+} as const
+
+export type PromotionConfigurationStatus = (typeof PromotionConfigurationStatus)[keyof typeof PromotionConfigurationStatus]
+
+
+export const PromotionEligibilityStatus = {
+  ELIGIBLE: 'ELIGIBLE',
+  NOT_ELIGIBLE: 'NOT_ELIGIBLE',
+  REVIEW_REQUIRED: 'REVIEW_REQUIRED'
+} as const
+
+export type PromotionEligibilityStatus = (typeof PromotionEligibilityStatus)[keyof typeof PromotionEligibilityStatus]
+
+
+export const PromotionAction = {
+  PROMOTED: 'PROMOTED',
+  RETAINED: 'RETAINED',
+  GRADUATED: 'GRADUATED'
+} as const
+
+export type PromotionAction = (typeof PromotionAction)[keyof typeof PromotionAction]
+
+
+export const GraduationCandidateStatus = {
+  PENDING: 'PENDING',
+  ELIGIBLE: 'ELIGIBLE',
+  NOT_ELIGIBLE: 'NOT_ELIGIBLE',
+  REVIEW_REQUIRED: 'REVIEW_REQUIRED',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type GraduationCandidateStatus = (typeof GraduationCandidateStatus)[keyof typeof GraduationCandidateStatus]
+
+
+export const GraduationRecordStatus = {
+  CONFIRMED: 'CONFIRMED',
+  REVOKED: 'REVOKED'
+} as const
+
+export type GraduationRecordStatus = (typeof GraduationRecordStatus)[keyof typeof GraduationRecordStatus]
+
+
+export const AcademicProgressionAction = {
+  ENROLLED: 'ENROLLED',
+  PROMOTED: 'PROMOTED',
+  RETAINED: 'RETAINED',
+  GRADUATED: 'GRADUATED',
+  CORRECTED: 'CORRECTED'
+} as const
+
+export type AcademicProgressionAction = (typeof AcademicProgressionAction)[keyof typeof AcademicProgressionAction]

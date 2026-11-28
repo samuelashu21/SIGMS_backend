@@ -267,6 +267,10 @@ export type SectionWhereInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingListRelationFilter
   reportCards?: Prisma.ReportCardListRelationFilter
   attendanceReports?: Prisma.AttendanceReportListRelationFilter
+  examinationReports?: Prisma.ExaminationReportListRelationFilter
+  promotionDecisions?: Prisma.PromotionDecisionListRelationFilter
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryListRelationFilter
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryListRelationFilter
 }
 
 export type SectionOrderByWithRelationInput = {
@@ -291,6 +295,10 @@ export type SectionOrderByWithRelationInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingOrderByRelationAggregateInput
   reportCards?: Prisma.ReportCardOrderByRelationAggregateInput
   attendanceReports?: Prisma.AttendanceReportOrderByRelationAggregateInput
+  examinationReports?: Prisma.ExaminationReportOrderByRelationAggregateInput
+  promotionDecisions?: Prisma.PromotionDecisionOrderByRelationAggregateInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryOrderByRelationAggregateInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryOrderByRelationAggregateInput
 }
 
 export type SectionWhereUniqueInput = Prisma.AtLeast<{
@@ -321,6 +329,10 @@ export type SectionWhereUniqueInput = Prisma.AtLeast<{
   academicStudentRankings?: Prisma.AcademicStudentRankingListRelationFilter
   reportCards?: Prisma.ReportCardListRelationFilter
   attendanceReports?: Prisma.AttendanceReportListRelationFilter
+  examinationReports?: Prisma.ExaminationReportListRelationFilter
+  promotionDecisions?: Prisma.PromotionDecisionListRelationFilter
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryListRelationFilter
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryListRelationFilter
 }, "id" | "academicYearId_gradeId_name" | "id_schoolId" | "id_schoolId_gradeId_academicYearId">
 
 export type SectionOrderByWithAggregationInput = {
@@ -376,6 +388,10 @@ export type SectionCreateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateInput = {
@@ -397,6 +413,10 @@ export type SectionUncheckedCreateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUpdateInput = {
@@ -418,6 +438,10 @@ export type SectionUpdateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateInput = {
@@ -439,6 +463,10 @@ export type SectionUncheckedUpdateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateManyInput = {
@@ -816,6 +844,68 @@ export type SectionUpdateOneWithoutAttendanceReportsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutAttendanceReportsInput, Prisma.SectionUpdateWithoutAttendanceReportsInput>, Prisma.SectionUncheckedUpdateWithoutAttendanceReportsInput>
 }
 
+export type SectionCreateNestedOneWithoutExaminationReportsInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutExaminationReportsInput, Prisma.SectionUncheckedCreateWithoutExaminationReportsInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutExaminationReportsInput
+  connect?: Prisma.SectionWhereUniqueInput
+}
+
+export type SectionUpdateOneWithoutExaminationReportsNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutExaminationReportsInput, Prisma.SectionUncheckedCreateWithoutExaminationReportsInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutExaminationReportsInput
+  upsert?: Prisma.SectionUpsertWithoutExaminationReportsInput
+  disconnect?: Prisma.SectionWhereInput | boolean
+  delete?: Prisma.SectionWhereInput | boolean
+  connect?: Prisma.SectionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutExaminationReportsInput, Prisma.SectionUpdateWithoutExaminationReportsInput>, Prisma.SectionUncheckedUpdateWithoutExaminationReportsInput>
+}
+
+export type SectionCreateNestedOneWithoutPromotionDecisionsInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutPromotionDecisionsInput, Prisma.SectionUncheckedCreateWithoutPromotionDecisionsInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutPromotionDecisionsInput
+  connect?: Prisma.SectionWhereUniqueInput
+}
+
+export type SectionUpdateOneRequiredWithoutPromotionDecisionsNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutPromotionDecisionsInput, Prisma.SectionUncheckedCreateWithoutPromotionDecisionsInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutPromotionDecisionsInput
+  upsert?: Prisma.SectionUpsertWithoutPromotionDecisionsInput
+  connect?: Prisma.SectionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutPromotionDecisionsInput, Prisma.SectionUpdateWithoutPromotionDecisionsInput>, Prisma.SectionUncheckedUpdateWithoutPromotionDecisionsInput>
+}
+
+export type SectionCreateNestedOneWithoutProgressionHistoryAsPreviousInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutProgressionHistoryAsPreviousInput
+  connect?: Prisma.SectionWhereUniqueInput
+}
+
+export type SectionCreateNestedOneWithoutProgressionHistoryAsNewInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsNewInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsNewInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutProgressionHistoryAsNewInput
+  connect?: Prisma.SectionWhereUniqueInput
+}
+
+export type SectionUpdateOneWithoutProgressionHistoryAsPreviousNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutProgressionHistoryAsPreviousInput
+  upsert?: Prisma.SectionUpsertWithoutProgressionHistoryAsPreviousInput
+  disconnect?: Prisma.SectionWhereInput | boolean
+  delete?: Prisma.SectionWhereInput | boolean
+  connect?: Prisma.SectionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUpdateWithoutProgressionHistoryAsPreviousInput>, Prisma.SectionUncheckedUpdateWithoutProgressionHistoryAsPreviousInput>
+}
+
+export type SectionUpdateOneWithoutProgressionHistoryAsNewNestedInput = {
+  create?: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsNewInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsNewInput>
+  connectOrCreate?: Prisma.SectionCreateOrConnectWithoutProgressionHistoryAsNewInput
+  upsert?: Prisma.SectionUpsertWithoutProgressionHistoryAsNewInput
+  disconnect?: Prisma.SectionWhereInput | boolean
+  delete?: Prisma.SectionWhereInput | boolean
+  connect?: Prisma.SectionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.SectionUpdateToOneWithWhereWithoutProgressionHistoryAsNewInput, Prisma.SectionUpdateWithoutProgressionHistoryAsNewInput>, Prisma.SectionUncheckedUpdateWithoutProgressionHistoryAsNewInput>
+}
+
 export type SectionCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -834,6 +924,10 @@ export type SectionCreateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutSchoolInput = {
@@ -854,6 +948,10 @@ export type SectionUncheckedCreateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutSchoolInput = {
@@ -916,6 +1014,10 @@ export type SectionCreateWithoutAcademicYearInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutAcademicYearInput = {
@@ -935,6 +1037,10 @@ export type SectionUncheckedCreateWithoutAcademicYearInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutAcademicYearInput = {
@@ -981,6 +1087,10 @@ export type SectionCreateWithoutGradeInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutGradeInput = {
@@ -1000,6 +1110,10 @@ export type SectionUncheckedCreateWithoutGradeInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutGradeInput = {
@@ -1046,6 +1160,10 @@ export type SectionCreateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutAcademicEnrollmentsInput = {
@@ -1066,6 +1184,10 @@ export type SectionUncheckedCreateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutAcademicEnrollmentsInput = {
@@ -1102,6 +1224,10 @@ export type SectionUpdateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutAcademicEnrollmentsInput = {
@@ -1122,6 +1248,10 @@ export type SectionUncheckedUpdateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutTeacherAssignmentsInput = {
@@ -1142,6 +1272,10 @@ export type SectionCreateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutTeacherAssignmentsInput = {
@@ -1162,6 +1296,10 @@ export type SectionUncheckedCreateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutTeacherAssignmentsInput = {
@@ -1198,6 +1336,10 @@ export type SectionUpdateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutTeacherAssignmentsInput = {
@@ -1218,6 +1360,10 @@ export type SectionUncheckedUpdateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutHomeroomAssignmentsInput = {
@@ -1238,6 +1384,10 @@ export type SectionCreateWithoutHomeroomAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutHomeroomAssignmentsInput = {
@@ -1258,6 +1408,10 @@ export type SectionUncheckedCreateWithoutHomeroomAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutHomeroomAssignmentsInput = {
@@ -1294,6 +1448,10 @@ export type SectionUpdateWithoutHomeroomAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutHomeroomAssignmentsInput = {
@@ -1314,6 +1472,10 @@ export type SectionUncheckedUpdateWithoutHomeroomAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutClassAttendanceInput = {
@@ -1334,6 +1496,10 @@ export type SectionCreateWithoutClassAttendanceInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutClassAttendanceInput = {
@@ -1354,6 +1520,10 @@ export type SectionUncheckedCreateWithoutClassAttendanceInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutClassAttendanceInput = {
@@ -1390,6 +1560,10 @@ export type SectionUpdateWithoutClassAttendanceInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutClassAttendanceInput = {
@@ -1410,6 +1584,10 @@ export type SectionUncheckedUpdateWithoutClassAttendanceInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutExaminationsInput = {
@@ -1430,6 +1608,10 @@ export type SectionCreateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutExaminationsInput = {
@@ -1450,6 +1632,10 @@ export type SectionUncheckedCreateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutExaminationsInput = {
@@ -1486,6 +1672,10 @@ export type SectionUpdateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutExaminationsInput = {
@@ -1506,6 +1696,10 @@ export type SectionUncheckedUpdateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutAcademicStudentRankingsInput = {
@@ -1526,6 +1720,10 @@ export type SectionCreateWithoutAcademicStudentRankingsInput = {
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutAcademicStudentRankingsInput = {
@@ -1546,6 +1744,10 @@ export type SectionUncheckedCreateWithoutAcademicStudentRankingsInput = {
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutAcademicStudentRankingsInput = {
@@ -1582,6 +1784,10 @@ export type SectionUpdateWithoutAcademicStudentRankingsInput = {
   examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutAcademicStudentRankingsInput = {
@@ -1602,6 +1808,10 @@ export type SectionUncheckedUpdateWithoutAcademicStudentRankingsInput = {
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutReportCardsInput = {
@@ -1622,6 +1832,10 @@ export type SectionCreateWithoutReportCardsInput = {
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutReportCardsInput = {
@@ -1642,6 +1856,10 @@ export type SectionUncheckedCreateWithoutReportCardsInput = {
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutReportCardsInput = {
@@ -1678,6 +1896,10 @@ export type SectionUpdateWithoutReportCardsInput = {
   examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutReportCardsInput = {
@@ -1698,6 +1920,10 @@ export type SectionUncheckedUpdateWithoutReportCardsInput = {
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionCreateWithoutAttendanceReportsInput = {
@@ -1718,6 +1944,10 @@ export type SectionCreateWithoutAttendanceReportsInput = {
   examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionUncheckedCreateWithoutAttendanceReportsInput = {
@@ -1738,6 +1968,10 @@ export type SectionUncheckedCreateWithoutAttendanceReportsInput = {
   examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
 }
 
 export type SectionCreateOrConnectWithoutAttendanceReportsInput = {
@@ -1774,6 +2008,10 @@ export type SectionUpdateWithoutAttendanceReportsInput = {
   examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutAttendanceReportsInput = {
@@ -1794,6 +2032,458 @@ export type SectionUncheckedUpdateWithoutAttendanceReportsInput = {
   examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionCreateWithoutExaminationReportsInput = {
+  id?: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSectionsInput
+  grade: Prisma.GradeCreateNestedOneWithoutSectionsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSectionsInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
+}
+
+export type SectionUncheckedCreateWithoutExaminationReportsInput = {
+  id?: string
+  schoolId: string
+  gradeId: string
+  academicYearId: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
+}
+
+export type SectionCreateOrConnectWithoutExaminationReportsInput = {
+  where: Prisma.SectionWhereUniqueInput
+  create: Prisma.XOR<Prisma.SectionCreateWithoutExaminationReportsInput, Prisma.SectionUncheckedCreateWithoutExaminationReportsInput>
+}
+
+export type SectionUpsertWithoutExaminationReportsInput = {
+  update: Prisma.XOR<Prisma.SectionUpdateWithoutExaminationReportsInput, Prisma.SectionUncheckedUpdateWithoutExaminationReportsInput>
+  create: Prisma.XOR<Prisma.SectionCreateWithoutExaminationReportsInput, Prisma.SectionUncheckedCreateWithoutExaminationReportsInput>
+  where?: Prisma.SectionWhereInput
+}
+
+export type SectionUpdateToOneWithWhereWithoutExaminationReportsInput = {
+  where?: Prisma.SectionWhereInput
+  data: Prisma.XOR<Prisma.SectionUpdateWithoutExaminationReportsInput, Prisma.SectionUncheckedUpdateWithoutExaminationReportsInput>
+}
+
+export type SectionUpdateWithoutExaminationReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSectionsNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutSectionsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSectionsNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionUncheckedUpdateWithoutExaminationReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionCreateWithoutPromotionDecisionsInput = {
+  id?: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSectionsInput
+  grade: Prisma.GradeCreateNestedOneWithoutSectionsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSectionsInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
+}
+
+export type SectionUncheckedCreateWithoutPromotionDecisionsInput = {
+  id?: string
+  schoolId: string
+  gradeId: string
+  academicYearId: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
+}
+
+export type SectionCreateOrConnectWithoutPromotionDecisionsInput = {
+  where: Prisma.SectionWhereUniqueInput
+  create: Prisma.XOR<Prisma.SectionCreateWithoutPromotionDecisionsInput, Prisma.SectionUncheckedCreateWithoutPromotionDecisionsInput>
+}
+
+export type SectionUpsertWithoutPromotionDecisionsInput = {
+  update: Prisma.XOR<Prisma.SectionUpdateWithoutPromotionDecisionsInput, Prisma.SectionUncheckedUpdateWithoutPromotionDecisionsInput>
+  create: Prisma.XOR<Prisma.SectionCreateWithoutPromotionDecisionsInput, Prisma.SectionUncheckedCreateWithoutPromotionDecisionsInput>
+  where?: Prisma.SectionWhereInput
+}
+
+export type SectionUpdateToOneWithWhereWithoutPromotionDecisionsInput = {
+  where?: Prisma.SectionWhereInput
+  data: Prisma.XOR<Prisma.SectionUpdateWithoutPromotionDecisionsInput, Prisma.SectionUncheckedUpdateWithoutPromotionDecisionsInput>
+}
+
+export type SectionUpdateWithoutPromotionDecisionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSectionsNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutSectionsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSectionsNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionUncheckedUpdateWithoutPromotionDecisionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionCreateWithoutProgressionHistoryAsPreviousInput = {
+  id?: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSectionsInput
+  grade: Prisma.GradeCreateNestedOneWithoutSectionsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSectionsInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewSectionInput
+}
+
+export type SectionUncheckedCreateWithoutProgressionHistoryAsPreviousInput = {
+  id?: string
+  schoolId: string
+  gradeId: string
+  academicYearId: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewSectionInput
+}
+
+export type SectionCreateOrConnectWithoutProgressionHistoryAsPreviousInput = {
+  where: Prisma.SectionWhereUniqueInput
+  create: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+}
+
+export type SectionCreateWithoutProgressionHistoryAsNewInput = {
+  id?: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutSectionsInput
+  grade: Prisma.GradeCreateNestedOneWithoutSectionsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutSectionsInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousSectionInput
+}
+
+export type SectionUncheckedCreateWithoutProgressionHistoryAsNewInput = {
+  id?: string
+  schoolId: string
+  gradeId: string
+  academicYearId: string
+  name: string
+  capacity?: number | null
+  room?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutSectionInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedCreateNestedManyWithoutSectionInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedCreateNestedManyWithoutSectionInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutSectionInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutSectionInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutSectionInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedCreateNestedManyWithoutSectionInput
+  examinationReports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutSectionInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetSectionInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousSectionInput
+}
+
+export type SectionCreateOrConnectWithoutProgressionHistoryAsNewInput = {
+  where: Prisma.SectionWhereUniqueInput
+  create: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsNewInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsNewInput>
+}
+
+export type SectionUpsertWithoutProgressionHistoryAsPreviousInput = {
+  update: Prisma.XOR<Prisma.SectionUpdateWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUncheckedUpdateWithoutProgressionHistoryAsPreviousInput>
+  create: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+  where?: Prisma.SectionWhereInput
+}
+
+export type SectionUpdateToOneWithWhereWithoutProgressionHistoryAsPreviousInput = {
+  where?: Prisma.SectionWhereInput
+  data: Prisma.XOR<Prisma.SectionUpdateWithoutProgressionHistoryAsPreviousInput, Prisma.SectionUncheckedUpdateWithoutProgressionHistoryAsPreviousInput>
+}
+
+export type SectionUpdateWithoutProgressionHistoryAsPreviousInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSectionsNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutSectionsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSectionsNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionUncheckedUpdateWithoutProgressionHistoryAsPreviousInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
+}
+
+export type SectionUpsertWithoutProgressionHistoryAsNewInput = {
+  update: Prisma.XOR<Prisma.SectionUpdateWithoutProgressionHistoryAsNewInput, Prisma.SectionUncheckedUpdateWithoutProgressionHistoryAsNewInput>
+  create: Prisma.XOR<Prisma.SectionCreateWithoutProgressionHistoryAsNewInput, Prisma.SectionUncheckedCreateWithoutProgressionHistoryAsNewInput>
+  where?: Prisma.SectionWhereInput
+}
+
+export type SectionUpdateToOneWithWhereWithoutProgressionHistoryAsNewInput = {
+  where?: Prisma.SectionWhereInput
+  data: Prisma.XOR<Prisma.SectionUpdateWithoutProgressionHistoryAsNewInput, Prisma.SectionUncheckedUpdateWithoutProgressionHistoryAsNewInput>
+}
+
+export type SectionUpdateWithoutProgressionHistoryAsNewInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutSectionsNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutSectionsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutSectionsNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+}
+
+export type SectionUncheckedUpdateWithoutProgressionHistoryAsNewInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutSectionNestedInput
+  teacherAssignments?: Prisma.TeacherClassAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  homeroomAssignments?: Prisma.HomeroomTeacherAssignmentUncheckedUpdateManyWithoutSectionNestedInput
+  classAttendance?: Prisma.ClassAttendanceUncheckedUpdateManyWithoutSectionNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutSectionNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
+  attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
 }
 
 export type SectionCreateManySchoolInput = {
@@ -1826,6 +2516,10 @@ export type SectionUpdateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutSchoolInput = {
@@ -1846,6 +2540,10 @@ export type SectionUncheckedUpdateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutSchoolInput = {
@@ -1889,6 +2587,10 @@ export type SectionUpdateWithoutAcademicYearInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutAcademicYearInput = {
@@ -1908,6 +2610,10 @@ export type SectionUncheckedUpdateWithoutAcademicYearInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -1950,6 +2656,10 @@ export type SectionUpdateWithoutGradeInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateWithoutGradeInput = {
@@ -1969,6 +2679,10 @@ export type SectionUncheckedUpdateWithoutGradeInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutSectionNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutSectionNestedInput
   attendanceReports?: Prisma.AttendanceReportUncheckedUpdateManyWithoutSectionNestedInput
+  examinationReports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutSectionNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetSectionNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousSectionNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewSectionNestedInput
 }
 
 export type SectionUncheckedUpdateManyWithoutGradeInput = {
@@ -1996,6 +2710,10 @@ export type SectionCountOutputType = {
   academicStudentRankings: number
   reportCards: number
   attendanceReports: number
+  examinationReports: number
+  promotionDecisions: number
+  progressionHistoryAsPrevious: number
+  progressionHistoryAsNew: number
 }
 
 export type SectionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2007,6 +2725,10 @@ export type SectionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extension
   academicStudentRankings?: boolean | SectionCountOutputTypeCountAcademicStudentRankingsArgs
   reportCards?: boolean | SectionCountOutputTypeCountReportCardsArgs
   attendanceReports?: boolean | SectionCountOutputTypeCountAttendanceReportsArgs
+  examinationReports?: boolean | SectionCountOutputTypeCountExaminationReportsArgs
+  promotionDecisions?: boolean | SectionCountOutputTypeCountPromotionDecisionsArgs
+  progressionHistoryAsPrevious?: boolean | SectionCountOutputTypeCountProgressionHistoryAsPreviousArgs
+  progressionHistoryAsNew?: boolean | SectionCountOutputTypeCountProgressionHistoryAsNewArgs
 }
 
 /**
@@ -2075,6 +2797,34 @@ export type SectionCountOutputTypeCountAttendanceReportsArgs<ExtArgs extends run
   where?: Prisma.AttendanceReportWhereInput
 }
 
+/**
+ * SectionCountOutputType without action
+ */
+export type SectionCountOutputTypeCountExaminationReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExaminationReportWhereInput
+}
+
+/**
+ * SectionCountOutputType without action
+ */
+export type SectionCountOutputTypeCountPromotionDecisionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PromotionDecisionWhereInput
+}
+
+/**
+ * SectionCountOutputType without action
+ */
+export type SectionCountOutputTypeCountProgressionHistoryAsPreviousArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+}
+
+/**
+ * SectionCountOutputType without action
+ */
+export type SectionCountOutputTypeCountProgressionHistoryAsNewArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+}
+
 
 export type SectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2098,6 +2848,10 @@ export type SectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   academicStudentRankings?: boolean | Prisma.Section$academicStudentRankingsArgs<ExtArgs>
   reportCards?: boolean | Prisma.Section$reportCardsArgs<ExtArgs>
   attendanceReports?: boolean | Prisma.Section$attendanceReportsArgs<ExtArgs>
+  examinationReports?: boolean | Prisma.Section$examinationReportsArgs<ExtArgs>
+  promotionDecisions?: boolean | Prisma.Section$promotionDecisionsArgs<ExtArgs>
+  progressionHistoryAsPrevious?: boolean | Prisma.Section$progressionHistoryAsPreviousArgs<ExtArgs>
+  progressionHistoryAsNew?: boolean | Prisma.Section$progressionHistoryAsNewArgs<ExtArgs>
   _count?: boolean | Prisma.SectionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["section"]>
 
@@ -2159,6 +2913,10 @@ export type SectionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   academicStudentRankings?: boolean | Prisma.Section$academicStudentRankingsArgs<ExtArgs>
   reportCards?: boolean | Prisma.Section$reportCardsArgs<ExtArgs>
   attendanceReports?: boolean | Prisma.Section$attendanceReportsArgs<ExtArgs>
+  examinationReports?: boolean | Prisma.Section$examinationReportsArgs<ExtArgs>
+  promotionDecisions?: boolean | Prisma.Section$promotionDecisionsArgs<ExtArgs>
+  progressionHistoryAsPrevious?: boolean | Prisma.Section$progressionHistoryAsPreviousArgs<ExtArgs>
+  progressionHistoryAsNew?: boolean | Prisma.Section$progressionHistoryAsNewArgs<ExtArgs>
   _count?: boolean | Prisma.SectionCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type SectionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2186,6 +2944,10 @@ export type $SectionPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     academicStudentRankings: Prisma.$AcademicStudentRankingPayload<ExtArgs>[]
     reportCards: Prisma.$ReportCardPayload<ExtArgs>[]
     attendanceReports: Prisma.$AttendanceReportPayload<ExtArgs>[]
+    examinationReports: Prisma.$ExaminationReportPayload<ExtArgs>[]
+    promotionDecisions: Prisma.$PromotionDecisionPayload<ExtArgs>[]
+    progressionHistoryAsPrevious: Prisma.$AcademicProgressionHistoryPayload<ExtArgs>[]
+    progressionHistoryAsNew: Prisma.$AcademicProgressionHistoryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2603,6 +3365,10 @@ export interface Prisma__SectionClient<T, Null = never, ExtArgs extends runtime.
   academicStudentRankings<T extends Prisma.Section$academicStudentRankingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$academicStudentRankingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicStudentRankingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reportCards<T extends Prisma.Section$reportCardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$reportCardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReportCardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   attendanceReports<T extends Prisma.Section$attendanceReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$attendanceReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AttendanceReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  examinationReports<T extends Prisma.Section$examinationReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$examinationReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExaminationReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  promotionDecisions<T extends Prisma.Section$promotionDecisionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$promotionDecisionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromotionDecisionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  progressionHistoryAsPrevious<T extends Prisma.Section$progressionHistoryAsPreviousArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$progressionHistoryAsPreviousArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicProgressionHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  progressionHistoryAsNew<T extends Prisma.Section$progressionHistoryAsNewArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Section$progressionHistoryAsNewArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicProgressionHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3232,6 +3998,102 @@ export type Section$attendanceReportsArgs<ExtArgs extends runtime.Types.Extensio
   take?: number
   skip?: number
   distinct?: Prisma.AttendanceReportScalarFieldEnum | Prisma.AttendanceReportScalarFieldEnum[]
+}
+
+/**
+ * Section.examinationReports
+ */
+export type Section$examinationReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExaminationReport
+   */
+  select?: Prisma.ExaminationReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExaminationReport
+   */
+  omit?: Prisma.ExaminationReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExaminationReportInclude<ExtArgs> | null
+  where?: Prisma.ExaminationReportWhereInput
+  orderBy?: Prisma.ExaminationReportOrderByWithRelationInput | Prisma.ExaminationReportOrderByWithRelationInput[]
+  cursor?: Prisma.ExaminationReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExaminationReportScalarFieldEnum | Prisma.ExaminationReportScalarFieldEnum[]
+}
+
+/**
+ * Section.promotionDecisions
+ */
+export type Section$promotionDecisionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PromotionDecision
+   */
+  select?: Prisma.PromotionDecisionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PromotionDecision
+   */
+  omit?: Prisma.PromotionDecisionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PromotionDecisionInclude<ExtArgs> | null
+  where?: Prisma.PromotionDecisionWhereInput
+  orderBy?: Prisma.PromotionDecisionOrderByWithRelationInput | Prisma.PromotionDecisionOrderByWithRelationInput[]
+  cursor?: Prisma.PromotionDecisionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PromotionDecisionScalarFieldEnum | Prisma.PromotionDecisionScalarFieldEnum[]
+}
+
+/**
+ * Section.progressionHistoryAsPrevious
+ */
+export type Section$progressionHistoryAsPreviousArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicProgressionHistory
+   */
+  select?: Prisma.AcademicProgressionHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicProgressionHistory
+   */
+  omit?: Prisma.AcademicProgressionHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicProgressionHistoryInclude<ExtArgs> | null
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+  orderBy?: Prisma.AcademicProgressionHistoryOrderByWithRelationInput | Prisma.AcademicProgressionHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicProgressionHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicProgressionHistoryScalarFieldEnum | Prisma.AcademicProgressionHistoryScalarFieldEnum[]
+}
+
+/**
+ * Section.progressionHistoryAsNew
+ */
+export type Section$progressionHistoryAsNewArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicProgressionHistory
+   */
+  select?: Prisma.AcademicProgressionHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicProgressionHistory
+   */
+  omit?: Prisma.AcademicProgressionHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicProgressionHistoryInclude<ExtArgs> | null
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+  orderBy?: Prisma.AcademicProgressionHistoryOrderByWithRelationInput | Prisma.AcademicProgressionHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicProgressionHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicProgressionHistoryScalarFieldEnum | Prisma.AcademicProgressionHistoryScalarFieldEnum[]
 }
 
 /**

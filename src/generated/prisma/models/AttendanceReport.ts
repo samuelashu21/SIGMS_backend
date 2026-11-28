@@ -67,6 +67,9 @@ export type AttendanceReportMinAggregateOutputType = {
   generatedById: string | null
   generatedAt: Date | null
   createdAt: Date | null
+  status: $Enums.ReportPublicationStatus | null
+  publishedAt: Date | null
+  publishedById: string | null
 }
 
 export type AttendanceReportMaxAggregateOutputType = {
@@ -90,6 +93,9 @@ export type AttendanceReportMaxAggregateOutputType = {
   generatedById: string | null
   generatedAt: Date | null
   createdAt: Date | null
+  status: $Enums.ReportPublicationStatus | null
+  publishedAt: Date | null
+  publishedById: string | null
 }
 
 export type AttendanceReportCountAggregateOutputType = {
@@ -114,6 +120,9 @@ export type AttendanceReportCountAggregateOutputType = {
   generatedById: number
   generatedAt: number
   createdAt: number
+  status: number
+  publishedAt: number
+  publishedById: number
   _all: number
 }
 
@@ -159,6 +168,9 @@ export type AttendanceReportMinAggregateInputType = {
   generatedById?: true
   generatedAt?: true
   createdAt?: true
+  status?: true
+  publishedAt?: true
+  publishedById?: true
 }
 
 export type AttendanceReportMaxAggregateInputType = {
@@ -182,6 +194,9 @@ export type AttendanceReportMaxAggregateInputType = {
   generatedById?: true
   generatedAt?: true
   createdAt?: true
+  status?: true
+  publishedAt?: true
+  publishedById?: true
 }
 
 export type AttendanceReportCountAggregateInputType = {
@@ -206,6 +221,9 @@ export type AttendanceReportCountAggregateInputType = {
   generatedById?: true
   generatedAt?: true
   createdAt?: true
+  status?: true
+  publishedAt?: true
+  publishedById?: true
   _all?: true
 }
 
@@ -317,6 +335,9 @@ export type AttendanceReportGroupByOutputType = {
   generatedById: string
   generatedAt: Date
   createdAt: Date
+  status: $Enums.ReportPublicationStatus
+  publishedAt: Date | null
+  publishedById: string | null
   _count: AttendanceReportCountAggregateOutputType | null
   _avg: AttendanceReportAvgAggregateOutputType | null
   _sum: AttendanceReportSumAggregateOutputType | null
@@ -364,12 +385,16 @@ export type AttendanceReportWhereInput = {
   generatedById?: Prisma.UuidFilter<"AttendanceReport"> | string
   generatedAt?: Prisma.DateTimeFilter<"AttendanceReport"> | Date | string
   createdAt?: Prisma.DateTimeFilter<"AttendanceReport"> | Date | string
+  status?: Prisma.EnumReportPublicationStatusFilter<"AttendanceReport"> | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.DateTimeNullableFilter<"AttendanceReport"> | Date | string | null
+  publishedById?: Prisma.UuidNullableFilter<"AttendanceReport"> | string | null
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
   academicYear?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
   student?: Prisma.XOR<Prisma.StudentNullableScalarRelationFilter, Prisma.StudentWhereInput> | null
   section?: Prisma.XOR<Prisma.SectionNullableScalarRelationFilter, Prisma.SectionWhereInput> | null
   semester?: Prisma.XOR<Prisma.SemesterNullableScalarRelationFilter, Prisma.SemesterWhereInput> | null
   generatedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  publishedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type AttendanceReportOrderByWithRelationInput = {
@@ -394,12 +419,16 @@ export type AttendanceReportOrderByWithRelationInput = {
   generatedById?: Prisma.SortOrder
   generatedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  publishedById?: Prisma.SortOrderInput | Prisma.SortOrder
   school?: Prisma.SchoolOrderByWithRelationInput
   academicYear?: Prisma.AcademicYearOrderByWithRelationInput
   student?: Prisma.StudentOrderByWithRelationInput
   section?: Prisma.SectionOrderByWithRelationInput
   semester?: Prisma.SemesterOrderByWithRelationInput
   generatedBy?: Prisma.UserOrderByWithRelationInput
+  publishedBy?: Prisma.UserOrderByWithRelationInput
 }
 
 export type AttendanceReportWhereUniqueInput = Prisma.AtLeast<{
@@ -429,12 +458,16 @@ export type AttendanceReportWhereUniqueInput = Prisma.AtLeast<{
   generatedById?: Prisma.UuidFilter<"AttendanceReport"> | string
   generatedAt?: Prisma.DateTimeFilter<"AttendanceReport"> | Date | string
   createdAt?: Prisma.DateTimeFilter<"AttendanceReport"> | Date | string
+  status?: Prisma.EnumReportPublicationStatusFilter<"AttendanceReport"> | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.DateTimeNullableFilter<"AttendanceReport"> | Date | string | null
+  publishedById?: Prisma.UuidNullableFilter<"AttendanceReport"> | string | null
   school?: Prisma.XOR<Prisma.SchoolScalarRelationFilter, Prisma.SchoolWhereInput>
   academicYear?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
   student?: Prisma.XOR<Prisma.StudentNullableScalarRelationFilter, Prisma.StudentWhereInput> | null
   section?: Prisma.XOR<Prisma.SectionNullableScalarRelationFilter, Prisma.SectionWhereInput> | null
   semester?: Prisma.XOR<Prisma.SemesterNullableScalarRelationFilter, Prisma.SemesterWhereInput> | null
   generatedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  publishedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "id_schoolId" | "schoolId_reportNumber">
 
 export type AttendanceReportOrderByWithAggregationInput = {
@@ -459,6 +492,9 @@ export type AttendanceReportOrderByWithAggregationInput = {
   generatedById?: Prisma.SortOrder
   generatedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  publishedById?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.AttendanceReportCountOrderByAggregateInput
   _avg?: Prisma.AttendanceReportAvgOrderByAggregateInput
   _max?: Prisma.AttendanceReportMaxOrderByAggregateInput
@@ -491,6 +527,9 @@ export type AttendanceReportScalarWhereWithAggregatesInput = {
   generatedById?: Prisma.UuidWithAggregatesFilter<"AttendanceReport"> | string
   generatedAt?: Prisma.DateTimeWithAggregatesFilter<"AttendanceReport"> | Date | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"AttendanceReport"> | Date | string
+  status?: Prisma.EnumReportPublicationStatusWithAggregatesFilter<"AttendanceReport"> | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"AttendanceReport"> | Date | string | null
+  publishedById?: Prisma.UuidNullableWithAggregatesFilter<"AttendanceReport"> | string | null
 }
 
 export type AttendanceReportCreateInput = {
@@ -509,12 +548,15 @@ export type AttendanceReportCreateInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
   student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
   section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
   semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
   generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateInput = {
@@ -539,6 +581,9 @@ export type AttendanceReportUncheckedCreateInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateInput = {
@@ -557,12 +602,15 @@ export type AttendanceReportUpdateInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
   student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
   semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
   generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateInput = {
@@ -587,6 +635,9 @@ export type AttendanceReportUncheckedUpdateInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportCreateManyInput = {
@@ -611,6 +662,9 @@ export type AttendanceReportCreateManyInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateManyMutationInput = {
@@ -629,6 +683,8 @@ export type AttendanceReportUpdateManyMutationInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyInput = {
@@ -653,6 +709,9 @@ export type AttendanceReportUncheckedUpdateManyInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportListRelationFilter = {
@@ -697,6 +756,9 @@ export type AttendanceReportCountOrderByAggregateInput = {
   generatedById?: Prisma.SortOrder
   generatedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  publishedById?: Prisma.SortOrder
 }
 
 export type AttendanceReportAvgOrderByAggregateInput = {
@@ -730,6 +792,9 @@ export type AttendanceReportMaxOrderByAggregateInput = {
   generatedById?: Prisma.SortOrder
   generatedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  publishedById?: Prisma.SortOrder
 }
 
 export type AttendanceReportMinOrderByAggregateInput = {
@@ -753,6 +818,9 @@ export type AttendanceReportMinOrderByAggregateInput = {
   generatedById?: Prisma.SortOrder
   generatedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  publishedById?: Prisma.SortOrder
 }
 
 export type AttendanceReportSumOrderByAggregateInput = {
@@ -856,10 +924,24 @@ export type AttendanceReportCreateNestedManyWithoutGeneratedByInput = {
   connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
 }
 
+export type AttendanceReportCreateNestedManyWithoutPublishedByInput = {
+  create?: Prisma.XOR<Prisma.AttendanceReportCreateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput> | Prisma.AttendanceReportCreateWithoutPublishedByInput[] | Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput | Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput[]
+  createMany?: Prisma.AttendanceReportCreateManyPublishedByInputEnvelope
+  connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+}
+
 export type AttendanceReportUncheckedCreateNestedManyWithoutGeneratedByInput = {
   create?: Prisma.XOR<Prisma.AttendanceReportCreateWithoutGeneratedByInput, Prisma.AttendanceReportUncheckedCreateWithoutGeneratedByInput> | Prisma.AttendanceReportCreateWithoutGeneratedByInput[] | Prisma.AttendanceReportUncheckedCreateWithoutGeneratedByInput[]
   connectOrCreate?: Prisma.AttendanceReportCreateOrConnectWithoutGeneratedByInput | Prisma.AttendanceReportCreateOrConnectWithoutGeneratedByInput[]
   createMany?: Prisma.AttendanceReportCreateManyGeneratedByInputEnvelope
+  connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+}
+
+export type AttendanceReportUncheckedCreateNestedManyWithoutPublishedByInput = {
+  create?: Prisma.XOR<Prisma.AttendanceReportCreateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput> | Prisma.AttendanceReportCreateWithoutPublishedByInput[] | Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput | Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput[]
+  createMany?: Prisma.AttendanceReportCreateManyPublishedByInputEnvelope
   connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
 }
 
@@ -877,6 +959,20 @@ export type AttendanceReportUpdateManyWithoutGeneratedByNestedInput = {
   deleteMany?: Prisma.AttendanceReportScalarWhereInput | Prisma.AttendanceReportScalarWhereInput[]
 }
 
+export type AttendanceReportUpdateManyWithoutPublishedByNestedInput = {
+  create?: Prisma.XOR<Prisma.AttendanceReportCreateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput> | Prisma.AttendanceReportCreateWithoutPublishedByInput[] | Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput | Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput[]
+  upsert?: Prisma.AttendanceReportUpsertWithWhereUniqueWithoutPublishedByInput | Prisma.AttendanceReportUpsertWithWhereUniqueWithoutPublishedByInput[]
+  createMany?: Prisma.AttendanceReportCreateManyPublishedByInputEnvelope
+  set?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  disconnect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  delete?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  update?: Prisma.AttendanceReportUpdateWithWhereUniqueWithoutPublishedByInput | Prisma.AttendanceReportUpdateWithWhereUniqueWithoutPublishedByInput[]
+  updateMany?: Prisma.AttendanceReportUpdateManyWithWhereWithoutPublishedByInput | Prisma.AttendanceReportUpdateManyWithWhereWithoutPublishedByInput[]
+  deleteMany?: Prisma.AttendanceReportScalarWhereInput | Prisma.AttendanceReportScalarWhereInput[]
+}
+
 export type AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput = {
   create?: Prisma.XOR<Prisma.AttendanceReportCreateWithoutGeneratedByInput, Prisma.AttendanceReportUncheckedCreateWithoutGeneratedByInput> | Prisma.AttendanceReportCreateWithoutGeneratedByInput[] | Prisma.AttendanceReportUncheckedCreateWithoutGeneratedByInput[]
   connectOrCreate?: Prisma.AttendanceReportCreateOrConnectWithoutGeneratedByInput | Prisma.AttendanceReportCreateOrConnectWithoutGeneratedByInput[]
@@ -888,6 +984,20 @@ export type AttendanceReportUncheckedUpdateManyWithoutGeneratedByNestedInput = {
   connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
   update?: Prisma.AttendanceReportUpdateWithWhereUniqueWithoutGeneratedByInput | Prisma.AttendanceReportUpdateWithWhereUniqueWithoutGeneratedByInput[]
   updateMany?: Prisma.AttendanceReportUpdateManyWithWhereWithoutGeneratedByInput | Prisma.AttendanceReportUpdateManyWithWhereWithoutGeneratedByInput[]
+  deleteMany?: Prisma.AttendanceReportScalarWhereInput | Prisma.AttendanceReportScalarWhereInput[]
+}
+
+export type AttendanceReportUncheckedUpdateManyWithoutPublishedByNestedInput = {
+  create?: Prisma.XOR<Prisma.AttendanceReportCreateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput> | Prisma.AttendanceReportCreateWithoutPublishedByInput[] | Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput[]
+  connectOrCreate?: Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput | Prisma.AttendanceReportCreateOrConnectWithoutPublishedByInput[]
+  upsert?: Prisma.AttendanceReportUpsertWithWhereUniqueWithoutPublishedByInput | Prisma.AttendanceReportUpsertWithWhereUniqueWithoutPublishedByInput[]
+  createMany?: Prisma.AttendanceReportCreateManyPublishedByInputEnvelope
+  set?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  disconnect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  delete?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  connect?: Prisma.AttendanceReportWhereUniqueInput | Prisma.AttendanceReportWhereUniqueInput[]
+  update?: Prisma.AttendanceReportUpdateWithWhereUniqueWithoutPublishedByInput | Prisma.AttendanceReportUpdateWithWhereUniqueWithoutPublishedByInput[]
+  updateMany?: Prisma.AttendanceReportUpdateManyWithWhereWithoutPublishedByInput | Prisma.AttendanceReportUpdateManyWithWhereWithoutPublishedByInput[]
   deleteMany?: Prisma.AttendanceReportScalarWhereInput | Prisma.AttendanceReportScalarWhereInput[]
 }
 
@@ -1021,6 +1131,10 @@ export type EnumAttendanceReportScopeFieldUpdateOperationsInput = {
   set?: $Enums.AttendanceReportScope
 }
 
+export type EnumReportPublicationStatusFieldUpdateOperationsInput = {
+  set?: $Enums.ReportPublicationStatus
+}
+
 export type AttendanceReportCreateWithoutSchoolInput = {
   id?: string
   reportNumber: string
@@ -1037,11 +1151,14 @@ export type AttendanceReportCreateWithoutSchoolInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
   student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
   section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
   semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
   generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateWithoutSchoolInput = {
@@ -1065,6 +1182,9 @@ export type AttendanceReportUncheckedCreateWithoutSchoolInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportCreateOrConnectWithoutSchoolInput = {
@@ -1118,6 +1238,9 @@ export type AttendanceReportScalarWhereInput = {
   generatedById?: Prisma.UuidFilter<"AttendanceReport"> | string
   generatedAt?: Prisma.DateTimeFilter<"AttendanceReport"> | Date | string
   createdAt?: Prisma.DateTimeFilter<"AttendanceReport"> | Date | string
+  status?: Prisma.EnumReportPublicationStatusFilter<"AttendanceReport"> | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.DateTimeNullableFilter<"AttendanceReport"> | Date | string | null
+  publishedById?: Prisma.UuidNullableFilter<"AttendanceReport"> | string | null
 }
 
 export type AttendanceReportCreateWithoutStudentInput = {
@@ -1136,11 +1259,14 @@ export type AttendanceReportCreateWithoutStudentInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
   section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
   semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
   generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateWithoutStudentInput = {
@@ -1163,6 +1289,9 @@ export type AttendanceReportUncheckedCreateWithoutStudentInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportCreateOrConnectWithoutStudentInput = {
@@ -1207,11 +1336,14 @@ export type AttendanceReportCreateWithoutGeneratedByInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
   student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
   section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
   semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateWithoutGeneratedByInput = {
@@ -1235,6 +1367,9 @@ export type AttendanceReportUncheckedCreateWithoutGeneratedByInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportCreateOrConnectWithoutGeneratedByInput = {
@@ -1244,6 +1379,68 @@ export type AttendanceReportCreateOrConnectWithoutGeneratedByInput = {
 
 export type AttendanceReportCreateManyGeneratedByInputEnvelope = {
   data: Prisma.AttendanceReportCreateManyGeneratedByInput | Prisma.AttendanceReportCreateManyGeneratedByInput[]
+  skipDuplicates?: boolean
+}
+
+export type AttendanceReportCreateWithoutPublishedByInput = {
+  id?: string
+  reportNumber: string
+  scope: $Enums.AttendanceReportScope
+  startDate: Date | string
+  endDate: Date | string
+  totalSessions?: number
+  presentCount?: number
+  absentCount?: number
+  lateCount?: number
+  excusedCount?: number
+  halfDayCount?: number
+  attendancePercentage?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  generatedAt?: Date | string
+  createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
+  student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
+  section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
+  semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
+  generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+}
+
+export type AttendanceReportUncheckedCreateWithoutPublishedByInput = {
+  id?: string
+  schoolId: string
+  academicYearId: string
+  studentId?: string | null
+  sectionId?: string | null
+  semesterId?: string | null
+  reportNumber: string
+  scope: $Enums.AttendanceReportScope
+  startDate: Date | string
+  endDate: Date | string
+  totalSessions?: number
+  presentCount?: number
+  absentCount?: number
+  lateCount?: number
+  excusedCount?: number
+  halfDayCount?: number
+  attendancePercentage?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  generatedById: string
+  generatedAt?: Date | string
+  createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+}
+
+export type AttendanceReportCreateOrConnectWithoutPublishedByInput = {
+  where: Prisma.AttendanceReportWhereUniqueInput
+  create: Prisma.XOR<Prisma.AttendanceReportCreateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput>
+}
+
+export type AttendanceReportCreateManyPublishedByInputEnvelope = {
+  data: Prisma.AttendanceReportCreateManyPublishedByInput | Prisma.AttendanceReportCreateManyPublishedByInput[]
   skipDuplicates?: boolean
 }
 
@@ -1263,6 +1460,22 @@ export type AttendanceReportUpdateManyWithWhereWithoutGeneratedByInput = {
   data: Prisma.XOR<Prisma.AttendanceReportUpdateManyMutationInput, Prisma.AttendanceReportUncheckedUpdateManyWithoutGeneratedByInput>
 }
 
+export type AttendanceReportUpsertWithWhereUniqueWithoutPublishedByInput = {
+  where: Prisma.AttendanceReportWhereUniqueInput
+  update: Prisma.XOR<Prisma.AttendanceReportUpdateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedUpdateWithoutPublishedByInput>
+  create: Prisma.XOR<Prisma.AttendanceReportCreateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedCreateWithoutPublishedByInput>
+}
+
+export type AttendanceReportUpdateWithWhereUniqueWithoutPublishedByInput = {
+  where: Prisma.AttendanceReportWhereUniqueInput
+  data: Prisma.XOR<Prisma.AttendanceReportUpdateWithoutPublishedByInput, Prisma.AttendanceReportUncheckedUpdateWithoutPublishedByInput>
+}
+
+export type AttendanceReportUpdateManyWithWhereWithoutPublishedByInput = {
+  where: Prisma.AttendanceReportScalarWhereInput
+  data: Prisma.XOR<Prisma.AttendanceReportUpdateManyMutationInput, Prisma.AttendanceReportUncheckedUpdateManyWithoutPublishedByInput>
+}
+
 export type AttendanceReportCreateWithoutAcademicYearInput = {
   id?: string
   reportNumber: string
@@ -1279,11 +1492,14 @@ export type AttendanceReportCreateWithoutAcademicYearInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
   student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
   section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
   semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
   generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateWithoutAcademicYearInput = {
@@ -1306,6 +1522,9 @@ export type AttendanceReportUncheckedCreateWithoutAcademicYearInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportCreateOrConnectWithoutAcademicYearInput = {
@@ -1350,11 +1569,14 @@ export type AttendanceReportCreateWithoutSemesterInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
   student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
   section?: Prisma.SectionCreateNestedOneWithoutAttendanceReportsInput
   generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateWithoutSemesterInput = {
@@ -1377,6 +1599,9 @@ export type AttendanceReportUncheckedCreateWithoutSemesterInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportCreateOrConnectWithoutSemesterInput = {
@@ -1421,11 +1646,14 @@ export type AttendanceReportCreateWithoutSectionInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
   school: Prisma.SchoolCreateNestedOneWithoutAttendanceReportsInput
   academicYear: Prisma.AcademicYearCreateNestedOneWithoutAttendanceReportsInput
   student?: Prisma.StudentCreateNestedOneWithoutAttendanceReportsInput
   semester?: Prisma.SemesterCreateNestedOneWithoutAttendanceReportsInput
   generatedBy: Prisma.UserCreateNestedOneWithoutGeneratedAttendanceReportsInput
+  publishedBy?: Prisma.UserCreateNestedOneWithoutPublishedAttendanceReportsInput
 }
 
 export type AttendanceReportUncheckedCreateWithoutSectionInput = {
@@ -1448,6 +1676,9 @@ export type AttendanceReportUncheckedCreateWithoutSectionInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportCreateOrConnectWithoutSectionInput = {
@@ -1497,6 +1728,9 @@ export type AttendanceReportCreateManySchoolInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateWithoutSchoolInput = {
@@ -1515,11 +1749,14 @@ export type AttendanceReportUpdateWithoutSchoolInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
   student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
   semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
   generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateWithoutSchoolInput = {
@@ -1543,6 +1780,9 @@ export type AttendanceReportUncheckedUpdateWithoutSchoolInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyWithoutSchoolInput = {
@@ -1566,6 +1806,9 @@ export type AttendanceReportUncheckedUpdateManyWithoutSchoolInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportCreateManyStudentInput = {
@@ -1588,6 +1831,9 @@ export type AttendanceReportCreateManyStudentInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateWithoutStudentInput = {
@@ -1606,11 +1852,14 @@ export type AttendanceReportUpdateWithoutStudentInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
   semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
   generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateWithoutStudentInput = {
@@ -1633,6 +1882,9 @@ export type AttendanceReportUncheckedUpdateWithoutStudentInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyWithoutStudentInput = {
@@ -1655,6 +1907,9 @@ export type AttendanceReportUncheckedUpdateManyWithoutStudentInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportCreateManyGeneratedByInput = {
@@ -1678,6 +1933,35 @@ export type AttendanceReportCreateManyGeneratedByInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
+}
+
+export type AttendanceReportCreateManyPublishedByInput = {
+  id?: string
+  schoolId: string
+  academicYearId: string
+  studentId?: string | null
+  sectionId?: string | null
+  semesterId?: string | null
+  reportNumber: string
+  scope: $Enums.AttendanceReportScope
+  startDate: Date | string
+  endDate: Date | string
+  totalSessions?: number
+  presentCount?: number
+  absentCount?: number
+  lateCount?: number
+  excusedCount?: number
+  halfDayCount?: number
+  attendancePercentage?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  generatedById: string
+  generatedAt?: Date | string
+  createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
 }
 
 export type AttendanceReportUpdateWithoutGeneratedByInput = {
@@ -1696,11 +1980,14 @@ export type AttendanceReportUpdateWithoutGeneratedByInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
   student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
   semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateWithoutGeneratedByInput = {
@@ -1724,6 +2011,9 @@ export type AttendanceReportUncheckedUpdateWithoutGeneratedByInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyWithoutGeneratedByInput = {
@@ -1747,6 +2037,87 @@ export type AttendanceReportUncheckedUpdateManyWithoutGeneratedByInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type AttendanceReportUpdateWithoutPublishedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  reportNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumAttendanceReportScopeFieldUpdateOperationsInput | $Enums.AttendanceReportScope
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  totalSessions?: Prisma.IntFieldUpdateOperationsInput | number
+  presentCount?: Prisma.IntFieldUpdateOperationsInput | number
+  absentCount?: Prisma.IntFieldUpdateOperationsInput | number
+  lateCount?: Prisma.IntFieldUpdateOperationsInput | number
+  excusedCount?: Prisma.IntFieldUpdateOperationsInput | number
+  halfDayCount?: Prisma.IntFieldUpdateOperationsInput | number
+  attendancePercentage?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
+  student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
+  section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
+  semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
+  generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+}
+
+export type AttendanceReportUncheckedUpdateWithoutPublishedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sectionId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  semesterId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  reportNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumAttendanceReportScopeFieldUpdateOperationsInput | $Enums.AttendanceReportScope
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  totalSessions?: Prisma.IntFieldUpdateOperationsInput | number
+  presentCount?: Prisma.IntFieldUpdateOperationsInput | number
+  absentCount?: Prisma.IntFieldUpdateOperationsInput | number
+  lateCount?: Prisma.IntFieldUpdateOperationsInput | number
+  excusedCount?: Prisma.IntFieldUpdateOperationsInput | number
+  halfDayCount?: Prisma.IntFieldUpdateOperationsInput | number
+  attendancePercentage?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  generatedById?: Prisma.StringFieldUpdateOperationsInput | string
+  generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type AttendanceReportUncheckedUpdateManyWithoutPublishedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sectionId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  semesterId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  reportNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  scope?: Prisma.EnumAttendanceReportScopeFieldUpdateOperationsInput | $Enums.AttendanceReportScope
+  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  totalSessions?: Prisma.IntFieldUpdateOperationsInput | number
+  presentCount?: Prisma.IntFieldUpdateOperationsInput | number
+  absentCount?: Prisma.IntFieldUpdateOperationsInput | number
+  lateCount?: Prisma.IntFieldUpdateOperationsInput | number
+  excusedCount?: Prisma.IntFieldUpdateOperationsInput | number
+  halfDayCount?: Prisma.IntFieldUpdateOperationsInput | number
+  attendancePercentage?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  generatedById?: Prisma.StringFieldUpdateOperationsInput | string
+  generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type AttendanceReportCreateManyAcademicYearInput = {
@@ -1769,6 +2140,9 @@ export type AttendanceReportCreateManyAcademicYearInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateWithoutAcademicYearInput = {
@@ -1787,11 +2161,14 @@ export type AttendanceReportUpdateWithoutAcademicYearInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
   student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
   semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
   generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateWithoutAcademicYearInput = {
@@ -1814,6 +2191,9 @@ export type AttendanceReportUncheckedUpdateWithoutAcademicYearInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -1836,6 +2216,9 @@ export type AttendanceReportUncheckedUpdateManyWithoutAcademicYearInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportCreateManySemesterInput = {
@@ -1858,6 +2241,9 @@ export type AttendanceReportCreateManySemesterInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateWithoutSemesterInput = {
@@ -1876,11 +2262,14 @@ export type AttendanceReportUpdateWithoutSemesterInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
   student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
   section?: Prisma.SectionUpdateOneWithoutAttendanceReportsNestedInput
   generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateWithoutSemesterInput = {
@@ -1903,6 +2292,9 @@ export type AttendanceReportUncheckedUpdateWithoutSemesterInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyWithoutSemesterInput = {
@@ -1925,6 +2317,9 @@ export type AttendanceReportUncheckedUpdateManyWithoutSemesterInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportCreateManySectionInput = {
@@ -1947,6 +2342,9 @@ export type AttendanceReportCreateManySectionInput = {
   generatedById: string
   generatedAt?: Date | string
   createdAt?: Date | string
+  status?: $Enums.ReportPublicationStatus
+  publishedAt?: Date | string | null
+  publishedById?: string | null
 }
 
 export type AttendanceReportUpdateWithoutSectionInput = {
@@ -1965,11 +2363,14 @@ export type AttendanceReportUpdateWithoutSectionInput = {
   reportDetails?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   school?: Prisma.SchoolUpdateOneRequiredWithoutAttendanceReportsNestedInput
   academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutAttendanceReportsNestedInput
   student?: Prisma.StudentUpdateOneWithoutAttendanceReportsNestedInput
   semester?: Prisma.SemesterUpdateOneWithoutAttendanceReportsNestedInput
   generatedBy?: Prisma.UserUpdateOneRequiredWithoutGeneratedAttendanceReportsNestedInput
+  publishedBy?: Prisma.UserUpdateOneWithoutPublishedAttendanceReportsNestedInput
 }
 
 export type AttendanceReportUncheckedUpdateWithoutSectionInput = {
@@ -1992,6 +2393,9 @@ export type AttendanceReportUncheckedUpdateWithoutSectionInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type AttendanceReportUncheckedUpdateManyWithoutSectionInput = {
@@ -2014,6 +2418,9 @@ export type AttendanceReportUncheckedUpdateManyWithoutSectionInput = {
   generatedById?: Prisma.StringFieldUpdateOperationsInput | string
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReportPublicationStatusFieldUpdateOperationsInput | $Enums.ReportPublicationStatus
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  publishedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -2040,12 +2447,16 @@ export type AttendanceReportSelect<ExtArgs extends runtime.Types.Extensions.Inte
   generatedById?: boolean
   generatedAt?: boolean
   createdAt?: boolean
+  status?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   student?: boolean | Prisma.AttendanceReport$studentArgs<ExtArgs>
   section?: boolean | Prisma.AttendanceReport$sectionArgs<ExtArgs>
   semester?: boolean | Prisma.AttendanceReport$semesterArgs<ExtArgs>
   generatedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.AttendanceReport$publishedByArgs<ExtArgs>
 }, ExtArgs["result"]["attendanceReport"]>
 
 export type AttendanceReportSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -2070,12 +2481,16 @@ export type AttendanceReportSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
   generatedById?: boolean
   generatedAt?: boolean
   createdAt?: boolean
+  status?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   student?: boolean | Prisma.AttendanceReport$studentArgs<ExtArgs>
   section?: boolean | Prisma.AttendanceReport$sectionArgs<ExtArgs>
   semester?: boolean | Prisma.AttendanceReport$semesterArgs<ExtArgs>
   generatedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.AttendanceReport$publishedByArgs<ExtArgs>
 }, ExtArgs["result"]["attendanceReport"]>
 
 export type AttendanceReportSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -2100,12 +2515,16 @@ export type AttendanceReportSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
   generatedById?: boolean
   generatedAt?: boolean
   createdAt?: boolean
+  status?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   student?: boolean | Prisma.AttendanceReport$studentArgs<ExtArgs>
   section?: boolean | Prisma.AttendanceReport$sectionArgs<ExtArgs>
   semester?: boolean | Prisma.AttendanceReport$semesterArgs<ExtArgs>
   generatedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.AttendanceReport$publishedByArgs<ExtArgs>
 }, ExtArgs["result"]["attendanceReport"]>
 
 export type AttendanceReportSelectScalar = {
@@ -2130,9 +2549,12 @@ export type AttendanceReportSelectScalar = {
   generatedById?: boolean
   generatedAt?: boolean
   createdAt?: boolean
+  status?: boolean
+  publishedAt?: boolean
+  publishedById?: boolean
 }
 
-export type AttendanceReportOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "schoolId" | "academicYearId" | "studentId" | "sectionId" | "semesterId" | "reportNumber" | "scope" | "startDate" | "endDate" | "totalSessions" | "presentCount" | "absentCount" | "lateCount" | "excusedCount" | "halfDayCount" | "attendancePercentage" | "reportDetails" | "generatedById" | "generatedAt" | "createdAt", ExtArgs["result"]["attendanceReport"]>
+export type AttendanceReportOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "schoolId" | "academicYearId" | "studentId" | "sectionId" | "semesterId" | "reportNumber" | "scope" | "startDate" | "endDate" | "totalSessions" | "presentCount" | "absentCount" | "lateCount" | "excusedCount" | "halfDayCount" | "attendancePercentage" | "reportDetails" | "generatedById" | "generatedAt" | "createdAt" | "status" | "publishedAt" | "publishedById", ExtArgs["result"]["attendanceReport"]>
 export type AttendanceReportInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
   academicYear?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
@@ -2140,6 +2562,7 @@ export type AttendanceReportInclude<ExtArgs extends runtime.Types.Extensions.Int
   section?: boolean | Prisma.AttendanceReport$sectionArgs<ExtArgs>
   semester?: boolean | Prisma.AttendanceReport$semesterArgs<ExtArgs>
   generatedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.AttendanceReport$publishedByArgs<ExtArgs>
 }
 export type AttendanceReportIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -2148,6 +2571,7 @@ export type AttendanceReportIncludeCreateManyAndReturn<ExtArgs extends runtime.T
   section?: boolean | Prisma.AttendanceReport$sectionArgs<ExtArgs>
   semester?: boolean | Prisma.AttendanceReport$semesterArgs<ExtArgs>
   generatedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.AttendanceReport$publishedByArgs<ExtArgs>
 }
 export type AttendanceReportIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   school?: boolean | Prisma.SchoolDefaultArgs<ExtArgs>
@@ -2156,6 +2580,7 @@ export type AttendanceReportIncludeUpdateManyAndReturn<ExtArgs extends runtime.T
   section?: boolean | Prisma.AttendanceReport$sectionArgs<ExtArgs>
   semester?: boolean | Prisma.AttendanceReport$semesterArgs<ExtArgs>
   generatedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  publishedBy?: boolean | Prisma.AttendanceReport$publishedByArgs<ExtArgs>
 }
 
 export type $AttendanceReportPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2167,6 +2592,7 @@ export type $AttendanceReportPayload<ExtArgs extends runtime.Types.Extensions.In
     section: Prisma.$SectionPayload<ExtArgs> | null
     semester: Prisma.$SemesterPayload<ExtArgs> | null
     generatedBy: Prisma.$UserPayload<ExtArgs>
+    publishedBy: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2190,6 +2616,9 @@ export type $AttendanceReportPayload<ExtArgs extends runtime.Types.Extensions.In
     generatedById: string
     generatedAt: Date
     createdAt: Date
+    status: $Enums.ReportPublicationStatus
+    publishedAt: Date | null
+    publishedById: string | null
   }, ExtArgs["result"]["attendanceReport"]>
   composites: {}
 }
@@ -2590,6 +3019,7 @@ export interface Prisma__AttendanceReportClient<T, Null = never, ExtArgs extends
   section<T extends Prisma.AttendanceReport$sectionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AttendanceReport$sectionArgs<ExtArgs>>): Prisma.Prisma__SectionClient<runtime.Types.Result.GetResult<Prisma.$SectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   semester<T extends Prisma.AttendanceReport$semesterArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AttendanceReport$semesterArgs<ExtArgs>>): Prisma.Prisma__SemesterClient<runtime.Types.Result.GetResult<Prisma.$SemesterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   generatedBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  publishedBy<T extends Prisma.AttendanceReport$publishedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AttendanceReport$publishedByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2640,6 +3070,9 @@ export interface AttendanceReportFieldRefs {
   readonly generatedById: Prisma.FieldRef<"AttendanceReport", 'String'>
   readonly generatedAt: Prisma.FieldRef<"AttendanceReport", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"AttendanceReport", 'DateTime'>
+  readonly status: Prisma.FieldRef<"AttendanceReport", 'ReportPublicationStatus'>
+  readonly publishedAt: Prisma.FieldRef<"AttendanceReport", 'DateTime'>
+  readonly publishedById: Prisma.FieldRef<"AttendanceReport", 'String'>
 }
     
 
@@ -3095,6 +3528,25 @@ export type AttendanceReport$semesterArgs<ExtArgs extends runtime.Types.Extensio
    */
   include?: Prisma.SemesterInclude<ExtArgs> | null
   where?: Prisma.SemesterWhereInput
+}
+
+/**
+ * AttendanceReport.publishedBy
+ */
+export type AttendanceReport$publishedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
 }
 
 /**

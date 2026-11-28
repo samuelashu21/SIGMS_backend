@@ -252,6 +252,14 @@ export type GradeWhereInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingListRelationFilter
   reportCards?: Prisma.ReportCardListRelationFilter
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryListRelationFilter
+  promotionGradeRules?: Prisma.PromotionGradeRuleListRelationFilter
+  promotionDecisions?: Prisma.PromotionDecisionListRelationFilter
+  progressionsFrom?: Prisma.GradeProgressionRuleListRelationFilter
+  progressionsTo?: Prisma.GradeProgressionRuleListRelationFilter
+  graduationConfigurations?: Prisma.GraduationConfigurationListRelationFilter
+  graduationRecords?: Prisma.GraduationRecordListRelationFilter
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryListRelationFilter
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryListRelationFilter
 }
 
 export type GradeOrderByWithRelationInput = {
@@ -275,6 +283,14 @@ export type GradeOrderByWithRelationInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingOrderByRelationAggregateInput
   reportCards?: Prisma.ReportCardOrderByRelationAggregateInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryOrderByRelationAggregateInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleOrderByRelationAggregateInput
+  promotionDecisions?: Prisma.PromotionDecisionOrderByRelationAggregateInput
+  progressionsFrom?: Prisma.GradeProgressionRuleOrderByRelationAggregateInput
+  progressionsTo?: Prisma.GradeProgressionRuleOrderByRelationAggregateInput
+  graduationConfigurations?: Prisma.GraduationConfigurationOrderByRelationAggregateInput
+  graduationRecords?: Prisma.GraduationRecordOrderByRelationAggregateInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryOrderByRelationAggregateInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryOrderByRelationAggregateInput
 }
 
 export type GradeWhereUniqueInput = Prisma.AtLeast<{
@@ -304,6 +320,14 @@ export type GradeWhereUniqueInput = Prisma.AtLeast<{
   academicStudentRankings?: Prisma.AcademicStudentRankingListRelationFilter
   reportCards?: Prisma.ReportCardListRelationFilter
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryListRelationFilter
+  promotionGradeRules?: Prisma.PromotionGradeRuleListRelationFilter
+  promotionDecisions?: Prisma.PromotionDecisionListRelationFilter
+  progressionsFrom?: Prisma.GradeProgressionRuleListRelationFilter
+  progressionsTo?: Prisma.GradeProgressionRuleListRelationFilter
+  graduationConfigurations?: Prisma.GraduationConfigurationListRelationFilter
+  graduationRecords?: Prisma.GraduationRecordListRelationFilter
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryListRelationFilter
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryListRelationFilter
 }, "id" | "schoolId_name" | "schoolId_gradeLevel" | "id_schoolId">
 
 export type GradeOrderByWithAggregationInput = {
@@ -356,6 +380,14 @@ export type GradeCreateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateInput = {
@@ -378,6 +410,14 @@ export type GradeUncheckedCreateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUpdateInput = {
@@ -400,6 +440,14 @@ export type GradeUpdateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateInput = {
@@ -422,6 +470,14 @@ export type GradeUncheckedUpdateInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateManyInput = {
@@ -730,6 +786,124 @@ export type GradeUpdateOneRequiredWithoutAcademicTranscriptEntriesNestedInput = 
   update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutAcademicTranscriptEntriesInput, Prisma.GradeUpdateWithoutAcademicTranscriptEntriesInput>, Prisma.GradeUncheckedUpdateWithoutAcademicTranscriptEntriesInput>
 }
 
+export type GradeCreateNestedOneWithoutPromotionGradeRulesInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutPromotionGradeRulesInput, Prisma.GradeUncheckedCreateWithoutPromotionGradeRulesInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutPromotionGradeRulesInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneRequiredWithoutPromotionGradeRulesNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutPromotionGradeRulesInput, Prisma.GradeUncheckedCreateWithoutPromotionGradeRulesInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutPromotionGradeRulesInput
+  upsert?: Prisma.GradeUpsertWithoutPromotionGradeRulesInput
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutPromotionGradeRulesInput, Prisma.GradeUpdateWithoutPromotionGradeRulesInput>, Prisma.GradeUncheckedUpdateWithoutPromotionGradeRulesInput>
+}
+
+export type GradeCreateNestedOneWithoutPromotionDecisionsInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutPromotionDecisionsInput, Prisma.GradeUncheckedCreateWithoutPromotionDecisionsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutPromotionDecisionsInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneRequiredWithoutPromotionDecisionsNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutPromotionDecisionsInput, Prisma.GradeUncheckedCreateWithoutPromotionDecisionsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutPromotionDecisionsInput
+  upsert?: Prisma.GradeUpsertWithoutPromotionDecisionsInput
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutPromotionDecisionsInput, Prisma.GradeUpdateWithoutPromotionDecisionsInput>, Prisma.GradeUncheckedUpdateWithoutPromotionDecisionsInput>
+}
+
+export type GradeCreateNestedOneWithoutProgressionsFromInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsFromInput, Prisma.GradeUncheckedCreateWithoutProgressionsFromInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionsFromInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeCreateNestedOneWithoutProgressionsToInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsToInput, Prisma.GradeUncheckedCreateWithoutProgressionsToInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionsToInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneRequiredWithoutProgressionsFromNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsFromInput, Prisma.GradeUncheckedCreateWithoutProgressionsFromInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionsFromInput
+  upsert?: Prisma.GradeUpsertWithoutProgressionsFromInput
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutProgressionsFromInput, Prisma.GradeUpdateWithoutProgressionsFromInput>, Prisma.GradeUncheckedUpdateWithoutProgressionsFromInput>
+}
+
+export type GradeUpdateOneWithoutProgressionsToNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsToInput, Prisma.GradeUncheckedCreateWithoutProgressionsToInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionsToInput
+  upsert?: Prisma.GradeUpsertWithoutProgressionsToInput
+  disconnect?: Prisma.GradeWhereInput | boolean
+  delete?: Prisma.GradeWhereInput | boolean
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutProgressionsToInput, Prisma.GradeUpdateWithoutProgressionsToInput>, Prisma.GradeUncheckedUpdateWithoutProgressionsToInput>
+}
+
+export type GradeCreateNestedOneWithoutGraduationConfigurationsInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutGraduationConfigurationsInput, Prisma.GradeUncheckedCreateWithoutGraduationConfigurationsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutGraduationConfigurationsInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneRequiredWithoutGraduationConfigurationsNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutGraduationConfigurationsInput, Prisma.GradeUncheckedCreateWithoutGraduationConfigurationsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutGraduationConfigurationsInput
+  upsert?: Prisma.GradeUpsertWithoutGraduationConfigurationsInput
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutGraduationConfigurationsInput, Prisma.GradeUpdateWithoutGraduationConfigurationsInput>, Prisma.GradeUncheckedUpdateWithoutGraduationConfigurationsInput>
+}
+
+export type GradeCreateNestedOneWithoutGraduationRecordsInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutGraduationRecordsInput, Prisma.GradeUncheckedCreateWithoutGraduationRecordsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutGraduationRecordsInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneRequiredWithoutGraduationRecordsNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutGraduationRecordsInput, Prisma.GradeUncheckedCreateWithoutGraduationRecordsInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutGraduationRecordsInput
+  upsert?: Prisma.GradeUpsertWithoutGraduationRecordsInput
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutGraduationRecordsInput, Prisma.GradeUpdateWithoutGraduationRecordsInput>, Prisma.GradeUncheckedUpdateWithoutGraduationRecordsInput>
+}
+
+export type GradeCreateNestedOneWithoutProgressionHistoryAsPreviousInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionHistoryAsPreviousInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeCreateNestedOneWithoutProgressionHistoryAsNewInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsNewInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsNewInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionHistoryAsNewInput
+  connect?: Prisma.GradeWhereUniqueInput
+}
+
+export type GradeUpdateOneWithoutProgressionHistoryAsPreviousNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionHistoryAsPreviousInput
+  upsert?: Prisma.GradeUpsertWithoutProgressionHistoryAsPreviousInput
+  disconnect?: Prisma.GradeWhereInput | boolean
+  delete?: Prisma.GradeWhereInput | boolean
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUpdateWithoutProgressionHistoryAsPreviousInput>, Prisma.GradeUncheckedUpdateWithoutProgressionHistoryAsPreviousInput>
+}
+
+export type GradeUpdateOneWithoutProgressionHistoryAsNewNestedInput = {
+  create?: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsNewInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsNewInput>
+  connectOrCreate?: Prisma.GradeCreateOrConnectWithoutProgressionHistoryAsNewInput
+  upsert?: Prisma.GradeUpsertWithoutProgressionHistoryAsNewInput
+  disconnect?: Prisma.GradeWhereInput | boolean
+  delete?: Prisma.GradeWhereInput | boolean
+  connect?: Prisma.GradeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.GradeUpdateToOneWithWhereWithoutProgressionHistoryAsNewInput, Prisma.GradeUpdateWithoutProgressionHistoryAsNewInput>, Prisma.GradeUncheckedUpdateWithoutProgressionHistoryAsNewInput>
+}
+
 export type GradeCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -749,6 +923,14 @@ export type GradeCreateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutSchoolInput = {
@@ -770,6 +952,14 @@ export type GradeUncheckedCreateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutSchoolInput = {
@@ -831,6 +1021,14 @@ export type GradeCreateWithoutSectionsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutSectionsInput = {
@@ -852,6 +1050,14 @@ export type GradeUncheckedCreateWithoutSectionsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutSectionsInput = {
@@ -889,6 +1095,14 @@ export type GradeUpdateWithoutSectionsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutSectionsInput = {
@@ -910,6 +1124,14 @@ export type GradeUncheckedUpdateWithoutSectionsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutSubjectAssignmentsInput = {
@@ -931,6 +1153,14 @@ export type GradeCreateWithoutSubjectAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutSubjectAssignmentsInput = {
@@ -952,6 +1182,14 @@ export type GradeUncheckedCreateWithoutSubjectAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutSubjectAssignmentsInput = {
@@ -989,6 +1227,14 @@ export type GradeUpdateWithoutSubjectAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutSubjectAssignmentsInput = {
@@ -1010,6 +1256,14 @@ export type GradeUncheckedUpdateWithoutSubjectAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutAdmissionApplicationsInput = {
@@ -1031,6 +1285,14 @@ export type GradeCreateWithoutAdmissionApplicationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAdmissionApplicationsInput = {
@@ -1052,6 +1314,14 @@ export type GradeUncheckedCreateWithoutAdmissionApplicationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAdmissionApplicationsInput = {
@@ -1089,6 +1359,14 @@ export type GradeUpdateWithoutAdmissionApplicationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAdmissionApplicationsInput = {
@@ -1110,6 +1388,14 @@ export type GradeUncheckedUpdateWithoutAdmissionApplicationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutAcademicEnrollmentsInput = {
@@ -1131,6 +1417,14 @@ export type GradeCreateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAcademicEnrollmentsInput = {
@@ -1152,6 +1446,14 @@ export type GradeUncheckedCreateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAcademicEnrollmentsInput = {
@@ -1189,6 +1491,14 @@ export type GradeUpdateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAcademicEnrollmentsInput = {
@@ -1210,6 +1520,14 @@ export type GradeUncheckedUpdateWithoutAcademicEnrollmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutTeacherAssignmentsInput = {
@@ -1231,6 +1549,14 @@ export type GradeCreateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutTeacherAssignmentsInput = {
@@ -1252,6 +1578,14 @@ export type GradeUncheckedCreateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutTeacherAssignmentsInput = {
@@ -1289,6 +1623,14 @@ export type GradeUpdateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutTeacherAssignmentsInput = {
@@ -1310,6 +1652,14 @@ export type GradeUncheckedUpdateWithoutTeacherAssignmentsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutExaminationsInput = {
@@ -1331,6 +1681,14 @@ export type GradeCreateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutExaminationsInput = {
@@ -1352,6 +1710,14 @@ export type GradeUncheckedCreateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutExaminationsInput = {
@@ -1389,6 +1755,14 @@ export type GradeUpdateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutExaminationsInput = {
@@ -1410,6 +1784,14 @@ export type GradeUncheckedUpdateWithoutExaminationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutAcademicSubjectWeightsInput = {
@@ -1431,6 +1813,14 @@ export type GradeCreateWithoutAcademicSubjectWeightsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAcademicSubjectWeightsInput = {
@@ -1452,6 +1842,14 @@ export type GradeUncheckedCreateWithoutAcademicSubjectWeightsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAcademicSubjectWeightsInput = {
@@ -1489,6 +1887,14 @@ export type GradeUpdateWithoutAcademicSubjectWeightsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAcademicSubjectWeightsInput = {
@@ -1510,6 +1916,14 @@ export type GradeUncheckedUpdateWithoutAcademicSubjectWeightsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutAcademicRankingConfigurationsInput = {
@@ -1531,6 +1945,14 @@ export type GradeCreateWithoutAcademicRankingConfigurationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAcademicRankingConfigurationsInput = {
@@ -1552,6 +1974,14 @@ export type GradeUncheckedCreateWithoutAcademicRankingConfigurationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAcademicRankingConfigurationsInput = {
@@ -1589,6 +2019,14 @@ export type GradeUpdateWithoutAcademicRankingConfigurationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAcademicRankingConfigurationsInput = {
@@ -1610,6 +2048,14 @@ export type GradeUncheckedUpdateWithoutAcademicRankingConfigurationsInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutAcademicStudentRankingsInput = {
@@ -1631,6 +2077,14 @@ export type GradeCreateWithoutAcademicStudentRankingsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAcademicStudentRankingsInput = {
@@ -1652,6 +2106,14 @@ export type GradeUncheckedCreateWithoutAcademicStudentRankingsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAcademicStudentRankingsInput = {
@@ -1689,6 +2151,14 @@ export type GradeUpdateWithoutAcademicStudentRankingsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAcademicStudentRankingsInput = {
@@ -1710,6 +2180,14 @@ export type GradeUncheckedUpdateWithoutAcademicStudentRankingsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutReportCardsInput = {
@@ -1731,6 +2209,14 @@ export type GradeCreateWithoutReportCardsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutReportCardsInput = {
@@ -1752,6 +2238,14 @@ export type GradeUncheckedCreateWithoutReportCardsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutReportCardsInput = {
@@ -1789,6 +2283,14 @@ export type GradeUpdateWithoutReportCardsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutReportCardsInput = {
@@ -1810,6 +2312,14 @@ export type GradeUncheckedUpdateWithoutReportCardsInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeCreateWithoutAcademicTranscriptEntriesInput = {
@@ -1831,6 +2341,14 @@ export type GradeCreateWithoutAcademicTranscriptEntriesInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
   academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeUncheckedCreateWithoutAcademicTranscriptEntriesInput = {
@@ -1852,6 +2370,14 @@ export type GradeUncheckedCreateWithoutAcademicTranscriptEntriesInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
   reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
 }
 
 export type GradeCreateOrConnectWithoutAcademicTranscriptEntriesInput = {
@@ -1889,6 +2415,14 @@ export type GradeUpdateWithoutAcademicTranscriptEntriesInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutAcademicTranscriptEntriesInput = {
@@ -1910,6 +2444,1070 @@ export type GradeUncheckedUpdateWithoutAcademicTranscriptEntriesInput = {
   academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeCreateWithoutPromotionGradeRulesInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutPromotionGradeRulesInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutPromotionGradeRulesInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutPromotionGradeRulesInput, Prisma.GradeUncheckedCreateWithoutPromotionGradeRulesInput>
+}
+
+export type GradeUpsertWithoutPromotionGradeRulesInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutPromotionGradeRulesInput, Prisma.GradeUncheckedUpdateWithoutPromotionGradeRulesInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutPromotionGradeRulesInput, Prisma.GradeUncheckedCreateWithoutPromotionGradeRulesInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutPromotionGradeRulesInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutPromotionGradeRulesInput, Prisma.GradeUncheckedUpdateWithoutPromotionGradeRulesInput>
+}
+
+export type GradeUpdateWithoutPromotionGradeRulesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutPromotionGradeRulesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeCreateWithoutPromotionDecisionsInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutPromotionDecisionsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutPromotionDecisionsInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutPromotionDecisionsInput, Prisma.GradeUncheckedCreateWithoutPromotionDecisionsInput>
+}
+
+export type GradeUpsertWithoutPromotionDecisionsInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutPromotionDecisionsInput, Prisma.GradeUncheckedUpdateWithoutPromotionDecisionsInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutPromotionDecisionsInput, Prisma.GradeUncheckedCreateWithoutPromotionDecisionsInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutPromotionDecisionsInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutPromotionDecisionsInput, Prisma.GradeUncheckedUpdateWithoutPromotionDecisionsInput>
+}
+
+export type GradeUpdateWithoutPromotionDecisionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutPromotionDecisionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeCreateWithoutProgressionsFromInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutProgressionsFromInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutProgressionsFromInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsFromInput, Prisma.GradeUncheckedCreateWithoutProgressionsFromInput>
+}
+
+export type GradeCreateWithoutProgressionsToInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutProgressionsToInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutProgressionsToInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsToInput, Prisma.GradeUncheckedCreateWithoutProgressionsToInput>
+}
+
+export type GradeUpsertWithoutProgressionsFromInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionsFromInput, Prisma.GradeUncheckedUpdateWithoutProgressionsFromInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsFromInput, Prisma.GradeUncheckedCreateWithoutProgressionsFromInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutProgressionsFromInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionsFromInput, Prisma.GradeUncheckedUpdateWithoutProgressionsFromInput>
+}
+
+export type GradeUpdateWithoutProgressionsFromInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutProgressionsFromInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUpsertWithoutProgressionsToInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionsToInput, Prisma.GradeUncheckedUpdateWithoutProgressionsToInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionsToInput, Prisma.GradeUncheckedCreateWithoutProgressionsToInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutProgressionsToInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionsToInput, Prisma.GradeUncheckedUpdateWithoutProgressionsToInput>
+}
+
+export type GradeUpdateWithoutProgressionsToInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutProgressionsToInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeCreateWithoutGraduationConfigurationsInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutGraduationConfigurationsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutGraduationConfigurationsInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutGraduationConfigurationsInput, Prisma.GradeUncheckedCreateWithoutGraduationConfigurationsInput>
+}
+
+export type GradeUpsertWithoutGraduationConfigurationsInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutGraduationConfigurationsInput, Prisma.GradeUncheckedUpdateWithoutGraduationConfigurationsInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutGraduationConfigurationsInput, Prisma.GradeUncheckedCreateWithoutGraduationConfigurationsInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutGraduationConfigurationsInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutGraduationConfigurationsInput, Prisma.GradeUncheckedUpdateWithoutGraduationConfigurationsInput>
+}
+
+export type GradeUpdateWithoutGraduationConfigurationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutGraduationConfigurationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeCreateWithoutGraduationRecordsInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutGraduationRecordsInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutGraduationRecordsInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutGraduationRecordsInput, Prisma.GradeUncheckedCreateWithoutGraduationRecordsInput>
+}
+
+export type GradeUpsertWithoutGraduationRecordsInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutGraduationRecordsInput, Prisma.GradeUncheckedUpdateWithoutGraduationRecordsInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutGraduationRecordsInput, Prisma.GradeUncheckedCreateWithoutGraduationRecordsInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutGraduationRecordsInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutGraduationRecordsInput, Prisma.GradeUncheckedUpdateWithoutGraduationRecordsInput>
+}
+
+export type GradeUpdateWithoutGraduationRecordsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutGraduationRecordsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeCreateWithoutProgressionHistoryAsPreviousInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeUncheckedCreateWithoutProgressionHistoryAsPreviousInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutNewGradeInput
+}
+
+export type GradeCreateOrConnectWithoutProgressionHistoryAsPreviousInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+}
+
+export type GradeCreateWithoutProgressionHistoryAsNewInput = {
+  id?: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  school: Prisma.SchoolCreateNestedOneWithoutGradesInput
+  sections?: Prisma.SectionCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryCreateNestedManyWithoutPreviousGradeInput
+}
+
+export type GradeUncheckedCreateWithoutProgressionHistoryAsNewInput = {
+  id?: string
+  schoolId: string
+  name: string
+  gradeLevel: number
+  description?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sections?: Prisma.SectionUncheckedCreateNestedManyWithoutGradeInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedCreateNestedManyWithoutGradeInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedCreateNestedManyWithoutRequestedGradeInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedCreateNestedManyWithoutGradeInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedCreateNestedManyWithoutGradeInput
+  examinations?: Prisma.ExaminationUncheckedCreateNestedManyWithoutGradeInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedCreateNestedManyWithoutGradeInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedCreateNestedManyWithoutGradeInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedCreateNestedManyWithoutGradeInput
+  reportCards?: Prisma.ReportCardUncheckedCreateNestedManyWithoutGradeInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedCreateNestedManyWithoutGradeInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedCreateNestedManyWithoutGradeInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedCreateNestedManyWithoutTargetGradeInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutCurrentGradeInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedCreateNestedManyWithoutNextGradeInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedCreateNestedManyWithoutTerminalGradeInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedCreateNestedManyWithoutTerminalGradeInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedCreateNestedManyWithoutPreviousGradeInput
+}
+
+export type GradeCreateOrConnectWithoutProgressionHistoryAsNewInput = {
+  where: Prisma.GradeWhereUniqueInput
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsNewInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsNewInput>
+}
+
+export type GradeUpsertWithoutProgressionHistoryAsPreviousInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUncheckedUpdateWithoutProgressionHistoryAsPreviousInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsPreviousInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutProgressionHistoryAsPreviousInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionHistoryAsPreviousInput, Prisma.GradeUncheckedUpdateWithoutProgressionHistoryAsPreviousInput>
+}
+
+export type GradeUpdateWithoutProgressionHistoryAsPreviousInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutProgressionHistoryAsPreviousInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
+}
+
+export type GradeUpsertWithoutProgressionHistoryAsNewInput = {
+  update: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionHistoryAsNewInput, Prisma.GradeUncheckedUpdateWithoutProgressionHistoryAsNewInput>
+  create: Prisma.XOR<Prisma.GradeCreateWithoutProgressionHistoryAsNewInput, Prisma.GradeUncheckedCreateWithoutProgressionHistoryAsNewInput>
+  where?: Prisma.GradeWhereInput
+}
+
+export type GradeUpdateToOneWithWhereWithoutProgressionHistoryAsNewInput = {
+  where?: Prisma.GradeWhereInput
+  data: Prisma.XOR<Prisma.GradeUpdateWithoutProgressionHistoryAsNewInput, Prisma.GradeUncheckedUpdateWithoutProgressionHistoryAsNewInput>
+}
+
+export type GradeUpdateWithoutProgressionHistoryAsNewInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  school?: Prisma.SchoolUpdateOneRequiredWithoutGradesNestedInput
+  sections?: Prisma.SectionUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+}
+
+export type GradeUncheckedUpdateWithoutProgressionHistoryAsNewInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  gradeLevel?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sections?: Prisma.SectionUncheckedUpdateManyWithoutGradeNestedInput
+  subjectAssignments?: Prisma.GradeSubjectUncheckedUpdateManyWithoutGradeNestedInput
+  admissionApplications?: Prisma.AdmissionApplicationUncheckedUpdateManyWithoutRequestedGradeNestedInput
+  academicEnrollments?: Prisma.AcademicEnrollmentUncheckedUpdateManyWithoutGradeNestedInput
+  teacherAssignments?: Prisma.TeacherSubjectAssignmentUncheckedUpdateManyWithoutGradeNestedInput
+  examinations?: Prisma.ExaminationUncheckedUpdateManyWithoutGradeNestedInput
+  academicSubjectWeights?: Prisma.AcademicSubjectWeightUncheckedUpdateManyWithoutGradeNestedInput
+  academicRankingConfigurations?: Prisma.AcademicRankingConfigurationUncheckedUpdateManyWithoutGradeNestedInput
+  academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
+  reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
+  academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
 }
 
 export type GradeCreateManySchoolInput = {
@@ -1941,6 +3539,14 @@ export type GradeUpdateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateWithoutSchoolInput = {
@@ -1962,6 +3568,14 @@ export type GradeUncheckedUpdateWithoutSchoolInput = {
   academicStudentRankings?: Prisma.AcademicStudentRankingUncheckedUpdateManyWithoutGradeNestedInput
   reportCards?: Prisma.ReportCardUncheckedUpdateManyWithoutGradeNestedInput
   academicTranscriptEntries?: Prisma.AcademicTranscriptEntryUncheckedUpdateManyWithoutGradeNestedInput
+  promotionGradeRules?: Prisma.PromotionGradeRuleUncheckedUpdateManyWithoutGradeNestedInput
+  promotionDecisions?: Prisma.PromotionDecisionUncheckedUpdateManyWithoutTargetGradeNestedInput
+  progressionsFrom?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutCurrentGradeNestedInput
+  progressionsTo?: Prisma.GradeProgressionRuleUncheckedUpdateManyWithoutNextGradeNestedInput
+  graduationConfigurations?: Prisma.GraduationConfigurationUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  graduationRecords?: Prisma.GraduationRecordUncheckedUpdateManyWithoutTerminalGradeNestedInput
+  progressionHistoryAsPrevious?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutPreviousGradeNestedInput
+  progressionHistoryAsNew?: Prisma.AcademicProgressionHistoryUncheckedUpdateManyWithoutNewGradeNestedInput
 }
 
 export type GradeUncheckedUpdateManyWithoutSchoolInput = {
@@ -1991,6 +3605,14 @@ export type GradeCountOutputType = {
   academicStudentRankings: number
   reportCards: number
   academicTranscriptEntries: number
+  promotionGradeRules: number
+  promotionDecisions: number
+  progressionsFrom: number
+  progressionsTo: number
+  graduationConfigurations: number
+  graduationRecords: number
+  progressionHistoryAsPrevious: number
+  progressionHistoryAsNew: number
 }
 
 export type GradeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2005,6 +3627,14 @@ export type GradeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   academicStudentRankings?: boolean | GradeCountOutputTypeCountAcademicStudentRankingsArgs
   reportCards?: boolean | GradeCountOutputTypeCountReportCardsArgs
   academicTranscriptEntries?: boolean | GradeCountOutputTypeCountAcademicTranscriptEntriesArgs
+  promotionGradeRules?: boolean | GradeCountOutputTypeCountPromotionGradeRulesArgs
+  promotionDecisions?: boolean | GradeCountOutputTypeCountPromotionDecisionsArgs
+  progressionsFrom?: boolean | GradeCountOutputTypeCountProgressionsFromArgs
+  progressionsTo?: boolean | GradeCountOutputTypeCountProgressionsToArgs
+  graduationConfigurations?: boolean | GradeCountOutputTypeCountGraduationConfigurationsArgs
+  graduationRecords?: boolean | GradeCountOutputTypeCountGraduationRecordsArgs
+  progressionHistoryAsPrevious?: boolean | GradeCountOutputTypeCountProgressionHistoryAsPreviousArgs
+  progressionHistoryAsNew?: boolean | GradeCountOutputTypeCountProgressionHistoryAsNewArgs
 }
 
 /**
@@ -2094,6 +3724,62 @@ export type GradeCountOutputTypeCountAcademicTranscriptEntriesArgs<ExtArgs exten
   where?: Prisma.AcademicTranscriptEntryWhereInput
 }
 
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountPromotionGradeRulesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PromotionGradeRuleWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountPromotionDecisionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PromotionDecisionWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountProgressionsFromArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.GradeProgressionRuleWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountProgressionsToArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.GradeProgressionRuleWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountGraduationConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.GraduationConfigurationWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountGraduationRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.GraduationRecordWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountProgressionHistoryAsPreviousArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+}
+
+/**
+ * GradeCountOutputType without action
+ */
+export type GradeCountOutputTypeCountProgressionHistoryAsNewArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+}
+
 
 export type GradeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2116,6 +3802,14 @@ export type GradeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   academicStudentRankings?: boolean | Prisma.Grade$academicStudentRankingsArgs<ExtArgs>
   reportCards?: boolean | Prisma.Grade$reportCardsArgs<ExtArgs>
   academicTranscriptEntries?: boolean | Prisma.Grade$academicTranscriptEntriesArgs<ExtArgs>
+  promotionGradeRules?: boolean | Prisma.Grade$promotionGradeRulesArgs<ExtArgs>
+  promotionDecisions?: boolean | Prisma.Grade$promotionDecisionsArgs<ExtArgs>
+  progressionsFrom?: boolean | Prisma.Grade$progressionsFromArgs<ExtArgs>
+  progressionsTo?: boolean | Prisma.Grade$progressionsToArgs<ExtArgs>
+  graduationConfigurations?: boolean | Prisma.Grade$graduationConfigurationsArgs<ExtArgs>
+  graduationRecords?: boolean | Prisma.Grade$graduationRecordsArgs<ExtArgs>
+  progressionHistoryAsPrevious?: boolean | Prisma.Grade$progressionHistoryAsPreviousArgs<ExtArgs>
+  progressionHistoryAsNew?: boolean | Prisma.Grade$progressionHistoryAsNewArgs<ExtArgs>
   _count?: boolean | Prisma.GradeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["grade"]>
 
@@ -2168,6 +3862,14 @@ export type GradeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   academicStudentRankings?: boolean | Prisma.Grade$academicStudentRankingsArgs<ExtArgs>
   reportCards?: boolean | Prisma.Grade$reportCardsArgs<ExtArgs>
   academicTranscriptEntries?: boolean | Prisma.Grade$academicTranscriptEntriesArgs<ExtArgs>
+  promotionGradeRules?: boolean | Prisma.Grade$promotionGradeRulesArgs<ExtArgs>
+  promotionDecisions?: boolean | Prisma.Grade$promotionDecisionsArgs<ExtArgs>
+  progressionsFrom?: boolean | Prisma.Grade$progressionsFromArgs<ExtArgs>
+  progressionsTo?: boolean | Prisma.Grade$progressionsToArgs<ExtArgs>
+  graduationConfigurations?: boolean | Prisma.Grade$graduationConfigurationsArgs<ExtArgs>
+  graduationRecords?: boolean | Prisma.Grade$graduationRecordsArgs<ExtArgs>
+  progressionHistoryAsPrevious?: boolean | Prisma.Grade$progressionHistoryAsPreviousArgs<ExtArgs>
+  progressionHistoryAsNew?: boolean | Prisma.Grade$progressionHistoryAsNewArgs<ExtArgs>
   _count?: boolean | Prisma.GradeCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type GradeIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2192,6 +3894,14 @@ export type $GradePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     academicStudentRankings: Prisma.$AcademicStudentRankingPayload<ExtArgs>[]
     reportCards: Prisma.$ReportCardPayload<ExtArgs>[]
     academicTranscriptEntries: Prisma.$AcademicTranscriptEntryPayload<ExtArgs>[]
+    promotionGradeRules: Prisma.$PromotionGradeRulePayload<ExtArgs>[]
+    promotionDecisions: Prisma.$PromotionDecisionPayload<ExtArgs>[]
+    progressionsFrom: Prisma.$GradeProgressionRulePayload<ExtArgs>[]
+    progressionsTo: Prisma.$GradeProgressionRulePayload<ExtArgs>[]
+    graduationConfigurations: Prisma.$GraduationConfigurationPayload<ExtArgs>[]
+    graduationRecords: Prisma.$GraduationRecordPayload<ExtArgs>[]
+    progressionHistoryAsPrevious: Prisma.$AcademicProgressionHistoryPayload<ExtArgs>[]
+    progressionHistoryAsNew: Prisma.$AcademicProgressionHistoryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2608,6 +4318,14 @@ export interface Prisma__GradeClient<T, Null = never, ExtArgs extends runtime.Ty
   academicStudentRankings<T extends Prisma.Grade$academicStudentRankingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$academicStudentRankingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicStudentRankingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reportCards<T extends Prisma.Grade$reportCardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$reportCardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReportCardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   academicTranscriptEntries<T extends Prisma.Grade$academicTranscriptEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$academicTranscriptEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicTranscriptEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  promotionGradeRules<T extends Prisma.Grade$promotionGradeRulesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$promotionGradeRulesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromotionGradeRulePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  promotionDecisions<T extends Prisma.Grade$promotionDecisionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$promotionDecisionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromotionDecisionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  progressionsFrom<T extends Prisma.Grade$progressionsFromArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$progressionsFromArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GradeProgressionRulePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  progressionsTo<T extends Prisma.Grade$progressionsToArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$progressionsToArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GradeProgressionRulePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  graduationConfigurations<T extends Prisma.Grade$graduationConfigurationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$graduationConfigurationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GraduationConfigurationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  graduationRecords<T extends Prisma.Grade$graduationRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$graduationRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GraduationRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  progressionHistoryAsPrevious<T extends Prisma.Grade$progressionHistoryAsPreviousArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$progressionHistoryAsPreviousArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicProgressionHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  progressionHistoryAsNew<T extends Prisma.Grade$progressionHistoryAsNewArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$progressionHistoryAsNewArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicProgressionHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3307,6 +5025,198 @@ export type Grade$academicTranscriptEntriesArgs<ExtArgs extends runtime.Types.Ex
   take?: number
   skip?: number
   distinct?: Prisma.AcademicTranscriptEntryScalarFieldEnum | Prisma.AcademicTranscriptEntryScalarFieldEnum[]
+}
+
+/**
+ * Grade.promotionGradeRules
+ */
+export type Grade$promotionGradeRulesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PromotionGradeRule
+   */
+  select?: Prisma.PromotionGradeRuleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PromotionGradeRule
+   */
+  omit?: Prisma.PromotionGradeRuleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PromotionGradeRuleInclude<ExtArgs> | null
+  where?: Prisma.PromotionGradeRuleWhereInput
+  orderBy?: Prisma.PromotionGradeRuleOrderByWithRelationInput | Prisma.PromotionGradeRuleOrderByWithRelationInput[]
+  cursor?: Prisma.PromotionGradeRuleWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PromotionGradeRuleScalarFieldEnum | Prisma.PromotionGradeRuleScalarFieldEnum[]
+}
+
+/**
+ * Grade.promotionDecisions
+ */
+export type Grade$promotionDecisionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PromotionDecision
+   */
+  select?: Prisma.PromotionDecisionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PromotionDecision
+   */
+  omit?: Prisma.PromotionDecisionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PromotionDecisionInclude<ExtArgs> | null
+  where?: Prisma.PromotionDecisionWhereInput
+  orderBy?: Prisma.PromotionDecisionOrderByWithRelationInput | Prisma.PromotionDecisionOrderByWithRelationInput[]
+  cursor?: Prisma.PromotionDecisionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PromotionDecisionScalarFieldEnum | Prisma.PromotionDecisionScalarFieldEnum[]
+}
+
+/**
+ * Grade.progressionsFrom
+ */
+export type Grade$progressionsFromArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GradeProgressionRule
+   */
+  select?: Prisma.GradeProgressionRuleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GradeProgressionRule
+   */
+  omit?: Prisma.GradeProgressionRuleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GradeProgressionRuleInclude<ExtArgs> | null
+  where?: Prisma.GradeProgressionRuleWhereInput
+  orderBy?: Prisma.GradeProgressionRuleOrderByWithRelationInput | Prisma.GradeProgressionRuleOrderByWithRelationInput[]
+  cursor?: Prisma.GradeProgressionRuleWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.GradeProgressionRuleScalarFieldEnum | Prisma.GradeProgressionRuleScalarFieldEnum[]
+}
+
+/**
+ * Grade.progressionsTo
+ */
+export type Grade$progressionsToArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GradeProgressionRule
+   */
+  select?: Prisma.GradeProgressionRuleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GradeProgressionRule
+   */
+  omit?: Prisma.GradeProgressionRuleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GradeProgressionRuleInclude<ExtArgs> | null
+  where?: Prisma.GradeProgressionRuleWhereInput
+  orderBy?: Prisma.GradeProgressionRuleOrderByWithRelationInput | Prisma.GradeProgressionRuleOrderByWithRelationInput[]
+  cursor?: Prisma.GradeProgressionRuleWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.GradeProgressionRuleScalarFieldEnum | Prisma.GradeProgressionRuleScalarFieldEnum[]
+}
+
+/**
+ * Grade.graduationConfigurations
+ */
+export type Grade$graduationConfigurationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GraduationConfiguration
+   */
+  select?: Prisma.GraduationConfigurationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GraduationConfiguration
+   */
+  omit?: Prisma.GraduationConfigurationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GraduationConfigurationInclude<ExtArgs> | null
+  where?: Prisma.GraduationConfigurationWhereInput
+  orderBy?: Prisma.GraduationConfigurationOrderByWithRelationInput | Prisma.GraduationConfigurationOrderByWithRelationInput[]
+  cursor?: Prisma.GraduationConfigurationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.GraduationConfigurationScalarFieldEnum | Prisma.GraduationConfigurationScalarFieldEnum[]
+}
+
+/**
+ * Grade.graduationRecords
+ */
+export type Grade$graduationRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GraduationRecord
+   */
+  select?: Prisma.GraduationRecordSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GraduationRecord
+   */
+  omit?: Prisma.GraduationRecordOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GraduationRecordInclude<ExtArgs> | null
+  where?: Prisma.GraduationRecordWhereInput
+  orderBy?: Prisma.GraduationRecordOrderByWithRelationInput | Prisma.GraduationRecordOrderByWithRelationInput[]
+  cursor?: Prisma.GraduationRecordWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.GraduationRecordScalarFieldEnum | Prisma.GraduationRecordScalarFieldEnum[]
+}
+
+/**
+ * Grade.progressionHistoryAsPrevious
+ */
+export type Grade$progressionHistoryAsPreviousArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicProgressionHistory
+   */
+  select?: Prisma.AcademicProgressionHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicProgressionHistory
+   */
+  omit?: Prisma.AcademicProgressionHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicProgressionHistoryInclude<ExtArgs> | null
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+  orderBy?: Prisma.AcademicProgressionHistoryOrderByWithRelationInput | Prisma.AcademicProgressionHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicProgressionHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicProgressionHistoryScalarFieldEnum | Prisma.AcademicProgressionHistoryScalarFieldEnum[]
+}
+
+/**
+ * Grade.progressionHistoryAsNew
+ */
+export type Grade$progressionHistoryAsNewArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicProgressionHistory
+   */
+  select?: Prisma.AcademicProgressionHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicProgressionHistory
+   */
+  omit?: Prisma.AcademicProgressionHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicProgressionHistoryInclude<ExtArgs> | null
+  where?: Prisma.AcademicProgressionHistoryWhereInput
+  orderBy?: Prisma.AcademicProgressionHistoryOrderByWithRelationInput | Prisma.AcademicProgressionHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.AcademicProgressionHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AcademicProgressionHistoryScalarFieldEnum | Prisma.AcademicProgressionHistoryScalarFieldEnum[]
 }
 
 /**

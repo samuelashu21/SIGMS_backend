@@ -396,6 +396,7 @@ export type ExaminationWhereInput = {
   section?: Prisma.XOR<Prisma.SectionNullableScalarRelationFilter, Prisma.SectionWhereInput> | null
   subject?: Prisma.XOR<Prisma.SubjectScalarRelationFilter, Prisma.SubjectWhereInput>
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  reports?: Prisma.ExaminationReportListRelationFilter
 }
 
 export type ExaminationOrderByWithRelationInput = {
@@ -436,6 +437,7 @@ export type ExaminationOrderByWithRelationInput = {
   section?: Prisma.SectionOrderByWithRelationInput
   subject?: Prisma.SubjectOrderByWithRelationInput
   createdBy?: Prisma.UserOrderByWithRelationInput
+  reports?: Prisma.ExaminationReportOrderByRelationAggregateInput
 }
 
 export type ExaminationWhereUniqueInput = Prisma.AtLeast<{
@@ -480,6 +482,7 @@ export type ExaminationWhereUniqueInput = Prisma.AtLeast<{
   section?: Prisma.XOR<Prisma.SectionNullableScalarRelationFilter, Prisma.SectionWhereInput> | null
   subject?: Prisma.XOR<Prisma.SubjectScalarRelationFilter, Prisma.SubjectWhereInput>
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  reports?: Prisma.ExaminationReportListRelationFilter
 }, "id" | "id_schoolId">
 
 export type ExaminationOrderByWithAggregationInput = {
@@ -577,6 +580,7 @@ export type ExaminationCreateInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateInput = {
@@ -610,6 +614,7 @@ export type ExaminationUncheckedCreateInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUpdateInput = {
@@ -643,6 +648,7 @@ export type ExaminationUpdateInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateInput = {
@@ -676,6 +682,7 @@ export type ExaminationUncheckedUpdateInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationCreateManyInput = {
@@ -1247,6 +1254,20 @@ export type ExaminationUpdateOneRequiredWithoutMarkRecordsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.ExaminationUpdateToOneWithWhereWithoutMarkRecordsInput, Prisma.ExaminationUpdateWithoutMarkRecordsInput>, Prisma.ExaminationUncheckedUpdateWithoutMarkRecordsInput>
 }
 
+export type ExaminationCreateNestedOneWithoutReportsInput = {
+  create?: Prisma.XOR<Prisma.ExaminationCreateWithoutReportsInput, Prisma.ExaminationUncheckedCreateWithoutReportsInput>
+  connectOrCreate?: Prisma.ExaminationCreateOrConnectWithoutReportsInput
+  connect?: Prisma.ExaminationWhereUniqueInput
+}
+
+export type ExaminationUpdateOneRequiredWithoutReportsNestedInput = {
+  create?: Prisma.XOR<Prisma.ExaminationCreateWithoutReportsInput, Prisma.ExaminationUncheckedCreateWithoutReportsInput>
+  connectOrCreate?: Prisma.ExaminationCreateOrConnectWithoutReportsInput
+  upsert?: Prisma.ExaminationUpsertWithoutReportsInput
+  connect?: Prisma.ExaminationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ExaminationUpdateToOneWithWhereWithoutReportsInput, Prisma.ExaminationUpdateWithoutReportsInput>, Prisma.ExaminationUncheckedUpdateWithoutReportsInput>
+}
+
 export type ExaminationCreateWithoutSchoolInput = {
   id?: string
   name: string
@@ -1277,6 +1298,7 @@ export type ExaminationCreateWithoutSchoolInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutSchoolInput = {
@@ -1309,6 +1331,7 @@ export type ExaminationUncheckedCreateWithoutSchoolInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutSchoolInput = {
@@ -1398,6 +1421,7 @@ export type ExaminationCreateWithoutCreatedByInput = {
   markRecords?: Prisma.MarkRecordCreateNestedManyWithoutExaminationInput
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutCreatedByInput = {
@@ -1430,6 +1454,7 @@ export type ExaminationUncheckedCreateWithoutCreatedByInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutCreatedByInput = {
@@ -1488,6 +1513,7 @@ export type ExaminationCreateWithoutAcademicYearInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutAcademicYearInput = {
@@ -1519,6 +1545,7 @@ export type ExaminationUncheckedCreateWithoutAcademicYearInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutAcademicYearInput = {
@@ -1577,6 +1604,7 @@ export type ExaminationCreateWithoutSemesterInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutSemesterInput = {
@@ -1608,6 +1636,7 @@ export type ExaminationUncheckedCreateWithoutSemesterInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutSemesterInput = {
@@ -1666,6 +1695,7 @@ export type ExaminationCreateWithoutGradeInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutGradeInput = {
@@ -1697,6 +1727,7 @@ export type ExaminationUncheckedCreateWithoutGradeInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutGradeInput = {
@@ -1755,6 +1786,7 @@ export type ExaminationCreateWithoutSectionInput = {
   markRecords?: Prisma.MarkRecordCreateNestedManyWithoutExaminationInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutSectionInput = {
@@ -1786,6 +1818,7 @@ export type ExaminationUncheckedCreateWithoutSectionInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutSectionInput = {
@@ -1844,6 +1877,7 @@ export type ExaminationCreateWithoutSubjectInput = {
   markRecords?: Prisma.MarkRecordCreateNestedManyWithoutExaminationInput
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutSubjectInput = {
@@ -1875,6 +1909,7 @@ export type ExaminationUncheckedCreateWithoutSubjectInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutSubjectInput = {
@@ -1933,6 +1968,7 @@ export type ExaminationCreateWithoutQuizInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutQuizInput = {
@@ -1965,6 +2001,7 @@ export type ExaminationUncheckedCreateWithoutQuizInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutQuizInput = {
@@ -2013,6 +2050,7 @@ export type ExaminationUpdateWithoutQuizInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutQuizInput = {
@@ -2045,6 +2083,7 @@ export type ExaminationUncheckedUpdateWithoutQuizInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationCreateWithoutAssignmentInput = {
@@ -2077,6 +2116,7 @@ export type ExaminationCreateWithoutAssignmentInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutAssignmentInput = {
@@ -2109,6 +2149,7 @@ export type ExaminationUncheckedCreateWithoutAssignmentInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutAssignmentInput = {
@@ -2157,6 +2198,7 @@ export type ExaminationUpdateWithoutAssignmentInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutAssignmentInput = {
@@ -2189,6 +2231,7 @@ export type ExaminationUncheckedUpdateWithoutAssignmentInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationCreateWithoutGradingConfigurationInput = {
@@ -2221,6 +2264,7 @@ export type ExaminationCreateWithoutGradingConfigurationInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutGradingConfigurationInput = {
@@ -2253,6 +2297,7 @@ export type ExaminationUncheckedCreateWithoutGradingConfigurationInput = {
   assignment?: Prisma.AssignmentUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutGradingConfigurationInput = {
@@ -2301,6 +2346,7 @@ export type ExaminationUpdateWithoutGradingConfigurationInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutGradingConfigurationInput = {
@@ -2333,6 +2379,7 @@ export type ExaminationUncheckedUpdateWithoutGradingConfigurationInput = {
   assignment?: Prisma.AssignmentUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationCreateWithoutHistoryInput = {
@@ -2365,6 +2412,7 @@ export type ExaminationCreateWithoutHistoryInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutHistoryInput = {
@@ -2397,6 +2445,7 @@ export type ExaminationUncheckedCreateWithoutHistoryInput = {
   assignment?: Prisma.AssignmentUncheckedCreateNestedOneWithoutExaminationInput
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutHistoryInput = {
@@ -2445,6 +2494,7 @@ export type ExaminationUpdateWithoutHistoryInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutHistoryInput = {
@@ -2477,6 +2527,7 @@ export type ExaminationUncheckedUpdateWithoutHistoryInput = {
   assignment?: Prisma.AssignmentUncheckedUpdateOneWithoutExaminationNestedInput
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationCreateWithoutMarkRecordsInput = {
@@ -2509,6 +2560,7 @@ export type ExaminationCreateWithoutMarkRecordsInput = {
   section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
   subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+  reports?: Prisma.ExaminationReportCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationUncheckedCreateWithoutMarkRecordsInput = {
@@ -2541,6 +2593,7 @@ export type ExaminationUncheckedCreateWithoutMarkRecordsInput = {
   assignment?: Prisma.AssignmentUncheckedCreateNestedOneWithoutExaminationInput
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
   history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
+  reports?: Prisma.ExaminationReportUncheckedCreateNestedManyWithoutExaminationInput
 }
 
 export type ExaminationCreateOrConnectWithoutMarkRecordsInput = {
@@ -2589,6 +2642,7 @@ export type ExaminationUpdateWithoutMarkRecordsInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutMarkRecordsInput = {
@@ -2621,6 +2675,155 @@ export type ExaminationUncheckedUpdateWithoutMarkRecordsInput = {
   assignment?: Prisma.AssignmentUncheckedUpdateOneWithoutExaminationNestedInput
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
+}
+
+export type ExaminationCreateWithoutReportsInput = {
+  id?: string
+  name: string
+  description?: string | null
+  type: $Enums.ExaminationType
+  mode?: $Enums.ExaminationMode
+  status?: $Enums.ExaminationStatus
+  totalMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  passingMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  weight?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  examinationDate?: Date | string | null
+  startTime?: Date | string | null
+  endTime?: Date | string | null
+  room?: string | null
+  instructions?: string | null
+  publishedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  statusReason?: string | null
+  quiz?: Prisma.QuizCreateNestedOneWithoutExaminationInput
+  assignment?: Prisma.AssignmentCreateNestedOneWithoutExaminationInput
+  school: Prisma.SchoolCreateNestedOneWithoutExaminationsInput
+  academicYear: Prisma.AcademicYearCreateNestedOneWithoutExaminationsInput
+  semester?: Prisma.SemesterCreateNestedOneWithoutExaminationsInput
+  grade: Prisma.GradeCreateNestedOneWithoutExaminationsInput
+  gradingConfiguration?: Prisma.ExaminationGradingConfigurationCreateNestedOneWithoutExaminationInput
+  history?: Prisma.ExaminationHistoryCreateNestedManyWithoutExaminationInput
+  markRecords?: Prisma.MarkRecordCreateNestedManyWithoutExaminationInput
+  section?: Prisma.SectionCreateNestedOneWithoutExaminationsInput
+  subject: Prisma.SubjectCreateNestedOneWithoutExaminationsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedExaminationsInput
+}
+
+export type ExaminationUncheckedCreateWithoutReportsInput = {
+  id?: string
+  schoolId: string
+  academicYearId: string
+  semesterId?: string | null
+  gradeId: string
+  sectionId?: string | null
+  subjectId: string
+  name: string
+  description?: string | null
+  type: $Enums.ExaminationType
+  mode?: $Enums.ExaminationMode
+  status?: $Enums.ExaminationStatus
+  totalMarks: runtime.Decimal | runtime.DecimalJsLike | number | string
+  passingMarks?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  weight?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  examinationDate?: Date | string | null
+  startTime?: Date | string | null
+  endTime?: Date | string | null
+  room?: string | null
+  instructions?: string | null
+  createdById: string
+  publishedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  statusReason?: string | null
+  quiz?: Prisma.QuizUncheckedCreateNestedOneWithoutExaminationInput
+  assignment?: Prisma.AssignmentUncheckedCreateNestedOneWithoutExaminationInput
+  gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedCreateNestedOneWithoutExaminationInput
+  history?: Prisma.ExaminationHistoryUncheckedCreateNestedManyWithoutExaminationInput
+  markRecords?: Prisma.MarkRecordUncheckedCreateNestedManyWithoutExaminationInput
+}
+
+export type ExaminationCreateOrConnectWithoutReportsInput = {
+  where: Prisma.ExaminationWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExaminationCreateWithoutReportsInput, Prisma.ExaminationUncheckedCreateWithoutReportsInput>
+}
+
+export type ExaminationUpsertWithoutReportsInput = {
+  update: Prisma.XOR<Prisma.ExaminationUpdateWithoutReportsInput, Prisma.ExaminationUncheckedUpdateWithoutReportsInput>
+  create: Prisma.XOR<Prisma.ExaminationCreateWithoutReportsInput, Prisma.ExaminationUncheckedCreateWithoutReportsInput>
+  where?: Prisma.ExaminationWhereInput
+}
+
+export type ExaminationUpdateToOneWithWhereWithoutReportsInput = {
+  where?: Prisma.ExaminationWhereInput
+  data: Prisma.XOR<Prisma.ExaminationUpdateWithoutReportsInput, Prisma.ExaminationUncheckedUpdateWithoutReportsInput>
+}
+
+export type ExaminationUpdateWithoutReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumExaminationTypeFieldUpdateOperationsInput | $Enums.ExaminationType
+  mode?: Prisma.EnumExaminationModeFieldUpdateOperationsInput | $Enums.ExaminationMode
+  status?: Prisma.EnumExaminationStatusFieldUpdateOperationsInput | $Enums.ExaminationStatus
+  totalMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  passingMarks?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  weight?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  examinationDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  startTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instructions?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  statusReason?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quiz?: Prisma.QuizUpdateOneWithoutExaminationNestedInput
+  assignment?: Prisma.AssignmentUpdateOneWithoutExaminationNestedInput
+  school?: Prisma.SchoolUpdateOneRequiredWithoutExaminationsNestedInput
+  academicYear?: Prisma.AcademicYearUpdateOneRequiredWithoutExaminationsNestedInput
+  semester?: Prisma.SemesterUpdateOneWithoutExaminationsNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutExaminationsNestedInput
+  gradingConfiguration?: Prisma.ExaminationGradingConfigurationUpdateOneWithoutExaminationNestedInput
+  history?: Prisma.ExaminationHistoryUpdateManyWithoutExaminationNestedInput
+  markRecords?: Prisma.MarkRecordUpdateManyWithoutExaminationNestedInput
+  section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
+  subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+}
+
+export type ExaminationUncheckedUpdateWithoutReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  schoolId?: Prisma.StringFieldUpdateOperationsInput | string
+  academicYearId?: Prisma.StringFieldUpdateOperationsInput | string
+  semesterId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  gradeId?: Prisma.StringFieldUpdateOperationsInput | string
+  sectionId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  subjectId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumExaminationTypeFieldUpdateOperationsInput | $Enums.ExaminationType
+  mode?: Prisma.EnumExaminationModeFieldUpdateOperationsInput | $Enums.ExaminationMode
+  status?: Prisma.EnumExaminationStatusFieldUpdateOperationsInput | $Enums.ExaminationStatus
+  totalMarks?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  passingMarks?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  weight?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  examinationDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  startTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  room?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instructions?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
+  publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  statusReason?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quiz?: Prisma.QuizUncheckedUpdateOneWithoutExaminationNestedInput
+  assignment?: Prisma.AssignmentUncheckedUpdateOneWithoutExaminationNestedInput
+  gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
+  history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
+  markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationCreateManySchoolInput = {
@@ -2680,6 +2883,7 @@ export type ExaminationUpdateWithoutSchoolInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutSchoolInput = {
@@ -2712,6 +2916,7 @@ export type ExaminationUncheckedUpdateWithoutSchoolInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutSchoolInput = {
@@ -2798,6 +3003,7 @@ export type ExaminationUpdateWithoutCreatedByInput = {
   markRecords?: Prisma.MarkRecordUpdateManyWithoutExaminationNestedInput
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutCreatedByInput = {
@@ -2830,6 +3036,7 @@ export type ExaminationUncheckedUpdateWithoutCreatedByInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutCreatedByInput = {
@@ -2915,6 +3122,7 @@ export type ExaminationUpdateWithoutAcademicYearInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutAcademicYearInput = {
@@ -2946,6 +3154,7 @@ export type ExaminationUncheckedUpdateWithoutAcademicYearInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutAcademicYearInput = {
@@ -3030,6 +3239,7 @@ export type ExaminationUpdateWithoutSemesterInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutSemesterInput = {
@@ -3061,6 +3271,7 @@ export type ExaminationUncheckedUpdateWithoutSemesterInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutSemesterInput = {
@@ -3145,6 +3356,7 @@ export type ExaminationUpdateWithoutGradeInput = {
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutGradeInput = {
@@ -3176,6 +3388,7 @@ export type ExaminationUncheckedUpdateWithoutGradeInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutGradeInput = {
@@ -3260,6 +3473,7 @@ export type ExaminationUpdateWithoutSectionInput = {
   markRecords?: Prisma.MarkRecordUpdateManyWithoutExaminationNestedInput
   subject?: Prisma.SubjectUpdateOneRequiredWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutSectionInput = {
@@ -3291,6 +3505,7 @@ export type ExaminationUncheckedUpdateWithoutSectionInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutSectionInput = {
@@ -3375,6 +3590,7 @@ export type ExaminationUpdateWithoutSubjectInput = {
   markRecords?: Prisma.MarkRecordUpdateManyWithoutExaminationNestedInput
   section?: Prisma.SectionUpdateOneWithoutExaminationsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedExaminationsNestedInput
+  reports?: Prisma.ExaminationReportUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateWithoutSubjectInput = {
@@ -3406,6 +3622,7 @@ export type ExaminationUncheckedUpdateWithoutSubjectInput = {
   gradingConfiguration?: Prisma.ExaminationGradingConfigurationUncheckedUpdateOneWithoutExaminationNestedInput
   history?: Prisma.ExaminationHistoryUncheckedUpdateManyWithoutExaminationNestedInput
   markRecords?: Prisma.MarkRecordUncheckedUpdateManyWithoutExaminationNestedInput
+  reports?: Prisma.ExaminationReportUncheckedUpdateManyWithoutExaminationNestedInput
 }
 
 export type ExaminationUncheckedUpdateManyWithoutSubjectInput = {
@@ -3442,11 +3659,13 @@ export type ExaminationUncheckedUpdateManyWithoutSubjectInput = {
 export type ExaminationCountOutputType = {
   history: number
   markRecords: number
+  reports: number
 }
 
 export type ExaminationCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   history?: boolean | ExaminationCountOutputTypeCountHistoryArgs
   markRecords?: boolean | ExaminationCountOutputTypeCountMarkRecordsArgs
+  reports?: boolean | ExaminationCountOutputTypeCountReportsArgs
 }
 
 /**
@@ -3471,6 +3690,13 @@ export type ExaminationCountOutputTypeCountHistoryArgs<ExtArgs extends runtime.T
  */
 export type ExaminationCountOutputTypeCountMarkRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.MarkRecordWhereInput
+}
+
+/**
+ * ExaminationCountOutputType without action
+ */
+export type ExaminationCountOutputTypeCountReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExaminationReportWhereInput
 }
 
 
@@ -3512,6 +3738,7 @@ export type ExaminationSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   section?: boolean | Prisma.Examination$sectionArgs<ExtArgs>
   subject?: boolean | Prisma.SubjectDefaultArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  reports?: boolean | Prisma.Examination$reportsArgs<ExtArgs>
   _count?: boolean | Prisma.ExaminationCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["examination"]>
 
@@ -3627,6 +3854,7 @@ export type ExaminationInclude<ExtArgs extends runtime.Types.Extensions.Internal
   section?: boolean | Prisma.Examination$sectionArgs<ExtArgs>
   subject?: boolean | Prisma.SubjectDefaultArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  reports?: boolean | Prisma.Examination$reportsArgs<ExtArgs>
   _count?: boolean | Prisma.ExaminationCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ExaminationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3663,6 +3891,7 @@ export type $ExaminationPayload<ExtArgs extends runtime.Types.Extensions.Interna
     section: Prisma.$SectionPayload<ExtArgs> | null
     subject: Prisma.$SubjectPayload<ExtArgs>
     createdBy: Prisma.$UserPayload<ExtArgs>
+    reports: Prisma.$ExaminationReportPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -4096,6 +4325,7 @@ export interface Prisma__ExaminationClient<T, Null = never, ExtArgs extends runt
   section<T extends Prisma.Examination$sectionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Examination$sectionArgs<ExtArgs>>): Prisma.Prisma__SectionClient<runtime.Types.Result.GetResult<Prisma.$SectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   subject<T extends Prisma.SubjectDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SubjectDefaultArgs<ExtArgs>>): Prisma.Prisma__SubjectClient<runtime.Types.Result.GetResult<Prisma.$SubjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  reports<T extends Prisma.Examination$reportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Examination$reportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExaminationReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4691,6 +4921,30 @@ export type Examination$sectionArgs<ExtArgs extends runtime.Types.Extensions.Int
    */
   include?: Prisma.SectionInclude<ExtArgs> | null
   where?: Prisma.SectionWhereInput
+}
+
+/**
+ * Examination.reports
+ */
+export type Examination$reportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExaminationReport
+   */
+  select?: Prisma.ExaminationReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExaminationReport
+   */
+  omit?: Prisma.ExaminationReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExaminationReportInclude<ExtArgs> | null
+  where?: Prisma.ExaminationReportWhereInput
+  orderBy?: Prisma.ExaminationReportOrderByWithRelationInput | Prisma.ExaminationReportOrderByWithRelationInput[]
+  cursor?: Prisma.ExaminationReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExaminationReportScalarFieldEnum | Prisma.ExaminationReportScalarFieldEnum[]
 }
 
 /**

@@ -120,7 +120,18 @@ export const ModelName = {
   StudentAcademicTranscript: 'StudentAcademicTranscript',
   AcademicTranscriptEntry: 'AcademicTranscriptEntry',
   AcademicTranscriptHistory: 'AcademicTranscriptHistory',
-  AttendanceReport: 'AttendanceReport'
+  AttendanceReport: 'AttendanceReport',
+  ExaminationReport: 'ExaminationReport',
+  StudentAccountLink: 'StudentAccountLink',
+  PromotionConfiguration: 'PromotionConfiguration',
+  PromotionGradeRule: 'PromotionGradeRule',
+  PromotionEligibilityAssessment: 'PromotionEligibilityAssessment',
+  PromotionDecision: 'PromotionDecision',
+  GradeProgressionRule: 'GradeProgressionRule',
+  GraduationConfiguration: 'GraduationConfiguration',
+  GraduationCandidate: 'GraduationCandidate',
+  GraduationRecord: 'GraduationRecord',
+  AcademicProgressionHistory: 'AcademicProgressionHistory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1423,10 +1434,264 @@ export const AttendanceReportScalarFieldEnum = {
   reportDetails: 'reportDetails',
   generatedById: 'generatedById',
   generatedAt: 'generatedAt',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  status: 'status',
+  publishedAt: 'publishedAt',
+  publishedById: 'publishedById'
 } as const
 
 export type AttendanceReportScalarFieldEnum = (typeof AttendanceReportScalarFieldEnum)[keyof typeof AttendanceReportScalarFieldEnum]
+
+
+export const ExaminationReportScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  examinationId: 'examinationId',
+  studentId: 'studentId',
+  sectionId: 'sectionId',
+  subjectId: 'subjectId',
+  reportNumber: 'reportNumber',
+  scope: 'scope',
+  totalStudents: 'totalStudents',
+  submittedMarks: 'submittedMarks',
+  approvedMarks: 'approvedMarks',
+  averageMarks: 'averageMarks',
+  highestMarks: 'highestMarks',
+  lowestMarks: 'lowestMarks',
+  passCount: 'passCount',
+  failCount: 'failCount',
+  passPercentage: 'passPercentage',
+  reportDetails: 'reportDetails',
+  generatedById: 'generatedById',
+  generatedAt: 'generatedAt',
+  createdAt: 'createdAt',
+  status: 'status',
+  publishedAt: 'publishedAt',
+  publishedById: 'publishedById'
+} as const
+
+export type ExaminationReportScalarFieldEnum = (typeof ExaminationReportScalarFieldEnum)[keyof typeof ExaminationReportScalarFieldEnum]
+
+
+export const StudentAccountLinkScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  userId: 'userId',
+  isActive: 'isActive',
+  verifiedAt: 'verifiedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentAccountLinkScalarFieldEnum = (typeof StudentAccountLinkScalarFieldEnum)[keyof typeof StudentAccountLinkScalarFieldEnum]
+
+
+export const PromotionConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  name: 'name',
+  decisionType: 'decisionType',
+  minimumOverallPercentage: 'minimumOverallPercentage',
+  minimumGradePoint: 'minimumGradePoint',
+  minimumAttendancePercentage: 'minimumAttendancePercentage',
+  minimumPassedSubjects: 'minimumPassedSubjects',
+  maximumFailedSubjects: 'maximumFailedSubjects',
+  requireAllCoreSubjectsPassed: 'requireAllCoreSubjectsPassed',
+  requireCompletedExaminations: 'requireCompletedExaminations',
+  requireApprovedResults: 'requireApprovedResults',
+  allowManualOverride: 'allowManualOverride',
+  requirePrincipalApproval: 'requirePrincipalApproval',
+  status: 'status',
+  createdById: 'createdById',
+  updatedById: 'updatedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PromotionConfigurationScalarFieldEnum = (typeof PromotionConfigurationScalarFieldEnum)[keyof typeof PromotionConfigurationScalarFieldEnum]
+
+
+export const PromotionGradeRuleScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  configurationId: 'configurationId',
+  gradeId: 'gradeId',
+  minimumOverallPercentage: 'minimumOverallPercentage',
+  minimumGradePoint: 'minimumGradePoint',
+  minimumAttendancePercentage: 'minimumAttendancePercentage',
+  minimumPassedSubjects: 'minimumPassedSubjects',
+  maximumFailedSubjects: 'maximumFailedSubjects',
+  requireAllCoreSubjectsPassed: 'requireAllCoreSubjectsPassed',
+  allowPromotion: 'allowPromotion',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PromotionGradeRuleScalarFieldEnum = (typeof PromotionGradeRuleScalarFieldEnum)[keyof typeof PromotionGradeRuleScalarFieldEnum]
+
+
+export const PromotionEligibilityAssessmentScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  enrollmentId: 'enrollmentId',
+  configurationId: 'configurationId',
+  academicYearId: 'academicYearId',
+  status: 'status',
+  overallPercentage: 'overallPercentage',
+  averageGradePoint: 'averageGradePoint',
+  attendancePercentage: 'attendancePercentage',
+  totalSubjects: 'totalSubjects',
+  passedSubjects: 'passedSubjects',
+  failedSubjects: 'failedSubjects',
+  completedExaminations: 'completedExaminations',
+  approvedResults: 'approvedResults',
+  reasons: 'reasons',
+  assessedById: 'assessedById',
+  assessedAt: 'assessedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PromotionEligibilityAssessmentScalarFieldEnum = (typeof PromotionEligibilityAssessmentScalarFieldEnum)[keyof typeof PromotionEligibilityAssessmentScalarFieldEnum]
+
+
+export const PromotionDecisionScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  currentEnrollmentId: 'currentEnrollmentId',
+  nextEnrollmentId: 'nextEnrollmentId',
+  eligibilityAssessmentId: 'eligibilityAssessmentId',
+  configurationId: 'configurationId',
+  nextAcademicYearId: 'nextAcademicYearId',
+  targetGradeId: 'targetGradeId',
+  targetSectionId: 'targetSectionId',
+  action: 'action',
+  reason: 'reason',
+  overrideReason: 'overrideReason',
+  decidedById: 'decidedById',
+  decidedAt: 'decidedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PromotionDecisionScalarFieldEnum = (typeof PromotionDecisionScalarFieldEnum)[keyof typeof PromotionDecisionScalarFieldEnum]
+
+
+export const GradeProgressionRuleScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  currentGradeId: 'currentGradeId',
+  nextGradeId: 'nextGradeId',
+  isGraduationGrade: 'isGraduationGrade',
+  isActive: 'isActive',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GradeProgressionRuleScalarFieldEnum = (typeof GradeProgressionRuleScalarFieldEnum)[keyof typeof GradeProgressionRuleScalarFieldEnum]
+
+
+export const GraduationConfigurationScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  academicYearId: 'academicYearId',
+  terminalGradeId: 'terminalGradeId',
+  name: 'name',
+  minimumOverallPercentage: 'minimumOverallPercentage',
+  minimumGradePoint: 'minimumGradePoint',
+  minimumAttendancePercentage: 'minimumAttendancePercentage',
+  minimumPassedSubjects: 'minimumPassedSubjects',
+  maximumFailedSubjects: 'maximumFailedSubjects',
+  requireCompletedExaminations: 'requireCompletedExaminations',
+  requireApprovedResults: 'requireApprovedResults',
+  requireAllCoreSubjectsPassed: 'requireAllCoreSubjectsPassed',
+  status: 'status',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GraduationConfigurationScalarFieldEnum = (typeof GraduationConfigurationScalarFieldEnum)[keyof typeof GraduationConfigurationScalarFieldEnum]
+
+
+export const GraduationCandidateScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  enrollmentId: 'enrollmentId',
+  configurationId: 'configurationId',
+  academicYearId: 'academicYearId',
+  status: 'status',
+  overallPercentage: 'overallPercentage',
+  averageGradePoint: 'averageGradePoint',
+  attendancePercentage: 'attendancePercentage',
+  totalSubjects: 'totalSubjects',
+  passedSubjects: 'passedSubjects',
+  failedSubjects: 'failedSubjects',
+  completedExaminations: 'completedExaminations',
+  approvedResults: 'approvedResults',
+  assessmentReasons: 'assessmentReasons',
+  assessedById: 'assessedById',
+  assessedAt: 'assessedAt',
+  reviewedById: 'reviewedById',
+  reviewedAt: 'reviewedAt',
+  reviewNotes: 'reviewNotes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GraduationCandidateScalarFieldEnum = (typeof GraduationCandidateScalarFieldEnum)[keyof typeof GraduationCandidateScalarFieldEnum]
+
+
+export const GraduationRecordScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  enrollmentId: 'enrollmentId',
+  candidateId: 'candidateId',
+  academicYearId: 'academicYearId',
+  terminalGradeId: 'terminalGradeId',
+  graduationNumber: 'graduationNumber',
+  graduationDate: 'graduationDate',
+  qualification: 'qualification',
+  distinction: 'distinction',
+  remarks: 'remarks',
+  status: 'status',
+  approvedById: 'approvedById',
+  approvedAt: 'approvedAt',
+  revokedById: 'revokedById',
+  revokedAt: 'revokedAt',
+  revocationReason: 'revocationReason',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type GraduationRecordScalarFieldEnum = (typeof GraduationRecordScalarFieldEnum)[keyof typeof GraduationRecordScalarFieldEnum]
+
+
+export const AcademicProgressionHistoryScalarFieldEnum = {
+  id: 'id',
+  schoolId: 'schoolId',
+  studentId: 'studentId',
+  currentEnrollmentId: 'currentEnrollmentId',
+  previousEnrollmentId: 'previousEnrollmentId',
+  academicYearId: 'academicYearId',
+  previousGradeId: 'previousGradeId',
+  newGradeId: 'newGradeId',
+  previousSectionId: 'previousSectionId',
+  newSectionId: 'newSectionId',
+  action: 'action',
+  reason: 'reason',
+  details: 'details',
+  performedById: 'performedById',
+  performedAt: 'performedAt'
+} as const
+
+export type AcademicProgressionHistoryScalarFieldEnum = (typeof AcademicProgressionHistoryScalarFieldEnum)[keyof typeof AcademicProgressionHistoryScalarFieldEnum]
 
 
 export const SortOrder = {
